@@ -1,0 +1,2707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashoer Intelligent Technology Ltd — Smart Packaging Solutions</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1648b8;
+      --secondary: #f97316;
+      --dark: #1f2937;
+      --gray: #6b7280;
+      --light: #f3f4f6;
+      --white: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c8161d;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      overflow: hidden;
+    }
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--gray);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    .lang-select {
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      background: var(--white);
+      color: var(--dark);
+      cursor: pointer;
+      font-family: inherit;
+      max-width: 150px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(rgba(10,40,120,0.55), rgba(22,72,184,0.6)), url('images/hero-banner.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249,115,22,0.4); }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* ── SECTION COMMON ── */
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .section-title p { color: var(--gray); font-size: 1.05rem; }
+
+    .section-badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products {
+      background: var(--light);
+      padding: 72px 24px;
+    }
+
+    .products-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+
+    .product-icon {
+      font-size: 2.6rem;
+      line-height: 1;
+      margin-bottom: 12px;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-icon { transform: scale(1.12); }
+
+    .product-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); }
+    .product-card p { font-size: 0.85rem; color: var(--gray); margin-top: 6px; }
+
+    /* ── FEATURED PRODUCTS (with real images) ── */
+    .featured-prods {
+      background: var(--white);
+      padding: 72px 24px;
+    }
+
+    .featured-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .featured-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .featured-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+
+    .featured-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: #e5e7eb;
+    }
+
+    .featured-body { padding: 20px 24px; }
+
+    .featured-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+
+    .featured-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .featured-body p { font-size: 0.875rem; color: var(--gray); line-height: 1.7; }
+
+    .featured-body .view-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    /* ── VIDEOS ── */
+    .videos {
+      background: #f8fafc;
+      padding: 72px 24px;
+    }
+
+    .videos .section-title h2 { color: var(--dark); }
+    .videos .section-title p { color: #64748b; }
+
+    .video-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .video-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(37,99,235,0.15); }
+
+    .video-thumb-wrap {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .video-thumb {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .video-card:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: #2563eb; }
+
+    .play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 16px solid var(--primary);
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      margin-left: 4px;
+    }
+
+    .video-meta {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .video-body { padding: 16px 18px 18px; }
+
+    .video-body h3 { color: #fff; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+
+    /* Video Modal */
+    .video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .video-modal.active { display: flex; }
+
+    /* Product Modal */
+    .product-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.78);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product-modal.active { display: flex; }
+    .product-modal-card {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .product-modal-card > img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-modal-card .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      z-index: 2;
+      cursor: pointer;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    }
+    .product-modal-body { padding: 28px 32px 32px; }
+    .product-modal-body h3 {
+      font-size: 1.4rem;
+      margin: 10px 0 12px;
+      color: #0f2257;
+    }
+    .product-modal-body p {
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+    .pm-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: filter 0.2s ease;
+    }
+    .pm-btn:hover { filter: brightness(1.12); }
+
+    .video-modal video {
+      max-width: 860px;
+      width: 95%;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .modal-close {
+      color: rgba(255,255,255,0.7);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: #fff; }
+
+    /* ── NEWS ── */
+    .news {
+      padding: 72px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .news-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .news-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+
+    .news-thumb {
+      height: 160px;
+      background: linear-gradient(135deg, #dbeafe, #e0e7ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      overflow: hidden;
+    }
+
+    .news-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+    .news-body { padding: 20px; }
+
+    .news-date {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .news-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+
+    .news-excerpt {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--white);
+      padding: 80px 24px;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .about p {
+      color: var(--gray);
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .about p + p { margin-top: 16px; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .stat-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-label { font-size: 0.875rem; color: var(--gray); margin-top: 4px; }
+
+    .stat-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 16px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.22);
+    }
+    .stat-icon svg { width: 32px; height: 32px; display: block; }
+    .stat-card:hover .stat-icon { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(15, 23, 42, 0.28); transition: transform .25s, box-shadow .25s; }
+
+    .about-visual {
+      position: relative;
+      height: 480px;
+    }
+
+    .about-photo {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(15, 34, 87, 0.18);
+      border: 4px solid #fff;
+      transition: transform 0.3s ease;
+    }
+
+    .about-photo:hover { transform: translateY(-6px) scale(1.02); z-index: 9; }
+
+    .about-photo-1 { top: 0; left: 0; width: 62%; height: 52%; z-index: 1; }
+    .about-photo-2 { top: 8%; right: 0; width: 44%; height: 40%; z-index: 2; }
+    .about-photo-3 { bottom: 6%; left: 6%; width: 42%; height: 36%; z-index: 2; }
+    .about-photo-4 { bottom: 0; right: 5%; width: 52%; height: 46%; z-index: 3; }
+
+    .about-visual-badge {
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      background: linear-gradient(135deg, #1a56db, #0e3a9f);
+      color: #fff;
+      border-radius: 12px;
+      padding: 12px 20px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(14, 58, 159, 0.4);
+      max-width: none;
+      white-space: nowrap;
+    }
+
+    .about-visual-badge h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+    .about-visual-badge p { opacity: 1; font-size: 0.8rem; color: #fff; font-weight: 500; }
+
+    /* ── WHY US ── */
+    .why-us {
+      background: var(--light);
+      padding: 80px 24px;
+    }
+
+    .why-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .why-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      transition: transform 0.3s, filter 0.3s;
+      filter: drop-shadow(0 4px 10px rgba(37,99,235,0.18));
+    }
+    .why-icon svg { width: 100%; height: 100%; display: block; }
+    .why-card:hover .why-icon {
+      transform: translateY(-3px) scale(1.05);
+      filter: drop-shadow(0 8px 16px rgba(37,99,235,0.28));
+    }
+
+    .why-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .why-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 80px 24px;
+      background: var(--white);
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+      align-items: stretch;
+    }
+    @media (max-width: 960px) { .contact-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .contact-cards { grid-template-columns: 1fr; } }
+
+    .contact-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-card h4 { font-size: 0.85rem; color: var(--gray); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .contact-card p { font-size: 1rem; font-weight: 700; color: var(--dark); }
+
+    /* ===== 第 2 框：微信二维码 + WhatsApp ===== */
+    .qc-card {
+      padding: 24px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 9px;
+    }
+
+    .qc-head { display: flex; align-items: center; gap: 8px; }
+    .qc-icon {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .qc-icon.wechat { background: #07C160; }
+    .qc-icon.whatsapp { background: #25D366; }
+    .qc-icon svg { width: 17px; height: 17px; fill: #fff; }
+    .qc-card h4 {
+      font-size: 0.92rem;
+      color: var(--dark);
+      font-weight: 700;
+      margin: 0;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .qc-qr {
+      width: 100%;
+      max-width: 138px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      border: 1px solid #e2e8f0;
+      border-radius: 9px;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .qc-id { font-size: 0.8rem; color: var(--dark); font-weight: 700; margin: 0; word-break: break-all; }
+    .qc-id span { font-weight: 700; color: var(--primary); }
+
+    .qc-divider { width: 100%; height: 1px; background: #dde3ea; margin: 5px 0; }
+
+    .qc-num {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin: 0;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+
+    .qc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 10px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+    .qc-btn:hover { background: #1fb957; transform: translateY(-2px); }
+    .qc-btn svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* ===== 第 1 框：联系人 + 邮箱 + 电话 ===== */
+    .cc-main { font-size: 0.95rem !important; word-break: break-all; }
+    .cc-main a { color: var(--dark); text-decoration: none; }
+    .cc-main a:hover { color: var(--primary); text-decoration: underline; }
+    .cc-divider {
+      height: 1px;
+      background: #d5dce5;
+      margin: 18px 0;
+    }
+    .cc-row { margin-bottom: 14px; }
+    .cc-row:last-child { margin-bottom: 0; }
+    .cc-label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .contact-form {
+      margin-top: 48px;
+      background: var(--light);
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 40px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: var(--primary-dark); }
+
+    .form-error {
+      margin: 14px 0 0;
+      padding: 11px 16px;
+      background: #fef2f2;
+      border-left: 3px solid #dc2626;
+      border-radius: 6px;
+      color: #b91c1c;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .form-error[hidden] { display: none; }
+
+    /* ===== WhatsApp 悬浮咨询按钮 ===== */
+    .wa-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, .42);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .wa-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(37, 211, 102, .5);
+      color: #fff;
+    }
+    .wa-float-icon {
+      width: 56px; height: 56px; flex: 0 0 56px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wa-float-icon svg { width: 32px; height: 32px; fill: #fff; }
+    .wa-float-text {
+      max-width: 0; overflow: hidden; white-space: nowrap;
+      font-size: 15px; font-weight: 600;
+      transition: max-width .28s ease, padding-right .28s ease;
+    }
+    .wa-float:hover .wa-float-text { max-width: 200px; padding-right: 20px; }
+    @media (max-width: 768px) {
+      .wa-float { right: 14px; bottom: 14px; }
+      .wa-float-icon { width: 50px; height: 50px; flex: 0 0 50px; }
+      .wa-float-icon svg { width: 28px; height: 28px; }
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 24px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo { color: #fff; margin-bottom: 12px; }
+
+    .footer-brand .logo .logo-icon { background: #fff; }
+
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-right { gap: 12px; }
+      .hero h1 { font-size: 1.9rem; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-visual { height: 380px; }
+      .about-visual-badge { display: none; }
+      .about-photo { border-width: 3px; }
+      .about-photo-1 { width: 68%; height: 46%; }
+      .about-photo-2 { top: 4%; width: 48%; height: 34%; }
+      .about-photo-3 { bottom: 4%; width: 44%; height: 30%; }
+      .about-photo-4 { width: 54%; height: 40%; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2150c07cc4fa4de4b070789867d2c941"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+  <!-- ════ VIDEO MODAL ════ -->
+  <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeModal()">
+    <div class="modal-close" onclick="closeModal()">&#x2715;</div>
+    <video id="modalVideo" controls autoplay>
+      <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- ════ PRODUCT MODAL ════ -->
+  <div class="product-modal" id="productModal" onclick="if(event.target===this)closeProduct()">
+    <div class="product-modal-card">
+      <div class="modal-close" onclick="closeProduct()">&#x2715;</div>
+      <img id="pmImg" src="" alt="" onerror="this.style.display='none'">
+      <div class="product-modal-body">
+        <span class="featured-badge" id="pmBadge"></span>
+        <h3 id="pmName"></h3>
+        <p id="pmDesc"></p>
+        <a href="#contact" class="pm-btn" onclick="closeProduct()" data-i18n="pm_inquiry">Send Inquiry →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ NAV ════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon"><img src="images/logo.jpg" alt="Hashoer Logo" onerror="this.remove()"></div>
+        Hashoer
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+          <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="#contact" class="nav-cta" data-i18n="nav_quote">Get a Quote</a></li>
+        </ul>
+        <select id="langSelect" class="lang-select" onchange="onLangChange(this.value)" aria-label="Language"></select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════ HERO ════ -->
+  <section class="hero">
+    <h1 data-i18n-html="hero_title">Smart Packaging Solutions<br>for Pharma &amp; Beyond</h1>
+    <p data-i18n="hero_subtitle">Hashoer Intelligent Technology — professional non-standard packaging equipment, from liquid filling &amp; capping to full automated production lines. Powered by European technology.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" data-i18n="hero_btn1">View Products</button>
+      <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="hero_btn2">Contact Us</button>
+    </div>
+  </section>
+
+  <!-- ════ PRODUCT CATEGORIES ════ -->
+  <section class="products" id="products">
+    <div class="section-title">
+      <span class="section-badge" data-i18n="products_badge">Product Range</span>
+      <h2 data-i18n="products_title">What We Make</h2>
+      <p data-i18n="products_subtitle">Complete packaging solutions across five core industries</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" id="cat1">
+        <div class="product-icon">💊</div>
+        <h3>Vials</h3>
+        <p>2–100 ml injectable vials</p>
+      </div>
+      <div class="product-card" id="cat2">
+        <div class="product-icon">🧪</div>
+        <h3>Ampoules</h3>
+        <p>1–20 ml ampoules</p>
+      </div>
+      <div class="product-card" id="cat3">
+        <div class="product-icon">💉</div>
+        <h3>Prefilled syringes</h3>
+        <p>RTU nested syringes</p>
+      </div>
+      <div class="product-card" id="cat4">
+        <div class="product-icon">⚗️</div>
+        <h3>Powder</h3>
+        <p>Screw &amp; airflow filling</p>
+      </div>
+      <div class="product-card" id="cat5">
+        <div class="product-icon">🍼</div>
+        <h3>Soft bags</h3>
+        <p>Lab soft-bag filling</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FEATURED PRODUCTS (real images from original site) ════ -->
+
+  <!-- ════ VIDEOS ════ -->
+  <section class="videos" id="videos">
+    <div class="section-title">
+      <span class="section-badge" style="background:rgba(37,99,235,0.1);color:#2563eb;" data-i18n="vid_badge">Video Center</span>
+      <h2 data-i18n="vid_title">See Us in Action</h2>
+      <p data-i18n="vid_subtitle">Real footage of our equipment running in production environments</p>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video1.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb1.jpg"
+               alt="Equipment Video 1"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ 0:48</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid1_title">Automated Packaging Line — Full Overview</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video2.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb2.jpg"
+               alt="Equipment Video 2"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ 1:12</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid2_title">Vial Filling &amp; Capping Machine Demo</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video3.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb3.jpg"
+               alt="Equipment Video 3"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ 0:55</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid3_title">Bottle Washing &amp; Sterilization Line</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video4.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb4.jpg"
+               alt="Equipment Video 4"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ 2:03</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid4_title">Production Line Integration — Live Run</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video5.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb5.jpg"
+               alt="Equipment Video 5"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ 1:34</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid5_title">Custom Turnkey Solution Showcase</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video6.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb6.jpg"
+               alt="Equipment Video 6"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ --:--</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid6_title">Product Demo Video 6</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video7.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb7.jpg"
+               alt="Equipment Video 7"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ --:--</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid7_title">Product Demo Video 7</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video8.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb8.jpg"
+               alt="Equipment Video 8"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ --:--</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid8_title">Product Demo Video 8</h3>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb-wrap" onclick="openModal('videos/video9.mp4')">
+          <img class="video-thumb"
+               src="images/video-thumb9.jpg"
+               alt="Equipment Video 9"
+               onerror="this.parentElement.style.background='#2a3a6e';this.style.display='none'">
+          <div class="play-btn"></div>
+          <div class="video-meta">▶ --:--</div>
+        </div>
+        <div class="video-body">
+          <h3 data-i18n="vid9_title">Product Demo Video 9</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="featured-prods">
+    <div class="section-title">
+      <span class="section-badge" data-i18n="feat_badge">Featured Products</span>
+      <h2 data-i18n="feat_title">Core Equipment</h2>
+      <p data-i18n="feat_subtitle">Real products from our production line — click to learn more</p>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-card">
+        <img class="featured-img"
+             src="images/product1.jpg"
+             alt="Vial Filling Machine"
+             onerror="this.style.display='none'">
+        <div class="featured-body">
+          <span class="featured-badge" data-i18n="fp1_badge">Pharmaceutical</span>
+          <h3 data-i18n="fp1_name">Vial Filling Machine</h3>
+          <p data-i18n="fp1_desc">Automated liquid filling system for pharmaceutical vials. High precision, reliable performance, compliant with GMP standards.</p>
+          <a href="#contact" class="view-link" onclick="openProduct('fp1','images/product1.jpg');return false;" data-i18n="fp1_link">View Details →</a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img class="featured-img"
+             src="images/product2.jpg"
+             alt="Bottle Washing Machine"
+             onerror="this.style.display='none'">
+        <div class="featured-body">
+          <span class="featured-badge" data-i18n="fp2_badge">Pharmaceutical</span>
+          <h3 data-i18n="fp2_name">Bottle Washing Machine</h3>
+          <p data-i18n="fp2_desc">High-efficiency vial and bottle washing system for sterile pharmaceutical production lines. Multi-stage cleaning cycle.</p>
+          <a href="#contact" class="view-link" onclick="openProduct('fp2','images/product2.jpg');return false;" data-i18n="fp2_link">View Details →</a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img class="featured-img"
+             src="images/product3.jpg"
+             alt="Lyophilizer"
+             style="width:100%;height:200px;object-fit:cover;display:block;"
+             onerror="this.style.display='none'">
+        <div class="featured-body">
+          <span class="featured-badge" data-i18n="fp3_badge">Laboratory</span>
+          <h3 data-i18n="fp3_name">Lyophilizer (Freeze Dryer)</h3>
+          <p data-i18n="fp3_desc">Production and laboratory-scale freeze dryers for pharmaceutical and biotech applications. Superior drying quality.</p>
+          <a href="#contact" class="view-link" onclick="openProduct('fp3','images/product3.jpg');return false;" data-i18n="fp3_link">View Details →</a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img class="featured-img"
+             src="images/product4.jpg"
+             alt="Liquid Charging System"
+             style="width:100%;height:200px;object-fit:cover;display:block;"
+             onerror="this.style.display='none'">
+        <div class="featured-body">
+          <span class="featured-badge" data-i18n="fp4_badge">Laboratory</span>
+          <h3 data-i18n="fp4_name">Liquid Charging System</h3>
+          <p data-i18n="fp4_desc">Custom liquid preparation and charging system for pharmaceutical manufacturing. Precise dosing, easy cleaning.</p>
+          <a href="#contact" class="view-link" onclick="openProduct('fp4','images/product4.jpg');return false;" data-i18n="fp4_link">View Details →</a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img class="featured-img"
+             src="images/product5.jpg"
+             alt="Ampoule Washing Machine"
+             onerror="this.style.display='none'">
+        <div class="featured-body">
+          <span class="featured-badge" data-i18n="fp5_badge">Pharmaceutical</span>
+          <h3 data-i18n="fp5_name">Ampoule Washing Machine</h3>
+          <p data-i18n="fp5_desc">High-efficiency ampoule washing machine for sterile pharmaceutical production lines. Multi-stage cleaning cycle, GMP compliant.</p>
+          <a href="#contact" class="view-link" onclick="openProduct('fp5','images/product5.jpg');return false;" data-i18n="fp5_link">View Details →</a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <img class="featured-img"
+             src="images/product6.jpg"
+             alt="Tunnel Sterilizing Oven"
+             onerror="this.style.display='none'">
+        <div class="featured-body">
+          <span class="featured-badge" data-i18n="fp6_badge">Pharmaceutical</span>
+          <h3 data-i18n="fp6_name">Tunnel Oven for Vials &amp; Ampoules</h3>
+          <p data-i18n="fp6_desc">Tunnel-type drying and sterilization oven for vials and ampoules. Continuous high-temperature sterilization and drying, ideal for high-speed filling lines.</p>
+          <a href="#contact" class="view-link" onclick="openProduct('fp6','images/product6.jpg');return false;" data-i18n="fp6_link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ 产品目录已迁移至独立页 products.html ════ -->
+
+  <!-- ════ ABOUT ════ -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <span class="section-badge" data-i18n="about_badge">About Us</span>
+        <h2 data-i18n="about_title">Hashoer Intelligent Technology (Shanghai) Ltd.</h2>
+        <p data-i18n-html="about_p1">A professional manufacturer of non-standard packaging equipment, Hashoer specializes in pharmaceutical machinery, medical devices, and laboratory solutions. Since our founding, we've been guided by market demand, pursuing the spirit of <strong>Professionalism · Integrity · Excellence</strong>.</p>
+        <p data-i18n="about_p2">Backed by advanced technology from Europe, we bring together a team of packaging engineering specialists serving the pharmaceutical, daily chemical, and food industries — from standalone machines to turnkey automated production lines.</p>
+        <p data-i18n="about_p3">Our team includes four mid-level engineers and 500 skilled technicians. Our field engineers supplement your maintenance operations, optimize equipment efficiency, and deliver turnkey solutions for your quality, production, and business challenges.</p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 64 64">
+                <defs><linearGradient id="g-eng" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+                <rect width="64" height="64" rx="16" fill="url(#g-eng)"/>
+                <g fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+                  <circle cx="32" cy="23" r="10"/>
+                  <path d="M15 53a17 17 0 0 1 34 0"/>
+                </g>
+              </svg>
+            </div>
+            <div class="stat-num">40+</div>
+            <div class="stat-label" data-i18n="stat1_label">Engineers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 64 64">
+                <defs><linearGradient id="g-tech" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0891b2"/></linearGradient></defs>
+                <rect width="64" height="64" rx="16" fill="url(#g-tech)"/>
+                <g fill="none" stroke="#fff" stroke-width="3.5">
+                  <circle cx="32" cy="34" r="13"/>
+                  <circle cx="32" cy="34" r="5"/>
+                  <path d="M32 12v6M32 50v6M10 34h6M48 34h6M17 19l4 4M43 45l4 4M47 19l-4 4M21 45l-4 4"/>
+                </g>
+              </svg>
+            </div>
+            <div class="stat-num">500+</div>
+            <div class="stat-label" data-i18n="stat2_label">Skilled Technicians</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 64 64">
+                <defs><linearGradient id="g-geo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+                <rect width="64" height="64" rx="16" fill="url(#g-geo)"/>
+                <g fill="none" stroke="#fff" stroke-width="3.5">
+                  <circle cx="32" cy="34" r="16"/>
+                  <ellipse cx="32" cy="34" rx="7" ry="16"/>
+                  <path d="M16 34h32M22 22c4 6 4 18 0 24M42 22c-4 6-4 18 0 24"/>
+                </g>
+              </svg>
+            </div>
+            <div class="stat-num">30+</div>
+            <div class="stat-label" data-i18n="stat3_label">Countries Served</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <img class="about-photo about-photo-1" src="images/about-factory.png" alt="Hashoer Factory" onerror="this.style.display='none'">
+        <img class="about-photo about-photo-2" src="images/about-hall.png" alt="Hashoer Showroom" onerror="this.style.display='none'">
+        <img class="about-photo about-photo-3" src="images/about-patents.png" alt="Patent Wall" onerror="this.style.display='none'">
+        <img class="about-photo about-photo-4" src="images/about-certs.png" alt="Certificates" onerror="this.style.display='none'">
+        <div class="about-visual-badge">
+          <h3 data-i18n="about_visual_h3">Your Trusted Equipment Partner</h3>
+          <p data-i18n="about_visual_p">From design to deployment — we handle it all</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ WHY US ════ -->
+  <section class="why-us">
+    <div class="section-title">
+      <span class="section-badge" data-i18n="why_badge">Our Advantages</span>
+      <h2 data-i18n="why_title">Why Choose Hashoer</h2>
+      <p data-i18n="why_subtitle">What makes us different from other equipment suppliers</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 64 64" style="overflow:visible">
+          <defs>
+            <linearGradient id="wg-1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+            <radialGradient id="wg-1h" cx="0.3" cy="0.25" r="0.55"><stop offset="0%" stop-color="rgba(255,255,255,0.6)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
+            <linearGradient id="wg-2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0e7490"/></linearGradient>
+            <linearGradient id="wg-3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
+            <linearGradient id="wg-4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#047857"/></linearGradient>
+            <linearGradient id="wg-3t" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#b45309"/></linearGradient>
+          </defs>
+          <!-- 3D 渐变球体（地球/科技） -->
+          <circle cx="32" cy="32" r="23" fill="url(#wg-1)"/>
+          <ellipse cx="32" cy="32" rx="23" ry="9" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+          <ellipse cx="32" cy="32" rx="23" ry="9" transform="rotate(60 32 32)" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+          <ellipse cx="32" cy="32" rx="23" ry="9" transform="rotate(-60 32 32)" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+          <circle cx="32" cy="32" r="23" fill="url(#wg-1h)"/>
+          <path d="M16 26 Q24 22 32 26 T48 26" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M16 38 Q24 42 32 38 T48 38" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg></div>
+        <h3 data-i18n="why1_title">EU Technology</h3>
+        <p data-i18n="why1_desc">Rooted in advanced packaging technologies from Europe for superior precision and reliability.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+        <svg viewBox="0 0 64 64" style="overflow:visible">
+          <!-- 3D 齿轮：8齿 + 高光 -->
+          <path d="M32 5 L38 5 L38.5 13 L44 14.5 L50 9 L55 14 L49.5 20 L51 25.5 L59 26 L59 38 L51 38.5 L49.5 44 L55 49.5 L50 54.5 L44 49 L38.5 50.5 L38 58 L26 58 L25.5 50.5 L20 49 L14 54.5 L9 49 L14.5 44 L13 38.5 L5 38 L5 26 L13 25.5 L14.5 20 L9 14 L14 9 L20 14.5 L25.5 13 L26 5 Z" fill="url(#wg-2)"/>
+          <circle cx="32" cy="32" r="9" fill="#fff"/>
+          <circle cx="32" cy="32" r="5" fill="url(#wg-2)"/>
+          <ellipse cx="26" cy="18" rx="10" ry="5" fill="rgba(255,255,255,0.3)" transform="rotate(-30 32 32)"/>
+        </svg></div>
+        <h3 data-i18n="why2_title">Custom Solutions</h3>
+        <p data-i18n="why2_desc">Non-standard equipment tailored to your specific production needs — no one-size-fits-all approach.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+        <svg viewBox="0 0 64 64" style="overflow:visible">
+          <!-- 工程师：3D 安全帽 + 扳手 -->
+          <ellipse cx="32" cy="55" rx="20" ry="3" fill="rgba(0,0,0,0.15)"/>
+          <path d="M12 38 Q12 19 32 15 Q52 19 52 38 Z" fill="url(#wg-3t)"/>
+          <rect x="8" y="38" width="48" height="6" rx="2" fill="#92400e"/>
+          <rect x="31" y="15" width="2" height="23" fill="#78350f"/>
+          <ellipse cx="22" cy="26" rx="7" ry="4" fill="rgba(255,255,255,0.4)"/>
+          <!-- 扳手 -->
+          <rect x="42" y="46" width="14" height="4" rx="1" fill="#1e293b" transform="rotate(35 49 48)"/>
+          <path d="M53 36 Q60 36 60 43 Q60 50 53 52 L52 48 Q56 47 56 43 Q56 40 52 40 Z" fill="url(#wg-3)"/>
+        </svg></div>
+        <h3 data-i18n="why3_title">On-Site Field Engineers</h3>
+        <p data-i18n="why3_desc">Our engineers work alongside your team — maintenance support, efficiency optimization, and more.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+        <svg viewBox="0 0 64 64" style="overflow:visible">
+          <!-- 3D 盾牌 + 勾（信任/客户至上） -->
+          <ellipse cx="32" cy="56" rx="20" ry="3" fill="rgba(0,0,0,0.15)"/>
+          <path d="M32 5 L52 13 L52 32 Q52 50 32 59 Q12 50 12 32 L12 13 Z" fill="url(#wg-4)"/>
+          <path d="M32 9 L48 16 L48 32 Q48 47 32 55 Q16 47 16 32 L16 16 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+          <path d="M21 32 L29 40 L44 23" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <ellipse cx="22" cy="20" rx="8" ry="4" fill="rgba(255,255,255,0.35)" transform="rotate(-25 22 20)"/>
+        </svg></div>
+        <h3 data-i18n="why4_title">Customer-First Philosophy</h3>
+        <p data-i18n="why4_desc">We measure success by your satisfaction — competitive pricing, quality products, and lasting partnerships.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ CONTACT ════ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-title">
+        <span class="section-badge" data-i18n="contact_badge">Contact Us</span>
+        <h2 data-i18n="contact_title">Get in Touch</h2>
+        <p data-i18n="contact_subtitle">Interested in our equipment? Send us a message and we'll respond within 24 hours.</p>
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card contact-card-main">
+          <div class="contact-card-icon">👤</div>
+          <h4 data-i18n="contact_person_label">Contact Person</h4>
+          <p data-i18n="contact_person">Charly</p>
+          <div class="cc-divider"></div>
+          <div class="cc-row">
+            <span class="cc-label" data-i18n="contact_email_label">Email</span>
+            <p class="cc-main"><a href="mailto:sales@hashoer.com">sales@hashoer.com</a></p>
+          </div>
+          <div class="cc-row">
+            <span class="cc-label" data-i18n="contact_phone_label">Phone</span>
+            <p class="cc-main"><a href="tel:+8613795278116">+86 13795278116</a></p>
+          </div>
+        </div>
+        <div class="contact-card qc-card">
+          <div class="qc-head">
+            <span class="qc-icon wechat">💬</span>
+            <h4 data-i18n="qc_wechat_title">WeChat</h4>
+          </div>
+          <img src="images/wechat-qr.jpg" alt="WeChat QR Code" class="qc-qr">
+          <p class="qc-id"><span data-i18n="qc_wechat_id">WeChat ID: </span><span id="wechatId">—</span></p>
+          <div class="qc-divider"></div>
+          <div class="qc-head">
+            <span class="qc-icon whatsapp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
+            <h4 data-i18n="qc_wa_title">WhatsApp</h4>
+          </div>
+          <p class="qc-num">+86 13795278116</p>
+          <a href="https://wa.me/8613795278116" target="_blank" rel="noopener" class="qc-btn" id="qcWaBtn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span data-i18n="qc_wa_click">Chat on WhatsApp</span>
+          </a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <h4 data-i18n="contact_address_label">Address</h4>
+          <p data-i18n="contact_address">Room 1003, Floor 1, No.2 Dongye Road, Dongjing Town, Songjiang District, Shanghai</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="form_name_label">Your Name *</label>
+              <input type="text" id="name" data-i18n-ph="form_name_ph" placeholder="Full name" required oninput="this.style.borderColor='';document.getElementById('formError').hidden=true;">
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="form_email_label">Email Address *</label>
+              <input type="email" id="email" data-i18n-ph="form_email_ph" placeholder="you@company.com" required oninput="this.style.borderColor='';document.getElementById('formError').hidden=true;">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone" data-i18n="form_phone_label">Phone / WhatsApp *</label>
+              <input type="tel" id="phone" data-i18n-ph="form_phone_ph" placeholder="+86 138 0000 0000" required oninput="this.style.borderColor='';document.getElementById('formError').hidden=true;">
+            </div>
+            <div class="form-group">
+              <label for="company" data-i18n="form_company_label">Company / Organization</label>
+              <input type="text" id="company" data-i18n-ph="form_company_ph" placeholder="Company name (optional)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form_message_label">Your Message *</label>
+            <textarea id="message" data-i18n-ph="form_message_ph" placeholder="Tell us about your equipment needs, production requirements, or any questions you have..." required oninput="this.style.borderColor='';document.getElementById('formError').hidden=true;"></textarea>
+          </div>
+          <button type="submit" class="form-submit" data-i18n="form_submit">Send Message →</button>
+          <p class="form-error" id="formError" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon"><img src="images/logo.jpg" alt="Hashoer Logo" onerror="this.remove()"></div>
+            Hashoer
+          </div>
+          <p data-i18n="footer_brand">Professional non-standard packaging equipment manufacturer. Business covers pharmaceutical, food, daily chemical, and lab industries worldwide.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_products_title">Products</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer_products_1">Pharmaceutical</a></li>
+            <li><a href="#" data-i18n="footer_products_2">Food &amp; Beverage</a></li>
+            <li><a href="#" data-i18n="footer_products_3">Lab Equipment</a></li>
+            <li><a href="#" data-i18n="footer_products_4">Packaging</a></li>
+            <li><a href="#" data-i18n="footer_products_5">Warehousing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_company_title">Company</h4>
+          <ul>
+            <li><a href="#about" data-i18n="footer_company_1">About Us</a></li>
+            <li><a href="#videos" data-i18n="footer_company_2">Videos</a></li>
+            <li><a href="#" data-i18n="footer_company_4">Partners</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_title">Contact</h4>
+          <ul>
+            <li><a href="#">+86 13795278116</a></li>
+            <li><a href="#">sales@hashoer.com</a></li>
+            <li><a href="#" data-i18n="footer_contact_3">Shanghai, China</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer_copyright">© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. All rights reserved.</span>
+        <span>沪ICP备2023014520号-1</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ════════════ I18N DATA ════════════ */
+    const I18N = {
+      zh: {
+        nav_products:"产品", nav_videos:"视频", nav_news:"新闻", nav_about:"关于我们", nav_contact:"联系我们", nav_quote:"获取报价",
+        hero_title:"智能包装解决方案<br>面向制药及更多行业",
+        hero_subtitle:"华枢合智能科技——专业非标包装设备，从灌装、轧盖到全自动生产线。融合欧洲先进技术。",
+        hero_btn1:"查看产品", hero_btn2:"联系我们",
+        products_badge:"产品范围", products_title:"我们制造什么", products_subtitle:"覆盖五大核心行业的完整包装解决方案",
+        pc1_name:"制药设备", pc1_desc:"灌装、加塞、轧盖与封口生产线",
+        pc2_name:"实验室设备", pc2_desc:"研发与质检实验室精密仪器",
+        pc3_name:"医美设备", pc3_desc:"医疗美容与美容医疗器械解决方案",
+        pc4_name:"食品饮料", pc4_desc:"高速液体与膏体包装生产线",
+        pc5_name:"包装机械", pc5_desc:"装盒机、贴标机、裹包机与装箱机",
+        feat_badge:"精选产品", feat_title:"核心设备", feat_subtitle:"来自我们生产线的真实产品——点击了解更多",
+        fp1_badge:"制药", fp1_name:"西林瓶灌装机", fp1_desc:"用于制药西林瓶的自动化液体灌装系统。高精度、性能可靠，符合 GMP 标准。", fp1_link:"查看详情 →", pm_inquiry:"发送询盘 →",
+        fp2_badge:"制药", fp2_name:"洗瓶机", fp2_desc:"用于无菌制药生产线的高效西林瓶与玻璃瓶清洗系统。多级清洗循环。", fp2_link:"查看详情 →",
+        fp3_badge:"实验室", fp3_name:"冻干机", fp3_desc:"面向制药与生物技术领域的生产与实验型冻干机。卓越的干燥品质。", fp3_link:"查看详情 →",
+        fp4_badge:"实验室", fp4_name:"液体配制系统", fp4_desc:"用于制药生产的定制液体配制与加料系统。计量精准，易于清洗。", fp4_link:"查看详情 →", fp5_badge:"制药类", fp5_name:"安瓿瓶洗瓶机", fp5_desc:"高效安瓿瓶清洗设备，适用于无菌制药生产线，多阶段清洗循环，符合 GMP 要求。", fp5_link:"查看详情 →", fp6_badge:"制药类", fp6_name:"西林瓶、安瓿瓶隧道烘箱", fp6_desc:"西林瓶、安瓿瓶隧道式烘干灭菌设备，高温灭菌与干燥连续完成，适配高速灌装线。", fp6_link:"查看详情 →",
+        vid_badge:"视频中心", vid_title:"看我们实际行动", vid_subtitle:"我们设备在生产环境中运行的真实画面",
+        vid1_title:"自动化包装线——全景概览", vid2_title:"西林瓶灌装与轧盖机演示", vid3_title:"洗瓶与灭菌生产线", vid4_title:"生产线集成——实况运行", vid5_title:"定制交钥匙方案展示", vid6_title:"产品演示视频 6", vid7_title:"产品演示视频 7", vid8_title:"产品演示视频 8", vid9_title:"产品演示视频 9",
+        news_badge:"最新动态", news_title:"行业洞察", news_subtitle:"公司资讯、技术文章与行业趋势",
+        news1_title:"变更医疗器械经销模式的要点", news1_excerpt:"医疗器械经销有三种模式：批发、零售和自营。每种都需要不同的合规文件——这是你需要了解的。",
+        news2_title:"医疗器械分类指南：一类、二类与三类", news2_excerpt:"一类仅需含医疗器械销售范围的营业执照；二类需备案凭证；三类需专项经营许可证。",
+        news3_title:"家用医疗器械：每个家庭都应了解", news3_excerpt:"从电子体温计到血压计，家用医疗器械越来越普遍——但正确使用关乎安全与准确。",
+        about_badge:"关于我们", about_title:"华枢合智能科技（上海）有限公司",
+        about_p1:"作为专业的非标包装设备制造商，华枢合专注于制药机械、医疗器械与实验室解决方案。自创立以来，我们以市场需求为导向，秉持<strong>专业 · 诚信 · 卓越</strong>的精神。",
+        about_p2:"依托来自欧洲的先进技术，我们汇聚了一支包装工程专家团队，服务制药、日化与食品行业——从单机设备到交钥匙自动化生产线。",
+        about_p3:"我们的团队包括 4 名中级工程师和 500 名熟练技术员。我们的现场工程师将协助您的运维、优化设备效率，并为您的品质、生产与业务挑战提供交钥匙方案。",
+        stat1_label:"工程师", stat2_label:"熟练技术员", stat3_label:"服务国家", stat4_label:"行业领域",
+        about_visual_h3:"您值得信赖的设备伙伴", about_visual_p:"从设计到交付——我们全程负责",
+        why_badge:"我们的优势", why_title:"为什么选择华枢合", why_subtitle:"我们与其他设备供应商的不同之处",
+        why1_title:"欧盟技术", why1_desc:"根植于欧洲的先进包装技术，带来卓越的精度与可靠性。",
+        why2_title:"定制方案", why2_desc:"根据您的特定生产需求量身打造非标设备——拒绝千篇一律。",
+        why3_title:"现场工程师", why3_desc:"我们的工程师与您的团队并肩工作——提供维护支持、效率优化等。",
+        why4_title:"客户至上理念", why4_desc:"我们以您的满意衡量成功——有竞争力的价格、优质产品与持久合作。",
+        contact_badge:"联系我们", contact_title:"取得联系", contact_subtitle:"对我们的设备感兴趣？给我们留言，我们将在 24 小时内回复。",
+        contact_person_label:"联系人", contact_phone_label:"电话", contact_email_label:"邮箱", contact_address_label:"地址",
+        contact_person:"Charly", contact_address:"上海市松江区洞泾镇东业路2号1幢1003室",
+        form_name_label:"您的姓名 *", form_name_ph:"全名", form_email_label:"电子邮箱 *", form_email_ph:"you@company.com",
+        form_company_label:"公司 / 组织", form_company_ph:"公司名称（选填）", form_message_label:"您的留言 *", form_message_ph:"告诉我们您的设备需求、生产要求或任何问题……",
+        form_submit:"发送留言 →", form_sent:"✓ 留言已发送！", form_fail:"✗ 发送失败，请直接发邮件到 sales@hashoer.com", qc_wechat_id:"微信号：", form_err_name:"请填写您的姓名", form_err_email:"请填写邮箱地址", form_err_email_invalid:"邮箱格式不正确，请检查", form_err_phone:"请填写电话或 WhatsApp 号码", form_err_message:"请填写您的留言", qc_wechat_title:"微信", qc_wechat_tip:"用微信扫描二维码，直接添加我为好友", qc_wa_title:"WhatsApp", qc_wa_click:"在 WhatsApp 上聊天", qc_wa_tip:"一键发起对话，我们通常几小时内回复", form_phone_label:"电话 / WhatsApp *", form_phone_ph:"+86 138 0000 0000", wa_float_text:"在线咨询", wa_msg:"你好，我在贵司官网看到相关设备，想进一步了解：",
+        footer_brand:"专业的非标包装设备制造商。业务覆盖全球制药、食品、日化与实验室行业。",
+        footer_products_title:"产品", footer_products_1:"制药", footer_products_2:"食品饮料", footer_products_3:"实验室设备", footer_products_4:"包装", footer_products_5:"仓储",
+        footer_company_title:"公司", footer_company_1:"关于我们", footer_company_2:"视频", footer_company_3:"新闻", footer_company_4:"合作伙伴",
+        footer_contact_title:"联系", footer_contact_3:"中国上海",
+        footer_copyright:"© 2023 华枢合智能科技（上海）有限公司 版权所有。"
+      },
+      en: {
+        nav_products:"Products", nav_videos:"Videos", nav_news:"News", nav_about:"About", nav_contact:"Contact", nav_quote:"Get a Quote",
+        hero_title:"Smart Packaging Solutions<br>for Pharma & Beyond",
+        hero_subtitle:"Hashoer Intelligent Technology — professional non-standard packaging equipment, from liquid filling & capping to full automated production lines. Powered by European technology.",
+        hero_btn1:"View Products", hero_btn2:"Contact Us",
+        products_badge:"Product Range", products_title:"What We Make", products_subtitle:"Complete packaging solutions across five core industries",
+        pc1_name:"Pharmaceutical Equipment", pc1_desc:"Filling, stoppering, capping & sealing lines",
+        pc2_name:"Lab Equipment", pc2_desc:"Precision instruments for R&D & QC labs",
+        pc3_name:"Medical Aesthetics Equipment", pc3_desc:"Solutions for medical aesthetics & beauty devices",
+        pc4_name:"Food & Beverage", pc4_desc:"High-speed liquid & paste packaging lines",
+        pc5_name:"Packaging Machinery", pc5_desc:"Cartoners, labelers, wrappers & case packers",
+        feat_badge:"Featured Products", feat_title:"Core Equipment", feat_subtitle:"Real products from our production line — click to learn more",
+        fp1_badge:"Pharmaceutical", fp1_name:"Vial Filling Machine", fp1_desc:"Automated liquid filling system for pharmaceutical vials. High precision, reliable performance, compliant with GMP standards.", fp1_link:"View Details →", pm_inquiry:"Send Inquiry →",
+        fp2_badge:"Pharmaceutical", fp2_name:"Bottle Washing Machine", fp2_desc:"High-efficiency vial and bottle washing system for sterile pharmaceutical production lines. Multi-stage cleaning cycle.", fp2_link:"View Details →",
+        fp3_badge:"Laboratory", fp3_name:"Lyophilizer (Freeze Dryer)", fp3_desc:"Production and laboratory-scale freeze dryers for pharmaceutical and biotech applications. Superior drying quality.", fp3_link:"View Details →",
+        fp4_badge:"Laboratory", fp4_name:"Liquid Charging System", fp4_desc:"Custom liquid preparation and charging system for pharmaceutical manufacturing. Precise dosing, easy cleaning.", fp4_link:"View Details →", fp5_badge:"Pharmaceutical", fp5_name:"Ampoule Washing Machine", fp5_desc:"High-efficiency ampoule washing machine for sterile pharmaceutical production lines. Multi-stage cleaning cycle, GMP compliant.", fp5_link:"View Details →", fp6_badge:"Pharmaceutical", fp6_name:"Tunnel Oven for Vials & Ampoules", fp6_desc:"Tunnel-type drying and sterilization oven for vials and ampoules. Continuous high-temperature sterilization and drying, ideal for high-speed filling lines.", fp6_link:"View Details →",
+        vid_badge:"Video Center", vid_title:"See Us in Action", vid_subtitle:"Real footage of our equipment running in production environments",
+        vid1_title:"Automated Packaging Line — Full Overview", vid2_title:"Vial Filling & Capping Machine Demo", vid3_title:"Bottle Washing & Sterilization Line", vid4_title:"Production Line Integration — Live Run", vid5_title:"Custom Turnkey Solution Showcase", vid6_title:"Product Demo Video 6", vid7_title:"Product Demo Video 7", vid8_title:"Product Demo Video 8", vid9_title:"Product Demo Video 9",
+        news_badge:"Latest News", news_title:"Industry Insights", news_subtitle:"Company updates, technical articles and industry trends",
+        news1_title:"Key Considerations for Changing Medical Device Distribution Models", news1_excerpt:"Medical device distribution has three modes: wholesale, retail, and operating. Each requires different compliance documentation — here's what you need to know.",
+        news2_title:"Medical Device Classification Guide: Class I, II & III", news2_excerpt:"Class I requires only a business license with medical device sales scope. Class II needs a filing certificate. Class III requires a special operating license.",
+        news3_title:"Home Medical Devices: What Every Family Should Know", news3_excerpt:"From digital thermometers to blood pressure monitors, household medical devices are increasingly common — but correct usage matters for safety and accuracy.",
+        about_badge:"About Us", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"A professional manufacturer of non-standard packaging equipment, Hashoer specializes in pharmaceutical machinery, medical devices, and laboratory solutions. Since our founding, we've been guided by market demand, pursuing the spirit of <strong>Professionalism · Integrity · Excellence</strong>.",
+        about_p2:"Backed by advanced technology from Europe, we bring together a team of packaging engineering specialists serving the pharmaceutical, daily chemical, and food industries — from standalone machines to turnkey automated production lines.",
+        about_p3:"Our team includes four mid-level engineers and 500 skilled technicians. Our field engineers supplement your maintenance operations, optimize equipment efficiency, and deliver turnkey solutions for your quality, production, and business challenges.",
+        stat1_label:"Engineers", stat2_label:"Skilled Technicians", stat3_label:"Countries Served", stat4_label:"Industry Sectors",
+        about_visual_h3:"Your Trusted Equipment Partner", about_visual_p:"From design to deployment — we handle it all",
+        why_badge:"Our Advantages", why_title:"Why Choose Hashoer", why_subtitle:"What makes us different from other equipment suppliers",
+        why1_title:"EU Technology", why1_desc:"Rooted in advanced packaging technologies from Europe for superior precision and reliability.",
+        why2_title:"Custom Solutions", why2_desc:"Non-standard equipment tailored to your specific production needs — no one-size-fits-all approach.",
+        why3_title:"On-Site Field Engineers", why3_desc:"Our engineers work alongside your team — maintenance support, efficiency optimization, and more.",
+        why4_title:"Customer-First Philosophy", why4_desc:"We measure success by your satisfaction — competitive pricing, quality products, and lasting partnerships.",
+        contact_badge:"Contact Us", contact_title:"Get in Touch", contact_subtitle:"Interested in our equipment? Send us a message and we'll respond within 24 hours.",
+        contact_person_label:"Contact Person", contact_phone_label:"Phone", contact_email_label:"Email", contact_address_label:"Address",
+        contact_person:"Charly", contact_address:"Room 1003, Floor 1, No.2 Dongye Road, Dongjing Town, Songjiang District, Shanghai",
+        form_name_label:"Your Name *", form_name_ph:"Full name", form_email_label:"Email Address *", form_email_ph:"you@company.com",
+        form_company_label:"Company / Organization", form_company_ph:"Company name (optional)", form_message_label:"Your Message *", form_message_ph:"Tell us about your equipment needs, production requirements, or any questions you have...",
+        form_submit:"Send Message →", form_sent:"✓ Message Sent!", form_fail:"✗ Failed to send. Please email sales@hashoer.com", qc_wechat_id:"WeChat ID: ", form_err_name:"Please enter your name", form_err_email:"Please enter your email address", form_err_email_invalid:"Please enter a valid email address", form_err_phone:"Please enter your phone or WhatsApp number", form_err_message:"Please enter your message", qc_wechat_title:"WeChat", qc_wechat_tip:"Scan the QR code with WeChat to add us directly", qc_wa_title:"WhatsApp", qc_wa_click:"Chat on WhatsApp", qc_wa_tip:"One tap to start a conversation - we usually reply within a few hours", form_phone_label:"Phone / WhatsApp *", form_phone_ph:"+1 234 567 8900", wa_float_text:"Chat with us", wa_msg:"Hello, I saw your equipment on your website and would like to know more:",
+        footer_brand:"Professional non-standard packaging equipment manufacturer. Business covers pharmaceutical, food, daily chemical, and lab industries worldwide.",
+        footer_products_title:"Products", footer_products_1:"Pharmaceutical", footer_products_2:"Food & Beverage", footer_products_3:"Lab Equipment", footer_products_4:"Packaging", footer_products_5:"Warehousing",
+        footer_company_title:"Company", footer_company_1:"About Us", footer_company_2:"Videos", footer_company_3:"News", footer_company_4:"Partners",
+        footer_contact_title:"Contact", footer_contact_3:"Shanghai, China",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. All rights reserved."
+      },
+      ja: {
+        nav_products:"製品", nav_videos:"ビデオ", nav_news:"ニュース", nav_about:"会社概要", nav_contact:"お問い合わせ", nav_quote:"見積もりを依頼",
+        hero_title:"スマート包装ソリューション<br>製薬および多分野へ",
+        hero_subtitle:"Hashoer Intelligent Technology — 液体充填・打栓から全自動生産ラインまでのプロフェッショナルな非標準包装設備。欧州の技術を融合。",
+        hero_btn1:"製品を見る", hero_btn2:"お問い合わせ",
+        products_badge:"製品分野", products_title:"私たちの製品", products_subtitle:"5つの主要業界を網羅する総合包装ソリューション",
+        pc1_name:"製薬設備", pc1_desc:"充填、打栓、キャッピング、シールライン",
+        pc2_name:"研究室設備", pc2_desc:"研究開発・品質管理ラボ向け精密機器",
+        pc3_name:"美容医療設備", pc3_desc:"美容医療・美容機器向けソリューション",
+        pc4_name:"食品・飲料", pc4_desc:"高速液体・ペースト包装ライン",
+        pc5_name:"包装機械", pc5_desc:"箱詰め機、ラベル貼り機、包装機、ケーシング機",
+        feat_badge:"注目製品", feat_title:"中核設備", feat_subtitle:"生産ラインの実際の製品 — クリックして詳細へ",
+        fp1_badge:"製薬", fp1_name:"バイアル充填機", fp1_desc:"製薬用バイアルの自動液体充填システム。高精度、信頼性の高い性能、GMP基準準拠。", fp1_link:"詳細を見る →", pm_inquiry:"問い合わせを送る →",
+        fp2_badge:"製薬", fp2_name:"洗瓶機", fp2_desc:"無菌製薬ライン向け高性能バイアル・びん洗浄システム。多段洗浄サイクル。", fp2_link:"詳細を見る →",
+        fp3_badge:"研究室", fp3_name:"凍結乾燥機（ライオフィライザー）", fp3_desc:"製薬・バイオテク分野向け生産・実験用凍結乾燥機。優れた乾燥品質。", fp3_link:"詳細を見る →",
+        fp4_badge:"研究室", fp4_name:"液体調合システム", fp4_desc:"製薬生産向けカスタム液体調合・供給システム。正確な投与、洗浄容易。", fp4_link:"詳細を見る →", fp5_badge:"製薬", fp5_name:"アンプル洗浄機", fp5_desc:"無菌製薬ライン向けの高効率アンプル洗浄機。多段階洗浄サイクル、GMP準拠。", fp5_link:"詳細を見る →", fp6_badge:"製薬", fp6_name:"バイアル・アンプル用トンネルオーブン", fp6_desc:"バイアル瓶・アンプル瓶向けトンネル式乾燥滅菌オーブン。高温滅菌と乾燥を連続で実現し、高速充填ラインに対応。", fp6_link:"詳細を見る →",
+        vid_badge:"ビデオセンター", vid_title:"実際の稼働を見る", vid_subtitle:"生産現場で稼働する設備の実際の映像",
+        vid1_title:"自動包装ライン — 全体概要", vid2_title:"バイアル充填・キャッピング機デモ", vid3_title:"洗瓶・滅菌ライン", vid4_title:"生産ライン統合 — 実稼働", vid5_title:"カスタム・ターンキー・ソリューション事例", vid6_title:"製品デモ動画 6", vid7_title:"製品デモ動画 7", vid8_title:"製品デモ動画 8", vid9_title:"製品デモ動画 9",
+        news_badge:"最新情報", news_title:"業界インサイト", news_subtitle:"会社情報、技術記事、業界トレンド",
+        news1_title:"医療機器販売モデル変更の重要ポイント", news1_excerpt:"医療機器の販売には卸、小売、直営の3つの形態があります。それぞれ異なるコンプライアンス書類が必要です — 知っておくべき要点はこちら。",
+        news2_title:"医療機器分類ガイド：クラスI、II、III", news2_excerpt:"クラスIは医療機器販売範囲を含む営業許可のみ。クラスIIは届出証明が必要。クラスIIIは特別な営業許可が必要です。",
+        news3_title:"家庭用医療機器：知っておくべきこと", news3_excerpt:"電子体温計から血圧計まで、家庭用医療機器はますます普及しています — しかし正しい使い方が安全と精度に重要です。",
+        about_badge:"会社概要", about_title:"華枢合智能科技（上海）有限公司",
+        about_p1:"プロの非標準包装設備メーカーとして、Hashoerは製薬機械、医療機器、研究室ソリューションを専門としています。創業以来、市場のニーズに導かれ、<strong>専門性・誠実・卓越</strong>の精神を追求してきました。",
+        about_p2:"欧州の先端技術を背景に、製薬・日化・食品業界に単機からターンキー自動生産ラインまでを提供する包装エンジニアリングの専門チームを結集しています。",
+        about_p3:"当社のチームには中級エンジニア4名と熟練技術者500名が含まれます。現場エンジニアがお客様の保守運用を支援し、設備効率を最適化し、品質・生産・事業の課題に対するターンキー・ソリューションを提供します。",
+        stat1_label:"エンジニア", stat2_label:"熟練技術者", stat3_label:"対応国数", stat4_label:"業界分野",
+        about_visual_h3:"信頼できる設備パートナー", about_visual_p:"設計から納入まで — すべてお任せください",
+        why_badge:"私たちの強み", why_title:"Hashoerを選ぶ理由", why_subtitle:"他の設備サプライヤーとの違い",
+        why1_title:"EUの技術", why1_desc:"欧州の先進包装技術に根ざし、卓越した精度と信頼性を実現。",
+        why2_title:"カスタムソリューション", why2_desc:"お客様の特定の生産ニーズに合わせた非標準設備 — 画一的な手法はありません。",
+        why3_title:"オンサイト現場エンジニア", why3_desc:"当社のエンジニアがお客様のチームと共に — 保守サポート、効率最適化など。",
+        why4_title:"顧客第一の理念", why4_desc:"成功はお客様の満足で測ります — 競争力のある価格、高品質製品、永続的なパートナーシップ。",
+        contact_badge:"お問い合わせ", contact_title:"お問い合わせ", contact_subtitle:"設備にご興味がありますか？メッセージをお送りください。24時間以内に返信します。",
+        contact_person_label:"担当者", contact_phone_label:"電話", contact_email_label:"メール", contact_address_label:"住所",
+        contact_person:"Charly", contact_address:"上海市松江区洞涇鎮東業路2号1棟1003室",
+        form_name_label:"お名前 *", form_name_ph:"フルネーム", form_email_label:"メールアドレス *", form_email_ph:"you@company.com",
+        form_company_label:"会社・組織", form_company_ph:"会社名（任意）", form_message_label:"メッセージ *", form_message_ph:"設備のご要望、生産要件、ご質問などをお聞かせください……",
+        form_submit:"送信する →", form_sent:"✓ 送信完了！", form_fail:"✗ 送信に失敗しました。sales@hashoer.com までメールしてください", qc_wechat_id:"WeChat ID: ", form_err_name:"お名前をご入力ください", form_err_email:"メールアドレスをご入力ください", form_err_email_invalid:"メールアドレスの形式が正しくありません", form_err_phone:"電話番号または WhatsApp をご入力ください", form_err_message:"メッセージをご入力ください", qc_wechat_title:"WeChat", qc_wechat_tip:"WeChatでQRコードをスキャンして追加してください", qc_wa_title:"WhatsApp", qc_wa_click:"WhatsAppでチャット", qc_wa_tip:"ワンタップで会話開始。通常数時間以内に返信します", form_phone_label:"電話 / WhatsApp *", form_phone_ph:"+81 90 1234 5678", wa_float_text:"お問い合わせ", wa_msg:"こんにちは。御社のウェブサイトで設備を拝見し、詳しく知りたいです：",
+        footer_brand:"プロの非標準包装設備メーカー。製薬、食品、日化、研究室業界を世界規模でカバー。",
+        footer_products_title:"製品", footer_products_1:"製薬", footer_products_2:"食品・飲料", footer_products_3:"研究室設備", footer_products_4:"包装", footer_products_5:"物流",
+        footer_company_title:"会社", footer_company_1:"会社概要", footer_company_2:"ビデオ", footer_company_3:"ニュース", footer_company_4:"パートナー",
+        footer_contact_title:"連絡先", footer_contact_3:"中国・上海",
+        footer_copyright:"© 2023 華枢合智能科技（上海）有限公司 All rights reserved."
+      },
+      ko: {
+        nav_products:"제품", nav_videos:"동영상", nav_news:"뉴스", nav_about:"회사 소개", nav_contact:"문의하기", nav_quote:"견적 요청",
+        hero_title:"스마트 포장 솔루션<br>제약 및 다양한 분야를 위해",
+        hero_subtitle:"Hashoer Intelligent Technology — 액체 충전·캡핑에서 전자동 생산 라인까지의 전문 비표준 포장 장비. 유럽의 기술력을 결합했습니다.",
+        hero_btn1:"제품 보기", hero_btn2:"문의하기",
+        products_badge:"제품 분야", products_title:"제조 제품", products_subtitle:"5대 핵심 산업을 아우르는 완전한 포장 솔루션",
+        pc1_name:"제약 장비", pc1_desc:"충전, 마개 삽입, 캡핑 및 밀봉 라인",
+        pc2_name:"실험실 장비", pc2_desc:"R&D 및 QC 실험실용 정밀 기기",
+        pc3_name:"의료 미용 장비", pc3_desc:"의료 미용 및 뷰티 기기 솔루션",
+        pc4_name:"식음료", pc4_desc:"고속 액체 및 페이스트 포장 라인",
+        pc5_name:"포장 기계", pc5_desc:"카토너, 라벨러, 래퍼 및 케이스 팩커",
+        feat_badge:"추천 제품", feat_title:"핵심 장비", feat_subtitle:"생산 라인의 실제 제품 — 클릭하여 자세히 보기",
+        fp1_badge:"제약", fp1_name:"바이알 충전기", fp1_desc:"제약용 바이알용 자동 액체 충전 시스템. 고정밀, 신뢰할 수 있는 성능, GMP 기준 준수.", fp1_link:"자세히 보기 →", pm_inquiry:"문의 보내기 →",
+        fp2_badge:"제약", fp2_name:"병 세척기", fp2_desc:"무균 제약 생산 라인용 고효율 바이알 및 병 세척 시스템. 다단계 세척 사이클.", fp2_link:"자세히 보기 →",
+        fp3_badge:"실험실", fp3_name:"동결 건조기(라이오필라이저)", fp3_desc:"제약 및 바이오테크 응용 분야용 생산 및 실험실용 동결 건조기. 우수한 건조 품질.", fp3_link:"자세히 보기 →",
+        fp4_badge:"실험실", fp4_name:"액체 배합 시스템", fp4_desc:"제약 제조용 맞춤형 액체 배합 및 충전 시스템. 정밀 계량, 세척 용이.", fp4_link:"자세히 보기 →", fp5_badge:"제약", fp5_name:"앰플 세척기", fp5_desc:"무균 제약 생산 라인용 고효율 앰플 세척기. 다단계 세척 사이클, GMP 준수.", fp5_link:"자세히 보기 →", fp6_badge:"제약", fp6_name:"바이알·앰플 터널 오븐", fp6_desc:"바이알 및 앰플용 터널식 건조·멸균 오븐. 고온 멸균과 건조를 연속 수행하며 고속 충전 라인에 적합.", fp6_link:"자세히 보기 →",
+        vid_badge:"동영상 센터", vid_title:"실제 가동 화면", vid_subtitle:"생산 환경에서 가동 중인 장비의 실제 영상",
+        vid1_title:"자동 포장 라인 — 전체 개요", vid2_title:"바이알 충전 및 캡핑기 데모", vid3_title:"병 세척 및 멸균 라인", vid4_title:"생산 라인 통합 — 라이브 가동", vid5_title:"맞춤형 턴키 솔루션 쇼케이스", vid6_title:"제품 데모 영상 6", vid7_title:"제품 데모 영상 7", vid8_title:"제품 데모 영상 8", vid9_title:"제품 데모 영상 9",
+        news_badge:"최신 소식", news_title:"업계 인사이트", news_subtitle:"회사 업데이트, 기술 기사 및 업계 동향",
+        news1_title:"의료기기 유통 모델 변경 시 고려사항", news1_excerpt:"의료기기 유통에는 도매, 소매, 직영의 세 가지 형태가 있습니다. 각각 다른 규정 문서가 필요합니다 — 알아두어야 할 내용은 다음과 같습니다.",
+        news2_title:"의료기기 분류 가이드: 클래스 I, II, III", news2_excerpt:"클래스 I은 의료기기 판매 범위를 포함한 사업자 등록증만 있으면 됩니다. 클래스 II는 신고 증명이 필요하며, 클래스 III는 특수 영업 허가가 필요합니다.",
+        news3_title:"가정용 의료기기: 모든 가족이 알아야 할 점", news3_excerpt:"디지털 체온계부터 혈압계까지 가정용 의료기기가 점점 보편화되고 있습니다 — 하지만 안전과 정확성을 위해 올바른 사용이 중요합니다.",
+        about_badge:"회사 소개", about_title:"화수허(华枢合) 지능 기술(상하이) 유한회사",
+        about_p1:"전문 비표준 포장 장비 제조업체로서 Hashoer는 제약 기계, 의료기기 및 실험실 솔루션을 전문으로 합니다. 창립 이래 시장 수요에 따라 <strong>전문성·정직·탁월함</strong>의 정신을 추구해 왔습니다.",
+        about_p2:"유럽의 첨단 기술을 바탕으로 제약, 일용 화학, 식품 산업에 단일 기계에서 턴키 자동 생산 라인까지 제공하는 포장 엔지니어링 전문가 팀을 결집했습니다.",
+        about_p3:"우리 팀에는 중급 엔지니어 4명과 숙련 기술자 500명이 포함되어 있습니다. 현장 엔지니어가 귀사의 유지보수를 지원하고, 장비 효율을 최적화하며, 품질·생산·사업 과제에 대한 턴키 솔루션을 제공합니다.",
+        stat1_label:"엔지니어", stat2_label:"숙련 기술자", stat3_label:"서비스 국가", stat4_label:"산업 분야",
+        about_visual_h3:"신뢰할 수 있는 장비 파트너", about_visual_p:"설계에서 배포까지 — 모든 것을 책임집니다",
+        why_badge:"우리의 강점", why_title:"Hashoer를 선택하는 이유", why_subtitle:"다른 장비 공급업체와 차별화되는 점",
+        why1_title:"EU 기술", why1_desc:"유럽의 첨단 포장 기술에 뿌리를 둔 탁월한 정밀도와 신뢰성.",
+        why2_title:"맞춤형 솔루션", why2_desc:"특정 생산 요구에 맞춘 비표준 장비 — 획일적인 방식은 없습니다.",
+        why3_title:"현장 파견 엔지니어", why3_desc:"당사 엔지니어가 귀사 팀과 함께 — 유지보수 지원, 효율 최적화 등.",
+        why4_title:"고객 최우선 철학", why4_desc:"우리는 귀사의 만족으로 성공을 측정합니다 — 경쟁력 있는 가격, 우수한 제품, 지속적인 파트너십.",
+        contact_badge:"문의하기", contact_title:"연락하기", contact_subtitle:"장비에 관심이 있으신가요? 메시지를 보내주시면 24시간 이내에 답변드리겠습니다.",
+        contact_person_label:"담당자", contact_phone_label:"전화", contact_email_label:"이메일", contact_address_label:"주소",
+        contact_person:"Charly", contact_address:"상하이시 송장구 동징진 둥예로 2호 1동 1003호",
+        form_name_label:"성함 *", form_name_ph:"전체 이름", form_email_label:"이메일 주소 *", form_email_ph:"you@company.com",
+        form_company_label:"회사 / 기관", form_company_ph:"회사명 (선택)", form_message_label:"메시지 *", form_message_ph:"장비 요구사항, 생산 요건 또는 궁금한 점을 알려주세요……",
+        form_submit:"메시지 보내기 →", form_sent:"✓ 메시지 전송 완료!", form_fail:"✗ 전송 실패. sales@hashoer.com 으로 이메일 주세요", qc_wechat_id:"WeChat ID: ", form_err_name:"이름을 입력해 주세요", form_err_email:"이메일을 입력해 주세요", form_err_email_invalid:"이메일 형식이 올바르지 않습니다", form_err_phone:"전화번호 또는 WhatsApp을 입력해 주세요", form_err_message:"메시지를 입력해 주세요", qc_wechat_title:"WeChat", qc_wechat_tip:"위챗으로 QR 코드를 스캔하여 친구 추가하세요", qc_wa_title:"WhatsApp", qc_wa_click:"WhatsApp으로 채팅", qc_wa_tip:"한 번 탭하면 대화가 시작됩니다. 보통 몇 시간 내에 답변드립니다", form_phone_label:"전화 / WhatsApp *", form_phone_ph:"+82 10 1234 5678", wa_float_text:"문의하기", wa_msg:"안녕하세요. 웹사이트에서 장비를 보고 연락드립니다. 자세히 알고 싶습니다:",
+        footer_brand:"전문 비표준 포장 장비 제조업체. 전 세계 제약, 식품, 일용 화학, 실험실 산업을 다룹니다.",
+        footer_products_title:"제품", footer_products_1:"제약", footer_products_2:"식음료", footer_products_3:"실험실 장비", footer_products_4:"포장", footer_products_5:"창고",
+        footer_company_title:"회사", footer_company_1:"회사 소개", footer_company_2:"동영상", footer_company_3:"뉴스", footer_company_4:"파트너",
+        footer_contact_title:"연락처", footer_contact_3:"중국 상하이",
+        footer_copyright:"© 2023 화수허(华枢合) 지능 기술(상하이) 유한회사. All rights reserved."
+      },
+      ru: {
+        nav_products:"Продукция", nav_videos:"Видео", nav_news:"Новости", nav_about:"О компании", nav_contact:"Контакты", nav_quote:"Запросить КП",
+        hero_title:"Умные решения для упаковки<br>для фармацевтики и не только",
+        hero_subtitle:"Hashoer Intelligent Technology — профессиональное нестандартное упаковочное оборудование: от розлива и укупорки до полностью автоматизированных линий. На базе технологий Европы.",
+        hero_btn1:"Смотреть продукцию", hero_btn2:"Связаться с нами",
+        products_badge:"Линейка продукции", products_title:"Что мы производим", products_subtitle:"Полные упаковочные решения для пяти ключевых отраслей",
+        pc1_name:"Фармацевтическое оборудование", pc1_desc:"Линии розлива, укупорки пробками и крышками, запайки",
+        pc2_name:"Лабораторное оборудование", pc2_desc:"Прецизионные приборы для НИОКР и ОТК",
+        pc3_name:"Оборудование для эстетической медицины", pc3_desc:"Решения для аппаратов эстетической косметологии",
+        pc4_name:"Пищевая и напитки", pc4_desc:"Высокоскоростные линии розлива жидкостей и паст",
+        pc5_name:"Упаковочные машины", pc5_desc:"Картонажеры, этикетировщики, обёрточные и укладочные машины",
+        feat_badge:"Избранная продукция", feat_title:"Основное оборудование", feat_subtitle:"Реальные продукты нашей линии — нажмите, чтобы узнать больше",
+        fp1_badge:"Фармацевтика", fp1_name:"Машина розлива во флаконы", fp1_desc:"Автоматизированная система розлива жидкостей во флаконы. Высокая точность, надёжность, соответствие стандартам GMP.", fp1_link:"Подробнее →", pm_inquiry:"Отправить запрос →",
+        fp2_badge:"Фармацевтика", fp2_name:"Машина мойки бутылок", fp2_desc:"Высокоэффективная система мойки флаконов и бутылок для стерильных фармацевтических линий. Многоступенчатый цикл очистки.", fp2_link:"Подробнее →",
+        fp3_badge:"Лаборатория", fp3_name:"Лиофильная сушилка", fp3_desc:"Промышленные и лабораторные лиофильные сушилки для фармацевтики и биотеха. Превосходное качество сушки.", fp3_link:"Подробнее →",
+        fp4_badge:"Лаборатория", fp4_name:"Система дозирования жидкостей", fp4_desc:"Индивидуальная система приготовления и подачи жидкостей для фармпроизводства. Точная дозация, лёгкая очистка.", fp4_link:"Подробнее →", fp5_badge:"Фармацевтика", fp5_name:"Машина для мытья ампул", fp5_desc:"Высокоэффективная машина для мытья ампул для стерильных фармацевтических линий. Многоступенчатый цикл мойки, соответствие GMP.", fp5_link:"Подробнее →", fp6_badge:"Фармацевтика", fp6_name:"Тоннельная печь для флаконов и ампул", fp6_desc:"Тоннельная сушильно-стерилизационная печь для флаконов и ампул. Непрерывная высокотемпературная стерилизация и сушка, подходит для высокоскоростных линий розлива.", fp6_link:"Подробнее →",
+        vid_badge:"Видеоцентр", vid_title:"Посмотрите нас в деле", vid_subtitle:"Реальные кадры работы нашего оборудования в производстве",
+        vid1_title:"Автоматическая линия упаковки — общий обзор", vid2_title:"Демонстрация машины розлива и укупорки флаконов", vid3_title:"Линия мойки и стерилизации бутылок", vid4_title:"Интеграция линии — живой запуск", vid5_title:"Демонстрация индивидуального решения под ключ", vid6_title:"Демо-видео продукции 6", vid7_title:"Демо-видео продукции 7", vid8_title:"Демо-видео продукции 8", vid9_title:"Демо-видео продукции 9",
+        news_badge:"Последние новости", news_title:"Отраслевые инсайты", news_subtitle:"Новости компании, технические статьи и тенденции отрасли",
+        news1_title:"Ключевые моменты при смене модели дистрибуции медизделий", news1_excerpt:"Дистрибуция медизделий бывает трёх видов: оптовая, розничная и прямая. Каждый требует разных документов — что нужно знать.",
+        news2_title:"Руководство по классификации медизделий: классы I, II и III", news2_excerpt:"Для класса I достаточно лицензии с правом продажи медизделий. Класс II требует свидетельства о регистрации. Класс III — специальной лицензии.",
+        news3_title:"Домашние медизделия: что должна знать каждая семья", news3_excerpt:"От электронных термометров до тонометров — домашние медизделия всё чаще, но правильное использование важно для безопасности и точности.",
+        about_badge:"О компании", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"Как профессиональный производитель нестандартного упаковочного оборудования, Hashoer специализируется на фармацевтических машинах, медизделиях и лабораторных решениях. С основания мы руководствуемся спросом рынка, следуя духу <strong>Профессионализм · Честность · Совершенство</strong>.",
+        about_p2:"Опираясь на передовые технологии Европы, мы объединили команду инженеров-упаковщиков, обслуживающую фармацевтику, парфюмерию и пищевую отрасль — от отдельных машин до автоматизированных линий под ключ.",
+        about_p3:"В нашей команде 4 инженера среднего звена и 500 квалифицированных техников. Наши инженеры на местах поддерживают ваше обслуживание, оптимизируют эффективность и предлагают решения под ключ для ваших задач по качеству, производству и бизнесу.",
+        stat1_label:"Инженеры", stat2_label:"Квалиф. техники", stat3_label:"Страны", stat4_label:"Отрасли",
+        about_visual_h3:"Надёжный партнёр по оборудованию", about_visual_p:"От проекта до внедрения — мы берём всё на себя",
+        why_badge:"Наши преимущества", why_title:"Почему Hashoer", why_subtitle:"Чем мы отличаемся от других поставщиков",
+        why1_title:"Технологии ЕС", why1_desc:"Основаны на передовых упаковочных технологиях Европы для высшей точности и надёжности.",
+        why2_title:"Индивидуальные решения", why2_desc:"Нестандартное оборудование под ваши задачи — никакого шаблонного подхода.",
+        why3_title:"Инженеры на местах", why3_desc:"Наши инженеры работают вместе с вашей командой — поддержка, оптимизация и многое другое.",
+        why4_title:"Философия «клиент прежде всего»", why4_desc:"Мы мерим успех вашей удовлетворённостью — конкурентные цены, качество и долгосрочное партнёрство.",
+        contact_badge:"Контакты", contact_title:"Свяжитесь с нами", contact_subtitle:"Заинтересованы в оборудовании? Напишите нам — ответим в течение 24 часов.",
+        contact_person_label:"Контактное лицо", contact_phone_label:"Телефон", contact_email_label:"Эл. почта", contact_address_label:"Адрес",
+        contact_person:"Charly", contact_address:"Китай, Шанхай, р-н Сунцзян, г. Дунцзин, ул. Дунъе, д. 2, корп. 1, оф. 1003",
+        form_name_label:"Ваше имя *", form_name_ph:"Полное имя", form_email_label:"Эл. почта *", form_email_ph:"you@company.com",
+        form_company_label:"Компания / организация", form_company_ph:"Название компании (необ.)", form_message_label:"Ваше сообщение *", form_message_ph:"Расскажите о ваших потребностях в оборудовании, требованиях или вопросах……",
+        form_submit:"Отправить →", form_sent:"✓ Сообщение отправлено!", form_fail:"✗ Не удалось отправить. Напишите на sales@hashoer.com", qc_wechat_id:"WeChat ID: ", form_err_name:"Пожалуйста, укажите ваше имя", form_err_email:"Пожалуйста, укажите email", form_err_email_invalid:"Неверный формат email", form_err_phone:"Пожалуйста, укажите телефон или WhatsApp", form_err_message:"Пожалуйста, введите сообщение", qc_wechat_title:"WeChat", qc_wechat_tip:"Отсканируйте QR-код в WeChat, чтобы добавить нас", qc_wa_title:"WhatsApp", qc_wa_click:"Написать в WhatsApp", qc_wa_tip:"Одно нажатие - и диалог начат. Обычно отвечаем в течение нескольких часов", form_phone_label:"Телефон / WhatsApp *", form_phone_ph:"+7 900 123 45 67", wa_float_text:"Написать нам", wa_msg:"Здравствуйте! Я увидел ваше оборудование на сайте и хотел бы узнать подробнее:",
+        footer_brand:"Профессиональный производитель нестандартного упаковочного оборудования. Работаем в фармацевтике, пищевой, парфюмерной и лабораторной отраслях по всему миру.",
+        footer_products_title:"Продукция", footer_products_1:"Фармацевтика", footer_products_2:"Пищевая и напитки", footer_products_3:"Лабораторное", footer_products_4:"Упаковка", footer_products_5:"Склад",
+        footer_company_title:"Компания", footer_company_1:"О компании", footer_company_2:"Видео", footer_company_3:"Новости", footer_company_4:"Партнёры",
+        footer_contact_title:"Контакты", footer_contact_3:"Шанхай, Китай",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. Все права защищены."
+      },
+      fr: {
+        nav_products:"Produits", nav_videos:"Vidéos", nav_news:"Actualités", nav_about:"À propos", nav_contact:"Contact", nav_quote:"Demander un devis",
+        hero_title:"Solutions d'emballage intelligentes<br>pour la pharma et au-delà",
+        hero_subtitle:"Hashoer Intelligent Technology — équipements d'emballage non standard professionnels, du remplissage et du sertissage aux lignes de production entièrement automatisées. Propulsé par la technologie d'Europe.",
+        hero_btn1:"Voir les produits", hero_btn2:"Nous contacter",
+        products_badge:"Gamme de produits", products_title:"Ce que nous fabriquons", products_subtitle:"Solutions d'emballage complètes pour cinq industries clés",
+        pc1_name:"Équipement pharmaceutique", pc1_desc:"Lignes de remplissage, bouchage et sertissage",
+        pc2_name:"Équipement de laboratoire", pc2_desc:"Instruments de précision pour R&D et contrôle qualité",
+        pc3_name:"Équipement de médecine esthétique", pc3_desc:"Solutions pour les dispositifs de médecine esthétique",
+        pc4_name:"Alimentation & Boissons", pc4_desc:"Lignes de conditionnement liquides et pâteuses à haute vitesse",
+        pc5_name:"Machines d'emballage", pc5_desc:"Encartonneuses, étiqueteuses, emballeuses et caseuses",
+        feat_badge:"Produits phares", feat_title:"Équipement clé", feat_subtitle:"Vrais produits de notre ligne — cliquez pour en savoir plus",
+        fp1_badge:"Pharmaceutique", fp1_name:"Machine de remplissage de flacons", fp1_desc:"Système de remplissage liquide automatisé pour flacons pharmaceutiques. Haute précision, fiable, conforme aux normes GMP.", fp1_link:"Voir détails →", pm_inquiry:"Envoyer une demande →",
+        fp2_badge:"Pharmaceutique", fp2_name:"Machine de lavage de bouteilles", fp2_desc:"Système de lavage haute efficacité pour flacons et bouteilles en lignes stériles. Cycle de nettoyage multiniveaux.", fp2_link:"Voir détails →",
+        fp3_badge:"Laboratoire", fp3_name:"Lyophilisateur", fp3_desc:"Lyophilisateurs de production et de laboratoire pour applications pharmaceutiques et biotech. Qualité de séchage supérieure.", fp3_link:"Voir détails →",
+        fp4_badge:"Laboratoire", fp4_name:"Système de dosage liquide", fp4_desc:"Système de préparation et de dosage liquide sur mesure pour l'industrie pharmaceutique. Dosage précis, nettoyage facile.", fp4_link:"Voir détails →", fp5_badge:"Pharmaceutique", fp5_name:"Machine à laver les ampoules", fp5_desc:"Machine de lavage d'ampoules haute efficacité pour lignes pharmaceutiques stériles. Cycle de lavage multi-étapes, conforme aux BPF.", fp5_link:"Voir détails →", fp6_badge:"Pharmaceutique", fp6_name:"Four tunnel pour flacons et ampoules", fp6_desc:"Four tunnel de séchage et stérilisation pour flacons et ampoules. Stérilisation et séchage continus à haute température, idéal pour les lignes de remplissage à grande vitesse.", fp6_link:"Voir détails →",
+        vid_badge:"Centre vidéo", vid_title:"Voyez-nous à l'œuvre", vid_subtitle:"Images réelles de nos équipements en production",
+        vid1_title:"Ligne d'emballage automatisée — aperçu complet", vid2_title:"Démo machine remplissage & sertissage flacons", vid3_title:"Ligne de lavage et stérilisation bouteilles", vid4_title:"Intégration de ligne — fonctionnement en direct", vid5_title:"Démonstration solution clé en main", vid6_title:"Vidéo démo produit 6", vid7_title:"Vidéo démo produit 7", vid8_title:"Vidéo démo produit 8", vid9_title:"Vidéo démo produit 9",
+        news_badge:"Actualités", news_title:"Perspectives sectorielles", news_subtitle:"Actualités, articles techniques et tendances",
+        news1_title:"Points clés pour changer de modèle de distribution de dispositifs médicaux", news1_excerpt:"La distribution de dispositifs médicaux compte trois modes : grossiste, détail et exploitation propre. Chacun exige des documents différents — voici l'essentiel.",
+        news2_title:"Guide de classification des dispositifs médicaux : classes I, II et III", news2_excerpt:"La classe I ne nécessite qu'une licence commerciale avec vente de dispositifs. La classe II exige un certificat d'enregistrement. La classe III nécessite une licence spéciale.",
+        news3_title:"Dispositifs médicaux domestiques : l'essentiel pour chaque famille", news3_excerpt:"Des thermomètres numériques aux tensiomètres, les dispositifs domestiques se généralisent — mais un bon usage est crucial pour la sécurité.",
+        about_badge:"À propos", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"Fabricant professionnel d'équipements d'emballage non standard, Hashoer se spécialise dans les machines pharmaceutiques, les dispositifs médicaux et les solutions de laboratoire. Depuis notre création, guidés par la demande, nous poursuivons l'esprit <strong>Professionnalisme · Intégrité · Excellence</strong>.",
+        about_p2:"S'appuyant sur la technologie d'Europe, nous réunissons une équipe d'ingénieurs au service de la pharma, de la cosmétique et de l'alimentaire — des machines isolées aux lignes automatisées clé en main.",
+        about_p3:"Notre équipe comprend 4 ingénieurs intermédiaires et 500 techniciens qualifiés. Nos ingénieurs sur site soutiennent votre maintenance, optimisent l'efficacité et livrent des solutions clé en main.",
+        stat1_label:"Ingénieurs", stat2_label:"Techniciens qualifiés", stat3_label:"Pays desservis", stat4_label:"Secteurs",
+        about_visual_h3:"Votre partenaire équipement de confiance", about_visual_p:"De la conception au déploiement — nous gérons tout",
+        why_badge:"Nos atouts", why_title:"Pourquoi choisir Hashoer", why_subtitle:"Ce qui nous distingue des autres fournisseurs",
+        why1_title:"Technologie UE", why1_desc:"Enraciné dans les technologies d'emballage avancées d'Europe pour une précision et fiabilité supérieures.",
+        why2_title:"Solutions sur mesure", why2_desc:"Équipements non standard adaptés à vos besoins — aucune solution unique.",
+        why3_title:"Ingénieurs sur site", why3_desc:"Nos ingénieurs travaillent avec votre équipe — support, optimisation et plus.",
+        why4_title:"Philosophie client d'abord", why4_desc:"Nous mesurons le succès à votre satisfaction — prix compétitifs, qualité, partenariats durables.",
+        contact_badge:"Contact", contact_title:"Restons en contact", contact_subtitle:"Intéressé par nos équipements ? Écrivez-nous, réponse sous 24 h.",
+        contact_person_label:"Personne à contacter", contact_phone_label:"Téléphone", contact_email_label:"E-mail", contact_address_label:"Adresse",
+        contact_person:"Charly", contact_address:"Chambre 1003, 1er étage, n°2 rue Dongye, ville de Dongjing, district de Songjiang, Shanghai",
+        form_name_label:"Votre nom *", form_name_ph:"Nom complet", form_email_label:"Adresse e-mail *", form_email_ph:"vous@entreprise.com",
+        form_company_label:"Société / Organisation", form_company_ph:"Nom de société (facultatif)", form_message_label:"Votre message *", form_message_ph:"Parlez-nous de vos besoins en équipement, exigences ou questions……",
+        form_submit:"Envoyer →", form_sent:"✓ Message envoyé !", form_fail:"✗ Échec de l'envoi. Écrivez à sales@hashoer.com", qc_wechat_id:"WeChat ID : ", form_err_name:"Veuillez saisir votre nom", form_err_email:"Veuillez saisir votre e-mail", form_err_email_invalid:"Format d'e-mail invalide", form_err_phone:"Veuillez saisir votre téléphone ou WhatsApp", form_err_message:"Veuillez saisir votre message", qc_wechat_title:"WeChat", qc_wechat_tip:"Scannez le QR code avec WeChat pour nous ajouter", qc_wa_title:"WhatsApp", qc_wa_click:"Discuter sur WhatsApp", qc_wa_tip:"Un seul clic pour démarrer la conversation - réponse sous quelques heures", form_phone_label:"Téléphone / WhatsApp *", form_phone_ph:"+33 6 12 34 56 78", wa_float_text:"Nous contacter", wa_msg:"Bonjour, j\'ai vu vos équipements sur votre site et je souhaite en savoir plus :",
+        footer_brand:"Fabricant professionnel d'équipements d'emballage non standard. Couvre la pharma, l'alimentaire, la cosmétique et les laboratoires dans le monde.",
+        footer_products_title:"Produits", footer_products_1:"Pharmaceutique", footer_products_2:"Alimentation & Boissons", footer_products_3:"Laboratoire", footer_products_4:"Emballage", footer_products_5:"Entrepôt",
+        footer_company_title:"Société", footer_company_1:"À propos", footer_company_2:"Vidéos", footer_company_3:"Actualités", footer_company_4:"Partenaires",
+        footer_contact_title:"Contact", footer_contact_3:"Shanghai, Chine",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. Tous droits réservés."
+      },
+      es: {
+        nav_products:"Productos", nav_videos:"Vídeos", nav_news:"Noticias", nav_about:"Nosotros", nav_contact:"Contacto", nav_quote:"Solicitar cotización",
+        hero_title:"Soluciones inteligentes de envase<br>para farmacia y más",
+        hero_subtitle:"Hashoer Intelligent Technology — equipos de envasado no estándar profesionales, del llenado y tapado a líneas de producción automatizadas. Tecnología de Europa.",
+        hero_btn1:"Ver productos", hero_btn2:"Contáctenos",
+        products_badge:"Gama de productos", products_title:"Qué fabricamos", products_subtitle:"Soluciones de envasado completas para cinco industrias clave",
+        pc1_name:"Equipo farmacéutico", pc1_desc:"Líneas de llenado, taponado y sellado",
+        pc2_name:"Equipo de laboratorio", pc2_desc:"Instrumentos de precisión para I+D y control de calidad",
+        pc3_name:"Equipo de medicina estética", pc3_desc:"Soluciones para dispositivos de medicina estética",
+        pc4_name:"Alimentos y bebidas", pc4_desc:"Líneas de envasado de líquidos y pastas de alta velocidad",
+        pc5_name:"Maquinaria de envase", pc5_desc:"Encajonadoras, etiquetadoras, enfardadoras y encajonadoras",
+        feat_badge:"Productos destacados", feat_title:"Equipo central", feat_subtitle:"Productos reales de nuestra línea — haga clic para saber más",
+        fp1_badge:"Farmacéutico", fp1_name:"Máquina de llenado de viales", fp1_desc:"Sistema automatizado de llenado de líquidos para viales farmacéuticos. Alta precisión, fiable, conforme a GMP.", fp1_link:"Ver detalles →", pm_inquiry:"Enviar consulta →",
+        fp2_badge:"Farmacéutico", fp2_name:"Máquina lavadora de botellas", fp2_desc:"Sistema de lavado de viales y botellas de alta eficiencia para líneas estériles. Ciclo de limpieza multietapa.", fp2_link:"Ver detalles →",
+        fp3_badge:"Laboratorio", fp3_name:"Liofilizador", fp3_desc:"Liofilizadores de producción y laboratorio para farmacia y biotecnología. Excelente calidad de secado.", fp3_link:"Ver detalles →",
+        fp4_badge:"Laboratorio", fp4_name:"Sistema de dosificación líquida", fp4_desc:"Sistema de preparación y dosificación líquida a medida para la industria farmacéutica. Dosis precisas, fácil limpieza.", fp4_link:"Ver detalles →", fp5_badge:"Farmacéutico", fp5_name:"Máquina lavadora de ampollas", fp5_desc:"Máquina lavadora de ampollas de alta eficiencia para líneas farmacéuticas estériles. Ciclo de lavado multietapa, conforme a GMP.", fp5_link:"Ver detalles →", fp6_badge:"Farmacéutico", fp6_name:"Horno túnel para viales y ampollas", fp6_desc:"Horno túnel de secado y esterilización para viales y ampollas. Esterilización y secado continuos a alta temperatura, ideal para líneas de llenado de alta velocidad.", fp6_link:"Ver detalles →",
+        vid_badge:"Centro de vídeo", vid_title:"Véanos en acción", vid_subtitle:"Imágenes reales de nuestros equipos en producción",
+        vid1_title:"Línea de envasado automatizada — vista general", vid2_title:"Demo de llenado y tapado de viales", vid3_title:"Línea de lavado y esterilización", vid4_title:"Integración de línea — en vivo", vid5_title:"Solución llave en mano a medida", vid6_title:"Video demostrativo del producto 6", vid7_title:"Video demostrativo del producto 7", vid8_title:"Video demostrativo del producto 8", vid9_title:"Video demostrativo del producto 9",
+        news_badge:"Últimas noticias", news_title:"Análisis del sector", news_subtitle:"Novedades, artículos técnicos y tendencias",
+        news1_title:"Claves para cambiar el modelo de distribución de dispositivos médicos", news1_excerpt:"La distribución de dispositivos médicos tiene tres modalidades: mayorista, minorista y propia. Cada una exige distinta documentación — esto es lo que debe saber.",
+        news2_title:"Guía de clasificación de dispositivos médicos: clases I, II y III", news2_excerpt:"La clase I solo requiere licencia comercial con venta de dispositivos. La clase II necesita certificado de registro. La clase III requiere licencia especial.",
+        news3_title:"Dispositivos médicos domésticos: lo que toda familia debe saber", news3_excerpt:"De termómetros digitales a tensiómetros, los dispositivos en el hogar se generalizan — pero el uso correcto es clave para la seguridad.",
+        about_badge:"Nosotros", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"Como fabricante profesional de equipos de envasado no estándar, Hashoer se especializa en maquinaria farmacéutica, dispositivos médicos y soluciones de laboratorio. Desde nuestra fundación, guiados por la demanda, perseguimos el espíritu de <strong>Profesionalidad · Integridad · Excelencia</strong>.",
+        about_p2:"Con tecnología de Europa, reunimos un equipo de ingenieros de envasado para farmacia, cosmética y alimentos — de máquinas únicas a líneas automatizadas llave en mano.",
+        about_p3:"Nuestro equipo incluye 4 ingenieros de nivel medio y 500 técnicos cualificados. Nuestros ingenieros in situ apoyan su mantenimiento, optimizan la eficiencia y entregan soluciones llave en mano.",
+        stat1_label:"Ingenieros", stat2_label:"Técnicos cualificados", stat3_label:"Países atendidos", stat4_label:"Sectores",
+        about_visual_h3:"Su socio de equipos de confianza", about_visual_p:"Del diseño a la puesta en marcha — nos encargamos de todo",
+        why_badge:"Nuestras ventajas", why_title:"Por qué elegir Hashoer", why_subtitle:"Lo que nos distingue de otros proveedores",
+        why1_title:"Tecnología de UE", why1_desc:"Basado en tecnologías de envasado avanzadas de Europa para precisión y fiabilidad superiores.",
+        why2_title:"Soluciones a medida", why2_desc:"Equipos no estándar adaptados a sus necesidades — sin enfoque único.",
+        why3_title:"Ingenieros in situ", why3_desc:"Nuestros ingenieros trabajan con su equipo — soporte, optimización y más.",
+        why4_title:"Filosofía del cliente primero", why4_desc:"Medimos el éxito por su satisfacción — precios competitivos, calidad y alianzas duraderas.",
+        contact_badge:"Contacto", contact_title:"Póngase en contacto", contact_subtitle:"¿Interesado en nuestros equipos? Escríbanos y le responderemos en 24 horas.",
+        contact_person_label:"Persona de contacto", contact_phone_label:"Teléfono", contact_email_label:"Correo", contact_address_label:"Dirección",
+        contact_person:"Charly", contact_address:"Habitación 1003, 1er piso, n.º 2 calle Dongye, poblado Dongjing, distrito Songjiang, Shanghái",
+        form_name_label:"Su nombre *", form_name_ph:"Nombre completo", form_email_label:"Correo electrónico *", form_email_ph:"tu@empresa.com",
+        form_company_label:"Empresa / Organización", form_company_ph:"Nombre de empresa (opcional)", form_message_label:"Su mensaje *", form_message_ph:"Cuéntenos sus necesidades de equipo, requisitos o dudas……",
+        form_submit:"Enviar mensaje →", form_sent:"✓ ¡Mensaje enviado!", form_fail:"✗ Error al enviar. Escriba a sales@hashoer.com", qc_wechat_id:"WeChat ID: ", form_err_name:"Introduzca su nombre", form_err_email:"Introduzca su correo electrónico", form_err_email_invalid:"Formato de correo electrónico no válido", form_err_phone:"Introduzca su teléfono o WhatsApp", form_err_message:"Introduzca su mensaje", qc_wechat_title:"WeChat", qc_wechat_tip:"Escanee el código QR con WeChat para agregarnos", qc_wa_title:"WhatsApp", qc_wa_click:"Chatear por WhatsApp", qc_wa_tip:"Un toque para iniciar la conversación. Respondemos en pocas horas", form_phone_label:"Teléfono / WhatsApp *", form_phone_ph:"+34 600 123 456", wa_float_text:"Contáctenos", wa_msg:"Hola, vi sus equipos en su sitio web y me gustaría saber más:",
+        footer_brand:"Fabricante profesional de equipos de envasado no estándar. Cubre farmacia, alimentos, cosmética y laboratorios en todo el mundo.",
+        footer_products_title:"Productos", footer_products_1:"Farmacéutico", footer_products_2:"Alimentos y bebidas", footer_products_3:"Laboratorio", footer_products_4:"Envasado", footer_products_5:"Almacenamiento",
+        footer_company_title:"Empresa", footer_company_1:"Nosotros", footer_company_2:"Vídeos", footer_company_3:"Noticias", footer_company_4:"Socios",
+        footer_contact_title:"Contacto", footer_contact_3:"Shanghái, China",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. Todos los derechos reservados."
+      },
+      pt: {
+        nav_products:"Produtos", nav_videos:"Vídeos", nav_news:"Notícias", nav_about:"Sobre", nav_contact:"Contato", nav_quote:"Solicitar orçamento",
+        hero_title:"Soluções inteligentes de embalagem<br>para farmácia e além",
+        hero_subtitle:"Hashoer Intelligent Technology — equipamentos de embalagem não padrão profissionais, do envase e tampagem a linhas de produção automatizadas. Tecnologia de Europa.",
+        hero_btn1:"Ver produtos", hero_btn2:"Fale conosco",
+        products_badge:"Linha de produtos", products_title:"O que fabricamos", products_subtitle:"Soluções de embalagem completas para cinco indústrias-chave",
+        pc1_name:"Equipamento farmacêutico", pc1_desc:"Linhas de envase, tampagem e selagem",
+        pc2_name:"Equipamento de laboratório", pc2_desc:"Instrumentos de precisão para P&D e QC",
+        pc3_name:"Equipamento de medicina estética", pc3_desc:"Soluções para dispositivos de medicina estética",
+        pc4_name:"Alimentos e bebidas", pc4_desc:"Linhas de embalagem de líquidos e pastas de alta velocidade",
+        pc5_name:"Máquinas de embalagem", pc5_desc:"Encaixotadoras, etiquetadoras, enfardadoras e empacotadoras",
+        feat_badge:"Produtos em destaque", feat_title:"Equipamento central", feat_subtitle:"Produtos reais da nossa linha — clique para saber mais",
+        fp1_badge:"Farmacêutico", fp1_name:"Máquina de envase de frascos", fp1_desc:"Sistema automatizado de envase de líquidos para frascos farmacêuticos. Alta precisão, confiável, conforme GMP.", fp1_link:"Ver detalhes →", pm_inquiry:"Enviar consulta →",
+        fp2_badge:"Farmacêutico", fp2_name:"Máquina lavadora de garrafas", fp2_desc:"Sistema de lavagem de frascos e garrafas de alta eficiência para linhas estéreis. Ciclo de limpeza multinível.", fp2_link:"Ver detalhes →",
+        fp3_badge:"Laboratório", fp3_name:"Liofilizador", fp3_desc:"Liofilizadores de produção e laboratório para farmácia e biotech. Excelente qualidade de secagem.", fp3_link:"Ver detalhes →",
+        fp4_badge:"Laboratório", fp4_name:"Sistema de dosagem líquida", fp4_desc:"Sistema de preparação e dosagem líquida sob medida para a indústria farmacêutica. Dosagem precisa, fácil limpeza.", fp4_link:"Ver detalhes →", fp5_badge:"Farmacêutico", fp5_name:"Máquina de lavar ampolas", fp5_desc:"Máquina de lavagem de ampolas de alta eficiência para linhas farmacêuticas estéreis. Ciclo de lavagem multiestágio, em conformidade com GMP.", fp5_link:"Ver detalhes →", fp6_badge:"Farmacêutico", fp6_name:"Forno túnel para frascos e ampolas", fp6_desc:"Forno túnel de secagem e esterilização para frascos e ampolas. Esterilização e secagem contínuas em alta temperatura, ideal para linhas de enchimento de alta velocidade.", fp6_link:"Ver detalhes →",
+        vid_badge:"Central de vídeo", vid_title:"Veja-nos em ação", vid_subtitle:"Imagens reais dos nossos equipamentos em produção",
+        vid1_title:"Linha de embalagem automatizada — visão geral", vid2_title:"Demo de envase e tampagem de frascos", vid3_title:"Linha de lavagem e esterilização", vid4_title:"Integração de linha — execução ao vivo", vid5_title:"Solução sob medida turnkey", vid6_title:"Vídeo demonstrativo do produto 6", vid7_title:"Vídeo demonstrativo do produto 7", vid8_title:"Vídeo demonstrativo do produto 8", vid9_title:"Vídeo demonstrativo do produto 9",
+        news_badge:"Últimas notícias", news_title:"Análises do setor", news_subtitle:"Novidades, artigos técnicos e tendências",
+        news1_title:"Pontos-chave ao mudar o modelo de distribuição de dispositivos médicos", news1_excerpt:"A distribuição de dispositivos médicos tem três modos: atacado, varejo e próprio. Cada um exige documentação diferente — isto é o que deve saber.",
+        news2_title:"Guia de classificação de dispositivos médicos: classes I, II e III", news2_excerpt:"A classe I exige apenas licença comercial com venda de dispositivos. A classe II precisa de certificado de registro. A classe III requer licença especial.",
+        news3_title:"Dispositivos médicos domésticos: o que toda família deve saber", news3_excerpt:"De termômetros digitais a tensiómetros, os dispositivos domésticos se popularizam — mas o uso correto é essencial para a segurança.",
+        about_badge:"Sobre", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"Como fabricante profissional de equipamentos de embalagem não padrão, a Hashoer é especializada em máquinas farmacêuticas, dispositivos médicos e soluções de laboratório. Desde a fundação, guiados pela demanda, seguimos o espírito de <strong>Profissionalismo · Integridade · Excelência</strong>.",
+        about_p2:"Com tecnologia de Europa, reunimos uma equipe de engenheiros de embalagem para farmácia, cosmética e alimentos — de máquinas únicas a linhas automatizadas turnkey.",
+        about_p3:"Nossa equipe inclui 4 engenheiros de nível médio e 500 técnicos qualificados. Nossos engenheiros in loco apoiam sua manutenção, otimizam a eficiência e entregam soluções turnkey.",
+        stat1_label:"Engenheiros", stat2_label:"Técnicos qualificados", stat3_label:"Países atendidos", stat4_label:"Setores",
+        about_visual_h3:"Seu parceiro de equipamentos confiável", about_visual_p:"Do projeto à implantação — cuidamos de tudo",
+        why_badge:"Nossas vantagens", why_title:"Por que escolher a Hashoer", why_subtitle:"O que nos diferencia de outros fornecedores",
+        why1_title:"Tecnologia de UE", why1_desc:"Baseado em tecnologias de embalagem avançadas de Europa para precisão e confiabilidade superiores.",
+        why2_title:"Soluções sob medida", why2_desc:"Equipamentos não padrão adaptados às suas necessidades — sem solução única.",
+        why3_title:"Engenheiros in loco", why3_desc:"Nossos engenheiros trabalham com sua equipe — suporte, otimização e mais.",
+        why4_title:"Filosofia do cliente em primeiro lugar", why4_desc:"Medimos o sucesso pela sua satisfação — preços competitivos, qualidade e parcerias duradouras.",
+        contact_badge:"Contato", contact_title:"Entre em contato", contact_subtitle:"Interessado em nossos equipamentos? Escreva-nos e responderemos em 24 horas.",
+        contact_person_label:"Pessoa de contato", contact_phone_label:"Telefone", contact_email_label:"E-mail", contact_address_label:"Endereço",
+        contact_person:"Charly", contact_address:"Sala 1003, 1º andar, n.º 2 rua Dongye, vila Dongjing, distrito de Songjiang, Xangai",
+        form_name_label:"Seu nome *", form_name_ph:"Nome completo", form_email_label:"Endereço de e-mail *", form_email_ph:"voce@empresa.com",
+        form_company_label:"Empresa / Organização", form_company_ph:"Nome da empresa (opcional)", form_message_label:"Sua mensagem *", form_message_ph:"Conte-nos sobre suas necessidades de equipamento, requisitos ou dúvidas……",
+        form_submit:"Enviar mensagem →", form_sent:"✓ Mensagem enviada!", form_fail:"✗ Falha ao enviar. Escreva para sales@hashoer.com", qc_wechat_id:"WeChat ID: ", form_err_name:"Digite seu nome", form_err_email:"Digite seu e-mail", form_err_email_invalid:"Formato de e-mail inválido", form_err_phone:"Digite seu telefone ou WhatsApp", form_err_message:"Digite sua mensagem", qc_wechat_title:"WeChat", qc_wechat_tip:"Escaneie o QR code com o WeChat para nos adicionar", qc_wa_title:"WhatsApp", qc_wa_click:"Conversar no WhatsApp", qc_wa_tip:"Um toque para iniciar a conversa - respondemos em poucas horas", form_phone_label:"Telefone / WhatsApp *", form_phone_ph:"+55 11 91234 5678", wa_float_text:"Fale conosco", wa_msg:"Olá, vi seus equipamentos no site e gostaria de saber mais:",
+        footer_brand:"Fabricante profissional de equipamentos de embalagem não padrão. Atende farmácia, alimentos, cosmética e laboratórios no mundo todo.",
+        footer_products_title:"Produtos", footer_products_1:"Farmacêutico", footer_products_2:"Alimentos e bebidas", footer_products_3:"Laboratório", footer_products_4:"Embalagem", footer_products_5:"Armazenagem",
+        footer_company_title:"Empresa", footer_company_1:"Sobre", footer_company_2:"Vídeos", footer_company_3:"Notícias", footer_company_4:"Parceiros",
+        footer_contact_title:"Contato", footer_contact_3:"Xangai, China",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. Todos os direitos reservados."
+      },
+      th: {
+        nav_products:"ผลิตภัณฑ์", nav_videos:"วิดีโอ", nav_news:"ข่าวสาร", nav_about:"เกี่ยวกับเรา", nav_contact:"ติดต่อเรา", nav_quote:"ขอใบเสนอราคา",
+        hero_title:"โซลูชันการบรรจุภัณฑ์อัจฉริยะ<br>สำหรับเภสัชกรรมและอื่น ๆ",
+        hero_subtitle:"Hashoer Intelligent Technology — อุปกรณ์บรรจุภัณฑ์มาตรฐานพิเศษระดับมืออาชีพ ตั้งแต่การบรรจุและปิดผนึกไปจนถึงสายการผลิตอัตโนมัติเต็มรูปแบบ ด้วยเทคโนโลยีจากยุโรป",
+        hero_btn1:"ดูผลิตภัณฑ์", hero_btn2:"ติดต่อเรา",
+        products_badge:"กลุ่มผลิตภัณฑ์", products_title:"เราผลิตอะไร", products_subtitle:"โซลูชันการบรรจุภัณฑ์ครบวงจรสำหรับ 5 อุตสาหกรรมหลัก",
+        pc1_name:"อุปกรณ์เภสัชกรรม", pc1_desc:"สายการบรรจุ ปิดจุก และปิดผนึก",
+        pc2_name:"อุปกรณ์ห้องปฏิบัติการ", pc2_desc:"เครื่องมือแม่นยำสำหรับ R&D และ QC",
+        pc3_name:"อุปกรณ์ความงามทางการแพทย์", pc3_desc:"โซลูชันสำหรับเครื่องความงามทางการแพทย์",
+        pc4_name:"อาหารและเครื่องดื่ม", pc4_desc:"สายการบรรจุของเหลวและครีมความเร็วสูง",
+        pc5_name:"เครื่องจักรบรรจุภัณฑ์", pc5_desc:"เครื่องใส่กล่อง ปะฉลาก มวน และบรรจุหีบห่อ",
+        feat_badge:"ผลิตภัณฑ์แนะนำ", feat_title:"อุปกรณ์หลัก", feat_subtitle:"ผลิตภัณฑ์จริงจากสายการผลิตของเรา — คลิกเพื่อดูเพิ่มเติม",
+        fp1_badge:"เภสัชกรรม", fp1_name:"เครื่องบรรจุขวดแอมพูล", fp1_desc:"ระบบบรรจุของเหลวอัตโนมัติสำหรับขวดแอมพูลเภสัชกรรม แม่นยำสูง เชื่อถือได้ ตามมาตรฐาน GMP", fp1_link:"ดูรายละเอียด →", pm_inquiry:"ส่งคำถาม →",
+        fp2_badge:"เภสัชกรรม", fp2_name:"เครื่องล้างขวด", fp2_desc:"ระบบล้างขวดและแอมพูลประสิทธิภาพสูงสำหรับสายการผลิตปลอดเชื้อ วงจรทำความสะอาดหลายขั้นตอน", fp2_link:"ดูรายละเอียด →",
+        fp3_badge:"ห้องปฏิบัติการ", fp3_name:"เครื่องทำแห้งเยือกแข็ง (ไลโอฟิไลเซอร์)", fp3_desc:"เครื่องทำแห้งเยือกแข็งระดับการผลิตและห้องปฏิบัติการสำหรับเภสัชกรรมและชีวเทค คุณภาพการทำแห้งเหนือระดับ", fp3_link:"ดูรายละเอียด →",
+        fp4_badge:"ห้องปฏิบัติการ", fp4_name:"ระบบผสมของเหลว", fp4_desc:"ระบบเตรียมและจ่ายของเหลวมาตรฐานพิเศษสำหรับการผลิตเภสัชกรรม ปริมาณแม่นยำ ทำความสะอาดง่าย", fp4_link:"ดูรายละเอียด →", fp5_badge:"เภสัชกรรม", fp5_name:"เครื่องล้างแอมพูล", fp5_desc:"เครื่องล้างแอมพูลประสิทธิภาพสูงสำหรับสายการผลิตเภสัชกรรมแบบปลอดเชื้อ รอบการล้างหลายขั้นตอน ตรงตามมาตรฐาน GMP", fp5_link:"ดูรายละเอียด →", fp6_badge:"เภสัชกรรม", fp6_name:"เตาอบทันเนลสำหรับขวดและแอมพูล", fp6_desc:"เตาอบทันเนลสำหรับทำแห้งและฆ่าเชื้อขวดและแอมพูล ฆ่าเชื้อและทำแห้งต่อเนื่องด้วยอุณหภูมิสูง เหมาะสำหรับสายการบรรจุความเร็วสูง", fp6_link:"ดูรายละเอียด →",
+        vid_badge:"ศูนย์วิดีโอ", vid_title:"ชมการทำงานจริง", vid_subtitle:"ภาพจริงของอุปกรณ์เราที่ทำงานในสายการผลิต",
+        vid1_title:"สายการบรรจุอัตโนมัติ — ภาพรวม", vid2_title:"สาธิตเครื่องบรรจุและปิดขวดแอมพูล", vid3_title:"สายการล้างและอบฆ่าเชื้อขวด", vid4_title:"การเชื่อมต่อสายการผลิต — ทำงานจริง", vid5_title:"โชว์เคสโซลูชันแบบครบวงจร", vid6_title:"วิดีโอสาธิตผลิตภัณฑ์ 6", vid7_title:"วิดีโอสาธิตผลิตภัณฑ์ 7", vid8_title:"วิดีโอสาธิตผลิตภัณฑ์ 8", vid9_title:"วิดีโอสาธิตผลิตภัณฑ์ 9",
+        news_badge:"ข่าวล่าสุด", news_title:"ข้อมูลเชิงลึกอุตสาหกรรม", news_subtitle:"ข่าวบริษัท บทความเทคนิค และเทรนด์อุตสาหกรรม",
+        news1_title:"ประเด็นสำคัญในการเปลี่ยนรูปแบบการจัดจำหน่ายอุปกรณ์การแพทย์", news1_excerpt:"การจัดจำหน่ายอุปกรณ์การแพทย์มี 3 รูปแบบ: ขายส่ง ปลีก และดำเนินการเอง แต่ละแบบต้องใช้เอกสารต่างกัน — นี่คือสิ่งที่ควรรู้",
+        news2_title:"คู่มือการจัดประเภทอุปกรณ์การแพทย์: ระดับ I, II และ III", news2_excerpt:"ระดับ I ต้องการเพียงใบอนุญาตประกอบกิจการที่รวมการขายอุปกรณ์ ระดับ II ต้องมีใบรับรองการขึ้นทะเบียน ระดับ III ต้องมีใบอนุญาตพิเศษ",
+        news3_title:"อุปกรณ์การแพทย์ในบ้าน: สิ่งที่ทุกครอบครัวควรรู้", news3_excerpt:"ตั้งแต่เทอร์มอมิเตอร์ดิจิทัลไปจนถึงเครื่องวัดความดัน อุปกรณ์ในบ้านได้รับความนิยมมากขึ้น — แต่การใช้ที่ถูกต้องสำคัญต่อความปลอดภัย",
+        about_badge:"เกี่ยวกับเรา", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"ในฐานะผู้ผลิตอุปกรณ์บรรจุภัณฑ์มาตรฐานพิเศษระดับมืออาชีพ Hashoer เชี่ยวชาญเครื่องจักรเภสัชกรรม อุปกรณ์การแพทย์ และโซลูชันห้องปฏิบัติการ ตั้งแต่ก่อตั้ง เราได้รับการชี้นำจากความต้องการตลาด และดำเนินตามจิตวิญญาณแห่ง <strong>ความเป็นมืออาชีพ · ความซื่อสัตย์ · ความเป็นเลิศ</strong>",
+        about_p2:"ด้วยเทคโนโลยีขั้นสูงจากยุโรป เรารวมทีมวิศวกรบรรจุภัณฑ์ที่ service อุตสาหกรรมเภสัชกรรม เครื่องสำอาง และอาหาร — ตั้งแต่เครื่องเดี่ยวไปจนถึงสายการผลิตอัตโนมัติแบบครบวงจร",
+        about_p3:"ทีมของเราประกอบด้วยวิศวกรระดับกลาง 4 คนและช่างเทคนิคมากฝีมือ 500 คน วิศวกรภาคสนามของเราสนับสนุนการบำรุงรักษา ปรับปรุงประสิทธิภาพ และส่งมอบโซลูชันแบบครบวงจร",
+        stat1_label:"วิศวกร", stat2_label:"ช่างเทคนิค", stat3_label:"ประเทศที่ให้บริการ", stat4_label:"อุตสาหกรรม",
+        about_visual_h3:"พันธมิตรอุปกรณ์ที่คุณไว้วางใจ", about_visual_p:"ตั้งแต่การออกแบบจนถึงการติดตั้ง — เราจัดการให้ทั้งหมด",
+        why_badge:"จุดแข็งของเรา", why_title:"ทำไมถึงเลือก Hashoer", why_subtitle:"สิ่งที่ทำให้เราแตกต่างจากซัพพลายเออร์อื่น",
+        why1_title:"เทคโนโลยีสหภาพยุโรป", why1_desc:"รากฐานจากเทคโนโลยีการบรรจุภัณฑ์ขั้นสูงของยุโรป เพื่อความแม่นยำและความน่าเชื่อถือเหนือระดับ",
+        why2_title:"โซลูชันตามสั่ง", why2_desc:"อุปกรณ์มาตรฐานพิเศษที่ออกแบบตามความต้องการเฉพาะของคุณ — ไม่มีทางเดียวที่เหมาะกับทุกคน",
+        why3_title:"วิศวกรประจำหน้างาน", why3_desc:"วิศวกรของเราทำงานเคียงข้างทีมของคุณ — สนับสนุนการบำรุงรักษา ปรับปรุงประสิทธิภาพ และอื่น ๆ",
+        why4_title:"ปรัชญาลูกค้าเป็นอันดับแรก", why4_desc:"เราวัดความสำเร็จจากความพึงพอใจของคุณ — ราคาแข่งขัน คุณภาพ และความเป็นหุ้นส่วนที่ยั่งยืน",
+        contact_badge:"ติดต่อเรา", contact_title:"ติดต่อเรา", contact_subtitle:"สนใจอุปกรณ์ของเราไหม? ส่งข้อความมา เราจะตอบภายใน 24 ชั่วโมง",
+        contact_person_label:"ผู้ติดต่อ", contact_phone_label:"โทรศัพท์", contact_email_label:"อีเมล", contact_address_label:"ที่อยู่",
+        contact_person:"Charly", contact_address:"ห้อง 1003 ชั้น 1 เลขที่ 2 ถนน Dongye เมือง Dongjing เขต Songjiang เซี่ยงไฮ้",
+        form_name_label:"ชื่อของคุณ *", form_name_ph:"ชื่อเต็ม", form_email_label:"อีเมล *", form_email_ph:"you@company.com",
+        form_company_label:"บริษัท / องค์กร", form_company_ph:"ชื่อบริษัท (ไม่ระบุได้)", form_message_label:"ข้อความของคุณ *", form_message_ph:"บอกเราเกี่ยวกับความต้องการอุปกรณ์ ข้อกำหนด หรือคำถาม……",
+        form_submit:"ส่งข้อความ →", form_sent:"✓ ส่งข้อความแล้ว!", form_fail:"✗ ส่งไม่สำเร็จ กรุณาอีเมลไปที่ sales@hashoer.com", qc_wechat_id:"WeChat ID: ", form_err_name:"กรุณากรอกชื่อของคุณ", form_err_email:"กรุณากรอกอีเมล", form_err_email_invalid:"รูปแบบอีเมลไม่ถูกต้อง", form_err_phone:"กรุณากรอกเบอร์โทรศัพท์หรือ WhatsApp", form_err_message:"กรุณากรอกข้อความของคุณ", qc_wechat_title:"WeChat", qc_wechat_tip:"สแกน QR โค้ดด้วย WeChat เพื่อเพิ่มเราเป็นเพื่อน", qc_wa_title:"WhatsApp", qc_wa_click:"แชทผ่าน WhatsApp", qc_wa_tip:"แตะครั้งเดียวเพื่อเริ่มสนทนา เราตอบกลับภายในไม่กี่ชั่วโมง", form_phone_label:"โทรศัพท์ / WhatsApp *", form_phone_ph:"+66 81 234 5678", wa_float_text:"แชทกับเรา", wa_msg:"สวัสดีครับ/ค่ะ ฉันเห็นอุปกรณ์ของคุณในเว็บไซต์และต้องการทราบข้อมูลเพิ่มเติม:",
+        footer_brand:"ผู้ผลิตอุปกรณ์บรรจุภัณฑ์มาตรฐานพิเศษระดับมืออาชีพ ให้บริการอุตสาหกรรมเภสัชกรรม อาหาร เครื่องสำอาง และห้องปฏิบัติการทั่วโลก",
+        footer_products_title:"ผลิตภัณฑ์", footer_products_1:"เภสัชกรรม", footer_products_2:"อาหารและเครื่องดื่ม", footer_products_3:"อุปกรณ์ห้องปฏิบัติการ", footer_products_4:"บรรจุภัณฑ์", footer_products_5:"คลังสินค้า",
+        footer_company_title:"บริษัท", footer_company_1:"เกี่ยวกับเรา", footer_company_2:"วิดีโอ", footer_company_3:"ข่าวสาร", footer_company_4:"พันธมิตร",
+        footer_contact_title:"ติดต่อ", footer_contact_3:"เซี่ยงไฮ้ จีน",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. สงวนลิขสิทธิ์ทั้งหมด"
+      },
+      vi: {
+        nav_products:"Sản phẩm", nav_videos:"Video", nav_news:"Tin tức", nav_about:"Giới thiệu", nav_contact:"Liên hệ", nav_quote:"Yêu cầu báo giá",
+        hero_title:"Giải pháp đóng gói thông minh<br>cho dược phẩm và hơn thế",
+        hero_subtitle:"Hashoer Intelligent Technology — thiết bị đóng gói phi tiêu chuẩn chuyên nghiệp, từ chiết rót và đóng nắp đến dây chuyền sản xuất tự động hoàn toàn. Với công nghệ Châu Âu.",
+        hero_btn1:"Xem sản phẩm", hero_btn2:"Liên hệ chúng tôi",
+        products_badge:"Dải sản phẩm", products_title:"Chúng tôi sản xuất gì", products_subtitle:"Giải pháp đóng gói hoàn chỉnh cho năm ngành công nghiệp cốt lõi",
+        pc1_name:"Thiết bị dược phẩm", pc1_desc:"Dây chuyền chiết rót, nút và đóng nắp",
+        pc2_name:"Thiết bị phòng lab", pc2_desc:"Dụng cụ chính xác cho R&D và QC",
+        pc3_name:"Thiết bị thẩm mỹ y tế", pc3_desc:"Giải pháp cho thiết bị thẩm mỹ y tế",
+        pc4_name:"Thực phẩm & Đồ uống", pc4_desc:"Dây chuyền đóng gói chất lỏng và paste tốc độ cao",
+        pc5_name:"Máy đóng gói", pc5_desc:"Máy đóng thùng, dán nhãn, bọc và xếp thùng",
+        feat_badge:"Sản phẩm nổi bật", feat_title:"Thiết bị cốt lõi", feat_subtitle:"Sản phẩm thực tế từ dây chuyền của chúng tôi — nhấp để tìm hiểu thêm",
+        fp1_badge:"Dược phẩm", fp1_name:"Máy chiết rót lọ (vial)", fp1_desc:"Hệ thống chiết rót chất lỏng tự động cho lọ dược phẩm. Độ chính xác cao, tin cậy, tuân thủ tiêu chuẩn GMP.", fp1_link:"Xem chi tiết →", pm_inquiry:"Gửi yêu cầu →",
+        fp2_badge:"Dược phẩm", fp2_name:"Máy rửa chai", fp2_desc:"Hệ thống rửa lọ và chai hiệu suất cao cho dây chuyền vô trùng. Chu trình làm sạch đa giai đoạn.", fp2_link:"Xem chi tiết →",
+        fp3_badge:"Phòng lab", fp3_name:"Máy sấy đông khô (Lyophilizer)", fp3_desc:"Máy sấy đông khô sản xuất và phòng lab cho dược phẩm và công nghệ sinh học. Chất lượng sấy vượt trội.", fp3_link:"Xem chi tiết →",
+        fp4_badge:"Phòng lab", fp4_name:"Hệ thống pha chế chất lỏng", fp4_desc:"Hệ thống pha chế và cấp chất lỏng tùy chỉnh cho sản xuất dược phẩm. Định lượng chính xác, dễ vệ sinh.", fp4_link:"Xem chi tiết →", fp5_badge:"Dược phẩm", fp5_name:"Máy rửa ampoule", fp5_desc:"Máy rửa ampoule hiệu suất cao cho dây chuyền sản xuất dược phẩm vô trùng. Chu trình rửa nhiều giai đoạn, tuân thủ GMP.", fp5_link:"Xem chi tiết →", fp6_badge:"Dược phẩm", fp6_name:"Lò hầm cho lọ và ampoule", fp6_desc:"Lò hầm sấy và tiệt trùng cho lọ và ampoule. Tiệt trùng và sấy liên tục ở nhiệt độ cao, phù hợp dây chuyền chiết rót tốc độ cao.", fp6_link:"Xem chi tiết →",
+        vid_badge:"Trung tâm video", vid_title:"Xem chúng tôi hoạt động", vid_subtitle:"Hình ảnh thực tế thiết bị vận hành tại nhà máy",
+        vid1_title:"Dây chuyền đóng gói tự động — Tổng quan", vid2_title:"Demo máy chiết rót và đóng nắp lọ", vid3_title:"Dây chuyền rửa và tiệt trùng chai", vid4_title:"Tích hợp dây chuyền — Vận hành thực tế", vid5_title:"Giới thiệu giải pháp trọn gói tùy chỉnh", vid6_title:"Video demo sản phẩm 6", vid7_title:"Video demo sản phẩm 7", vid8_title:"Video demo sản phẩm 8", vid9_title:"Video demo sản phẩm 9",
+        news_badge:"Tin mới nhất", news_title:"Góc nhìn ngành", news_subtitle:"Cập nhật công ty, bài viết kỹ thuật và xu hướng",
+        news1_title:"Các điểm lưu ý khi thay đổi mô hình phân phối thiết bị y tế", news1_excerpt:"Phân phối thiết bị y tế có ba hình thức: bán buôn, bán lẻ và tự vận hành. Mỗi hình thức yêu cầu hồ sơ khác nhau — đây là điều cần biết.",
+        news2_title:"Hướng dẫn phân loại thiết bị y tế: Hạng I, II và III", news2_excerpt:"Hạng I chỉ cần giấy phép kinh doanh có ngành bán thiết bị y tế. Hạng II cần giấy chứng nhận đăng ký. Hạng III yêu cầu giấy phép kinh doanh đặc biệt.",
+        news3_title:"Thiết bị y tế gia đình: Điều mọi gia đình nên biết", news3_excerpt:"Từ nhiệt kế số đến máy đo huyết áp, thiết bị gia đình ngày càng phổ biến — nhưng sử dụng đúng cách mới an toàn.",
+        about_badge:"Giới thiệu", about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"Là nhà sản xuất thiết bị đóng gói phi tiêu chuẩn chuyên nghiệp, Hashoer chuyên về máy dược phẩm, thiết bị y tế và giải pháp phòng lab. Từ khi thành lập, được dẫn dắt bởi nhu cầu thị trường, chúng tôi theo đuổi tinh thần <strong>Chuyên nghiệp · Chính trực · Xuất sắc</strong>.",
+        about_p2:"Với công nghệ tiên tiến từ Châu Âu, chúng tôi quy tụ đội ngũ kỹ sư đóng gói phục vụ dược phẩm, mỹ phẩm và thực phẩm — từ máy đơn đến dây chuyền tự động trọn gói.",
+        about_p3:"Đội ngũ của chúng tôi gồm 4 kỹ sư trung cấp và 500 kỹ thuật viên lành nghề. Kỹ sư hiện trường hỗ trợ bảo trì, tối ưu hiệu suất và cung cấp giải pháp trọn gói.",
+        stat1_label:"Kỹ sư", stat2_label:"Kỹ thuật viên", stat3_label:"Quốc gia phục vụ", stat4_label:"Lĩnh vực",
+        about_visual_h3:"Đối tác thiết bị đáng tin cậy", about_visual_p:"Từ thiết kế đến vận hành — chúng tôi lo toàn bộ",
+        why_badge:"Lợi thế của chúng tôi", why_title:"Tại sao chọn Hashoer", why_subtitle:"Điều làm chúng tôi khác biệt",
+        why1_title:"Công nghệ EU", why1_desc:"Dựa trên công nghệ đóng gói tiên tiến của Châu Âu để có độ chính xác và tin cậy vượt trội.",
+        why2_title:"Giải pháp tùy chỉnh", why2_desc:"Thiết bị phi tiêu chuẩn được thiết kế theo nhu cầu — không áp dụng một kiểu cho tất cả.",
+        why3_title:"Kỹ sư hiện trường", why3_desc:"Kỹ sư của chúng tôi làm việc cùng đội ngũ của bạn — hỗ trợ bảo trì, tối ưu hóa và hơn thế.",
+        why4_title:"Triết lý lấy khách hàng làm gốc", why4_desc:"Chúng tôi đo lường thành công bằng sự hài lòng của bạn — giá cạnh tranh, chất lượng và hợp tác bền vững.",
+        contact_badge:"Liên hệ", contact_title:"Liên hệ với chúng tôi", contact_subtitle:"Quan tâm đến thiết bị? Gửi tin nhắn, chúng tôi sẽ phản hồi trong 24 giờ.",
+        contact_person_label:"Người liên hệ", contact_phone_label:"Điện thoại", contact_email_label:"Email", contact_address_label:"Địa chỉ",
+        contact_person:"Charly", contact_address:"Phòng 1003, tầng 1, số 2 đường Dongye, thị trấn Dongjing, quận Songjiang, Thượng Hải",
+        form_name_label:"Họ tên *", form_name_ph:"Họ và tên", form_email_label:"Địa chỉ email *", form_email_ph:"you@company.com",
+        form_company_label:"Công ty / Tổ chức", form_company_ph:"Tên công ty (tùy chọn)", form_message_label:"Tin nhắn *", form_message_ph:"Cho chúng tôi biết nhu cầu thiết bị, yêu cầu sản xuất hoặc thắc mắc……",
+        form_submit:"Gửi tin nhắn →", form_sent:"✓ Đã gửi tin nhắn!", form_fail:"✗ Gửi thất bại. Vui lòng email sales@hashoer.com", qc_wechat_id:"WeChat ID: ", form_err_name:"Vui lòng nhập tên của bạn", form_err_email:"Vui lòng nhập email", form_err_email_invalid:"Định dạng email không hợp lệ", form_err_phone:"Vui lòng nhập số điện thoại hoặc WhatsApp", form_err_message:"Vui lòng nhập tin nhắn của bạn", qc_wechat_title:"WeChat", qc_wechat_tip:"Quét mã QR bằng WeChat để kết bạn với chúng tôi", qc_wa_title:"WhatsApp", qc_wa_click:"Trò chuyện qua WhatsApp", qc_wa_tip:"Một chạm để bắt đầu trò chuyện - chúng tôi thường phản hồi trong vài giờ", form_phone_label:"Điện thoại / WhatsApp *", form_phone_ph:"+84 912 345 678", wa_float_text:"Trò chuyện", wa_msg:"Xin chào, tôi thấy thiết bị của bạn trên website và muốn biết thêm:",
+        footer_brand:"Nhà sản xuất thiết bị đóng gói phi tiêu chuẩn chuyên nghiệp. Phục vụ dược phẩm, thực phẩm, mỹ phẩm và phòng lab trên toàn cầu.",
+        footer_products_title:"Sản phẩm", footer_products_1:"Dược phẩm", footer_products_2:"Thực phẩm & Đồ uống", footer_products_3:"Thiết bị phòng lab", footer_products_4:"Đóng gói", footer_products_5:"Kho bãi",
+        footer_company_title:"Công ty", footer_company_1:"Giới thiệu", footer_company_2:"Video", footer_company_3:"Tin tức", footer_company_4:"Đối tác",
+        footer_contact_title:"Liên hệ", footer_contact_3:"Thượng Hải, Trung Quốc",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. Bảo lưu mọi quyền."
+      },
+      bn: {
+        nav_products:"পণ্য",
+        nav_videos:"ভিডিও",
+        nav_news:"সংবাদ",
+        nav_about:"আমাদের সম্পর্কে",
+        nav_contact:"যোগাযোগ",
+        nav_quote:"উদ্ধৃতি চান",
+        hero_title:"স্মার্ট প্যাকেজিং সমাধান<br>ফার্মাসিউটিক্যাল ও অন্যান্য শিল্পের জন্য",
+        hero_subtitle:"Hashoer Intelligent Technology — পেশাদার নন-স্ট্যান্ডার্ড প্যাকেজিং ইকুইপমেন্ট, তরল ভরাট ও ক্যাপিং থেকে সম্পূর্ণ স্বয়ংক্রিয় উৎপাদন লাইন পর্যন্ত। ইউরোপের প্রযুক্তি দ্বারা চালিত।",
+        hero_btn1:"পণ্য দেখুন",
+        hero_btn2:"যোগাযোগ করুন",
+        products_badge:"পণ্যের পরিসর",
+        products_title:"আমরা যা তৈরি করি",
+        products_subtitle:"পাঁচটি মূল শিল্প জুড়ে সম্পূর্ণ প্যাকেজিং সমাধান",
+        pc1_name:"ফার্মাসিউটিক্যাল ইকুইপমেন্ট",
+        pc1_desc:"ভরাট, স্টপারিং, ক্যাপিং ও সিলিং লাইন",
+        pc2_name:"ল্যাব ইকুইপমেন্ট",
+        pc2_desc:"আরঅ্যান্ডডি ও কিউসি ল্যাবের জন্য সুস্পষ্ট যন্ত্র",
+        pc3_name:"মেডিকেল এসথেটিক ইকুইপমেন্ট",
+        pc3_desc:"মেডিকেল এসথেটিক ও বিউটি ডিভাইসের সমাধান",
+        pc4_name:"ফুড অ্যান্ড বেভারেজ",
+        pc4_desc:"উচ্চ গতির তরল ও পেস্ট প্যাকেজিং লাইন",
+        pc5_name:"প্যাকেজিং মেশিনারি",
+        pc5_desc:"কার্টনার, লেবেলার, র্যাপার ও কেস প্যাকার",
+        feat_badge:"ফিচার্ড পণ্য",
+        feat_title:"কোর ইকুইপমেন্ট",
+        feat_subtitle:"আমাদের উৎপাদন লাইনের বাস্তব পণ্য — আরও জানতে ক্লিক করুন",
+        fp1_badge:"ফার্মাসিউটিক্যাল",
+        fp1_name:"ভায়াল ফিলিং মেশিন",
+        fp1_desc:"ফার্মাসিউটিক্যাল ভায়ালের জন্য স্বয়ংক্রিয় তরল ভরাট সিস্টেম। উচ্চ নির্ভুলতা, নির্ভরযোগ্য পারফরম্যান্স, GMP স্ট্যান্ডার্ড অনুযায়ী।",
+        fp1_link:"বিস্তারিত দেখুন →",
+        pm_inquiry:"অনুসন্ধান পাঠান →",
+        fp2_badge:"ফার্মাসিউটিক্যাল",
+        fp2_name:"বোতল ধোয়ার মেশিন",
+        fp2_desc:"স্টেরাইল ফার্মাসিউটিক্যাল উৎপাদন লাইনের জন্য উচ্চ-দক্ষতার ভায়াল ও বোতল ধোয়ার সিস্টেম। মাল্টি-স্টেজ ক্লিনিং সাইকেল।",
+        fp2_link:"বিস্তারিত দেখুন →",
+        fp3_badge:"ল্যাবরেটরি",
+        fp3_name:"লায়োফিলাইজার (ফ্রিজ ড্রায়ার)",
+        fp3_desc:"ফার্মাসিউটিক্যাল ও বায়োটেক অ্যাপ্লিকেশনের জন্য উৎপাদন ও ল্যাবরেটরি স্কেল লায়োফিলাইজার। সুপিরিয়র ড্রায়িং কোয়ালিটি।",
+        fp3_link:"বিস্তারিত দেখুন →",
+        fp4_badge:"ল্যাবরেটরি",
+        fp4_name:"লিকুইড চার্জিং সিস্টেম",
+        fp4_desc:"ফার্মাসিউটিক্যাল ম্যানুফ্যাকচারিংয়ের জন্য কাস্টম লিকুইড প্রিপারেশন ও চার্জিং সিস্টেম। সুনির্দিষ্ট ডোজিং, সহজ পরিষ্কার।",
+        fp4_link:"বিস্তারিত দেখুন →",
+        fp5_badge:"ফার্মাসিউটিক্যাল",
+        fp5_name:"অ্যাম্পোল ধোয়ার মেশিন",
+        fp5_desc:"স্টেরাইল ফার্মাসিউটিক্যাল উৎপাদন লাইনের জন্য উচ্চ-দক্ষতার অ্যাম্পোল ধোয়ার মেশিন। মাল্টি-স্টেজ ক্লিনিং সাইকেল, GMP সামঞ্জস্যপূর্ণ।",
+        fp5_link:"বিস্তারিত দেখুন →",
+        fp6_badge:"ফার্মাসিউটিক্যাল",
+        fp6_name:"ভায়াল ও অ্যাম্পোলের জন্য টানেল ওভেন",
+        fp6_desc:"ভায়াল ও অ্যাম্পোলের জন্য টানেল-টাইপ ড্রায়িং ও স্টেরিলাইজেশন ওভেন। ধারাবাহিক উচ্চ-তাপমাত্রা স্টেরিলাইজেশন ও ড্রায়িং, উচ্চ গতির ভরাট লাইনের জন্য আদর্শ।",
+        fp6_link:"বিস্তারিত দেখুন →",
+        vid_badge:"ভিডিও সেন্টার",
+        vid_title:"অ্যাকশনে আমাদের দেখুন",
+        vid_subtitle:"উৎপাদন পরিবেশে আমাদের ইকুইপমেন্ট চলমান বাস্তব ফুটেজ",
+        vid1_title:"স্বয়ংক্রিয় প্যাকেজিং লাইন — সম্পূর্ণ ওভারভিউ",
+        vid2_title:"ভায়াল ফিলিং ও ক্যাপিং মেশিন ডেমো",
+        vid3_title:"বোতল ধোয়া ও স্টেরিলাইজেশন লাইন",
+        vid4_title:"প্রোডাকশন লাইন ইন্টিগ্রেশন — লাইভ রান",
+        vid5_title:"কাস্টম টার্নকি সল্যুশন শোকেস",
+        vid6_title:"পণ্য ডেমো ভিডিও 6",
+        vid7_title:"পণ্য ডেমো ভিডিও 7",
+        vid8_title:"পণ্য ডেমো ভিডিও 8",
+        vid9_title:"পণ্য ডেমো ভিডিও 9",
+        news_badge:"সাম্প্রতিক খবর",
+        news_title:"ইন্ডাস্ট্রি ইনসাইটস",
+        news_subtitle:"কোম্পানি আপডেট, কারিগরি নিবন্ধ এবং শিল্প প্রবণতা",
+        news1_title:"মেডিকেল ডিভাইস ডিস্ট্রিবিউশন মডেল পরিবর্তনের মূল বিষয়াবলী",
+        news1_excerpt:"মেডিকেল ডিভাইস ডিস্ট্রিবিউশনের তিনটি মোড আছে: পাইকারি, খুচরা এবং অপারেটিং। প্রতিটির জন্য ভিন্ন কমপ্লায়েন্স ডকুমেন্টেশন প্রয়োজন — এখানে আপনার যা জানা দরকার।",
+        news2_title:"মেডিকেল ডিভাইস ক্লাসিফিকেশন গাইড: ক্লাস I, II ও III",
+        news2_excerpt:"ক্লাস I এর জন্য শুধু মেডিকেল ডিভাইস বিক্রয় সুযোগ সহ ব্যবসায়িক লাইসেন্স প্রয়োজন। ক্লাস II এর জন্য ফাইলিং সার্টিফিকেট প্রয়োজন। ক্লাস III এর জন্য বিশেষ অপারেটিং লাইসেন্স প্রয়োজন।",
+        news3_title:"হোম মেডিকেল ডিভাইস: প্রতিটি পরিবারের জানা উচিত",
+        news3_excerpt:"ডিজিটাল থার্মোমিটার থেকে ব্লাড প্রেশার মনিটর পর্যন্ত, হোম মেডিকেল ডিভাইস ক্রমশ সাধারণ হয়ে উঠছে — তবে সঠিক ব্যবহার নিরাপত্তা ও সঠিকতার জন্য গুরুত্বপূর্ণ।",
+        about_badge:"আমাদের সম্পর্কে",
+        about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"একটি পেশাদার নন-স্ট্যান্ডার্ড প্যাকেজিং ইকুইপমেন্ট প্রস্তুতকারক হিসেবে, Hashoer ফার্মাসিউটিক্যাল মেশিনারি, মেডিকেল ডিভাইস এবং ল্যাবরেটরি সমাধানে বিশেষজ্ঞ। প্রতিষ্ঠার পর থেকে, আমরা বাজারের চাহিদা দ্বারা পরিচালিত, <strong>পেশাদারিত্ব · সততা · অসাধারণ</strong> এর চেতনা অনুসরণ করে আসছি।",
+        about_p2:"ইউরোপের উন্নত প্রযুক্তির সহায়তায়, আমরা ফার্মাসিউটিক্যাল, ডেইলি কেমিক্যাল ও ফুড ইন্ডাস্ট্রির জন্য প্যাকেজিং ইঞ্জিনিয়ারিং বিশেষজ্ঞদের একটি দল গঠন করেছি — স্ট্যান্ডঅ্যালোন মেশিন থেকে টার্নকি অটোমেটেড প্রোডাকশন লাইন পর্যন্ত।",
+        about_p3:"আমাদের দলে ৪ জন মিড-লেভেল ইঞ্জিনিয়ার এবং ৫০০ জন দক্ষ টেকনিশিয়ান রয়েছে। আমাদের ফিল্ড ইঞ্জিনিয়াররা আপনার রক্ষণাবেক্ষণ কার্যক্রমে সহায়তা করে, ইকুইপমেন্ট দক্ষতা অপটিমাইজ করে এবং আপনার মান, উৎপাদন ও ব্যবসায়িক চ্যালেঞ্জের জন্য টার্নকি সমাধান প্রদান করে।",
+        stat1_label:"ইঞ্জিনিয়ার",
+        stat2_label:"দক্ষ টেকনিশিয়ান",
+        stat3_label:"সার্ভ করা দেশ",
+        stat4_label:"ইন্ডাস্ট্রি সেক্টর",
+        about_visual_h3:"আপনার বিশ্বস্ত ইকুইপমেন্ট পার্টনার",
+        about_visual_p:"ডিজাইন থেকে ডেপ্লয়মেন্ট — আমরা সবটুকু সামলাই",
+        why_badge:"আমাদের সুবিধা",
+        why_title:"Hashoer কেন বেছে নেবেন",
+        why_subtitle:"অন্য ইকুইপমেন্ট সাপ্লায়ার থেকে আমাদের আলাদা করে তোলে যা",
+        why1_title:"ইইউ প্রযুক্তি",
+        why1_desc:"অসাধারণ নির্ভুলতা ও নির্ভরযোগ্যতার জন্য ইউরোপের উন্নত প্যাকেজিং প্রযুক্তির ওপর ভিত্তি করে।",
+        why2_title:"কাস্টম সল্যুশন",
+        why2_desc:"আপনার নির্দিষ্ট উৎপাদন প্রয়োজন অনুযায়ী তৈরি নন-স্ট্যান্ডার্ড ইকুইপমেন্ট — কোনো এক-সাইজ-ফিট-অল অ্যাপ্রোচ নেই।",
+        why3_title:"অন-সাইট ফিল্ড ইঞ্জিনিয়ার",
+        why3_desc:"আমাদের ইঞ্জিনিয়াররা আপনার দলের সাথে কাজ করে — রক্ষণাবেক্ষণ সহায়তা, দক্ষতা অপটিমাইজেশন এবং আরও অনেক কিছু।",
+        why4_title:"কাস্টমার-ফার্স্ট দর্শন",
+        why4_desc:"আমরা আপনার সন্তুষ্টি দিয়ে সাফল্য পরিমাপ করি — প্রতিযোগিতামূলক মূল্য, মানসম্পন্ন পণ্য এবং স্থায়ী অংশীদারিত্ব।",
+        contact_badge:"যোগাযোগ করুন",
+        contact_title:"যোগাযোগ করুন",
+        contact_subtitle:"আমাদের ইকুইপমেন্টে আগ্রহী? আমাদের একটি বার্তা পাঠান, আমরা ২৪ ঘন্টার মধ্যে উত্তর দেব।",
+        contact_person_label:"যোগাযোগের ব্যক্তি",
+        contact_phone_label:"ফোন",
+        contact_email_label:"ইমেইল",
+        contact_address_label:"ঠিকানা",
+        contact_person:"Charly",
+        contact_address:"রুম ১০০৩, ১ম তলা, নং ২ ডংইয়ে রোড, ডংজিং টাউন, সংজিয়াং জেলা, সাংহাই",
+        form_name_label:"আপনার নাম *",
+        form_name_ph:"পূর্ণ নাম",
+        form_email_label:"ইমেইল ঠিকানা *",
+        form_email_ph:"you@company.com",
+        form_company_label:"কোম্পানি / সংগঠন",
+        form_company_ph:"কোম্পানির নাম (ঐচ্ছিক)",
+        form_message_label:"আপনার বার্তা *",
+        form_message_ph:"আপনার ইকুইপমেন্টের চাহিদা, উৎপাদন প্রয়োজনীয়তা বা যেকোনো প্রশ্ন আমাদের জানান……",
+        form_submit:"বার্তা পাঠান →",
+        form_sent:"✓ বার্তা পাঠানো হয়েছে!",
+        form_fail:"✗ পাঠাতে ব্যর্থ। অনুগ্রহ করে sales@hashoer.com এ ইমেইল করুন",
+        qc_wechat_id:"WeChat ID: ",
+        form_err_name:"অনুগ্রহ করে আপনার নাম লিখুন",
+        form_err_email:"অনুগ্রহ করে আপনার ইমেইল ঠিকানা লিখুন",
+        form_err_email_invalid:"অনুগ্রহ করে একটি বৈধ ইমেইল ঠিকানা লিখুন",
+        form_err_phone:"অনুগ্রহ করে আপনার ফোন বা WhatsApp নম্বর লিখুন",
+        form_err_message:"অনুগ্রহ করে আপনার বার্তা লিখুন",
+        qc_wechat_title:"WeChat",
+        qc_wechat_tip:"আমাদের সরাসরি যোগ করতে WeChat দিয়ে QR কোড স্ক্যান করুন",
+        qc_wa_title:"WhatsApp",
+        qc_wa_click:"WhatsApp-এ চ্যাট করুন",
+        qc_wa_tip:"কথোপকথন শুরু করতে একটি ট্যাপ — আমরা সাধারণত কয়েক ঘন্টার মধ্যে উত্তর দিই",
+        form_phone_label:"ফোন / WhatsApp *",
+        form_phone_ph:"+880 1700 000000",
+        wa_float_text:"আমাদের সাথে চ্যাট করুন",
+        wa_msg:"হ্যালো, আমি আপনার ওয়েবসাইটে আপনার ইকুইপমেন্ট দেখেছি এবং আরও জানতে চাই:",
+        footer_brand:"পেশাদার নন-স্ট্যান্ডার্ড প্যাকেজিং ইকুইপমেন্ট প্রস্তুতকারক। ব্যবসা বিশ্বব্যাপী ফার্মাসিউটিক্যাল, ফুড, ডেইলি কেমিক্যাল ও ল্যাব ইন্ডাস্ট্রি কভার করে।",
+        footer_products_title:"পণ্য",
+        footer_products_1:"ফার্মাসিউটিক্যাল",
+        footer_products_2:"ফুড অ্যান্ড বেভারেজ",
+        footer_products_3:"ল্যাব ইকুইপমেন্ট",
+        footer_products_4:"প্যাকেজিং",
+        footer_products_5:"ওয়্যারহাউজিং",
+        footer_company_title:"কোম্পানি",
+        footer_company_1:"আমাদের সম্পর্কে",
+        footer_company_2:"ভিডিও",
+        footer_company_3:"সংবাদ",
+        footer_company_4:"পার্টনার",
+        footer_contact_title:"যোগাযোগ",
+        footer_contact_3:"সাংহাই, চীন",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. সর্বস্বত্ব সংরক্ষিত।",
+      },
+      ur: {
+        nav_products:"پروڈکٹس",
+        nav_videos:"ویڈیوز",
+        nav_news:"خبریں",
+        nav_about:"ہمارے بارے میں",
+        nav_contact:"رابطہ کریں",
+        nav_quote:"کوٹیشن مانگیں",
+        hero_title:"اسمارٹ پیکجنگ حل<br>فارما اور اس سے آگے",
+        hero_subtitle:"Hashoer Intelligent Technology — پیشہ ورانہ غیر معیاری پیکجنگ آلات، مائع بھرنے اور ڈھکن لگانے سے لے کر مکمل خودکار پیداواری لائنیں۔ یورپ کی ٹیکنالوجی سے چلنے والا۔",
+        hero_btn1:"پروڈکٹس دیکھیں",
+        hero_btn2:"ہم سے رابطہ کریں",
+        products_badge:"پروڈکٹ رینج",
+        products_title:"ہم کیا بناتے ہیں",
+        products_subtitle:"پانچ کور صنعتوں میں مکمل پیکجنگ حل",
+        pc1_name:"فارماسیوٹیکل آلات",
+        pc1_desc:"بھرنے، اسٹاپرنگ، کیپنگ اور سیلنگ لائنیں",
+        pc2_name:"لیب آلات",
+        pc2_desc:"تحقیق و ترقی اور کنٹرول کوالٹی لیب کے لیے درست آلات",
+        pc3_name:"میڈیکل ایسٹھیٹک آلات",
+        pc3_desc:"میڈیکل ایسٹھیٹکس اور بیوٹی آلات کے لیے حل",
+        pc4_name:"فوڈ اینڈ بیوریج",
+        pc4_desc:"تیز رفتار مائع اور پیسٹ پیکجنگ لائنیں",
+        pc5_name:"پیکجنگ مشینری",
+        pc5_desc:"کارٹنرز، لیبلرز، ریپرز اور کیس پیکرز",
+        feat_badge:"نمایاں پروڈکٹس",
+        feat_title:"کور آلات",
+        feat_subtitle:"ہماری پیداواری لائن کے حقیقی پروڈکٹس — مزید جاننے کے لیے کلک کریں",
+        fp1_badge:"فارماسیوٹیکل",
+        fp1_name:"وائل فلنگ مشین",
+        fp1_desc:"فارماسیوٹیکل وائلز کے لیے خودکار مائع بھرنے کا نظام۔ اعلی درستگی، قابل اعتماد کارکردگی، GMP کے معیارات کے مطابق۔",
+        fp1_link:"تفصیلات دیکھیں →",
+        pm_inquiry:"استعلام بھیجیں →",
+        fp2_badge:"فارماسیوٹیکل",
+        fp2_name:"بوتل دھونے کی مشین",
+        fp2_desc:"اسٹرائل فارماسیوٹیکل پیداواری لائنوں کے لیے اعلی کارکردگی کا وائل اور بوتل دھونے کا نظام۔ ملٹی اسٹیج کلیننگ سائیکل۔",
+        fp2_link:"تفصیلات دیکھیں →",
+        fp3_badge:"لیب",
+        fp3_name:"لیوفلائزر (فریز ڈرائر)",
+        fp3_desc:"فارماسیوٹیکل اور بائیو ٹیک ایپلی کیشنز کے لیے پیداواری اور لیب سکیل لیوفلائزرز۔ بہترین سکھانے کا معیار۔",
+        fp3_link:"تفصیلات دیکھیں →",
+        fp4_badge:"لیب",
+        fp4_name:"لیکویڈ چارجنگ سسٹم",
+        fp4_desc:"فارماسیوٹیکل مینوفیکچرنگ کے لیے کسٹم لیکویڈ تیار کرنے اور چارج کرنے کا نظام۔ درست ڈوزنگ، آسان صفائی۔",
+        fp4_link:"تفصیلات دیکھیں →",
+        fp5_badge:"فارماسیوٹیکل",
+        fp5_name:"امپول دھونے کی مشین",
+        fp5_desc:"اسٹرائل فارماسیوٹیکل پیداواری لائنوں کے لیے اعلی کارکردگی کا امپول دھونے والی مشین۔ ملٹی اسٹیج کلیننگ سائیکل، GMP کے مطابق۔",
+        fp5_link:"تفصیلات دیکھیں →",
+        fp6_badge:"فارماسیوٹیکل",
+        fp6_name:"وائلز اور امپولز کے لیے ٹنل اوون",
+        fp6_desc:"وائلز اور امپولز کے لیے ٹنل ٹائپ سکھانے اور سٹریلائزیشن اوون۔ مسلسل ہائی ٹمپریچر سٹریلائزیشن اور سکھائی، تیز رفتار بھرنے والی لائنوں کے لیے موزوں۔",
+        fp6_link:"تفصیلات دیکھیں →",
+        vid_badge:"ویڈیو سینٹر",
+        vid_title:"ایکشن میں ہمیں دیکھیں",
+        vid_subtitle:"پیداواری ماحول میں ہمارے آلات کے چلنے کی حقیقی فوٹیج",
+        vid1_title:"خودکار پیکجنگ لائن — مکمل جائزہ",
+        vid2_title:"وائل فلنگ اور کیپنگ مشین ڈیمو",
+        vid3_title:"بوتل دھونے اور سٹریلائزیشن لائن",
+        vid4_title:"پروڈکشن لائن انٹیگریشن — لائیو رن",
+        vid5_title:"کسٹم ٹرن کی سلوشن شوکیس",
+        vid6_title:"پروڈکٹ ڈیمو ویڈیو 6",
+        vid7_title:"پروڈکٹ ڈیمو ویڈیو 7",
+        vid8_title:"پروڈکٹ ڈیمو ویڈیو 8",
+        vid9_title:"پروڈکٹ ڈیمو ویڈیو 9",
+        news_badge:"تازہ ترین خبریں",
+        news_title:"انڈسٹری انسائٹس",
+        news_subtitle:"کمپنی اپڈیٹس، تکنیکی مضامین اور انڈسٹری رجحانات",
+        news1_title:"میڈیکل ڈیوائس ڈسٹری بیوشن ماڈلز تبدیل کرنے کے اہم نکات",
+        news1_excerpt:"میڈیکل ڈیوائس ڈسٹری بیوشن کے تین موڈ ہیں: تھوک، خوردہ اور آپریٹنگ۔ ہر ایک کے لیے مختلف کمپلائنس دستاویزات درکار ہیں — یہی وہ باتیں ہیں جنہیں آپ کو جاننا چاہیے۔",
+        news2_title:"میڈیکل ڈیوائس کلاسیفکیشن گائیڈ: کلاس I، II اور III",
+        news2_excerpt:"کلاس I کے لیے صرف میڈیکل ڈیوائس کی فروخت کی حد والا کاروباری لائسنس درکار ہے۔ کلاس II کو فائلنگ سرٹیفکیٹ درکار ہے۔ کلاس III کے لیے خصوصی آپریٹنگ لائسنس درکار ہے۔",
+        news3_title:"گھریلو میڈیکل آلات: ہر خاندان کو کیا جاننا چاہیے",
+        news3_excerpt:"ڈیجیٹل تھرمامیٹر سے لے کر بلڈ پریشر مانیٹر تک، گھریلو میڈیکل آلات تیزی سے عام ہو رہے ہیں — لیکن صحت اور درستگی کے لیے صحیح استعمال اہم ہے۔",
+        about_badge:"ہمارے بارے میں",
+        about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"ایک پیشہ ورانہ غیر معیاری پیکجنگ آلات بنانے والے کے طور پر، Hashoer فارماسیوٹیکل مشینری، میڈیکل ڈیوائسز اور لیب حل میں ماہر ہے۔ قیام سے، ہم مارکیٹ کی مانگ سے ہدایت یافتہ ہیں، <strong>پیشہ ورانہ مہارت · دیانتداری · بے مثال</strong> کے جذبے کا پیچھا کرتے ہیں۔",
+        about_p2:"یورپ کی جدید ٹیکنالوجی کے بل بوتے پر، ہم نے فارماسیوٹیکل، ڈیلی کیمیکل اور فوڈ انڈسٹری کی خدمت کرنے والے پیکجنگ انجینئرنگ ماہرین کی ایک ٹیم اکٹھی کی ہے — اسٹینڈ العائن مشینوں سے لے کر ٹرن کی خودکار پیداواری لائنوں تک۔",
+        about_p3:"ہماری ٹیم میں 4 مڈ لیول انجینئرز اور 500 ماہر ٹیکنیشنز شامل ہیں۔ ہمارے فیلڈ انجینئرز آپ کے مینٹیننس آپریشنز کی مدد کرتے ہیں، آلات کی کارکردگی بہتر بناتے ہیں، اور آپ کے معیار، پیداوار اور کاروباری چیلنجز کے لیے ٹرن کی حل فراہم کرتے ہیں۔",
+        stat1_label:"انجینئرز",
+        stat2_label:"ماہر ٹیکنیشنز",
+        stat3_label:"خدمت کردہ ممالک",
+        stat4_label:"انڈسٹری سیکٹرز",
+        about_visual_h3:"آپ کا قابل اعتماد آلات کا پارٹنر",
+        about_visual_p:"ڈیزائن سے تعیناتی تک — ہم سب کچھ سنبھالتے ہیں",
+        why_badge:"ہمارے فوائد",
+        why_title:"Hashoer کو کیوں چنیں",
+        why_subtitle:"ہمیں دیگر آلات سپلائرز سے کیا مختلف بناتا ہے",
+        why1_title:"یورپ کی ٹیکنالوجی",
+        why1_desc:"اعلی درستگی اور قابل اعتمادی کے لیے یورپ کی جدید پیکجنگ ٹیکنالوجیز پر مبنی۔",
+        why2_title:"کسٹم سلوشنز",
+        why2_desc:"آپ کی مخصوص پیداواری ضروریات کے مطابق بنائے گئے غیر معیاری آلات — کوئی ایک سائز سب کے لیے نہیں۔",
+        why3_title:"آن سائٹ فیلڈ انجینئرز",
+        why3_desc:"ہمارے انجینئرز آپ کی ٹیم کے ساتھ کام کرتے ہیں — مینٹیننس سپورٹ، کارکردگی کی بہتری اور مزید۔",
+        why4_title:"کسٹمر فرسٹ فلسفہ",
+        why4_desc:"ہم کامیابی کو آپ کی اطمینان سے ناپتے ہیں — مسابقتی قیمت، معیاری مصنوعات، اور پائیدار شراکت داری۔",
+        contact_badge:"رابطہ کریں",
+        contact_title:"رابطہ کریں",
+        contact_subtitle:"ہمارے آلات میں دلچسپی ہے؟ ہمیں ایک پیغام بھیجیں، ہم 24 گھنٹوں کے اندر جواب دیں گے۔",
+        contact_person_label:"رابطہ کرنے والا",
+        contact_phone_label:"فون",
+        contact_email_label:"ای میل",
+        contact_address_label:"پتہ",
+        contact_person:"Charly",
+        contact_address:"کمرہ 1003، فرش 1، نمبر 2 ڈونگیے روڈ، ڈونگجنگ ٹاؤن، سونگجیانگ ڈسٹرکٹ، شنگھائی",
+        form_name_label:"آپ کا نام *",
+        form_name_ph:"پورا نام",
+        form_email_label:"ای میل ایڈریس *",
+        form_email_ph:"you@company.com",
+        form_company_label:"کمپنی / تنظیم",
+        form_company_ph:"کمپنی کا نام (اختیاری)",
+        form_message_label:"آپ کا پیغام *",
+        form_message_ph:"اپنی آلات کی ضروریات، پیداواری تقاضوں یا کسی بھی سوال کے بارے میں ہمیں بتائیں……",
+        form_submit:"پیغام بھیجیں →",
+        form_sent:"✓ پیغام بھیج دیا گیا!",
+        form_fail:"✗ بھیجنے میں ناکام۔ براہ کرم sales@hashoer.com پر ای میل کریں",
+        qc_wechat_id:"WeChat ID: ",
+        form_err_name:"براہ کرم اپنا نام درج کریں",
+        form_err_email:"براہ کرم اپنا ای میل ایڈریس درج کریں",
+        form_err_email_invalid:"براہ کرم درست ای میل ایڈریس درج کریں",
+        form_err_phone:"براہ کرم اپنا فون یا WhatsApp نمبر درج کریں",
+        form_err_message:"براہ کرم اپنا پیغام درج کریں",
+        qc_wechat_title:"WeChat",
+        qc_wechat_tip:"ہمیں براہ راست شامل کرنے کے لیے WeChat سے QR کوڈ اسکین کریں",
+        qc_wa_title:"WhatsApp",
+        qc_wa_click:"WhatsApp پر چیٹ کریں",
+        qc_wa_tip:"بات چیت شروع کرنے کے لیے ایک ٹیپ — ہم عام طور پر چند گھنٹوں میں جواب دیتے ہیں",
+        form_phone_label:"فون / WhatsApp *",
+        form_phone_ph:"+92 300 0000000",
+        wa_float_text:"ہم سے چیٹ کریں",
+        wa_msg:"ہیلو، میں نے آپ کی ویب سائٹ پر آپ کے آلات دیکھے اور مزید جاننا چاہتا ہوں:",
+        footer_brand:"پیشہ ورانہ غیر معیاری پیکجنگ آلات بنانے والا۔ کاروبار دنیا بھر میں فارماسیوٹیکل، فوڈ، ڈیلی کیمیکل اور لیب انڈسٹریز کا احاطہ کرتا ہے۔",
+        footer_products_title:"پروڈکٹس",
+        footer_products_1:"فارماسیوٹیکل",
+        footer_products_2:"فوڈ اینڈ بیوریج",
+        footer_products_3:"لیب آلات",
+        footer_products_4:"پیکجنگ",
+        footer_products_5:"گودام",
+        footer_company_title:"کمپنی",
+        footer_company_1:"ہمارے بارے میں",
+        footer_company_2:"ویڈیوز",
+        footer_company_3:"خبریں",
+        footer_company_4:"پارٹنرز",
+        footer_contact_title:"رابطہ",
+        footer_contact_3:"شنگھائی، چین",
+        footer_copyright:"© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. جملہ حقوق محفوظ ہیں۔",
+      },
+      fa: {
+        nav_products:"محصولات",
+        nav_videos:"ویدیوها",
+        nav_news:"اخبار",
+        nav_about:"درباره ما",
+        nav_contact:"تماس",
+        nav_quote:"درخواست قیمت",
+        hero_title:"راهکارهای هوشمند بسته‌بندی<br>برای داروسازی و فراتر",
+        hero_subtitle:"Hashoer Intelligent Technology — تجهیزات حرفه‌ای بسته‌بندی غیراستاندارد، از پرکردن و درپوش‌گذاری تا خطوط تولید کاملاً خودکار. با بهره‌گیری از فناوری اروپا.",
+        hero_btn1:"مشاهده محصولات",
+        hero_btn2:"تماس با ما",
+        products_badge:"محصولات",
+        products_title:"چه چیزی تولید می‌کنیم",
+        products_subtitle:"راهکارهای کامل بسته‌بندی برای پنج صنعت اصلی",
+        pc1_name:"تجهیزات دارویی",
+        pc1_desc:"خطوط پرکردن، درپوش‌گذاری و مهروموم‌سازی",
+        pc2_name:"تجهیزات آزمایشگاهی",
+        pc2_desc:"ابزارهای دقیق برای R&D و کنترل کیفیت",
+        pc3_name:"تجهیزات زیبایی پزشکی",
+        pc3_desc:"راهکارهایی برای دستگاه‌های زیبایی پزشکی",
+        pc4_name:"غذا و نوشیدنی",
+        pc4_desc:"خطوط بسته‌بندی پرسرعت مایعات و خمیرها",
+        pc5_name:"ماشین‌آلات بسته‌بندی",
+        pc5_desc:"کارتن‌کن، برچسب‌زن، بسته‌بندی و کیس‌پکر",
+        feat_badge:"محصولات ویژه",
+        feat_title:"تجهیزات اصلی",
+        feat_subtitle:"محصولات واقعی خط تولید ما — برای جزئیات بیشتر کلیک کنید",
+        fp1_badge:"دارویی",
+        fp1_name:"دستگاه پرکردن ویال",
+        fp1_desc:"سیستم پرکردن خودکار مایع برای ویال‌های دارویی. دقت بالا، عملکرد قابل اعتماد، مطابق با استانداردهای GMP.",
+        fp1_link:"مشاهده جزئیات →",
+        pm_inquiry:"ارسال استعلام →",
+        fp2_badge:"دارویی",
+        fp2_name:"دستگاه شستشوی بطری",
+        fp2_desc:"سیستم شستشوی پرکارای ویال و بطری برای خطوط استریل دارویی. چرخه شستشوی چندمرحله‌ای.",
+        fp2_link:"مشاهده جزئیات →",
+        fp3_badge:"آزمایشگاهی",
+        fp3_name:"فریزدرایر (خشک‌کن انجمادی)",
+        fp3_desc:"خشک‌کن‌های انجمادی تولیدی و آزمایشگاهی برای کاربردهای دارویی و بیوتک. کیفیت خشک‌کردن برتر.",
+        fp3_link:"مشاهده جزئیات →",
+        fp4_badge:"آزمایشگاهی",
+        fp4_name:"سیستم تزریق مایع",
+        fp4_desc:"سیستم آماده‌سازی و تزریق مایع سفارشی برای تولید دارویی. دوز دقیق، تمیزکاری آسان.",
+        fp4_link:"مشاهده جزئیات →",
+        fp5_badge:"دارویی",
+        fp5_name:"دستگاه شستشوی آمپول",
+        fp5_desc:"دستگاه شستشوی آمپول پرکارا برای خطوط استریل دارویی. چرخه شستشوی چندمرحله‌ای، مطابق GMP.",
+        fp5_link:"مشاهده جزئیات →",
+        fp6_badge:"دارویی",
+        fp6_name:"کوره تونلی برای ویال و آمپول",
+        fp6_desc:"کوره خشک‌کن و استریلیزاسیون تونلی برای ویال و آمپول. استریلیزاسیون و خشک‌کردن مداوم با دمای بالا، ایده‌آل برای خطوط پرکردن پرسرعت.",
+        fp6_link:"مشاهده جزئیات →",
+        vid_badge:"مرکز ویدیو",
+        vid_title:"ما را در عمل ببینید",
+        vid_subtitle:"تصاویر واقعی از تجهیزات ما در محیط‌های تولید",
+        vid1_title:"خط بسته‌بندی خودکار — نمای کلی",
+        vid2_title:"دموی دستگاه پرکردن و درپوش‌گذاری ویال",
+        vid3_title:"خط شستشو و استریلیزاسیون بطری",
+        vid4_title:"یکپارچه‌سازی خط تولید — اجرای زنده",
+        vid5_title:"نمایش راهکار سفارشی تحویل کلید",
+        vid6_title:"ویدیوی نمایشی محصول ۶",
+        vid7_title:"ویدیوی نمایشی محصول ۷",
+        vid8_title:"ویدیوی نمایشی محصول ۸",
+        vid9_title:"ویدیوی نمایشی محصول ۹",
+        news_badge:"آخرین اخبار",
+        news_title:"بینش‌های صنعت",
+        news_subtitle:"به‌روزرسانی‌های شرکت، مقالات فنی و روندهای صنعت",
+        news1_title:"نکات کلیدی برای تغییر مدل توزیع تجهیزات پزشکی",
+        news1_excerpt:"توزیع تجهیزات پزشکی سه حالت دارد: عمده‌فروشی، خرده‌فروشی و مستقیم. هر کدام اسناد انطباق متفاوتی نیاز دارند — آنچه باید بدانید اینجاست.",
+        news2_title:"راهنمای طبقه‌بندی تجهیزات پزشکی: کلاس I، II و III",
+        news2_excerpt:"کلاس I فقط به مجوز کسب‌وکار با دامنه فروش تجهیزات پزشکی نیاز دارد. کلاس II نیازمند گواهی ثبت است. کلاس III نیازمند مجوز بهره‌برداری ویژه است.",
+        news3_title:"تجهیزات پزشکی خانگی: آنچه هر خانواده باید بداند",
+        news3_excerpt:"از دماسنج‌های دیجیتال تا فشارسنج، تجهیزات پزشکی خانگی روزبه‌روز رایج‌تر می‌شود — اما استفاده صحیح برای ایمنی و دقت مهم است.",
+        about_badge:"درباره ما",
+        about_title:"Hashoer Intelligent Technology (Shanghai) Ltd.",
+        about_p1:"به عنوان سازنده‌ای حرفه‌ای از تجهیزات بسته‌بندی غیراستاندارد، Hashoer در ماشین‌آلات دارویی، تجهیزات پزشکی و راهکارهای آزمایشگاهی تخصص دارد. از زمان تأسیس، با هدایت تقاضای بازار، روحیه <strong>حرفه‌ای‌گری · صداقت · برتری</strong> را دنبال کرده‌ایم.",
+        about_p2:"با پشتوانه فناوری پیشرفته اروپا، تیمی از متخصصان مهندسی بسته‌بندی گرد هم آورده‌ایم که صنایع دارویی، بهداشتی و غذایی را پوشش می‌دهند — از ماشین‌های تکی تا خطوط تولید خودکار تحویل کلید.",
+        about_p3:"تیم ما شامل ۴ مهندس میان‌رده و ۵۰۰ تکنسین ماهر است. مهندسان میدانی ما عملیات نگهداری شما را پشتیبانی می‌کنند، کارایی تجهیزات را بهینه می‌سازند و راهکارهای تحویل کلید برای چالش‌های کیفیت، تولید و کسب‌وکار شما ارائه می‌دهند.",
+        stat1_label:"مهندسان",
+        stat2_label:"تکنسین‌های ماهر",
+        stat3_label:"کشورهای تحت پوشش",
+        stat4_label:"بخش‌های صنعتی",
+        about_visual_h3:"شریک قابل اعتماد تجهیزات شما",
+        about_visual_p:"از طراحی تا استقرار — همه را ما انجام می‌دهیم",
+        why_badge:"مزایای ما",
+        why_title:"چرا Hashoer را انتخاب کنید",
+        why_subtitle:"آنچه ما را از سایر تأمین‌کنندگان تجهیزات متمایز می‌کند",
+        why1_title:"فناوری اتحادیه اروپا",
+        why1_desc:"مبتنی بر فناوری‌های پیشرفته بسته‌بندی اروپا برای دقت و قابلیت اطمینان برتر.",
+        why2_title:"راهکارهای سفارشی",
+        why2_desc:"تجهیزات غیراستاندارد متناسب با نیازهای تولید خاص شما — بدون رویکرد یک‌اندازه‌برای‌همه.",
+        why3_title:"مهندسان میدانی",
+        why3_desc:"مهندسان ما در کنار تیم شما کار می‌کنند — پشتیبانی نگهداری، بهینه‌سازی کارایی و بیشتر.",
+        why4_title:"فلسفه مشتری‌اول",
+        why4_desc:"ما موفقیت را با رضایت شما می‌سنجیم — قیمت‌های رقابتی، محصولات باکیفیت و مشارکت‌های پایدار.",
+        contact_badge:"تماس با ما",
+        contact_title:"با ما در تماس باشید",
+        contact_subtitle:"به تجهیزات ما علاقه‌مند هستید؟ پیامی برای ما بفرستید، ظرف ۲۴ ساعت پاسخ می‌دهیم.",
+        contact_person_label:"مسئول تماس",
+        contact_phone_label:"تلفن",
+        contact_email_label:"ایمیل",
+        contact_address_label:"آدرس",
+        contact_person:"Charly",
+        contact_address:"اتاق ۱۰۰۳، طبقه ۱، شماره ۲ جاده دونگ‌یه، شهر دونگ‌جینگ، منطقه سونگ‌جیانگ، شانگهای",
+        form_name_label:"نام شما *",
+        form_name_ph:"نام کامل",
+        form_email_label:"آدرس ایمیل *",
+        form_email_ph:"you@company.com",
+        form_company_label:"شرکت / سازمان",
+        form_company_ph:"نام شرکت (اختیاری)",
+        form_message_label:"پیام شما *",
+        form_message_ph:"درباره نیازهای تجهیزات، الزامات تولید یا سوالات خود به ما بگویید……",
+        form_submit:"ارسال پیام →",
+        form_sent:"✓ پیام ارسال شد!",
+        form_fail:"✗ ارسال ناموفق بود. لطفاً به sales@hashoer.com ایمیل بزنید",
+        qc_wechat_id:"WeChat ID: ",
+        form_err_name:"لطفاً نام خود را وارد کنید",
+        form_err_email:"لطفاً آدرس ایمیل خود را وارد کنید",
+        form_err_email_invalid:"لطفاً یک آدرس ایمیل معتبر وارد کنید",
+        form_err_phone:"لطفاً شماره تلفن یا WhatsApp خود را وارد کنید",
+        form_err_message:"لطفاً پیام خود را وارد کنید",
+        qc_wechat_title:"WeChat",
+        qc_wechat_tip:"برای افزودن ما، کد QR را با WeChat اسکن کنید",
+        qc_wa_title:"WhatsApp",
+        qc_wa_click:"چت در WhatsApp",
+        qc_wa_tip:"با یک لمس گفتگو را شروع کنید - معمولاً ظرف چند ساعت پاسخ می‌دهیم",
+        form_phone_label:"تلفن / WhatsApp *",
+        form_phone_ph:"+98 912 345 6789",
+        wa_float_text:"با ما چت کنید",
+        wa_msg:"سلام، تجهیزات شما را در وب‌سایت دیدم و مایلم بیشتر بدانم:",
+        footer_brand:"سازنده حرفه‌ای تجهیزات بسته‌بندی غیراستاندارد. فعالیت در صنایع دارویی، غذایی، بهداشتی و آزمایشگاهی در سراسر جهان.",
+        footer_products_title:"محصولات",
+        footer_products_1:"دارویی",
+        footer_products_2:"غذا و نوشیدنی",
+        footer_products_3:"تجهیزات آزمایشگاهی",
+        footer_products_4:"بسته‌بندی",
+        footer_products_5:"انبارداری",
+        footer_company_title:"شرکت",
+        footer_company_1:"درباره ما",
+        footer_company_2:"ویدیوها",
+        footer_company_3:"اخبار",
+        footer_company_4:"شرکا",
+        footer_contact_title:"تماس",
+        footer_contact_3:"شانگهای، چین",
+        footer_copyright:"© ۲۰۲۳ Hashoer Intelligent Technology (Shanghai) Ltd. تمام حقوق محفوظ است."
+      }    };
+
+    const LANGS = [
+      {code:'zh', name:'中文', flag:'🇨🇳'},
+      {code:'ja', name:'日本語', flag:'🇯🇵'},
+      {code:'ko', name:'한국어', flag:'🇰🇷'},
+      {code:'ru', name:'Русский', flag:'🇷🇺'},
+      {code:'en', name:'English', flag:'🇬🇧'},
+      {code:'fr', name:'Français', flag:'🇫🇷'},
+      {code:'es', name:'Español', flag:'🇪🇸'},
+      {code:'pt', name:'Português', flag:'🇵🇹'},
+      {code:'th', name:'ไทย', flag:'🇹🇭'},
+      {code:'vi', name:'Tiếng Việt', flag:'🇻🇳'},
+      {code:'bn', name:'বাংলা', flag:'🇧🇩'},
+      {code:'ur', name:'اردو', flag:'🇵🇰'},
+      {code:'fa', name:'فارسی', flag:'🇮🇷'}
+    ];
+
+    const DEFAULT_LANG = 'en';
+
+    const COUNTRY_TO_LANG = {
+      /* 中文 */
+      CN:'zh', HK:'zh', MO:'zh', TW:'zh',
+      /* 日语 */
+      JP:'ja',
+      /* 韩语 */
+      KR:'ko',
+      /* 俄语 */
+      RU:'ru', BY:'ru', KZ:'ru', KG:'ru', TJ:'ru', UZ:'ru', TM:'ru',
+      /* 法语 */
+      FR:'fr', MC:'fr', LU:'fr', CD:'fr', CI:'fr', SN:'fr', CM:'fr',
+      MA:'fr', DZ:'fr', TN:'fr',
+      /* 西班牙语 */
+      ES:'es', MX:'es', AR:'es', CO:'es', CL:'es', PE:'es', VE:'es',
+      EC:'es', GT:'es', CU:'es', BO:'es', DO:'es', HN:'es', PY:'es',
+      SV:'es', NI:'es', CR:'es', PA:'es', UY:'es', GQ:'es',
+      /* 葡萄牙语 */
+      BR:'pt', PT:'pt', AO:'pt', MZ:'pt',
+      /* 泰语 */
+      TH:'th',
+      /* 越南语 */
+      VN:'vi',
+      /* 孟加拉语 */
+      BD:'bn',
+      /* 乌尔都语（巴基斯坦） */
+      PK:'ur',
+      /* 波斯语（伊朗） */
+      IR:'fa'
+      /* 其他国家一律回退到英文 */
+    };
+
+    function buildLangSelect() {
+      const sel = document.getElementById('langSelect');
+      LANGS.forEach(function(l){
+        const opt = document.createElement('option');
+        opt.value = l.code;
+        opt.textContent = l.flag + ' ' + l.name;
+        sel.appendChild(opt);
+      });
+    }
+
+    function applyLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      try { sessionStorage.setItem('hashoer_active_lang', lang); } catch (e) {}
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.textContent = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+        const key = el.getAttribute('data-i18n-html');
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+        const key = el.getAttribute('data-i18n-ph');
+        if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+      });
+      const sel = document.getElementById('langSelect');
+      if (sel) sel.value = lang;
+      const wa = document.getElementById('waFloat');
+      if (wa && dict.wa_msg) {
+        wa.setAttribute('href', 'https://wa.me/8613795278116?text=' + encodeURIComponent(dict.wa_msg));
+      }
+      const qcWa = document.getElementById('qcWaBtn');
+      if (qcWa && dict.wa_msg) {
+        qcWa.setAttribute('href', 'https://wa.me/8613795278116?text=' + encodeURIComponent(dict.wa_msg));
+      }
+    }
+
+    function onLangChange(code) {
+      applyLang(code);
+      localStorage.setItem('hashoer_lang', code);
+      localStorage.setItem('hashoer_lang_manual', '1');
+    }
+
+    /* 默认语言：英文。只有访客手动切换过的语言才会被记住。 */
+    function detectInitialLang() {
+      try {
+        if (localStorage.getItem('hashoer_lang_manual') === '1') {
+          const saved = localStorage.getItem('hashoer_lang');
+          if (saved && I18N[saved]) return saved;
+        }
+      } catch (e) {}
+      return DEFAULT_LANG;
+    }
+
+    /* 按访客所在国家自动匹配本地语言；匹配不到就用英文 */
+    function autoDetectLang() {
+      try {
+        if (localStorage.getItem('hashoer_lang_manual') === '1') return;
+      } catch (e) {}
+      fetch('https://ipwho.is/', { cache: 'no-store' })
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          const code = d && d.country_code ? String(d.country_code).toUpperCase() : '';
+          const lang = COUNTRY_TO_LANG[code];
+          if (lang && I18N[lang]) {
+            applyLang(lang);
+          } else {
+            applyLang(DEFAULT_LANG);
+          }
+        })
+        .catch(function(){ applyLang(DEFAULT_LANG); });
+    }
+
+    function initI18n() {
+      buildLangSelect();
+      applyLang(detectInitialLang());
+      autoDetectLang();
+      /* 产品页询盘预填：products.html 弹窗里点询盘后跳回主页 */
+      try {
+        const inq = sessionStorage.getItem('hashoer_inquiry_msg');
+        if (inq) {
+          const msgBox = document.getElementById('message');
+          if (msgBox && !msgBox.value) msgBox.value = inq;
+          sessionStorage.removeItem('hashoer_inquiry_msg');
+        }
+      } catch (e) {}
+    }
+
+    function openModal(src) {
+      var modal = document.getElementById('videoModal');
+      var video = document.getElementById('modalVideo');
+      video.src = src;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      var modal = document.getElementById('videoModal');
+      var video = document.getElementById('modalVideo');
+      video.pause();
+      video.src = '';
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function openProduct(key, imgSrc) {
+      var dict = I18N[document.documentElement.lang] || I18N.en;
+      var img = document.getElementById('pmImg');
+      img.style.display = 'block';
+      img.src = imgSrc;
+      document.getElementById('pmBadge').textContent = dict[key + '_badge'] || '';
+      document.getElementById('pmName').textContent = dict[key + '_name'] || '';
+      document.getElementById('pmDesc').textContent = dict[key + '_desc'] || '';
+      var modal = document.getElementById('productModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProduct() {
+      document.getElementById('productModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeModal(); closeProduct(); }
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      var btn = document.querySelector('.form-submit');
+      var dict = I18N[document.documentElement.lang] || I18N.en;
+      var errBox = document.getElementById('formError');
+      var fName = document.getElementById('name');
+      var fEmail = document.getElementById('email');
+      var fPhone = document.getElementById('phone');
+      var fMsg = document.getElementById('message');
+
+      function fail(msg, el) {
+        if (errBox) { errBox.textContent = msg; errBox.hidden = false; }
+        [fName, fEmail, fPhone, fMsg].forEach(function(x) { if (x) x.style.borderColor = ''; });
+        if (el) { el.style.borderColor = '#dc2626'; el.focus(); }
+      }
+
+      if (!fName.value.trim()) return fail(dict.form_err_name, fName);
+      if (!fEmail.value.trim()) return fail(dict.form_err_email, fEmail);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fEmail.value.trim())) return fail(dict.form_err_email_invalid, fEmail);
+      if (!fPhone.value.trim()) return fail(dict.form_err_phone, fPhone);
+      if (!fMsg.value.trim()) return fail(dict.form_err_message, fMsg);
+      if (errBox) errBox.hidden = true;
+
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: '1030cdd2-1130-4b83-8cb1-782508310889',
+          subject: 'New Inquiry from Hashoer Website',
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          replyto: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          company: document.getElementById('company').value,
+          message: document.getElementById('message').value
+        })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res.success) {
+          btn.textContent = dict.form_sent;
+          btn.style.background = '#16a34a';
+          e.target.reset();
+        } else {
+          btn.textContent = dict.form_fail;
+          btn.style.background = '#dc2626';
+        }
+      })
+      .catch(function() {
+        btn.textContent = dict.form_fail;
+        btn.style.background = '#dc2626';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.style.opacity = '';
+        setTimeout(function() {
+          btn.textContent = dict.form_submit;
+          btn.style.background = '';
+        }, 4000);
+      });
+    }
+
+    initI18n();
+  </script>
+
+  <a class="wa-float" id="waFloat" href="https://wa.me/8613795278116" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="wa-float-icon">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.97 9.97 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </span>
+    <span class="wa-float-text" data-i18n="wa_float_text">Chat with us</span>
+  </a>
+
+  <script src="products.js" charset="utf-8"></script>
+</body>
+</html>
