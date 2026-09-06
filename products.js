@@ -199,14 +199,14 @@
       dUr: 'سکرو اور ایئر فلو بھرائی', dFa: 'پرکردن اسکرو و جریان هوا'
     },
     {
-      q: 'bag', icon: '\uD83C\uDF7C',
-      en: 'Soft bags', zh: '软袋', ja: 'ソフトバッグ', ko: '소프트백', ru: 'Мягкие контейнеры', fr: 'Poches souples',
-      es: 'Bolsas flexibles', pt: 'Bolsas flexíveis', th: 'ถุงนิ่ม', vi: 'Túi mềm', bn: 'নরম ব্যাগ', ur: 'نرم تھیلے', fa: 'کیسه‌های نرم',
-      dEn: 'Lab soft-bag filling', dZh: '实验室软袋灌装',
-      dJa: 'ラボ用ソフトバッグ充填', dKo: '연구소용 소프트백 충전', dRu: 'Лабораторный розлив в мягкие контейнеры',
-      dFr: 'Remplissage labo de poches souples', dEs: 'Llenado de bolsas flexibles en laboratorio', dPt: 'Enchimento de bolsas flexíveis em laboratório',
-      dTh: 'การบรรจุถุงนิ่มระดับห้องปฏิบัติการ', dVi: 'Chiết rót túi mềm trong phòng thí nghiệm', dBn: 'ল্যাবে নরম ব্যাগ ভরাট',
-      dUr: 'لیبارٹری میں نرم تھیلوں کی بھرائی', dFa: 'پرکردن کیسه نرم در آزمایشگاه'
+      q: 'lab', icon: '🔬',
+      en: 'Lab equipment', zh: '实验室设备', ja: '実験室設備', ko: '실험실 장비', ru: 'Лабораторное оборудование', fr: 'Équipement de laboratoire',
+      es: 'Equipo de laboratorio', pt: 'Equipamento de laboratório', th: 'อุปกรณ์ห้องปฏิบัติการ', vi: 'Thiết bị phòng thí nghiệm', bn: 'ল্যাবরেটরি সরঞ্জাম', ur: 'لیبارٹری کا سامان', fa: 'تجهیزات آزمایشگاهی',
+      dEn: 'Bench-top R&D machines', dZh: '小试与研发用设备',
+      dJa: 'ベンチトップ研究開発機', dKo: '벤치탑 R&D 장비', dRu: 'Настольные машины для R&D',
+      dFr: 'Machines de paillasse pour R&D', dEs: 'Equipos de mesa para I+D', dPt: 'Máquinas de bancada para P&D',
+      dTh: 'เครื่อง R&D แบบตั้งบนโต๊ะ', dVi: 'Máy R&D kiểu bàn', dBn: 'বেঞ্চ-টপ R&D মেশিন',
+      dUr: 'بینچ ٹاپ R&D مشینیں', dFa: 'دستگاه‌های R&D رومیزی'
     }
   ];
 
@@ -620,7 +620,7 @@
     },
     {
       id: 'lyophilizer', cat: 'lab', img: 'images/p15-lyophilizer.jpg',
-      kw: 'lyophilizer freeze dryer lyophilisation vaccine API CIP SIP',
+      kw: 'lyophilizer freeze dryer lyophilisation laboratory vaccine API CIP SIP',
       name: {
         en: 'Lyophilizer (freeze dryer)', zh: '冻干机',
         ja: '凍結乾燥機（ライオフィライザー）', ko: '동결건조기',
@@ -736,7 +736,7 @@
     },
     {
       id: 'pfs-semi', cat: 'lab', img: 'images/p19-pfs-semi.jpg',
-      kw: 'PFS semi-automatic filling machine syringe nest R&D small batch',
+      kw: 'PFS semi-automatic filling machine syringe nest laboratory R&D small batch',
       name: {
         en: 'PFS semi-automatic filling machine', zh: 'PFS 半自动灌装机',
         ja: 'PFS半自動充填機', ko: 'PFS 반자동 충전기',
