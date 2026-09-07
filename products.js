@@ -70,16 +70,16 @@
       es: 'Gama completa de equipos', pt: 'Gama completa de equipamentos', th: 'อุปกรณ์ทั้งหมด', vi: 'Danh sách thiết bị đầy đủ', bn: 'সম্পূর্ণ সরঞ্জাম তালিকা', ur: 'مکمل آلات کی فہرست', fa: 'فهرست کامل تجهیزات'
     },
     subtitle: {
-      zh: '21 类设备 —— 可按名称、剂型或型号搜索',
-      en: '21 machine types — search by name, container or model',
-      ja: '21 機種 — 名称・容器・型式で検索',
-      ko: '21종 장비 — 이름·용기·모델로 검색',
-      ru: '21 тип машин — поиск по названию, таре или модели',
-      fr: '21 types de machines — recherche par nom, contenant ou modèle',
-      es: '21 tipos de máquina: busque por nombre, envase o modelo',
-      pt: '21 tipos de máquina: pesquise por nome, recipiente ou modelo',
-      th: '21 ประเภทเครื่องจักร — ค้นหาด้วยชื่อ ภาชนะ หรือรุ่น',
-      vi: '21 loại máy — tìm theo tên, dạng bao bì hoặc model',
+      zh: '18 类设备 —— 可按名称、剂型或型号搜索',
+      en: '18 machine types — search by name, container or model',
+      ja: '18 機種 — 名称・容器・型式で検索',
+      ko: '18종 장비 — 이름·용기·모델로 검색',
+      ru: '18 тип машин — поиск по названию, таре или модели',
+      fr: '18 types de machines — recherche par nom, contenant ou modèle',
+      es: '18 tipos de máquina: busque por nombre, envase o modelo',
+      pt: '18 tipos de máquina: pesquise por nome, recipiente ou modelo',
+      th: '18 ประเภทเครื่องจักร — ค้นหาด้วยชื่อ ภาชนะ หรือรุ่น',
+      vi: '18 loại máy — tìm theo tên, dạng bao bì hoặc model',
       bn: '২১ ধরনের যন্ত্র — নাম, পাত্র বা মডেল দিয়ে খুঁজুন',
       ur: 'مشینوں کی 21 اقسام — نام، کنٹینر یا ماڈل سے تلاش کریں',
       fa: '۲۱ نوع دستگاه — جستجو بر اساس نام، ظرف یا مدل'
@@ -210,96 +210,9 @@
     }
   ];
 
-  /* ---------- 21 条产品线 ---------- */
+  /* ---------- 18 条产品线 ---------- */
   var CATALOG = [
-    {
-      id: 'vial-line', cat: 'lines', img: 'images/p01-vial-line.jpg',
-      kw: 'vial line complete turnkey washing filling stoppering capping lyophilized liquid injection production',
-      name: {
-        en: 'Vial washing–filling–capping line', zh: '西林瓶洗烘灌轧联动线',
-        ja: 'バイアル洗浄・充填・打栓ライン', ko: '바이알 세척-충전-캡핑 라인',
-        ru: 'Линия мойки, наполнения и укупорки флаконов', fr: 'Ligne de lavage, remplissage et capsulage de flacons',
-        es: 'Línea de lavado, llenado y tapado de viales', pt: 'Linha de lavagem, enchimento e fechamento de frascos',
-        th: 'สายการผลิตล้าง-บรรจุ-ปิดฝาขวดไวอัล', vi: 'Dây chuyền rửa – chiết rót – đóng nắp lọ vial',
-        bn: 'ভায়াল ওয়াশিং–ভরাট–ক্যাপিং লাইন', ur: 'شیشی دھونے، بھرنے اور کیپنگ کی لائن',
-        fa: 'خط شست‌وشو، پرکردن و دربندی ویال'
-      },
-      desc: {
-        en: 'Linked line for 2–100 ml vials: washing, depyrogenation, filling, stoppering and capping.',
-        zh: '面向 2–100ml 西林瓶的联动线：洗瓶、去热原、灌装、加塞、轧盖。',
-        ja: '2〜100ml バイアル向けの連動ライン：洗浄・脱パイロジェン・充填・打栓・キャッピング。',
-        ko: '2~100ml 바이알용 연동 라인: 세척·발열물질 제거·충전·마개·캡핑.',
-        ru: 'Поточная линия для флаконов 2–100 мл: мойка, удаление пирогенов, наполнение, укупорка и обжим колпачка.',
-        fr: 'Ligne intégrée pour flacons de 2–100 ml : lavage, dépyrogénation, remplissage, bouchage et capsulage.',
-        es: 'Línea integrada para viales de 2–100 ml: lavado, despirogenización, llenado, taponado y capsulado.',
-        pt: 'Linha integrada para frascos de 2–100 ml: lavagem, despirogenização, enchimento, batoque e fechamento.',
-        th: 'สำหรับขวดไวอัล 2–100 มล.: ล้าง กำจัดไพโรเจน บรรจุ ใส่จุก และปิดฝา',
-        vi: 'Dành cho lọ vial 2–100 ml: rửa, khử pyrogen, chiết rót, đậy nút và đóng nắp.',
-        bn: '২–১০০ মিলি ভায়ালের জন্য সংযুক্ত লাইন: ধোয়া, ডিপাইরোজেনেশন, ভরাট, স্টপারিং ও ক্যাপিং।',
-        ur: '2–100 ملی لیٹر شیشیوں کے لیے مربوط لائن: دھلائی، ڈیپائروجینیشن، بھرائی، سٹاپرنگ اور کیپنگ۔',
-        fa: 'خط پیوسته برای ویال‌های ۲–۱۰۰ میلی‌لیتر: شست‌وشو، حذف پیروژن، پرکردن، درپوش‌گذاری و دربندی.'
-      },
-      specs: { config: 'Washer + tunnel + filler/stopperer + capper', container: '2–100 ml vial', output: '10–600 vials/min', feature: 'Ceramic piston pump, peristaltic or time-pressure filling' }
-    },
-    {
-      id: 'ampoule-line', cat: 'lines', img: 'images/p02-ampoule-line.jpg',
-      kw: 'ampoule line complete washing sterilizing filling sealing liquid injection production',
-      name: {
-        en: 'Ampoule liquid injection line', zh: '安瓿瓶水针制剂生产线',
-        ja: 'アンプル水針剤製造ライン', ko: '앰플 수액제 생산라인',
-        ru: 'Линия производства ампул с жидким препаратом', fr: 'Ligne de production d’ampoules injectables liquides',
-        es: 'Línea de producción de ampollas inyectables líquidas', pt: 'Linha de produção de ampolas injetáveis líquidas',
-        th: 'สายการผลิตยาฉีดแบบหลอดแอมพูล', vi: 'Dây chuyền sản xuất thuốc tiêm dạng ống ampoule',
-        bn: 'অ্যাম্পুল তরল ইনজেকশন লাইন', ur: 'ایمپول مائع انجیکشن لائن',
-        fa: 'خط تولید آمپول تزریقی مایع'
-      },
-      desc: {
-        en: 'Vertical washer, depyrogenation tunnel and ampoule filling & sealing machine.',
-        zh: '立式洗瓶机、去热原隧道烘箱与安瓿灌装封口机组成。',
-        ja: '立型洗浄機・脱パイロジェントンネル・アンプル充填密封機で構成。',
-        ko: '수직 세척기·발열물질 제거 터널·앰플 충전밀봉기로 구성.',
-        ru: 'Состоит из вертикальной моечной машины, туннеля депирогенизации и машины наполнения и запайки ампул.',
-        fr: 'Composée d’une laveuse verticale, d’un tunnel de dépyrogénation et d’une machine de remplissage et scellage d’ampoules.',
-        es: 'Compuesta por lavadora vertical, túnel de despirogenización y máquina de llenado y sellado de ampollas.',
-        pt: 'Composta por lavadora vertical, túnel de despirogenização e máquina de enchimento e selagem de ampolas.',
-        th: 'ประกอบด้วยเครื่องล้างแนวตั้ง อุโมงค์กำจัดไพโรเจน และเครื่องบรรจุ-ปิดผนึกหลอด',
-        vi: 'Gồm máy rửa đứng, đường hầm khử pyrogen và máy chiết rót – hàn kín ống.',
-        bn: 'উল্লম্ব ওয়াশার, ডিপাইরোজেনেশন টানেল এবং অ্যাম্পুল ভরাট ও সিলিং মেশিন।',
-        ur: 'عمودی واشر، ڈیپائروجینیشن ٹنل اور ایمپول بھرنے و سیل کرنے والی مشین۔',
-        fa: 'شامل واشر عمودی، تونل حذف پیروژن و دستگاه پرکردن و پلمپ آمپول.'
-      },
-      specs: { config: 'Washer + tunnel + filling & sealing', container: '1–20 ml ampoule', output: '100–600 ampoules/min', feature: 'Ceramic or peristaltic pump filling' }
-    },
-    {
-      id: 'oral-line', cat: 'lines', img: 'images/p03-oral-line.jpg',
-      kw: 'oral liquid line complete washing hot air tunnel filling capping syrup production',
-      name: {
-        en: 'Oral liquid production line', zh: '口服液制剂生产线',
-        ja: '経口液剤製造ライン', ko: '경구액제 생산라인',
-        ru: 'Линия производства жидких пероральных препаратов', fr: 'Ligne de production de liquides oraux',
-        es: 'Línea de producción de líquidos orales', pt: 'Linha de produção de líquidos orais',
-        th: 'สายการผลิตยาน้ำรับประทาน', vi: 'Dây chuyền sản xuất thuốc nước uống',
-        bn: 'ওরাল লিকুইড উৎপাদন লাইন', ur: 'زبانی مائع دواء کی پیداوار لائن',
-        fa: 'خط تولید مایع خوراکی'
-      },
-      desc: {
-        en: 'Washer, hot-air sterilizing tunnel and filling & capping machine for oral liquid bottles.',
-        zh: '洗瓶机、热风循环烘箱与灌装轧盖机组成，适用于口服液瓶。',
-        ja: '洗浄機・熱風滅菌トンネル・充填打栓機で構成。経口液ボトル対応。',
-        ko: '세척기·열풍 멸균 터널·충전 캡핑기로 구성. 경구액 병용.',
-        ru: 'Состоит из моечной машины, туннеля горячего воздуха и машины наполнения и укупорки флаконов для пероральных жидкостей.',
-        fr: 'Composée d’une laveuse, d’un tunnel à air chaud et d’une machine de remplissage et capsulage pour flacons de liquides oraux.',
-        es: 'Compuesta por lavadora, túnel de aire caliente y máquina de llenado y tapado para frascos de líquidos orales.',
-        pt: 'Composta por lavadora, túnel de ar quente e máquina de enchimento e fechamento para frascos de líquidos orais.',
-        th: 'ประกอบด้วยเครื่องล้าง อุโมงค์ลมร้อน และเครื่องบรรจุ-ปิดฝา สำหรับขวดยาน้ำ',
-        vi: 'Gồm máy rửa, đường hầm khí nóng và máy chiết rót – đóng nắp cho chai thuốc nước.',
-        bn: 'ওয়াশার, হট-এয়ার স্টেরিলাইজিং টানেল এবং ওরাল লিকুইড বোতলের ভরাট ও ক্যাপিং মেশিন।',
-        ur: 'واشر، گرم ہوا کا ٹنل اور زبانی مائع کی بوتلوں کے لیے بھرنے اور کیپنگ مشین۔',
-        fa: 'شامل واشر، تونل هوای گرم و دستگاه پرکردن و دربندی برای بطری‌های مایع خوراکی.'
-      },
-      specs: { config: 'Washer + hot-air tunnel + filler & capper', container: '5–20 ml oral liquid bottle', output: '20–400 bottles/min', feature: 'Ceramic or peristaltic pump filling' }
-    },
-    {
+                {
       id: 'washer', cat: 'washing', img: 'images/p04-washer.jpg',
       kw: 'washing machine washer vial ampoule ultrasonic rotary cleaning FWV',
       name: {
@@ -1315,8 +1228,7 @@
 
   function buildCatLabels() {
     var defs = [
-      { k: 'lines', label: UI.tabLines },
-      { k: 'filling', label: UI.tabFill },
+            { k: 'filling', label: UI.tabFill },
       { k: 'washing', label: UI.tabWash },
       { k: 'capping', label: UI.tabCap },
       { k: 'lab', label: UI.tabLab }
