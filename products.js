@@ -208,6 +208,27 @@
       dTh: 'เครื่อง R&D แบบตั้งบนโต๊ะ', dVi: 'Máy R&D kiểu bàn', dBn: 'বেঞ্চ-টপ R&D মেশিন',
       dUr: 'بینچ ٹاپ R&D مشینیں', dFa: 'دستگاه‌های R&D رومیزی'
     }
+      ,
+    {
+      q: 'cartridge', icon: '\uD83E\uDDF4',
+      en: 'Cartridges', zh: '卡式瓶', ja: 'カートリッジ', ko: '카트리지', ru: 'Картриджи', fr: 'Cartouches',
+      es: 'Cartuchos', pt: 'Cartuchos', th: 'คาร์ทริดจ์', vi: 'Cartridge', bn: 'কার্ট্রিজ', ur: 'کارٹریج', fa: 'کارتریج',
+      dEn: '1–5 ml cartridge filling', dZh: '1–5ml 卡式瓶灌装',
+      dJa: '1〜5ml カートリッジ充填', dKo: '1~5ml 카트리지 충전', dRu: 'Картриджи 1–5 мл',
+      dFr: 'Cartouches 1–5 ml', dEs: 'Cartuchos de 1–5 ml', dPt: 'Cartuchos de 1–5 ml',
+      dTh: 'คาร์ทริดจ์ 1–5 มล.', dVi: 'Cartridge 1–5 ml', dBn: '১–৫ মিলি কার্ট্রিজ',
+      dUr: '1–5 ملی کارٹریج', dFa: 'کارتریج ۱–۵ میلی‌لیتر'
+    }
+    ,{
+      q: 'spray', icon: '\uD83D\uDCA7',
+      en: 'Sprays & eye drops', zh: '喷雾剂滴眼液', ja: 'スプレー・点眼液', ko: '스프레이·안약', ru: 'Спреи и глазные капли', fr: 'Sprays et collyres',
+      es: 'Sprays y colirios', pt: 'Sprays e colírios', th: 'สเปรย์และยาหยอดตา', vi: 'Xịt & thuốc nhỏ mắt', bn: 'স্প্রে ও চোখের ড্রপ', ur: 'اسپرے اور آنکھ کے قطرے', fa: 'اسپری و قطره چشم',
+      dEn: 'Nasal spray & eye drop filling', dZh: '喷雾剂与滴眼液灌装',
+      dJa: 'スプレー・点眼液の充填', dKo: '스프레이·안약 충전', dRu: 'Наполнение спреев и глазных капель',
+      dFr: 'Remplissage sprays et collyres', dEs: 'Llenado de sprays y colirios', dPt: 'Enchimento de sprays e colírios',
+      dTh: 'บรรจุสเปรย์และยาหยอดตา', dVi: 'Chiết rót xịt & thuốc nhỏ mắt', dBn: 'স্প্রে ও চোখের ড্রপ ভরাট',
+      dUr: 'اسپرے اور آنکھ کے قطروں کی بھرائی', dFa: 'پرکردن اسپری و قطره چشم'
+    }
   ];
 
   /* ---------- 18 条产品线 ---------- */
@@ -446,7 +467,7 @@
     },
     {
       id: 'spray-filler', cat: 'filling', img: 'images/p12-spray-filler.jpg',
-      kw: 'spray filling capping machine nasal spray vial FFD',
+      kw: 'spray filling capping machine nasal spray eye drop vial FFD',
       name: {
         en: 'Spray filling & capping machine', zh: '喷雾剂灌装轧盖机',
         ja: 'スプレー充填・打栓機', ko: '스프레이 충전 캡핑기',
@@ -1269,7 +1290,7 @@
   }
 
   function bindContainers() {
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= CONTAINERS.length; i++) {
       (function (idx) {
         var card = document.getElementById('cat' + idx);
         if (!card) return;
@@ -1283,7 +1304,7 @@
 
   function renderContainers() {
     var l = lang();
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= CONTAINERS.length; i++) {
       var card = document.getElementById('cat' + i);
       if (!card) continue;
       var cfg = CONTAINERS[i - 1];
