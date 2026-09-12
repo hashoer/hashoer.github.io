@@ -79,17 +79,37 @@
       transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--primary-dark); }
-    .lang-select {
-      padding: 7px 12px;
-      border-radius: 8px;
+    .lang-select { display: none; }
+    .lang-dd { position: relative; display: inline-block; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 7px;
+      padding: 7px 12px; border-radius: 8px;
       border: 1px solid var(--border);
-      font-size: 0.9rem;
-      background: var(--white);
-      color: var(--dark);
-      cursor: pointer;
-      font-family: inherit;
-      max-width: 150px;
+      background: var(--white); color: var(--dark);
+      cursor: pointer; font-family: inherit; font-size: 0.9rem;
+      max-width: 170px;
     }
+    .lang-flag { width: 22px; height: 15px; object-fit: cover; border-radius: 2px; flex: 0 0 auto; box-shadow: 0 0 0 1px rgba(0,0,0,0.08); }
+    .lang-code { font-weight: 700; font-size: 0.82em; letter-spacing: 0.5px; }
+    .lang-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .lang-caret { font-size: 0.7em; opacity: 0.55; }
+    .lang-menu {
+      display: none; position: absolute; top: calc(100% + 6px); right: 0;
+      background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.14);
+      min-width: 200px; max-height: min(360px, 70vh); overflow-y: auto;
+      z-index: 1200; padding: 4px;
+    }
+    .lang-menu.open { display: block; }
+    .lang-row {
+      display: flex; align-items: center; gap: 9px; width: 100%;
+      padding: 9px 12px; border: 0; border-radius: 7px;
+      background: none; cursor: pointer; font-family: inherit;
+      font-size: 0.95rem; color: var(--dark); text-align: start;
+    }
+    .lang-row:hover { background: #f1f5f9; }
+    .lang-row.active { background: #eef2ff; }
+    .lang-row.active .lang-name { font-weight: 700; }
 
     .page-foot {
       border-top: 1px solid var(--border);
@@ -122,7 +142,11 @@
           <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
           <li><a href="index.html#contact" class="nav-cta" data-i18n="nav_quote">Get a Quote</a></li>
         </ul>
-        <select id="langSelect" class="lang-select" onchange="onLangChange(this.value)" aria-label="Language"></select>
+        <div class="lang-dd">
+          <button type="button" class="lang-btn" id="langBtn" aria-label="Language" aria-haspopup="listbox"></button>
+          <div class="lang-menu" id="langMenu" role="listbox"></div>
+          <select id="langSelect" class="lang-select" aria-hidden="true" tabindex="-1"></select>
+        </div>
       </div>
     </div>
   </nav>
@@ -186,6 +210,7 @@
       });
       const sel = document.getElementById('langSelect');
       if (sel) sel.value = lang;
+      updateLangBtn(lang);
     }
 
     function pOnLangChange(code) {
@@ -204,6 +229,50 @@
         opt.value = l.code;
         opt.textContent = l.flag + ' ' + l.name;
         sel.appendChild(opt);
+      });
+    }
+
+    /* 国旗下拉（Windows 无国旗 emoji，用 flagcdn 图片替代） */
+    const LANG_CC = { zh:'cn', ja:'jp', ko:'kr', ru:'ru', en:'gb', fr:'fr', es:'es', pt:'pt', th:'th', vi:'vn', bn:'bd', ur:'pk', fa:'ir' };
+    function flagImgHTML(code, cls) {
+      return '<img class="' + cls + '" src="https://flagcdn.com/w40/' + (LANG_CC[code] || 'gb') + '.png" alt="" onerror="this.style.visibility=\'hidden\'">';
+    }
+    function closeLangMenu() {
+      const m = document.getElementById('langMenu');
+      if (m) m.classList.remove('open');
+    }
+    function buildLangMenu() {
+      const menu = document.getElementById('langMenu');
+      const btn = document.getElementById('langBtn');
+      if (!menu || !btn) return;
+      menu.innerHTML = P_LANGS.map(function(l){
+        return '<button type="button" class="lang-row" data-code="' + l.code + '">' + flagImgHTML(l.code, 'lang-flag') +
+          '<span class="lang-code">' + l.code.toUpperCase() + '</span>' +
+          '<span class="lang-name">' + l.name + '</span></button>';
+      }).join('');
+      menu.addEventListener('click', function(ev){
+        const row = ev.target.closest('.lang-row');
+        if (!row) return;
+        closeLangMenu();
+        pOnLangChange(row.getAttribute('data-code'));
+      });
+      btn.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        menu.classList.toggle('open');
+      });
+      document.addEventListener('click', function(ev){
+        if (!ev.target.closest('.lang-dd')) closeLangMenu();
+      });
+    }
+    function updateLangBtn(lang) {
+      const btn = document.getElementById('langBtn');
+      if (!btn) return;
+      const l = P_LANGS.filter(function(x){ return x.code === lang; })[0] || P_LANGS[4];
+      btn.innerHTML = flagImgHTML(l.code, 'lang-flag') +
+        '<span class="lang-code">' + l.code.toUpperCase() + '</span>' +
+        '<span class="lang-name">' + l.name + '</span><span class="lang-caret">▾</span>';
+      document.querySelectorAll('.lang-row').forEach(function(r){
+        r.classList.toggle('active', r.getAttribute('data-code') === lang);
       });
     }
 
@@ -234,6 +303,7 @@
     }
 
     pBuildLangSelect();
+    buildLangMenu();
     pApplyLang(pInitialLang());
     pAutoDetect();
   </script>
