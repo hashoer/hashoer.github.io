@@ -232,6 +232,16 @@
       dFr: 'Remplissage sprays et collyres', dEs: 'Llenado de sprays y colirios', dPt: 'Enchimento de sprays e colírios',
       dTh: 'บรรจุสเปรย์และยาหยอดตา', dVi: 'Chiết rót xịt & thuốc nhỏ mắt', dBn: 'স্প্রে ও চোখের ড্রপ ভরাট',
       dUr: 'اسپرے اور آنکھ کے قطروں کی بھرائی', dFa: 'پرکردن اسپری و قطره چشم'
+    },
+    {
+      q: 'isolator', icon: '\uD83D\uDEE1\uFE0F',
+      en: 'Isolator systems', zh: '隔离器', ja: 'アイソレータ', ko: '아이솔레이터', ru: 'Изоляторы', fr: 'Isolateurs',
+      es: 'Aisladores', pt: 'Isoladores', th: 'ไอโซเลเตอร์', vi: 'Isolator', bn: 'আইসোলেটর', ur: 'آئسولیٹر', fa: 'ایزولاتور',
+      dEn: 'Grade A aseptic containment', dZh: '动态 A 级无菌隔离',
+      dJa: '動的グレードA無菌環境', dKo: '동적 그레이드A 무균 격리', dRu: 'Асептическая изоляция класса A',
+      dFr: 'Confinement aseptique grade A', dEs: 'Confinamiento aséptico grado A', dPt: 'Confinamento asséptico grau A',
+      dTh: 'การกักกันปลอดเชื้อเกรด A', dVi: 'Kín vô trùng cấp A động', dBn: 'গ্রেড-এ অ্যাসেপটিক কনটেইনমেন্ট',
+      dUr: 'گریڈ A ایسپٹک کنٹینمنٹ', dFa: 'جداسازی آسپتیک گرید A'
     }
   ];
 
