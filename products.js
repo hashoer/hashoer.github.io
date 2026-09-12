@@ -123,6 +123,10 @@
       zh: '实验室小试', en: 'Lab & R&D', ja: 'ラボ・研究開発', ko: '연구소·R&D', ru: 'Лаборатория и НИОКР', fr: 'Labo & R&D',
       es: 'Laboratorio e I+D', pt: 'Laboratório e P&D', th: 'ห้องปฏิบัติการและวิจัย', vi: 'Phòng thí nghiệm & R&D', bn: 'ল্যাব ও গবেষণা', ur: 'لیبارٹری اور R&D', fa: 'آزمایشگاه و تحقیق'
     },
+    tabVial: {
+      zh: '西林瓶专用', en: 'Vial equipment', ja: 'バイアル用', ko: '바이알용', ru: 'Для флаконов', fr: 'Équipement flacons',
+      es: 'Equipos para viales', pt: 'Equipamentos para frascos', th: 'อุปกรณ์ขวดไวอัล', vi: 'Thiết bị vial', bn: 'ভায়াল সরঞ্জাম', ur: 'ویائل آلات', fa: 'تجهیزات ویال'
+    },
     unit: {
       zh: '款设备', en: 'machines', ja: '機種', ko: '종', ru: 'машин', fr: 'machines',
       es: 'máquinas', pt: 'máquinas', th: 'เครื่อง', vi: 'máy', bn: 'যন্ত্র', ur: 'مشینیں', fa: 'دستگاه'
@@ -553,8 +557,8 @@
       specs: { model: 'PFS-M / PFS-P (1–10 filling heads)', container: 'RTU nest: syringe, vial, cartridge', feature: 'Mechanical or vacuum stoppering, submerged filling, modular' }
     },
     {
-      id: 'lyophilizer', cat: 'lab', img: 'images/p15-lyophilizer.jpg',
-      kw: 'lyophilizer freeze dryer lyophilisation laboratory vaccine API CIP SIP',
+      id: 'lyophilizer', cat: 'vial', img: 'images/p15-lyophilizer.jpg',
+      kw: 'lyophilizer freeze dryer lyophilisation vial vials vaccine API CIP SIP',
       name: {
         en: 'Lyophilizer (freeze dryer)', zh: '冻干机',
         ja: '凍結乾燥機（ライオフィライザー）', ko: '동결건조기',
@@ -1249,6 +1253,7 @@
 
   function buildCatLabels() {
     var defs = [
+            { k: 'vial', label: UI.tabVial },
             { k: 'filling', label: UI.tabFill },
       { k: 'washing', label: UI.tabWash },
       { k: 'capping', label: UI.tabCap },
