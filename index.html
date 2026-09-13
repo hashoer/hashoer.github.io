@@ -2745,6 +2745,7 @@
     function initI18n() {
       buildLangSelect();
       buildLangMenu();
+      bindVideoPrefetch();
       applyLang(detectInitialLang());
       autoDetectLang();
       /* 产品页询盘预填：products.html 弹窗里点询盘后跳回主页 */
@@ -2759,6 +2760,7 @@
     }
 
     function openModal(src) {
+      prefetchVideo(src);
       var modal = document.getElementById('videoModal');
       var video = document.getElementById('modalVideo');
       video.src = src;
@@ -2768,6 +2770,29 @@
     }
 
     function preventCtx(e) { e.preventDefault(); }
+
+    var _prefetched = Object.create(null);
+    function prefetchVideo(src) {
+      if (_prefetched[src]) return;
+      _prefetched[src] = 1;
+      try {
+        fetch(src, { headers: { Range: 'bytes=0-524287' }, mode: 'cors' })
+          .then(function(r){ if(!r.ok && r.status!==206) _prefetched[src]=0; })
+          .catch(function(){ _prefetched[src]=0; });
+      } catch(e) {}
+    }
+    function bindVideoPrefetch() {
+      var wraps = document.querySelectorAll('.video-thumb-wrap');
+      for (var i=0; i<wraps.length; i++) {
+        (function(el){
+          var oc = el.getAttribute('onclick') || '';
+          var m = oc.match(/openModal\('([^']+)'\)/);
+          if (!m) return;
+          var src = m[1];
+          el.addEventListener('mouseenter', function(){ prefetchVideo(src); });
+        })(wraps[i]);
+      }
+    }
 
     function closeModal() {
       var modal = document.getElementById('videoModal');
