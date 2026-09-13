@@ -1024,7 +1024,7 @@
   <!-- ════ VIDEO MODAL ════ -->
   <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeModal()">
     <div class="modal-close" onclick="closeModal()">&#x2715;</div>
-    <video id="modalVideo" controls autoplay>
+    <video id="modalVideo" controls controlslist="nodownload noremoteplayback" disablepictureinpicture oncontextmenu="return false">
       <source src="" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -2764,7 +2764,10 @@
       video.src = src;
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      video.addEventListener('contextmenu', preventCtx);
     }
+
+    function preventCtx(e) { e.preventDefault(); }
 
     function closeModal() {
       var modal = document.getElementById('videoModal');
