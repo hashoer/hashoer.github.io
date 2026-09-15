@@ -163,7 +163,7 @@
   /* ---------- 剂型快捷入口 ---------- */
   var CONTAINERS = [
     {
-      q: 'vial', icon: '\uD83D\uDC8A',
+      q: 'vial', icon: '\uD83D\uDC8A', img: 'cat-vial.png',
       en: 'Vials', zh: '西林瓶', ja: 'バイアル', ko: '바이알', ru: 'Флаконы', fr: 'Flacons',
       es: 'Viales', pt: 'Frascos', th: 'ขวดไวอัล', vi: 'Lọ vial', bn: 'ভায়াল', ur: 'شیشیاں', fa: 'ویال‌ها',
       dEn: '2–100 ml injectable vials', dZh: '2–100ml 注射剂西林瓶',
@@ -173,7 +173,7 @@
       dUr: '2–100 ملی لیٹر انجیکشن والی شیشیاں', dFa: 'ویال‌های تزریقی ۲–۱۰۰ میلی‌لیتر'
     },
     {
-      q: 'ampoule', icon: '\uD83E\uDDEA',
+      q: 'ampoule', icon: '\uD83E\uDDEA', img: 'cat-ampoule.png',
       en: 'Ampoules', zh: '安瓿瓶', ja: 'アンプル', ko: '앰플', ru: 'Ампулы', fr: 'Ampoules',
       es: 'Ampollas', pt: 'Ampolas', th: 'หลอดแอมพูล', vi: 'Ống ampoule', bn: 'অ্যাম্পুল', ur: 'ایمپول', fa: 'آمپول‌ها',
       dEn: '1–20 ml ampoules', dZh: '1–20ml 安瓿瓶',
@@ -183,7 +183,7 @@
       dUr: '1–20 ملی لیٹر ایمپول', dFa: 'آمپول‌های ۱–۲۰ میلی‌لیتر'
     },
     {
-      q: 'pfs', icon: '\uD83D\uDC89',
+      q: 'pfs', icon: '\uD83D\uDC89', img: 'cat-pfs.png',
       en: 'Prefilled syringes', zh: '预充针', ja: 'プレフィルドシリンジ', ko: '프리필드시린지', ru: 'Предзаполненные шприцы', fr: 'Seringues préremplies',
       es: 'Jeringas precargadas', pt: 'Seringas pré-cheias', th: 'กระบอกฉีดยาพร้อมใช้', vi: 'Ống tiêm đóng sẵn', bn: 'প্রিফিলড সিরিঞ্জ', ur: 'پہلے سے بھری سرنجیں', fa: 'سرنگ‌های از پیش پرشده',
       dEn: 'RTU nested syringes', dZh: '即用型巢板预充针',
@@ -193,7 +193,7 @@
       dUr: 'RTU نیسٹڈ سرنجیں', dFa: 'سرنگ‌های RTU در سینی'
     },
     {
-      q: 'powder', icon: '\u2697\uFE0F',
+      q: 'powder', icon: '\u2697\uFE0F', img: 'cat-powder.png',
       en: 'Powder', zh: '粉针', ja: '粉末', ko: '분말', ru: 'Порошок', fr: 'Poudre',
       es: 'Polvo', pt: 'Pó', th: 'ผง', vi: 'Bột', bn: 'পাউডার', ur: 'پاؤڈر', fa: 'پودر',
       dEn: 'Screw & airflow filling', dZh: '螺杆与气流粉末分装',
@@ -203,7 +203,7 @@
       dUr: 'سکرو اور ایئر فلو بھرائی', dFa: 'پرکردن اسکرو و جریان هوا'
     },
     {
-      q: 'lab', icon: '🔬',
+      q: 'lab', icon: '🔬', img: 'cat-lab.png',
       en: 'Lab equipment', zh: '实验室设备', ja: '実験室設備', ko: '실험실 장비', ru: 'Лабораторное оборудование', fr: 'Équipement de laboratoire',
       es: 'Equipo de laboratorio', pt: 'Equipamento de laboratório', th: 'อุปกรณ์ห้องปฏิบัติการ', vi: 'Thiết bị phòng thí nghiệm', bn: 'ল্যাবরেটরি সরঞ্জাম', ur: 'لیبارٹری کا سامان', fa: 'تجهیزات آزمایشگاهی',
       dEn: 'Bench-top R&D machines', dZh: '小试与研发用设备',
@@ -214,7 +214,7 @@
     }
       ,
     {
-      q: 'cartridge', icon: '\uD83E\uDDF4',
+      q: 'cartridge', icon: '\uD83E\uDDF4', img: 'cat-cartridge.png',
       en: 'Cartridges', zh: '卡式瓶', ja: 'カートリッジ', ko: '카트리지', ru: 'Картриджи', fr: 'Cartouches',
       es: 'Cartuchos', pt: 'Cartuchos', th: 'คาร์ทริดจ์', vi: 'Cartridge', bn: 'কার্ট্রিজ', ur: 'کارٹریج', fa: 'کارتریج',
       dEn: '1–5 ml cartridge filling', dZh: '1–5ml 卡式瓶灌装',
@@ -224,7 +224,7 @@
       dUr: '1–5 ملی کارٹریج', dFa: 'کارتریج ۱–۵ میلی‌لیتر'
     }
     ,{
-      q: 'spray', icon: '\uD83D\uDCA7',
+      q: 'spray', icon: '\uD83D\uDCA7', img: 'cat-spray.png',
       en: 'Sprays & eye drops', zh: '喷雾剂滴眼液', ja: 'スプレー・点眼液', ko: '스프레이·안약', ru: 'Спреи и глазные капли', fr: 'Sprays et collyres',
       es: 'Sprays y colirios', pt: 'Sprays e colírios', th: 'สเปรย์และยาหยอดตา', vi: 'Xịt & thuốc nhỏ mắt', bn: 'স্প্রে ও চোখের ড্রপ', ur: 'اسپرے اور آنکھ کے قطرے', fa: 'اسپری و قطره چشم',
       dEn: 'Nasal spray & eye drop filling', dZh: '喷雾剂与滴眼液灌装',
@@ -1326,7 +1326,10 @@
       var icon = card.querySelector('.product-icon');
       var h3 = card.querySelector('h3');
       var p = card.querySelector('p');
-      if (icon) icon.textContent = cfg.icon;
+      if (icon) {
+        if (cfg.img) { icon.innerHTML = '<img src="images/' + cfg.img + '" alt="">'; }
+        else { icon.textContent = cfg.icon; }
+      }
       if (h3) h3.textContent = cfg[l] !== undefined ? cfg[l] : cfg.en;
       if (p) p.textContent = cfg['d' + l.charAt(0).toUpperCase() + l.slice(1)] !== undefined
         ? cfg['d' + l.charAt(0).toUpperCase() + l.slice(1)]
