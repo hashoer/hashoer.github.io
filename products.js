@@ -234,7 +234,7 @@
       dUr: 'اسپرے اور آنکھ کے قطروں کی بھرائی', dFa: 'پرکردن اسپری و قطره چشم'
     },
     {
-      q: 'isolator', icon: '\uD83D\uDEE1\uFE0F',
+      q: 'isolator', icon: '\uD83D\uDEE1\uFE0F', img: 'cat-isolator.png',
       en: 'Isolator systems', zh: '隔离器', ja: 'アイソレータ', ko: '아이솔레이터', ru: 'Изоляторы', fr: 'Isolateurs',
       es: 'Aisladores', pt: 'Isoladores', th: 'ไอโซเลเตอร์', vi: 'Isolator', bn: 'আইসোলেটর', ur: 'آئسولیٹر', fa: 'ایزولاتور',
       dEn: 'Grade A aseptic containment', dZh: '动态 A 级无菌隔离',
