@@ -707,7 +707,7 @@
       transition: transform 0.3s, filter 0.3s;
       filter: drop-shadow(0 4px 10px rgba(37,99,235,0.18));
     }
-    .why-icon svg { width: 100%; height: 100%; display: block; }
+    .why-icon svg, .why-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .why-card:hover .why-icon {
       transform: translateY(-3px) scale(1.05);
       filter: drop-shadow(0 8px 16px rgba(37,99,235,0.28));
@@ -1465,83 +1465,27 @@
     </div>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon"><svg viewBox="0 0 64 64" style="overflow:visible">
-          <defs>
-            <linearGradient id="wg-1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
-            <radialGradient id="wg-1h" cx="0.3" cy="0.25" r="0.55"><stop offset="0%" stop-color="rgba(255,255,255,0.6)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
-            <linearGradient id="wg-2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0e7490"/></linearGradient>
-            <linearGradient id="wg-3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
-            <linearGradient id="wg-4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#047857"/></linearGradient>
-            <linearGradient id="wg-3t" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#b45309"/></linearGradient>
-          </defs>
-          <!-- 3D 渐变球体（地球/科技） -->
-          <circle cx="32" cy="32" r="23" fill="url(#wg-1)"/>
-          <ellipse cx="32" cy="32" rx="23" ry="9" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
-          <ellipse cx="32" cy="32" rx="23" ry="9" transform="rotate(60 32 32)" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
-          <ellipse cx="32" cy="32" rx="23" ry="9" transform="rotate(-60 32 32)" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
-          <circle cx="32" cy="32" r="23" fill="url(#wg-1h)"/>
-          <path d="M16 26 Q24 22 32 26 T48 26" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M16 38 Q24 42 32 38 T48 38" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg></div>
+        <div class="why-icon"><img src="images/why1.png" alt=""></div>
         <h3 data-i18n="why1_title">EU Technology</h3>
         <p data-i18n="why1_desc">Built on mature European packaging processes — high precision, stable operation, and GMP-compliant production.</p>
       </div>
             <div class="why-card">
-        <div class="why-icon">
-        <svg viewBox="0 0 64 64" style="overflow:visible">
-          <!-- 3D 齿轮：8齿 + 高光 -->
-          <path d="M32 5 L38 5 L38.5 13 L44 14.5 L50 9 L55 14 L49.5 20 L51 25.5 L59 26 L59 38 L51 38.5 L49.5 44 L55 49.5 L50 54.5 L44 49 L38.5 50.5 L38 58 L26 58 L25.5 50.5 L20 49 L14 54.5 L9 49 L14.5 44 L13 38.5 L5 38 L5 26 L13 25.5 L14.5 20 L9 14 L14 9 L20 14.5 L25.5 13 L26 5 Z" fill="url(#wg-2)"/>
-          <circle cx="32" cy="32" r="9" fill="#fff"/>
-          <circle cx="32" cy="32" r="5" fill="url(#wg-2)"/>
-          <ellipse cx="26" cy="18" rx="10" ry="5" fill="rgba(255,255,255,0.3)" transform="rotate(-30 32 32)"/>
-        </svg></div>
+        <div class="why-icon"><img src="images/why2.png" alt=""></div>
         <h3 data-i18n="why2_title">Custom Solutions</h3>
         <p data-i18n="why2_desc">Fast response to custom requirements with end-to-end delivery — non-standard pharma equipment tailored to your unique line conditions.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">
-        <svg viewBox="0 0 64 64" style="overflow:visible">
-          <!-- 工程师：3D 安全帽 + 扳手 -->
-          <ellipse cx="32" cy="55" rx="20" ry="3" fill="rgba(0,0,0,0.15)"/>
-          <path d="M12 38 Q12 19 32 15 Q52 19 52 38 Z" fill="url(#wg-3t)"/>
-          <rect x="8" y="38" width="48" height="6" rx="2" fill="#92400e"/>
-          <rect x="31" y="15" width="2" height="23" fill="#78350f"/>
-          <ellipse cx="22" cy="26" rx="7" ry="4" fill="rgba(255,255,255,0.4)"/>
-          <!-- 扳手 -->
-          <rect x="42" y="46" width="14" height="4" rx="1" fill="#1e293b" transform="rotate(35 49 48)"/>
-          <path d="M53 36 Q60 36 60 43 Q60 50 53 52 L52 48 Q56 47 56 43 Q56 40 52 40 Z" fill="url(#wg-3)"/>
-        </svg></div>
+        <div class="why-icon"><img src="images/why3.png" alt=""></div>
         <h3 data-i18n="why3_title">Delivery &amp; After-Sales</h3>
         <p data-i18n="why3_desc">End-to-end commissioning with ongoing after-sales support — equipment debugging, maintenance inspections, and line optimization.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">
-        <svg viewBox="0 0 64 64" style="overflow:visible">
-          <defs>
-            <linearGradient id="wg-5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
-          </defs>
-          <!-- 3D 金色价签（性价比） -->
-          <ellipse cx="32" cy="57" rx="19" ry="3" fill="rgba(0,0,0,0.15)"/>
-          <g transform="rotate(-12 32 32)">
-            <path d="M28 12 L52 12 Q58 12 58 18 L58 34 Q58 40 52 40 L28 40 L10 26 Z" fill="url(#wg-5)"/>
-            <circle cx="51" cy="26" r="3.2" fill="#fff" opacity="0.9"/>
-            <path d="M22 26 L27 31 L38 19" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <ellipse cx="30" cy="16" rx="12" ry="3.5" fill="rgba(255,255,255,0.35)" transform="rotate(-4 32 32)"/>
-          </g>
-        </svg></div>
+        <div class="why-icon"><img src="images/why4.png" alt=""></div>
         <h3 data-i18n="why5_title">Unbeatable Value</h3>
         <p data-i18n="why5_desc">At equal quality, our equipment matches leading brands in performance and finish — at a clear cost advantage.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">
-        <svg viewBox="0 0 64 64" style="overflow:visible">
-          <!-- 3D 盾牌 + 勾（信任/客户至上） -->
-          <ellipse cx="32" cy="56" rx="20" ry="3" fill="rgba(0,0,0,0.15)"/>
-          <path d="M32 5 L52 13 L52 32 Q52 50 32 59 Q12 50 12 32 L12 13 Z" fill="url(#wg-4)"/>
-          <path d="M32 9 L48 16 L48 32 Q48 47 32 55 Q16 47 16 32 L16 16 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-          <path d="M21 32 L29 40 L44 23" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <ellipse cx="22" cy="20" rx="8" ry="4" fill="rgba(255,255,255,0.35)" transform="rotate(-25 22 20)"/>
-        </svg></div>
+        <div class="why-icon"><img src="images/why5.png" alt=""></div>
         <h3 data-i18n="why4_title">Win-Win Value</h3>
         <p data-i18n="why4_desc">Deep expertise in pharma equipment projects — reliable solutions that keep your line running, built for long-term mutual success.</p>
       </div>
