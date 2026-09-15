@@ -164,8 +164,8 @@
   var CONTAINERS = [
     {
       q: 'vial', icon: '\uD83D\uDC8A', img: 'cat-vial.png',
-      en: 'Vials', zh: '西林瓶', ja: 'バイアル', ko: '바이알', ru: 'Флаконы', fr: 'Flacons',
-      es: 'Viales', pt: 'Frascos', th: 'ขวดไวอัล', vi: 'Lọ vial', bn: 'ভায়াল', ur: 'شیشیاں', fa: 'ویال‌ها',
+      en: 'Vials Filling Line', zh: '西林瓶灌装线', ja: 'バイアル充填ライン', ko: '바이알 충전 라인', ru: 'Линия наполнения флаконов', fr: 'Ligne de remplissage de flacons',
+      es: 'Línea de llenado de viales', pt: 'Linha de enchimento de frascos', th: 'ไลน์บรรจุขวดไวอัล', vi: 'Dây chuyền chiết rót vial', bn: 'ভায়াল ফিলিং লাইন', ur: 'وائل بھرائی لائن', fa: 'خط پرکردن ویال',
       dEn: '2–100 ml injectable vials', dZh: '2–100ml 注射剂西林瓶',
       dJa: '2〜100ml 注射用バイアル', dKo: '2~100ml 주사제 바이알', dRu: 'Флаконы 2–100 мл для инъекций',
       dFr: 'Flacons injectables 2–100 ml', dEs: 'Viales inyectables de 2–100 ml', dPt: 'Frascos injetáveis de 2–100 ml',
@@ -174,8 +174,8 @@
     },
     {
       q: 'ampoule', icon: '\uD83E\uDDEA', img: 'cat-ampoule.png',
-      en: 'Ampoules', zh: '安瓿瓶', ja: 'アンプル', ko: '앰플', ru: 'Ампулы', fr: 'Ampoules',
-      es: 'Ampollas', pt: 'Ampolas', th: 'หลอดแอมพูล', vi: 'Ống ampoule', bn: 'অ্যাম্পুল', ur: 'ایمپول', fa: 'آمپول‌ها',
+      en: 'Ampoules Filling Line', zh: '安瓿瓶灌装机', ja: 'アンプル充填ライン', ko: '앰플 충전 라인', ru: 'Линия наполнения ампул', fr: 'Ligne de remplissage d’ampoules',
+      es: 'Línea de llenado de ampollas', pt: 'Linha de enchimento de ampolas', th: 'ไลน์บรรจุหลอดแอมพูล', vi: 'Dây chuyền chiết rót ống ampoule', bn: 'অ্যাম্পুল ফিলিং লাইন', ur: 'ایمپول بھرائی لائن', fa: 'خط پرکردن آمپول',
       dEn: '1–20 ml ampoules', dZh: '1–20ml 安瓿瓶',
       dJa: '1〜20ml アンプル', dKo: '1~20ml 앰플', dRu: 'Ампулы 1–20 мл',
       dFr: 'Ampoules 1–20 ml', dEs: 'Ampollas de 1–20 ml', dPt: 'Ampolas de 1–20 ml',
@@ -184,8 +184,8 @@
     },
     {
       q: 'pfs', icon: '\uD83D\uDC89', img: 'cat-pfs.png',
-      en: 'Prefilled syringes', zh: '预充针', ja: 'プレフィルドシリンジ', ko: '프리필드시린지', ru: 'Предзаполненные шприцы', fr: 'Seringues préremplies',
-      es: 'Jeringas precargadas', pt: 'Seringas pré-cheias', th: 'กระบอกฉีดยาพร้อมใช้', vi: 'Ống tiêm đóng sẵn', bn: 'প্রিফিলড সিরিঞ্জ', ur: 'پہلے سے بھری سرنجیں', fa: 'سرنگ‌های از پیش پرشده',
+      en: 'PFS Filling Line', zh: '预灌封灌装线', ja: 'プレフィルドシリンジ充填ライン', ko: '프리필드 시린지 충전 라인', ru: 'Линия наполнения шприцев', fr: 'Ligne de remplissage de seringues préremplies',
+      es: 'Línea de llenado de jeringas precargadas', pt: 'Linha de enchimento de seringas pré-cheias', th: 'ไลน์บรรจุกระบอกฉีดยาพร้อมใช้', vi: 'Dây chuyền chiết rót ống tiêm đóng sẵn', bn: 'প্রিফিলড সিরিঞ্জ ফিলিং লাইন', ur: 'پری فِلڈ سرنج بھرائی لائن', fa: 'خط پرکردن سرنگ از پیش پرشده',
       dEn: 'RTU nested syringes', dZh: '即用型巢板预充针',
       dJa: 'RTU ネスト式シリンジ', dKo: 'RTU 네스트 시린지', dRu: 'Готовые шприцы в гнёздах',
       dFr: 'Seringues RTU en nid', dEs: 'Jeringas RTU en nido', dPt: 'Seringas RTU em ninho',
@@ -194,8 +194,8 @@
     },
     {
       q: 'powder', icon: '\u2697\uFE0F', img: 'cat-powder.png',
-      en: 'Powder', zh: '粉针', ja: '粉末', ko: '분말', ru: 'Порошок', fr: 'Poudre',
-      es: 'Polvo', pt: 'Pó', th: 'ผง', vi: 'Bột', bn: 'পাউডার', ur: 'پاؤڈر', fa: 'پودر',
+      en: 'Vials Powder Filling Line', zh: '粉末灌装线', ja: '粉末充填ライン', ko: '분말 충전 라인', ru: 'Линия дозирования порошка', fr: 'Ligne de remplissage de poudre',
+      es: 'Línea de llenado de polvo', pt: 'Linha de enchimento de pó', th: 'ไลน์บรรจุผง', vi: 'Dây chuyền chiết rót bột', bn: 'পাউডার ফিলিং লাইন', ur: 'پاؤڈر بھرائی لائن', fa: 'خط پرکردن پودر',
       dEn: 'Screw & airflow filling', dZh: '螺杆与气流粉末分装',
       dJa: 'スクリュー式・気流式充填', dKo: '스크류 및 기류 충전', dRu: 'Шнековое и воздушное дозирование',
       dFr: 'Dosage à vis et à air', dEs: 'Dosificación por tornillo y por aire', dPt: 'Dosagem por rosca e por ar',
@@ -204,7 +204,7 @@
     },
     {
       q: 'lab', icon: '🔬', img: 'cat-lab.png',
-      en: 'Lab equipment', zh: '实验室设备', ja: '実験室設備', ko: '실험실 장비', ru: 'Лабораторное оборудование', fr: 'Équipement de laboratoire',
+      en: 'Lab Equipment', zh: '实验室设备', ja: '実験室設備', ko: '실험실 장비', ru: 'Лабораторное оборудование', fr: 'Équipement de laboratoire',
       es: 'Equipo de laboratorio', pt: 'Equipamento de laboratório', th: 'อุปกรณ์ห้องปฏิบัติการ', vi: 'Thiết bị phòng thí nghiệm', bn: 'ল্যাবরেটরি সরঞ্জাম', ur: 'لیبارٹری کا سامان', fa: 'تجهیزات آزمایشگاهی',
       dEn: 'Bench-top R&D machines', dZh: '小试与研发用设备',
       dJa: 'ベンチトップ研究開発機', dKo: '벤치탑 R&D 장비', dRu: 'Настольные машины для R&D',
@@ -215,8 +215,8 @@
       ,
     {
       q: 'cartridge', icon: '\uD83E\uDDF4', img: 'cat-cartridge.png',
-      en: 'Cartridges', zh: '卡式瓶', ja: 'カートリッジ', ko: '카트리지', ru: 'Картриджи', fr: 'Cartouches',
-      es: 'Cartuchos', pt: 'Cartuchos', th: 'คาร์ทริดจ์', vi: 'Cartridge', bn: 'কার্ট্রিজ', ur: 'کارٹریج', fa: 'کارتریج',
+      en: 'Cartridge Filling Line', zh: '卡式瓶灌装线', ja: 'カートリッジ充填ライン', ko: '카트리지 충전 라인', ru: 'Линия наполнения картриджей', fr: 'Ligne de remplissage de cartouches',
+      es: 'Línea de llenado de cartuchos', pt: 'Linha de enchimento de cartuchos', th: 'ไลน์บรรจุคาร์ทริดจ์', vi: 'Dây chuyền chiết rót cartridge', bn: 'কার্ট্রিজ ফিলিং লাইন', ur: 'کارٹریج بھرائی لائن', fa: 'خط پرکردن کارتریج',
       dEn: '1–5 ml cartridge filling', dZh: '1–5ml 卡式瓶灌装',
       dJa: '1〜5ml カートリッジ充填', dKo: '1~5ml 카트리지 충전', dRu: 'Картриджи 1–5 мл',
       dFr: 'Cartouches 1–5 ml', dEs: 'Cartuchos de 1–5 ml', dPt: 'Cartuchos de 1–5 ml',
@@ -225,8 +225,8 @@
     }
     ,{
       q: 'spray', icon: '\uD83D\uDCA7', img: 'cat-spray.png',
-      en: 'Sprays & eye drops', zh: '喷雾剂滴眼液', ja: 'スプレー・点眼液', ko: '스프레이·안약', ru: 'Спреи и глазные капли', fr: 'Sprays et collyres',
-      es: 'Sprays y colirios', pt: 'Sprays e colírios', th: 'สเปรย์และยาหยอดตา', vi: 'Xịt & thuốc nhỏ mắt', bn: 'স্প্রে ও চোখের ড্রপ', ur: 'اسپرے اور آنکھ کے قطرے', fa: 'اسپری و قطره چشم',
+      en: 'Sprays & eye drops Filling Line', zh: '喷雾剂&滴眼液', ja: 'スプレー・点眼液充填ライン', ko: '스프레이·안약 충전 라인', ru: 'Линия розлива спреев и глазных капель', fr: 'Ligne sprays et collyres',
+      es: 'Línea de llenado de sprays y colirios', pt: 'Linha de enchimento de sprays e colírios', th: 'ไลน์บรรจุสเปรย์และยาหยอดตา', vi: 'Dây chuyền chiết rót xịt & thuốc nhỏ mắt', bn: 'স্প্রে ও চোখের ড্রপ ফিলিং লাইন', ur: 'اسپرے اور آنکھ کے قطرے بھرائی لائن', fa: 'خط پرکردن اسپری و قطره چشم',
       dEn: 'Nasal spray & eye drop filling', dZh: '喷雾剂与滴眼液灌装',
       dJa: 'スプレー・点眼液の充填', dKo: '스프레이·안약 충전', dRu: 'Наполнение спреев и глазных капель',
       dFr: 'Remplissage sprays et collyres', dEs: 'Llenado de sprays y colirios', dPt: 'Enchimento de sprays e colírios',
@@ -235,8 +235,8 @@
     },
     {
       q: 'isolator', icon: '\uD83D\uDEE1\uFE0F', img: 'cat-isolator.png',
-      en: 'Isolator systems', zh: '隔离器', ja: 'アイソレータ', ko: '아이솔레이터', ru: 'Изоляторы', fr: 'Isolateurs',
-      es: 'Aisladores', pt: 'Isoladores', th: 'ไอโซเลเตอร์', vi: 'Isolator', bn: 'আইসোলেটর', ur: 'آئسولیٹر', fa: 'ایزولاتور',
+      en: 'Isolator', zh: '无菌隔离器', ja: '無菌アイソレータ', ko: '무균 아이솔레이터', ru: 'Асептические изоляторы', fr: 'Isolateurs stériles',
+      es: 'Aisladores estériles', pt: 'Isoladores estéreis', th: 'ไอโซเลเตอร์ปลอดเชื้อ', vi: 'Isolator vô trùng', bn: 'স্টেরাইল আইসোলেটর', ur: 'اسٹیرائل آئسولیٹر', fa: 'ایزولاتور استریل',
       dEn: 'Grade A aseptic containment', dZh: '动态 A 级无菌隔离',
       dJa: '動的グレードA無菌環境', dKo: '동적 그레이드A 무균 격리', dRu: 'Асептическая изоляция класса A',
       dFr: 'Confinement aseptique grade A', dEs: 'Confinamiento aséptico grado A', dPt: 'Confinamento asséptico grau A',
