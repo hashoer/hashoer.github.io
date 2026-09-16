@@ -307,7 +307,7 @@
     },
     {
       id: 'vial-filler', cat: 'filling', img: 'images/p06-vial-filler.jpg',
-      kw: 'vial filling machine filler stoppering isolator servo FFV aseptic',
+      kw: 'vial filling machine filler stoppering servo FFV aseptic',
       name: {
         en: 'Vial filling machine', zh: '西林瓶灌装机',
         ja: 'バイアル充填機', ko: '바이알 충전기',
@@ -318,19 +318,19 @@
         fa: 'دستگاه پرکردن ویال'
       },
       desc: {
-        en: 'Servo-driven aseptic filler for vials, integrable with isolator or RABS.',
-        zh: '全伺服无菌灌装机，可配套隔离器或 RABS。',
-        ja: 'サーボ駆動の無菌充填機。アイソレータやRABSと統合可能。',
-        ko: '서보 구동 무균 충전기. 아이솔레이터·RABS 통합 가능.',
-        ru: 'Сервоприводный асептический наполнитель для флаконов, интегрируется с изолятором или RABS.',
-        fr: 'Remplisseuse aseptique à servomoteurs pour flacons, intégrable à un isolateur ou un RABS.',
-        es: 'Llenadora aséptica servoaccionada para viales, integrable con aislador o RABS.',
-        pt: 'Enchedora asséptica servoacionada para frascos, integrável com isolador ou RABS.',
-        th: 'เครื่องบรรจุปลอดเชื้อขับเคลื่อนด้วยเซอร์โว รองรับการเชื่อมต่อไอโซเลเตอร์หรือ RABS',
-        vi: 'Máy chiết rót vô trùng truyền động servo, tích hợp được với isolator hoặc RABS.',
-        bn: 'সার্ভো-চালিত অ্যাসেপটিক ভায়াল ফিলার, আইসোলেটর বা RABS-এর সাথে সংযোগযোগ্য।',
-        ur: 'سروو ڈرائیون ایسپٹک فلر، آئسولیٹر یا RABS کے ساتھ مربوط کیا جا سکتا ہے۔',
-        fa: 'پرکن آسپتیک سروو برای ویال، قابل ادغام با ایزولاتور یا RABS.'
+        en: 'Servo-driven aseptic filler for vials, integrable with RABS.',
+        zh: '全伺服无菌灌装机，可配套 RABS。',
+        ja: 'サーボ駆動の無菌充填機。RABSと統合可能。',
+        ko: '서보 구동 무균 충전기. RABS 통합 가능.',
+        ru: 'Сервоприводный асептический наполнитель для флаконов, интегрируется с RABS.',
+        fr: 'Remplisseuse aseptique à servomoteurs pour flacons, intégrable à un RABS.',
+        es: 'Llenadora aséptica servoaccionada para viales, integrable con RABS.',
+        pt: 'Enchedora asséptica servoacionada para frascos, integrável com RABS.',
+        th: 'เครื่องบรรจุปลอดเชื้อขับเคลื่อนด้วยเซอร์โว รองรับการเชื่อมต่อ RABS',
+        vi: 'Máy chiết rót vô trùng truyền động servo, tích hợp được với RABS.',
+        bn: 'সার্ভো-চালিত অ্যাসেপটিক ভায়াল ফিলার, RABS-এর সাথে সংযোগযোগ্য।',
+        ur: 'سروو ڈرائیون ایسپٹک فلر، RABS کے ساتھ مربوط کیا جا سکتا ہے۔',
+        fa: 'پرکن آسپتیک سروو برای ویال، قابل ادغام با RABS.'
       },
       specs: { model: 'FFV-100 / 200 / 300 / 400 / 500', output: '100–500 vials/min', container: '2–30 ml vial', accuracy: '±0.5% (2 ml water-like)', feature: 'Robot-compatible, CIP/SIP, nitrogen purging, 100% check-weigh' }
     },
@@ -510,7 +510,7 @@
     },
     {
       id: 'capper', cat: 'capping', img: 'images/p13-capper.jpg',
-      kw: 'capping machine capper crimping vial aluminium cap RABS isolator FC',
+      kw: 'capping machine capper crimping vial aluminium cap RABS FC',
       name: {
         en: 'Vial capping machine', zh: '西林瓶轧盖机',
         ja: 'バイアル打栓機', ko: '바이알 캡핑기',
@@ -521,19 +521,19 @@
         fa: 'دستگاه دربندی ویال'
       },
       desc: {
-        en: 'cGMP capper for medium to large vial lines, integrable with isolator or RABS.',
-        zh: '符合 cGMP 的中大型西林瓶轧盖机，可配套隔离器或 RABS。',
-        ja: 'cGMP準拠の中〜大型バイアル打栓機。アイソレータ・RABSと統合可能。',
-        ko: 'cGMP 준수 중대형 바이알 캡핑기. 아이솔레이터·RABS 통합 가능.',
-        ru: 'Укупорочная машина cGMP для средних и крупных линий, интегрируется с изолятором или RABS.',
-        fr: 'Capsuleuse cGMP pour lignes de flacons moyennes et grandes, intégrable à un isolateur ou RABS.',
-        es: 'Capsuladora cGMP para líneas de viales medianas y grandes, integrable con aislador o RABS.',
-        pt: 'Fechadora cGMP para linhas de frascos médias e grandes, integrável com isolador ou RABS.',
-        th: 'เครื่องปิดฝาสำหรับสายการผลิตขนาดกลางถึงใหญ่ ตาม cGMP รองรับไอโซเลเตอร์หรือ RABS',
-        vi: 'Máy đóng nắp đạt cGMP cho dây chuyền vial trung bình – lớn, tích hợp được isolator hoặc RABS.',
-        bn: 'মাঝারি থেকে বড় ভায়াল লাইনের জন্য সিজিএমপি ক্যাপার, আইসোলেটর বা RABS-এর সাথে সংযোগযোগ্য।',
-        ur: 'درمیانے سے بڑے شیشی لائنوں کے لیے cGMP کیپر، آئسولیٹر یا RABS کے ساتھ مربوط۔',
-        fa: 'دربندنمای cGMP برای خطوط متوسط تا بزرگ ویال، قابل ادغام با ایزولاتور یا RABS.'
+        en: 'cGMP capper for medium to large vial lines, integrable with RABS.',
+        zh: '符合 cGMP 的中大型西林瓶轧盖机，可配套 RABS。',
+        ja: 'cGMP準拠の中〜大型バイアル打栓機。RABSと統合可能。',
+        ko: 'cGMP 준수 중대형 바이알 캡핑기. RABS 통합 가능.',
+        ru: 'Укупорочная машина cGMP для средних и крупных линий, интегрируется с RABS.',
+        fr: 'Capsuleuse cGMP pour lignes de flacons moyennes et grandes, intégrable à un RABS.',
+        es: 'Capsuladora cGMP para líneas de viales medianas y grandes, integrable con RABS.',
+        pt: 'Fechadora cGMP para linhas de frascos médias e grandes, integrável com RABS.',
+        th: 'เครื่องปิดฝาสำหรับสายการผลิตขนาดกลางถึงใหญ่ ตาม cGMP รองรับ RABS',
+        vi: 'Máy đóng nắp đạt cGMP cho dây chuyền vial trung bình – lớn, tích hợp được RABS.',
+        bn: 'মাঝারি থেকে বড় ভায়াল লাইনের জন্য সিজিএমপি ক্যাপার, RABS-এর সাথে সংযোগযোগ্য।',
+        ur: 'درمیانے سے بڑے شیشی لائنوں کے لیے cGMP کیپر، RABS کے ساتھ مربوط۔',
+        fa: 'دربندنمای cGMP برای خطوط متوسط تا بزرگ ویال، قابل ادغام با RABS.'
       },
       specs: { model: 'FC-020 / 040 / 120 / 300', output: '20–500 vials/min', container: '2–100 ml vial', feature: 'Breakage rate 0.05%, rejection of missing stopper/cap, vision option' }
     },
@@ -666,19 +666,19 @@
         fa: 'دستگاه پرکردن ویال آزمایشگاهی'
       },
       desc: {
-        en: 'Portable bench-top filler for installation inside an isolator or biosafety cabinet.',
-        zh: '便携式台式设备，可置于隔离器或生物安全柜内操作。',
-        ja: '可搬型卓上充填機。アイソレータや安全キャビネット内に設置可能。',
-        ko: '이동식 탁상 충전기. 아이솔레이터·생물안전캐비닛 내 설치 가능.',
-        ru: 'Портативный настольный наполнитель для установки внутри изолятора или бокса биобезопасности.',
-        fr: 'Remplisseuse de paillasse portable, installable dans un isolateur ou une enceinte de biosécurité.',
-        es: 'Llenadora de sobremesa portátil, instalable en aislador o cabina de bioseguridad.',
-        pt: 'Enchedora de bancada portátil, instalável em isolador ou cabine de biossegurança.',
-        th: 'เครื่องตั้งโต๊ะแบบพกพา ติดตั้งในไอโซเลเตอร์หรือตู้ความปลอดภัยชีวภาพได้',
-        vi: 'Thiết bị để bàn di động, lắp được bên trong isolator hoặc tủ an toàn sinh học.',
-        bn: 'পোর্টেবল বেঞ্চ-টপ ফিলার, আইসোলেটর বা বায়োসেফটি ক্যাবিনেটের ভেতরে বসানো যায়।',
-        ur: 'پورٹیبل بینچ ٹاپ فلر، آئسولیٹر یا بائیو سیفٹی کیبنٹ کے اندر نصب کیا جا سکتا ہے۔',
-        fa: 'پرکن رومیزی قابل‌حمل، قابل نصب در ایزولاتور یا کابینت ایمنی زیستی.'
+        en: 'Portable bench-top filler for installation inside a biosafety cabinet.',
+        zh: '便携式台式设备，可置于生物安全柜内操作。',
+        ja: '可搬型卓上充填機。安全キャビネット内に設置可能。',
+        ko: '이동식 탁상 충전기. 생물안전캐비닛 내 설치 가능.',
+        ru: 'Портативный настольный наполнитель для установки внутри бокса биобезопасности.',
+        fr: 'Remplisseuse de paillasse portable, installable dans une enceinte de biosécurité.',
+        es: 'Llenadora de sobremesa portátil, instalable en cabina de bioseguridad.',
+        pt: 'Enchedora de bancada portátil, instalável em cabine de biossegurança.',
+        th: 'เครื่องตั้งโต๊ะแบบพกพา ติดตั้งในตู้ความปลอดภัยชีวภาพได้',
+        vi: 'Thiết bị để bàn di động, lắp được bên trong tủ an toàn sinh học.',
+        bn: 'পোর্টেবল বেঞ্চ-টপ ফিলার, বায়োসেফটি ক্যাবিনেটের ভেতরে বসানো যায়।',
+        ur: 'پورٹیبل بینچ ٹاپ فلر، بائیو سیفٹی کیبنٹ کے اندر نصب کیا جا سکتا ہے۔',
+        fa: 'پرکن رومیزی قابل‌حمل، قابل نصب در کابینت ایمنی زیستی.'
       },
       specs: { size: '≈750 × 550 × 600 mm', weight: '≈50 kg', power: '2P / 220 V', output: '10–15 vials/min', container: '2–20 ml' }
     },
