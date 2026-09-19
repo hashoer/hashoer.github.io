@@ -157,7 +157,7 @@
   <div class="page-foot">© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. All rights reserved.</div>
 
   <script>
-    /* ════ 导航多语（13 语，与主页字典同步） ════ */
+    /* ════ 导航多语（16 语，与主页字典同步） ════ */
     const NAVI18N = {
       zh:  { nav_home:"首页", nav_products:"产品", nav_videos:"视频", nav_about:"关于我们", nav_contact:"联系我们", nav_quote:"获取报价" },
       en:  { nav_home:"Home", nav_products:"Products", nav_videos:"Videos", nav_about:"About", nav_contact:"Contact", nav_quote:"Get a Quote" },
@@ -171,7 +171,10 @@
       vi:  { nav_home:"Trang chủ", nav_products:"Sản phẩm", nav_videos:"Video", nav_about:"Giới thiệu", nav_contact:"Liên hệ", nav_quote:"Yêu cầu báo giá" },
       bn:  { nav_home:"হোম", nav_products:"পণ্য", nav_videos:"ভিডিও", nav_about:"আমাদের সম্পর্কে", nav_contact:"যোগাযোগ", nav_quote:"উদ্ধৃতি চান" },
       ur:  { nav_home:"ہوم", nav_products:"پروڈکٹس", nav_videos:"ویڈیوز", nav_about:"ہمارے بارے میں", nav_contact:"رابطہ کریں", nav_quote:"کوٹیشن مانگیں" },
-      fa:  { nav_home:"خانه", nav_products:"محصولات", nav_videos:"ویدیوها", nav_about:"درباره ما", nav_contact:"تماس", nav_quote:"درخواست قیمت" }
+      fa:  { nav_home:"خانه", nav_products:"محصولات", nav_videos:"ویدیوها", nav_about:"درباره ما", nav_contact:"تماس", nav_quote:"درخواست قیمت" },
+      ar:  { nav_home:"الرئيسية", nav_products:"المنتجات", nav_videos:"الفيديوهات", nav_about:"من نحن", nav_contact:"اتصل بنا", nav_quote:"اطلب عرض سعر" },
+      de:  { nav_home:"Start", nav_products:"Produkte", nav_videos:"Videos", nav_about:"Über uns", nav_contact:"Kontakt", nav_quote:"Angebot anfordern" },
+      it:  { nav_home:"Home", nav_products:"Prodotti", nav_videos:"Video", nav_about:"Chi siamo", nav_contact:"Contatti", nav_quote:"Richiedi un preventivo" }
     };
 
     const P_LANGS = [
@@ -187,7 +190,10 @@
       {code:'vi', name:'Tiếng Việt', flag:'🇻🇳'},
       {code:'bn', name:'বাংলা', flag:'🇧🇩'},
       {code:'ur', name:'اردو', flag:'🇵🇰'},
-      {code:'fa', name:'فارسی', flag:'🇮🇷'}
+      {code:'fa', name:'فارسی', flag:'🇮🇷'},
+      {code:'ar', name:'العربية', flag:'🇸🇦'},
+      {code:'de', name:'Deutsch', flag:'🇩🇪'},
+      {code:'it', name:'Italiano', flag:'🇮🇹'}
     ];
 
     const P_COUNTRY_TO_LANG = {
@@ -198,7 +204,10 @@
       ES:'es', MX:'es', AR:'es', CO:'es', CL:'es', PE:'es', VE:'es', EC:'es', GT:'es', CU:'es',
       BO:'es', DO:'es', HN:'es', PY:'es', SV:'es', NI:'es', CR:'es', PA:'es', UY:'es', GQ:'es',
       BR:'pt', PT:'pt', AO:'pt', MZ:'pt',
-      TH:'th', VN:'vi', BD:'bn', PK:'ur', IR:'fa'
+      TH:'th', VN:'vi', BD:'bn', PK:'ur', IR:'fa',
+      SA:'ar', AE:'ar', EG:'ar', JO:'ar', KW:'ar', QA:'ar', BH:'ar', OM:'ar', IQ:'ar', LB:'ar', SY:'ar', YE:'ar', MA:'ar', DZ:'ar', TN:'ar', LY:'ar',
+      DE:'de', AT:'de', CH:'de', LI:'de', LU:'de',
+      IT:'it', SM:'it', VA:'it'
     };
 
     function pApplyLang(lang) {
@@ -212,9 +221,11 @@
       if (sel) sel.value = lang;
       updateLangBtn(lang);
     }
+    /* 挂到 window：products.js 加载后会包装它，实现目录随语言重绘 */
+    window.applyLang = pApplyLang;
 
     function pOnLangChange(code) {
-      pApplyLang(code);
+      if (typeof window.applyLang === 'function') window.applyLang(code); else pApplyLang(code);
       try {
         localStorage.setItem('hashoer_lang', code);
         localStorage.setItem('hashoer_lang_manual', '1');
@@ -233,7 +244,7 @@
     }
 
     /* 国旗下拉（Windows 无国旗 emoji，用 flagcdn 图片替代） */
-    const LANG_CC = { zh:'cn', ja:'jp', ko:'kr', ru:'ru', en:'gb', fr:'fr', es:'es', pt:'pt', th:'th', vi:'vn', bn:'bd', ur:'pk', fa:'ir' };
+    const LANG_CC = { zh:'cn', ja:'jp', ko:'kr', ru:'ru', en:'gb', fr:'fr', es:'es', pt:'pt', th:'th', vi:'vn', bn:'bd', ur:'pk', fa:'ir', ar:'sa', de:'de', it:'it' };
     function flagImgHTML(code, cls) {
       return '<img class="' + cls + '" src="https://flagcdn.com/w40/' + (LANG_CC[code] || 'gb') + '.png" alt="" onerror="this.style.visibility=\'hidden\'">';
     }
@@ -297,7 +308,7 @@
         .then(function (d) {
           const cc = d && d.country_code ? String(d.country_code).toUpperCase() : '';
           const lang = P_COUNTRY_TO_LANG[cc];
-          pApplyLang(lang || 'en');
+          if (typeof window.applyLang === 'function') window.applyLang(lang || 'en'); else pApplyLang(lang || 'en');
         })
         .catch(function () {});
     }
