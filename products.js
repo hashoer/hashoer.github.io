@@ -11,51 +11,87 @@
   var LABELS = {
     model: {
       zh: '型号', en: 'Model', ja: '型式', ko: '모델', ru: 'Модель', fr: 'Modèle',
-      es: 'Modelo', pt: 'Modelo', th: 'รุ่น', vi: 'Model', bn: 'মডেল', ur: 'ماڈل', fa: 'مدل'
+      es: 'Modelo', pt: 'Modelo', th: 'รุ่น', vi: 'Model', bn: 'মডেল', ur: 'ماڈل', fa: 'مدل',
+
+      ar: 'الموديل', de: 'Modell', it: 'Modello',
+
     },
     output: {
       zh: '生产速度', en: 'Output', ja: '処理能力', ko: '생산 속도', ru: 'Производительность', fr: 'Cadence',
-      es: 'Producción', pt: 'Produção', th: 'กำลังการผลิต', vi: 'Năng suất', bn: 'উৎপাদন ক্ষমতা', ur: 'پیداواری رفتار', fa: 'ظرفیت تولید'
+      es: 'Producción', pt: 'Produção', th: 'กำลังการผลิต', vi: 'Năng suất', bn: 'উৎপাদন ক্ষমতা', ur: 'پیداواری رفتار', fa: 'ظرفیت تولید',
+
+      ar: 'الإنتاجية', de: 'Leistung', it: 'Produzione',
+
     },
     container: {
       zh: '适用规格', en: 'Container', ja: '容器', ko: '용기', ru: 'Тара', fr: 'Contenant',
-      es: 'Envase', pt: 'Recipiente', th: 'ภาชนะ', vi: 'Dạng bao bì', bn: 'পাত্র', ur: 'کنٹینر', fa: 'ظرف'
+      es: 'Envase', pt: 'Recipiente', th: 'ภาชนะ', vi: 'Dạng bao bì', bn: 'পাত্র', ur: 'کنٹینر', fa: 'ظرف',
+
+      ar: 'الحاوية', de: 'Behälter', it: 'Contenitore',
+
     },
     accuracy: {
       zh: '灌装精度', en: 'Accuracy', ja: '充填精度', ko: '충전 정밀도', ru: 'Точность дозирования', fr: 'Précision',
-      es: 'Precisión', pt: 'Precisão', th: 'ความแม่นยำ', vi: 'Độ chính xác', bn: 'নির্ভুলতা', ur: 'درستی', fa: 'دقت'
+      es: 'Precisión', pt: 'Precisão', th: 'ความแม่นยำ', vi: 'Độ chính xác', bn: 'নির্ভুলতা', ur: 'درستی', fa: 'دقت',
+
+      ar: 'الدقة', de: 'Genauigkeit', it: 'Precisione',
+
     },
     config: {
       zh: '设备组成', en: 'Line configuration', ja: 'ライン構成', ko: '라인 구성', ru: 'Состав линии', fr: 'Configuration',
-      es: 'Configuración', pt: 'Configuração', th: 'การจัดสายการผลิต', vi: 'Cấu hình dây chuyền', bn: 'লাইন কনফিগারেশন', ur: 'لائن کی ترتیب', fa: 'پیکربندی خط'
+      es: 'Configuración', pt: 'Configuração', th: 'การจัดสายการผลิต', vi: 'Cấu hình dây chuyền', bn: 'লাইন কনফিগারেশন', ur: 'لائن کی ترتیب', fa: 'پیکربندی خط',
+
+      ar: 'تكوين الخط', de: 'Linienkonfiguration', it: 'Configurazione della linea',
+
     },
     feature: {
       zh: '主要特点', en: 'Key feature', ja: '主な特長', ko: '주요 특징', ru: 'Особенность', fr: 'Point clé',
-      es: 'Característica', pt: 'Característica', th: 'จุดเด่น', vi: 'Đặc điểm nổi bật', bn: 'প্রধান বৈশিষ্ট্য', ur: 'اہم خصوصیت', fa: 'ویژگی کلیدی'
+      es: 'Característica', pt: 'Característica', th: 'จุดเด่น', vi: 'Đặc điểm nổi bật', bn: 'প্রধান বৈশিষ্ট্য', ur: 'اہم خصوصیت', fa: 'ویژگی کلیدی',
+
+      ar: 'الميزة الرئيسية', de: 'Hauptmerkmal', it: 'Caratteristica principale',
+
     },
     size: {
       zh: '外形尺寸', en: 'Dimensions', ja: '外形寸法', ko: '외형 치수', ru: 'Габариты', fr: 'Dimensions',
-      es: 'Dimensiones', pt: 'Dimensões', th: 'ขนาด', vi: 'Kích thước', bn: 'মাত্রা', ur: 'ابعاد', fa: 'ابعاد'
+      es: 'Dimensiones', pt: 'Dimensões', th: 'ขนาด', vi: 'Kích thước', bn: 'মাত্রা', ur: 'ابعاد', fa: 'ابعاد',
+
+      ar: 'الأبعاد', de: 'Abmessungen', it: 'Dimensioni',
+
     },
     weight: {
       zh: '重量', en: 'Weight', ja: '重量', ko: '무게', ru: 'Масса', fr: 'Poids',
-      es: 'Peso', pt: 'Peso', th: 'น้ำหนัก', vi: 'Trọng lượng', bn: 'ওজন', ur: 'وزن', fa: 'وزن'
+      es: 'Peso', pt: 'Peso', th: 'น้ำหนัก', vi: 'Trọng lượng', bn: 'ওজন', ur: 'وزن', fa: 'وزن',
+
+      ar: 'الوزن', de: 'Gewicht', it: 'Peso',
+
     },
     power: {
       zh: '供电电源', en: 'Power supply', ja: '電源', ko: '전원', ru: 'Питание', fr: 'Alimentation',
-      es: 'Alimentación', pt: 'Alimentação', th: 'แหล่งจ่ายไฟ', vi: 'Nguồn điện', bn: 'বিদ্যুৎ সরবরাহ', ur: 'بجلی کی فراہمی', fa: 'منبع تغذیه'
+      es: 'Alimentación', pt: 'Alimentação', th: 'แหล่งจ่ายไฟ', vi: 'Nguồn điện', bn: 'বিদ্যুৎ সরবরাহ', ur: 'بجلی کی فراہمی', fa: 'منبع تغذیه',
+
+      ar: 'مصدر الطاقة', de: 'Stromversorgung', it: 'Alimentazione',
+
     },
     filter: {
       zh: '过滤', en: 'Filtration', ja: 'ろ過', ko: '여과', ru: 'Фильтрация', fr: 'Filtration',
-      es: 'Filtración', pt: 'Filtração', th: 'การกรอง', vi: 'Lọc', bn: 'পরিস্রাবণ', ur: 'فلٹریشن', fa: 'فیلتراسیون'
+      es: 'Filtración', pt: 'Filtração', th: 'การกรอง', vi: 'Lọc', bn: 'পরিস্রাবণ', ur: 'فلٹریشن', fa: 'فیلتراسیون',
+
+      ar: 'التصفية', de: 'Filtration', it: 'Filtrazione',
+
     },
     cert: {
       zh: '法规符合', en: 'Compliance', ja: '適合規格', ko: '규격 준수', ru: 'Соответствие', fr: 'Conformité',
-      es: 'Cumplimiento', pt: 'Conformidade', th: 'การรับรองมาตรฐาน', vi: 'Tuân thủ', bn: 'সম্মতি', ur: 'تعمیل', fa: 'انطباق'
+      es: 'Cumplimiento', pt: 'Conformidade', th: 'การรับรองมาตรฐาน', vi: 'Tuân thủ', bn: 'সম্মতি', ur: 'تعمیل', fa: 'انطباق',
+
+      ar: 'الامتثال', de: 'Konformität', it: 'Conformità',
+
     },
     decontam: {
       zh: '生物去污', en: 'Decontamination', ja: '除染', ko: '오염 제거', ru: 'Деконтаминация', fr: 'Décontamination',
-      es: 'Descontaminación', pt: 'Descontaminação', th: 'การกำจัดเชื้อ', vi: 'Khử khuẩn', bn: 'জীবাণুমুক্তকরণ', ur: 'جراثیم کشی', fa: 'آلودگی‌زدایی'
+      es: 'Descontaminación', pt: 'Descontaminação', th: 'การกำจัดเชื้อ', vi: 'Khử khuẩn', bn: 'জীবাণুমুক্তকরণ', ur: 'جراثیم کشی', fa: 'آلودگی‌زدایی',
+
+      ar: 'إزالة التلوث', de: 'Dekontamination', it: 'Decontaminazione',
+
     }
   };
 
@@ -63,11 +99,17 @@
   var UI = {
     badge: {
       zh: '产品目录', en: 'Product catalogue', ja: '製品カタログ', ko: '제품 카탈로그', ru: 'Каталог продукции', fr: 'Catalogue produits',
-      es: 'Catálogo de productos', pt: 'Catálogo de produtos', th: 'แคตตาล็อกสินค้า', vi: 'Danh mục sản phẩm', bn: 'পণ্য ক্যাটালগ', ur: 'پروڈکٹ کیٹلاگ', fa: 'کاتالوگ محصولات'
+      es: 'Catálogo de productos', pt: 'Catálogo de produtos', th: 'แคตตาล็อกสินค้า', vi: 'Danh mục sản phẩm', bn: 'পণ্য ক্যাটালগ', ur: 'پروڈکٹ کیٹلاگ', fa: 'کاتالوگ محصولات',
+
+      ar: 'كتالوج المنتجات', de: 'Produktkatalog', it: 'Catalogo prodotti',
+
     },
     title: {
       zh: '完整设备清单', en: 'Full equipment range', ja: '全製品ラインアップ', ko: '전체 장비 라인업', ru: 'Полный перечень оборудования', fr: 'Gamme complète',
-      es: 'Gama completa de equipos', pt: 'Gama completa de equipamentos', th: 'อุปกรณ์ทั้งหมด', vi: 'Danh sách thiết bị đầy đủ', bn: 'সম্পূর্ণ সরঞ্জাম তালিকা', ur: 'مکمل آلات کی فہرست', fa: 'فهرست کامل تجهیزات'
+      es: 'Gama completa de equipos', pt: 'Gama completa de equipamentos', th: 'อุปกรณ์ทั้งหมด', vi: 'Danh sách thiết bị đầy đủ', bn: 'সম্পূর্ণ সরঞ্জাম তালিকা', ur: 'مکمل آلات کی فہرست', fa: 'فهرست کامل تجهیزات',
+
+      ar: 'مجموعة المعدات الكاملة', de: 'Volle Ausrüstungspalette', it: 'Gamma completa di attrezzature',
+
     },
     subtitle: {
       zh: '18 类设备 —— 可按名称、剂型或型号搜索',
@@ -82,7 +124,10 @@
       vi: '18 loại máy — tìm theo tên, dạng bao bì hoặc model',
       bn: '২১ ধরনের যন্ত্র — নাম, পাত্র বা মডেল দিয়ে খুঁজুন',
       ur: 'مشینوں کی 21 اقسام — نام، کنٹینر یا ماڈل سے تلاش کریں',
-      fa: '۲۱ نوع دستگاه — جستجو بر اساس نام، ظرف یا مدل'
+      fa: '۲۱ نوع دستگاه — جستجو بر اساس نام، ظرف یا مدل',
+
+      ar: '18 نوع آلة — ابحث بالاسم أو الحاوية أو الموديل', de: '18 Maschinentypen — suchen nach Name, Behälter oder Modell', it: '18 tipi di macchine — cerca per nome, contenitore o modello',
+
     },
     searchPh: {
       zh: '搜索 —— 试试“西林瓶”“安瓿”“预充针”“粉末”“FFV”…',
@@ -97,39 +142,66 @@
       vi: 'Tìm kiếm — thử «vial» «ampoule» «PFS» «powder» «FFV»…',
       bn: 'খুঁজুন — চেষ্টা করুন «vial» «ampoule» «PFS» «powder» «FFV»…',
       ur: 'تلاش کریں — «vial»، «ampoule»، «PFS»، «powder»، «FFV» آزمائیں…',
-      fa: 'جستجو — «vial»، «ampoule»، «PFS»، «powder»، «FFV» را امتحان کنید…'
+      fa: 'جستجو — «vial»، «ampoule»، «PFS»، «powder»، «FFV» را امتحان کنید…',
+
+      ar: 'بحث — جرّب "vial"، "ampoule"، "PFS"، "powder"، "FFV"…', de: 'Suche — versuchen Sie „vial", „ampoule", „PFS", „powder", „FFV"…', it: 'Cerca — prova "vial", "ampoule", "PFS", "powder", "FFV"…',
+
     },
     tabAll: {
       zh: '全部', en: 'All', ja: 'すべて', ko: '전체', ru: 'Все', fr: 'Tous',
-      es: 'Todo', pt: 'Todos', th: 'ทั้งหมด', vi: 'Tất cả', bn: 'সব', ur: 'سب', fa: 'همه'
+      es: 'Todo', pt: 'Todos', th: 'ทั้งหมด', vi: 'Tất cả', bn: 'সব', ur: 'سب', fa: 'همه',
+
+      ar: 'الكل', de: 'Alle', it: 'Tutti',
+
     },
     tabLines: {
       zh: '整线', en: 'Complete lines', ja: 'ターンキーライン', ko: '완성 라인', ru: 'Комплексные линии', fr: 'Lignes complètes',
-      es: 'Líneas completas', pt: 'Linhas completas', th: 'สายการผลิตครบชุด', vi: 'Dây chuyền hoàn chỉnh', bn: 'সম্পূর্ণ লাইন', ur: 'مکمل لائنیں', fa: 'خطوط کامل'
+      es: 'Líneas completas', pt: 'Linhas completas', th: 'สายการผลิตครบชุด', vi: 'Dây chuyền hoàn chỉnh', bn: 'সম্পূর্ণ লাইন', ur: 'مکمل لائنیں', fa: 'خطوط کامل',
+
+      ar: 'خطوط كاملة', de: 'Komplettlinien', it: 'Linee complete',
+
     },
     tabFill: {
       zh: '灌装计量', en: 'Filling & dosing', ja: '充填・定量', ko: '충전·정량', ru: 'Наполнение и дозирование', fr: 'Remplissage & dosage',
-      es: 'Llenado y dosificación', pt: 'Enchimento e dosagem', th: 'การบรรจุและตวง', vi: 'Chiết rót & định lượng', bn: 'ভরাট ও ডোজিং', ur: 'بھرائی اور خوراک', fa: 'پرکردن و دوزینگ'
+      es: 'Llenado y dosificación', pt: 'Enchimento e dosagem', th: 'การบรรจุและตวง', vi: 'Chiết rót & định lượng', bn: 'ভরাট ও ডোজিং', ur: 'بھرائی اور خوراک', fa: 'پرکردن و دوزینگ',
+
+      ar: 'التعبئة والتجهيز', de: 'Abfüllen & Dosieren', it: 'Riempimento e dosaggio',
+
     },
     tabWash: {
       zh: '洗烘灭菌', en: 'Wash & sterilize', ja: '洗浄・滅菌', ko: '세척·멸균', ru: 'Мойка и стерилизация', fr: 'Lavage & stérilisation',
-      es: 'Lavado y esterilización', pt: 'Lavagem e esterilização', th: 'การล้างและฆ่าเชื้อ', vi: 'Rửa & tiệt trùng', bn: 'ধোয়া ও জীবাণুমুক্ত', ur: 'دھلائی اور جراثیم کشی', fa: 'شست‌وشو و استریل'
+      es: 'Lavado y esterilización', pt: 'Lavagem e esterilização', th: 'การล้างและฆ่าเชื้อ', vi: 'Rửa & tiệt trùng', bn: 'ধোয়া ও জীবাণুমুক্ত', ur: 'دھلائی اور جراثیم کشی', fa: 'شست‌وشو و استریل',
+
+      ar: 'الغسل والتعقيم', de: 'Waschen & Sterilisieren', it: 'Lavaggio e sterilizzazione',
+
     },
     tabCap: {
       zh: '轧盖灯检与隔离', en: 'Cap, inspect & containment', ja: '打栓・検査・封じ込め', ko: '캡핑·검사·아이솔레이터', ru: 'Укупорка, инспекция и изоляция', fr: 'Capsulage, inspection & confinement',
-      es: 'Tapado, inspección y contención', pt: 'Fechamento, inspeção e contenção', th: 'ปิดฝา ตรวจสอบ และแยก', vi: 'Đóng nắp, kiểm tra & cách ly', bn: 'ক্যাপিং, পরিদর্শন ও কনটেইনমেন্ট', ur: 'کیپنگ، معائنہ اور کنٹینمنٹ', fa: 'دربندی، بازرسی و ایزولاسیون'
+      es: 'Tapado, inspección y contención', pt: 'Fechamento, inspeção e contenção', th: 'ปิดฝา ตรวจสอบ และแยก', vi: 'Đóng nắp, kiểm tra & cách ly', bn: 'ক্যাপিং, পরিদর্শন ও কনটেইনমেন্ট', ur: 'کیپنگ، معائنہ اور کنٹینمنٹ', fa: 'دربندی، بازرسی و ایزولاسیون',
+
+      ar: 'الإغلاق والفحص والعزل', de: 'Verschließen, Prüfen & Containment', it: 'Chiusura, ispezione e contenimento',
+
     },
     tabLab: {
       zh: '实验室小试', en: 'Lab & R&D', ja: 'ラボ・研究開発', ko: '연구소·R&D', ru: 'Лаборатория и НИОКР', fr: 'Labo & R&D',
-      es: 'Laboratorio e I+D', pt: 'Laboratório e P&D', th: 'ห้องปฏิบัติการและวิจัย', vi: 'Phòng thí nghiệm & R&D', bn: 'ল্যাব ও গবেষণা', ur: 'لیبارٹری اور R&D', fa: 'آزمایشگاه و تحقیق'
+      es: 'Laboratorio e I+D', pt: 'Laboratório e P&D', th: 'ห้องปฏิบัติการและวิจัย', vi: 'Phòng thí nghiệm & R&D', bn: 'ল্যাব ও গবেষণা', ur: 'لیبارٹری اور R&D', fa: 'آزمایشگاه و تحقیق',
+
+      ar: 'المختبر والبحث والتطوير', de: 'Labor & F&E', it: 'Lab e R&D',
+
     },
     tabVial: {
       zh: '西林瓶专用', en: 'Vial equipment', ja: 'バイアル用', ko: '바이알용', ru: 'Для флаконов', fr: 'Équipement flacons',
-      es: 'Equipos para viales', pt: 'Equipamentos para frascos', th: 'อุปกรณ์ขวดไวอัล', vi: 'Thiết bị vial', bn: 'ভায়াল সরঞ্জাম', ur: 'ویائل آلات', fa: 'تجهیزات ویال'
+      es: 'Equipos para viales', pt: 'Equipamentos para frascos', th: 'อุปกรณ์ขวดไวอัล', vi: 'Thiết bị vial', bn: 'ভায়াল সরঞ্জাম', ur: 'ویائل آلات', fa: 'تجهیزات ویال',
+
+      ar: 'معدات القوارير', de: 'Vial-Ausrüstung', it: 'Attrezzature per vial',
+
     },
     unit: {
       zh: '款设备', en: 'machines', ja: '機種', ko: '종', ru: 'машин', fr: 'machines',
-      es: 'máquinas', pt: 'máquinas', th: 'เครื่อง', vi: 'máy', bn: 'যন্ত্র', ur: 'مشینیں', fa: 'دستگاه'
+      es: 'máquinas', pt: 'máquinas', th: 'เครื่อง', vi: 'máy', bn: 'যন্ত্র', ur: 'مشینیں', fa: 'دستگاه',
+
+      ar: 'آلات', de: 'Maschinen', it: 'macchine',
+
     },
     noResult: {
       zh: '没有匹配的设备 —— 换个关键词，或直接联系我们。',
@@ -144,19 +216,31 @@
       vi: 'Không có kết quả — thử từ khóa khác hoặc liên hệ trực tiếp.',
       bn: 'কোনো মিল নেই — অন্য কীওয়ার্ড দিয়ে চেষ্টা করুন, বা সরাসরি যোগাযোগ করুন।',
       ur: 'کوئی نتیجہ نہیں — دوسرا لفظ آزمائیں، یا براہ راست رابطہ کریں۔',
-      fa: 'موردی یافت نشد — واژه دیگری امتحان کنید یا مستقیماً با ما تماس بگیرید.'
+      fa: 'موردی یافت نشد — واژه دیگری امتحان کنید یا مستقیماً با ما تماس بگیرید.',
+
+      ar: 'لا يوجد تطابق — جرّب كلمة أخرى أو تواصل معنا مباشرة.', de: 'Kein Treffer — probieren Sie ein anderes Stichwort oder kontaktieren Sie uns direkt.', it: 'Nessun risultato — prova un\'altra parola chiave o contattaci direttamente.',
+
     },
     viewSpec: {
       zh: '查看参数', en: 'View specs', ja: '仕様を見る', ko: '사양 보기', ru: 'Характеристики', fr: 'Voir les specs',
-      es: 'Ver especificaciones', pt: 'Ver especificações', th: 'ดูสเปก', vi: 'Xem thông số', bn: 'স্পেস দেখুন', ur: 'تفصیلات دیکھیں', fa: 'مشاهده مشخصات'
+      es: 'Ver especificaciones', pt: 'Ver especificações', th: 'ดูสเปก', vi: 'Xem thông số', bn: 'স্পেস দেখুন', ur: 'تفصیلات دیکھیں', fa: 'مشاهده مشخصات',
+
+      ar: 'عرض المواصفات', de: 'Spezifikationen ansehen', it: 'Vedi specifiche',
+
     },
     cta: {
       zh: '咨询这台设备', en: 'Inquire about this machine', ja: 'この機械について問い合わせる', ko: '이 기계 문의하기', ru: 'Запросить эту машину', fr: 'Demander cette machine',
-      es: 'Consultar sobre esta máquina', pt: 'Consultar sobre esta máquina', th: 'สอบถามเครื่องนี้', vi: 'Hỏi về máy này', bn: 'এই যন্ত্র সম্পর্কে জানতে', ur: 'اس مشین کے بارے میں پوچھیں', fa: 'استعلام درباره این دستگاه'
+      es: 'Consultar sobre esta máquina', pt: 'Consultar sobre esta máquina', th: 'สอบถามเครื่องนี้', vi: 'Hỏi về máy này', bn: 'এই যন্ত্র সম্পর্কে জানতে', ur: 'اس مشین کے بارے میں پوچھیں', fa: 'استعلام درباره این دستگاه',
+
+      ar: 'استفسر عن هذه الآلة', de: 'Diese Maschine anfragen', it: 'Richiedi info su questa macchina',
+
     },
     clear: {
       zh: '清空', en: 'Clear', ja: 'クリア', ko: '지우기', ru: 'Очистить', fr: 'Effacer',
-      es: 'Borrar', pt: 'Limpar', th: 'ล้าง', vi: 'Xóa', bn: 'খালি করুন', ur: 'صاف کریں', fa: 'پاک‌کردن'
+      es: 'Borrar', pt: 'Limpar', th: 'ล้าง', vi: 'Xóa', bn: 'খালি করুন', ur: 'صاف کریں', fa: 'پاک‌کردن',
+
+      ar: 'مسح', de: 'Löschen', it: 'Cancella',
+
     }
   };
 
@@ -166,82 +250,122 @@
       q: 'vial', icon: '\uD83D\uDC8A', img: 'cat-vial.png',
       en: 'Vials Filling Line', zh: '西林瓶灌装线', ja: 'バイアル充填ライン', ko: '바이알 충전 라인', ru: 'Линия наполнения флаконов', fr: 'Ligne de remplissage de flacons',
       es: 'Línea de llenado de viales', pt: 'Linha de enchimento de frascos', th: 'ไลน์บรรจุขวดไวอัล', vi: 'Dây chuyền chiết rót vial', bn: 'ভায়াল ফিলিং লাইন', ur: 'وائل بھرائی لائن', fa: 'خط پرکردن ویال',
+      ar: 'خط تعبئة القوارير', de: 'Vial-Abfülllinie', it: 'Linea di riempimento vial',
+
       dEn: '2–100 ml injectable vials', dZh: '2–100ml 注射剂西林瓶',
       dJa: '2〜100ml 注射用バイアル', dKo: '2~100ml 주사제 바이알', dRu: 'Флаконы 2–100 мл для инъекций',
       dFr: 'Flacons injectables 2–100 ml', dEs: 'Viales inyectables de 2–100 ml', dPt: 'Frascos injetáveis de 2–100 ml',
       dTh: 'ขวดไวอัลฉีด 2–100 มล.', dVi: 'Lọ vial tiêm 2–100 ml', dBn: '২–১০০ মিলি ইনজেক্টেবল ভায়াল',
-      dUr: '2–100 ملی لیٹر انجیکشن والی شیشیاں', dFa: 'ویال‌های تزریقی ۲–۱۰۰ میلی‌لیتر'
+      dUr: '2–100 ملی لیٹر انجیکشن والی شیشیاں', dFa: 'ویال‌های تزریقی ۲–۱۰۰ میلی‌لیتر',
+
+      dAr: 'قوارير حقن 2–100 مل', dDe: '2–100 ml Injektionsvials', dIt: 'Vial da 2–100 ml per iniezione',
+
     },
     {
       q: 'ampoule', icon: '\uD83E\uDDEA', img: 'cat-ampoule.png',
       en: 'Ampoules Filling Line', zh: '安瓿瓶灌装机', ja: 'アンプル充填ライン', ko: '앰플 충전 라인', ru: 'Линия наполнения ампул', fr: 'Ligne de remplissage d’ampoules',
       es: 'Línea de llenado de ampollas', pt: 'Linha de enchimento de ampolas', th: 'ไลน์บรรจุหลอดแอมพูล', vi: 'Dây chuyền chiết rót ống ampoule', bn: 'অ্যাম্পুল ফিলিং লাইন', ur: 'ایمپول بھرائی لائن', fa: 'خط پرکردن آمپول',
+      ar: 'خط تعبئة الأمبولات', de: 'Ampullen-Abfülllinie', it: 'Linea di riempimento ampolle',
+
       dEn: '1–20 ml ampoules', dZh: '1–20ml 安瓿瓶',
       dJa: '1〜20ml アンプル', dKo: '1~20ml 앰플', dRu: 'Ампулы 1–20 мл',
       dFr: 'Ampoules 1–20 ml', dEs: 'Ampollas de 1–20 ml', dPt: 'Ampolas de 1–20 ml',
       dTh: 'หลอดแอมพูล 1–20 มล.', dVi: 'Ống ampoule 1–20 ml', dBn: '১–২০ মিলি অ্যাম্পুল',
-      dUr: '1–20 ملی لیٹر ایمپول', dFa: 'آمپول‌های ۱–۲۰ میلی‌لیتر'
+      dUr: '1–20 ملی لیٹر ایمپول', dFa: 'آمپول‌های ۱–۲۰ میلی‌لیتر',
+
+      dAr: 'أمبولات 1–20 مل', dDe: '1–20 ml Ampullen', dIt: 'Ampolle da 1–20 ml',
+
     },
     {
       q: 'pfs', icon: '\uD83D\uDC89', img: 'cat-pfs.png',
       en: 'PFS Filling Line', zh: '预灌封灌装线', ja: 'プレフィルドシリンジ充填ライン', ko: '프리필드 시린지 충전 라인', ru: 'Линия наполнения шприцев', fr: 'Ligne de remplissage de seringues préremplies',
       es: 'Línea de llenado de jeringas precargadas', pt: 'Linha de enchimento de seringas pré-cheias', th: 'ไลน์บรรจุกระบอกฉีดยาพร้อมใช้', vi: 'Dây chuyền chiết rót ống tiêm đóng sẵn', bn: 'প্রিফিলড সিরিঞ্জ ফিলিং লাইন', ur: 'پری فِلڈ سرنج بھرائی لائن', fa: 'خط پرکردن سرنگ از پیش پرشده',
+      ar: 'خط تعبئة PFS', de: 'PFS-Abfülllinie', it: 'Linea di riempimento PFS',
+
       dEn: 'RTU nested syringes', dZh: '即用型巢板预充针',
       dJa: 'RTU ネスト式シリンジ', dKo: 'RTU 네스트 시린지', dRu: 'Готовые шприцы в гнёздах',
       dFr: 'Seringues RTU en nid', dEs: 'Jeringas RTU en nido', dPt: 'Seringas RTU em ninho',
       dTh: 'กระบอกฉีดยา RTU แบบถาด', dVi: 'Ống tiêm RTU dạng khay', dBn: 'RTU নেস্টেড সিরিঞ্জ',
-      dUr: 'RTU نیسٹڈ سرنجیں', dFa: 'سرنگ‌های RTU در سینی'
+      dUr: 'RTU نیسٹڈ سرنجیں', dFa: 'سرنگ‌های RTU در سینی',
+
+      dAr: 'سرنجات جاهزة بنظام العش (RTU)', dDe: 'RTU-Nestsysteme mit Spritzen', dIt: 'Siringhe RTU in nido',
+
     },
     {
       q: 'powder', icon: '\u2697\uFE0F', img: 'cat-powder.png',
       en: 'Vials Powder Filling Line', zh: '粉末灌装线', ja: '粉末充填ライン', ko: '분말 충전 라인', ru: 'Линия дозирования порошка', fr: 'Ligne de remplissage de poudre',
       es: 'Línea de llenado de polvo', pt: 'Linha de enchimento de pó', th: 'ไลน์บรรจุผง', vi: 'Dây chuyền chiết rót bột', bn: 'পাউডার ফিলিং লাইন', ur: 'پاؤڈر بھرائی لائن', fa: 'خط پرکردن پودر',
+      ar: 'خط تعبئة بودرة القوارير', de: 'Vial-Pulverabfülllinie', it: 'Linea di riempimento polvere vial',
+
       dEn: 'Screw & airflow filling', dZh: '螺杆与气流粉末分装',
       dJa: 'スクリュー式・気流式充填', dKo: '스크류 및 기류 충전', dRu: 'Шнековое и воздушное дозирование',
       dFr: 'Dosage à vis et à air', dEs: 'Dosificación por tornillo y por aire', dPt: 'Dosagem por rosca e por ar',
       dTh: 'การบรรจุแบบสกรูและลม', dVi: 'Chiết rót trục vít & khí nén', dBn: 'স্ক্রু ও এয়ারফ্লো ভরাট',
-      dUr: 'سکرو اور ایئر فلو بھرائی', dFa: 'پرکردن اسکرو و جریان هوا'
+      dUr: 'سکرو اور ایئر فلو بھرائی', dFa: 'پرکردن اسکرو و جریان هوا',
+
+      dAr: 'تعبئة باللولب والهواء', dDe: 'Schnecken- & Luftstromfüllung', dIt: 'Riempimento a vite e ad aria',
+
     },
     {
       q: 'lab', icon: '🔬', img: 'cat-lab.png',
       en: 'Lab Equipment', zh: '实验室设备', ja: '実験室設備', ko: '실험실 장비', ru: 'Лабораторное оборудование', fr: 'Équipement de laboratoire',
       es: 'Equipo de laboratorio', pt: 'Equipamento de laboratório', th: 'อุปกรณ์ห้องปฏิบัติการ', vi: 'Thiết bị phòng thí nghiệm', bn: 'ল্যাবরেটরি সরঞ্জাম', ur: 'لیبارٹری کا سامان', fa: 'تجهیزات آزمایشگاهی',
+      ar: 'معدات المختبر', de: 'Laboreinrichtung', it: 'Attrezzature da laboratorio',
+
       dEn: 'Bench-top R&D machines', dZh: '小试与研发用设备',
       dJa: 'ベンチトップ研究開発機', dKo: '벤치탑 R&D 장비', dRu: 'Настольные машины для R&D',
       dFr: 'Machines de paillasse pour R&D', dEs: 'Equipos de mesa para I+D', dPt: 'Máquinas de bancada para P&D',
       dTh: 'เครื่อง R&D แบบตั้งบนโต๊ะ', dVi: 'Máy R&D kiểu bàn', dBn: 'বেঞ্চ-টপ R&D মেশিন',
-      dUr: 'بینچ ٹاپ R&D مشینیں', dFa: 'دستگاه‌های R&D رومیزی'
+      dUr: 'بینچ ٹاپ R&D مشینیں', dFa: 'دستگاه‌های R&D رومیزی',
+
+      dAr: 'آلات مخبرية للبحث والتطوير', dDe: 'Tischgeräte für F&E', dIt: 'Macchine da banco per R&D',
+
     }
       ,
     {
       q: 'cartridge', icon: '\uD83E\uDDF4', img: 'cat-cartridge.png',
       en: 'Cartridge Filling Line', zh: '卡式瓶灌装线', ja: 'カートリッジ充填ライン', ko: '카트리지 충전 라인', ru: 'Линия наполнения картриджей', fr: 'Ligne de remplissage de cartouches',
       es: 'Línea de llenado de cartuchos', pt: 'Linha de enchimento de cartuchos', th: 'ไลน์บรรจุคาร์ทริดจ์', vi: 'Dây chuyền chiết rót cartridge', bn: 'কার্ট্রিজ ফিলিং লাইন', ur: 'کارٹریج بھرائی لائن', fa: 'خط پرکردن کارتریج',
+      ar: 'خط تعبئة الكارتريدج', de: 'Kartuschen-Abfülllinie', it: 'Linea di riempimento cartucce',
+
       dEn: '1–5 ml cartridge filling', dZh: '1–5ml 卡式瓶灌装',
       dJa: '1〜5ml カートリッジ充填', dKo: '1~5ml 카트리지 충전', dRu: 'Картриджи 1–5 мл',
       dFr: 'Cartouches 1–5 ml', dEs: 'Cartuchos de 1–5 ml', dPt: 'Cartuchos de 1–5 ml',
       dTh: 'คาร์ทริดจ์ 1–5 มล.', dVi: 'Cartridge 1–5 ml', dBn: '১–৫ মিলি কার্ট্রিজ',
-      dUr: '1–5 ملی کارٹریج', dFa: 'کارتریج ۱–۵ میلی‌لیتر'
+      dUr: '1–5 ملی کارٹریج', dFa: 'کارتریج ۱–۵ میلی‌لیتر',
+
+      dAr: 'تعبئة كارتريدج 1–5 مل', dDe: 'Kartuschenfüllung 1–5 ml', dIt: 'Riempimento cartucce 1–5 ml',
+
     }
     ,{
       q: 'spray', icon: '\uD83D\uDCA7', img: 'cat-spray.png',
       en: 'Sprays & eye drops Filling Line', zh: '喷雾剂&滴眼液', ja: 'スプレー・点眼液充填ライン', ko: '스프레이·안약 충전 라인', ru: 'Линия розлива спреев и глазных капель', fr: 'Ligne sprays et collyres',
       es: 'Línea de llenado de sprays y colirios', pt: 'Linha de enchimento de sprays e colírios', th: 'ไลน์บรรจุสเปรย์และยาหยอดตา', vi: 'Dây chuyền chiết rót xịt & thuốc nhỏ mắt', bn: 'স্প্রে ও চোখের ড্রপ ফিলিং লাইন', ur: 'اسپرے اور آنکھ کے قطرے بھرائی لائن', fa: 'خط پرکردن اسپری و قطره چشم',
+      ar: 'خط تعبئة البخاخ وقطرة العين', de: 'Spray- & Augentropfen-Abfülllinie', it: 'Linea di riempimento spray e colliri',
+
       dEn: 'Nasal spray & eye drop filling', dZh: '喷雾剂与滴眼液灌装',
       dJa: 'スプレー・点眼液の充填', dKo: '스프레이·안약 충전', dRu: 'Наполнение спреев и глазных капель',
       dFr: 'Remplissage sprays et collyres', dEs: 'Llenado de sprays y colirios', dPt: 'Enchimento de sprays e colírios',
       dTh: 'บรรจุสเปรย์และยาหยอดตา', dVi: 'Chiết rót xịt & thuốc nhỏ mắt', dBn: 'স্প্রে ও চোখের ড্রপ ভরাট',
-      dUr: 'اسپرے اور آنکھ کے قطروں کی بھرائی', dFa: 'پرکردن اسپری و قطره چشم'
+      dUr: 'اسپرے اور آنکھ کے قطروں کی بھرائی', dFa: 'پرکردن اسپری و قطره چشم',
+
+      dAr: 'تعبئة بخاخ الأنف وقطرة العين', dDe: 'Nasenspray- & Augentropfenfüllung', dIt: 'Riempimento spray nasale e collirio',
+
     },
     {
       q: 'isolator', icon: '\uD83D\uDEE1\uFE0F', img: 'cat-isolator.png',
       en: 'Isolator', zh: '无菌隔离器', ja: '無菌アイソレータ', ko: '무균 아이솔레이터', ru: 'Асептические изоляторы', fr: 'Isolateurs stériles',
       es: 'Aisladores estériles', pt: 'Isoladores estéreis', th: 'ไอโซเลเตอร์ปลอดเชื้อ', vi: 'Isolator vô trùng', bn: 'স্টেরাইল আইসোলেটর', ur: 'اسٹیرائل آئسولیٹر', fa: 'ایزولاتور استریل',
+      ar: 'العازل', de: 'Isolator', it: 'Isolatore',
+
       dEn: 'Grade A aseptic containment', dZh: '动态 A 级无菌隔离',
       dJa: '動的グレードA無菌環境', dKo: '동적 그레이드A 무균 격리', dRu: 'Асептическая изоляция класса A',
       dFr: 'Confinement aseptique grade A', dEs: 'Confinamiento aséptico grado A', dPt: 'Confinamento asséptico grau A',
       dTh: 'การกักกันปลอดเชื้อเกรด A', dVi: 'Kín vô trùng cấp A động', dBn: 'গ্রেড-এ অ্যাসেপটিক কনটেইনমেন্ট',
-      dUr: 'گریڈ A ایسپٹک کنٹینمنٹ', dFa: 'جداسازی آسپتیک گرید A'
+      dUr: 'گریڈ A ایسپٹک کنٹینمنٹ', dFa: 'جداسازی آسپتیک گرید A',
+
+      dAr: 'عزل معقم درجة A', dDe: 'Aseptisches Containment Klasse A', dIt: 'Contenimento asettico grado A',
+
     }
   ];
 
@@ -257,7 +381,10 @@
         es: 'Lavadora vertical para viales y ampollas', pt: 'Lavadora vertical para frascos e ampolas',
         th: 'เครื่องล้างขวดไวอัลและหลอดแอมพูลแนวตั้ง', vi: 'Máy rửa vial & ampoule đứng',
         bn: 'ভায়াল ও অ্যাম্পুল উল্লম্ব ওয়াশিং মেশিন', ur: 'شیشی اور ایمپول کی عمودی دھلائی مشین',
-        fa: 'دستگاه شست‌وشوی عمودی ویال و آمپول'
+        fa: 'دستگاه شست‌وشوی عمودی ویال و آمپول',
+
+        ar: 'آلة غسل عمودية للقوارير والأمبولات', de: 'Vertikale Vial- & Ampullenwaschmaschine', it: 'Lavatrice verticale per vial e ampolle',
+
       },
       desc: {
         en: 'Rotary vertical washer using ultrasonic plus alternating WFI and clean compressed air.',
@@ -272,7 +399,10 @@
         vi: 'Máy rửa đứng dạng quay, dùng siêu âm kết hợp luân phiên nước pha tiêm và khí nén sạch.',
         bn: 'ঘূর্ণায়মান উল্লম্ব ওয়াশার: আল্ট্রাসোনিক ও ডব্লিউএফআই এবং পরিষ্কার সংকুচিত বাতাস পর্যায়ক্রমে।',
         ur: 'روٹری عمودی واشر، الٹراسونک کے ساتھ انجیکشن پانی اور صاف کمپریسڈ ہوا باری باری۔',
-        fa: 'واشر چرخشی عمودی با اولتراسونیک و تناوب آب تزریقی و هوای فشرده تمیز.'
+        fa: 'واشر چرخشی عمودی با اولتراسونیک و تناوب آب تزریقی و هوای فشرده تمیز.',
+
+        ar: 'غسالة عمودية دوارة بالموجات فوق الصوتية مع تعاقب الماء للحقن والهواء المضغوط النظيف.', de: 'Rotierende Vertikalwaschmaschine mit Ultraschall plus abwechselnd WFI und sauberer Druckluft.', it: 'Lavatrice verticale rotativa con ultrasuoni e alternanza di WFI e aria compressa pulita.',
+
       },
       specs: { model: 'FWV-100 / 200 / 300 / 400 / 500 / 600', output: '40–160 washing needles', container: 'Vials & ampoules', feature: '≥3-log particle removal, WFI recirculation, silicone option' }
     },
@@ -286,7 +416,10 @@
         es: 'Túnel de esterilización y despirogenización', pt: 'Túnel de esterilização e despirogenização',
         th: 'อุโมงค์ฆ่าเชื้อและกำจัดไพโรเจน', vi: 'Đường hầm tiệt trùng & khử pyrogen',
         bn: 'স্টেরিলাইজিং ও ডিপাইরোজেনেশন টানেল', ur: 'جراثیم کشی اور ڈیپائروجینیشن ٹنل',
-        fa: 'تونل استریل و حذف پیروژن'
+        fa: 'تونل استریل و حذف پیروژن',
+
+        ar: 'نفق التعقيم وإزالة الحمى', de: 'Sterilisations- & Depyrogenisationstunnel', it: 'Tunnel di sterilizzazione e depirogenazione',
+
       },
       desc: {
         en: 'Hot dry-air tunnel that sterilizes and depyrogenates containers under Grade A laminar flow.',
@@ -301,7 +434,10 @@
         vi: 'Đường hầm khí nóng khô, tiệt trùng và khử pyrogen dưới dòng chảy tầng cấp A.',
         bn: 'গরম শুকনো বাতাসের টানেল, গ্রেড-এ ল্যামিনার ফ্লোতে কনটেইনার স্টেরিলাইজ ও ডিপাইরোজেন করে।',
         ur: 'خشک گرم ہوا کا ٹنل جو گریڈ A لیمینر فلو کے تحت کنٹینرز کو جراثیم سے پاک اور ڈیپائروجنیٹ کرتا ہے۔',
-        fa: 'تونل هوای گرم خشک که ظروف را در جریان آرام گرید A استریل و عاری از پیروژن می‌کند.'
+        fa: 'تونل هوای گرم خشک که ظروف را در جریان آرام گرید A استریل و عاری از پیروژن می‌کند.',
+
+        ar: 'نفق هواء ساخن جاف يعقم الحاويات ويزيل حمّاها تحت تيار لاميناري درجة A.', de: 'Heißlufttunnel, der Behälter unter Laminarstrom Klasse A sterilisiert und depyrogenisiert.', it: 'Tunnel ad aria calda secca che sterilizza e depirogena i contenitori sotto flusso laminare grado A.',
+
       },
       specs: { model: 'FTV-100 / 200 / 300 / 400 / 500', output: '100–600 containers/min', feature: '320 °C hot air, 3.0–5.5 m tunnel, auto pressure balance', cert: 'Validated with PAO-tested H14 HEPA' }
     },
@@ -315,7 +451,10 @@
         es: 'Máquina llenadora de viales', pt: 'Máquina de enchimento de frascos',
         th: 'เครื่องบรรจุขวดไวอัล', vi: 'Máy chiết rót lọ vial',
         bn: 'ভায়াল ভরাট মেশিন', ur: 'شیشی بھرنے کی مشین',
-        fa: 'دستگاه پرکردن ویال'
+        fa: 'دستگاه پرکردن ویال',
+
+        ar: 'آلة تعبئة القوارير', de: 'Vial-Abfüllmaschine', it: 'Macchina di riempimento vial',
+
       },
       desc: {
         en: 'Servo-driven aseptic filler for vials, integrable with RABS.',
@@ -330,7 +469,10 @@
         vi: 'Máy chiết rót vô trùng truyền động servo, tích hợp được với RABS.',
         bn: 'সার্ভো-চালিত অ্যাসেপটিক ভায়াল ফিলার, RABS-এর সাথে সংযোগযোগ্য।',
         ur: 'سروو ڈرائیون ایسپٹک فلر، RABS کے ساتھ مربوط کیا جا سکتا ہے۔',
-        fa: 'پرکن آسپتیک سروو برای ویال، قابل ادغام با RABS.'
+        fa: 'پرکن آسپتیک سروو برای ویال، قابل ادغام با RABS.',
+
+        ar: 'آلة تعبئة معقمة بتقنية سيرفو للقوارير، قابلة للدمج مع RABS.', de: 'Servogetriebene aseptische Abfüllmaschine für Vials, integrierbar mit RABS.', it: 'Riempitrice asettica servoassistita per vial, integrabile con RABS.',
+
       },
       specs: { model: 'FFV-100 / 200 / 300 / 400 / 500', output: '100–500 vials/min', container: '2–30 ml vial', accuracy: '±0.5% (2 ml water-like)', feature: 'Robot-compatible, CIP/SIP, nitrogen purging, 100% check-weigh' }
     },
@@ -344,7 +486,10 @@
         es: 'Máquina de llenado y sellado de ampollas', pt: 'Máquina de enchimento e selagem de ampolas',
         th: 'เครื่องบรรจุและปิดผนึกหลอดแอมพูล', vi: 'Máy chiết rót & hàn kín ampoule',
         bn: 'অ্যাম্পুল ভরাট ও সিলিং মেশিন', ur: 'ایمپول بھرنے اور سیل کرنے کی مشین',
-        fa: 'دستگاه پرکردن و پلمپ آمپول'
+        fa: 'دستگاه پرکردن و پلمپ آمپول',
+
+        ar: 'آلة تعبئة وإغلاق الأمبولات', de: 'Ampullen-Füll- & Siegelmaschine', it: 'Macchina di riempimento e sigillatura ampolle',
+
       },
       desc: {
         en: 'Infeed, pre-gassing, filling, post-gassing, pre-heating and sealing under Grade A airflow.',
@@ -359,7 +504,10 @@
         vi: 'Cấp liệu, sục khí trước, chiết rót, sục khí sau, gia nhiệt và hàn kín dưới luồng khí cấp A.',
         bn: 'ইনফিড, প্রি-গ্যাসিং, ভরাট, পোস্ট-গ্যাসিং, প্রি-হিটিং ও সিলিং—সবই গ্রেড-এ বায়ুপ্রবাহে।',
         ur: 'فیڈ، پری گیسنگ، بھرائی، پوسٹ گیسنگ، پری ہیٹنگ اور سیلنگ، سب گریڈ A ہوا کے بہاؤ میں۔',
-        fa: 'تغذیه، پیش‌گازدهی، پرکردن، پس‌گازدهی، پیش‌گرم‌کردن و پلمپ در جریان هوای گرید A.'
+        fa: 'تغذیه، پیش‌گازدهی، پرکردن، پس‌گازدهی، پیش‌گرم‌کردن و پلمپ در جریان هوای گرید A.',
+
+        ar: 'تغذية، غاز مسبق، تعبئة، غاز لاحق، تسخين مسبق وإغلاق تحت تيار هواء درجة A.', de: 'Einzug, Vorgasen, Füllen, Nachgasen, Vorwärmen und Siegeln unter Luftstrom Klasse A.', it: 'Alimentazione, pre-gassatura, riempimento, post-gassatura, pre-riscaldamento e sigillatura sotto flusso d’aria grado A.',
+
       },
       specs: { model: 'FFA-100 / 200 / 300 / 400 / 500', output: '100–500 ampoules/min', container: '1–20 ml ampoule', feature: 'Servo ceramic pump, curved needle lift to reduce splashing' }
     },
@@ -373,7 +521,10 @@
         es: 'Máquina de llenado y tapado de líquidos orales', pt: 'Máquina de enchimento e fechamento de líquidos orais',
         th: 'เครื่องบรรจุและปิดฝายาน้ำ', vi: 'Máy chiết rót & đóng nắp thuốc nước',
         bn: 'ওরাল লিকুইড ভরাট ও ক্যাপিং মেশিন', ur: 'زبانی مائع بھرنے اور کیپنگ مشین',
-        fa: 'دستگاه پرکردن و دربندی مایع خوراکی'
+        fa: 'دستگاه پرکردن و دربندی مایع خوراکی',
+
+        ar: 'آلة تعبئة وإغلاق السوائل الفموية', de: 'Mundflüssigkeits-Abfüll- & Verschließmaschine', it: 'Macchina di riempimento e chiusura liquidi orali',
+
       },
       desc: {
         en: 'Unscrambling, filling, cap sorting, cap placing and rolling for oral liquid bottles.',
@@ -388,7 +539,10 @@
         vi: 'Tự động sắp xếp chai, chiết rót, phân loại nắp, đặt nắp và ép nắp.',
         bn: 'বোতল সাজানো, ভরাট, ক্যাপ সাজানো, ক্যাপ বসানো ও রোলিং স্বয়ংক্রিয়ভাবে।',
         ur: 'بوتلوں کی ترتیب، بھرائی، کیپ کی چھانٹی، کیپ لگانا اور رولنگ خودکار۔',
-        fa: 'مرتب‌سازی بطری، پرکردن، مرتب‌سازی درپوش، قرارگیری و پرس درپوش به‌طور خودکار.'
+        fa: 'مرتب‌سازی بطری، پرکردن، مرتب‌سازی درپوش، قرارگیری و پرس درپوش به‌طور خودکار.',
+
+        ar: 'ترتيب، تعبئة، فرز الأغطية، وضعها وتدحرجها لزجاجات السوائل الفموية.', de: 'Entstapeln, Füllen, Kappen sortieren, Kappen setzen und Rollen für Mundflüssigkeitsflaschen.', it: 'Riorientamento, riempimento, selezione tappi, posa tappi e rullatura per flaconi di liquidi orali.',
+
       },
       specs: { model: 'FFK-100 / 200 / 300 / 400', output: '100–400 bottles/min', container: '5–30 ml oral liquid bottle', feature: 'Piston, stainless piston, ceramic or peristaltic pump options' }
     },
@@ -402,7 +556,10 @@
         es: 'Llenadora de polvo por tornillo', pt: 'Enchedora de pó por rosca',
         th: 'เครื่องบรรจุผงแบบสกรู', vi: 'Máy chiết rót bột trục vít',
         bn: 'স্ক্রু পাউডার ভরাট মেশিন', ur: 'سکرو پاؤڈر بھرنے کی مشین',
-        fa: 'دستگاه پرکردن پودر اسکرو'
+        fa: 'دستگاه پرکردن پودر اسکرو',
+
+        ar: 'آلة تعبئة البودرة باللولب', de: 'Schnecken-Pulverabfüllmaschine', it: 'Macchina di riempimento polvere a vite',
+
       },
       desc: {
         en: 'cGMP screw filler with interchangeable pitch, diameter and helix for different doses.',
@@ -417,7 +574,10 @@
         vi: 'Máy định lượng trục vít đạt cGMP, có thể thay đổi bước, đường kính và dạng xoắn.',
         bn: 'সিজিএমপি স্ক্রু ফিলার, বিভিন্ন ডোজের জন্য পিচ, ব্যাস ও হেলিক্স বদলানো যায়।',
         ur: 'cGMP سکرو فلر، مختلف خوراکوں کے لیے پچ، قطر اور ہیلکس تبدیل کیا جا سکتا ہے۔',
-        fa: 'پرکن اسکرو cGMP با گام، قطر و مارپیچ قابل تعویض برای دوزهای مختلف.'
+        fa: 'پرکن اسکرو cGMP با گام، قطر و مارپیچ قابل تعویض برای دوزهای مختلف.',
+
+        ar: 'معبئة بودرة بموجب cGMP ذات لولب قابل تبديل في الوتيرة والقطر واللفافة لجرعات مختلفة.', de: 'cGMP-Schneckenfiller mit auswechselbarem Steigungs-, Durchmesser- und Helix für verschiedene Dosen.', it: 'Dosatore a vite cGMP con passo, diametro ed elica intercambiabili per diverse dosi.',
+
       },
       specs: { model: 'FF-100 / 200 / 300', output: '50–200 vials/min', container: '1–100 ml vial', accuracy: '±1% – ±8%', feature: 'Dosing range 50–5000 mg, 1 / 2 / 4 heads' }
     },
@@ -431,7 +591,10 @@
         es: 'Llenadora de polvo por aire', pt: 'Enchedora de pó por ar',
         th: 'เครื่องบรรจุผงแบบลม', vi: 'Máy chiết rót bột khí nén',
         bn: 'এয়ারফ্লো পাউডার ভরাট মেশিন', ur: 'ایئر فلو پاؤڈر بھرنے کی مشین',
-        fa: 'دستگاه پرکردن پودر با جریان هوا'
+        fa: 'دستگاه پرکردن پودر با جریان هوا',
+
+        ar: 'آلة تعبئة البودرة بالهواء', de: 'Luftstrom-Pulverabfüllmaschine', it: 'Macchina di riempimento polvere ad aria',
+
       },
       desc: {
         en: 'Vacuum draws a metered dose through a porous filter, then dry compressed air blows it into the vial.',
@@ -446,7 +609,10 @@
         vi: 'Dùng chân không hút liều qua màng lọc xốp, rồi khí nén khô thổi vào lọ.',
         bn: 'ভ্যাকুয়াম ছিদ্রযুক্ত ফিল্টার দিয়ে ডোজ টেনে নেয়, এরপর শুকনো সংকুচিত বাতাসে ভায়ালে ফুঁক দেয়।',
         ur: 'ویکیوم غیرمحفوظ فلٹر کے ذریعے خوراک کھینچتا ہے، پھر خشک کمپریسڈ ہوا اسے شیشی میں پھونک دیتی ہے۔',
-        fa: 'خلأ دوز را از صافی متخلخل می‌کشد، سپس هوای فشرده خشک آن را به درون ویال می‌دمد.'
+        fa: 'خلأ دوز را از صافی متخلخل می‌کشد، سپس هوای فشرده خشک آن را به درون ویال می‌دمد.',
+
+        ar: 'يسحب الفراغ جرعة مقدرة عبر مرشح مسامي، ثم ينفخ الهواء المضغوط الجاف في القارورة.', de: 'Vakuum zieht eine dosierte Menge durch einen porösen Filter, dann bläst trockene Druckluft sie in das Vial.', it: 'Il vuoto aspira una dose calibrata attraverso un filtro poroso, poi l’aria compressa secca la soffia nel vial.',
+
       },
       specs: { model: 'FF-100 / 200 / 300', output: '20–80 vials/min', container: '2–100 ml vial', accuracy: '±1% – ±8%', feature: 'Dosing range 20–1000 mg, minimal mechanical friction' }
     },
@@ -460,7 +626,10 @@
         es: 'Máquina llenadora de cartuchos', pt: 'Máquina de enchimento de cartuchos',
         th: 'เครื่องบรรจุคาร์ทริดจ์', vi: 'Máy chiết rót cartridge',
         bn: 'কার্ট্রিজ ভরাট মেশিন', ur: 'کارٹریج بھرنے کی مشین',
-        fa: 'دستگاه پرکردن کارتریج'
+        fa: 'دستگاه پرکردن کارتریج',
+
+        ar: 'آلة تعبئة الكارتريدج', de: 'Kartuschen-Abfüllmaschine', it: 'Macchina di riempimento cartucce',
+
       },
       desc: {
         en: 'Aseptic filler for cartridges, designed to cGMP and FDA requirements.',
@@ -475,7 +644,10 @@
         vi: 'Máy chiết rót vô trùng cho cartridge, đáp ứng cGMP và FDA.',
         bn: 'কার্ট্রিজের জন্য অ্যাসেপটিক ফিলার, cGMP ও FDA প্রয়োজনীয়তা অনুযায়ী।',
         ur: 'کارٹریج کے لیے ایسپٹک فلر، cGMP اور FDA تقاضوں کے مطابق۔',
-        fa: 'پرکن آسپتیک کارتریج مطابق الزامات cGMP و FDA.'
+        fa: 'پرکن آسپتیک کارتریج مطابق الزامات cGMP و FDA.',
+
+        ar: 'آلة تعبئة معقمة للكارتريدج، مصممة وفق متطلبات cGMP وFDA.', de: 'Aseptische Abfüllmaschine für Kartuschen, entsprechend cGMP- und FDA-Anforderungen.', it: 'Riempitrice asettica per cartucce, conforme ai requisiti cGMP e FDA.',
+
       },
       specs: { model: 'FFC-100 / 150 / 200', output: '100–200 cartridges/min', container: 'Cartridge 1–5 ml', accuracy: '±1%', feature: 'Filling range 2–30 ml, nitrogen purging, CIP/SIP' }
     },
@@ -489,7 +661,10 @@
         es: 'Máquina de llenado y tapado de sprays', pt: 'Máquina de enchimento e fechamento de sprays',
         th: 'เครื่องบรรจุและปิดฝาสเปรย์', vi: 'Máy chiết rót & đóng nắp dạng xịt',
         bn: 'স্প্রে ভরাট ও ক্যাপিং মেশিন', ur: 'سپرے بھرنے اور کیپنگ مشین',
-        fa: 'دستگاه پرکردن و دربندی اسپری'
+        fa: 'دستگاه پرکردن و دربندی اسپری',
+
+        ar: 'آلة تعبئة وإغلال البخاخ', de: 'Spray-Abfüll- & Verschließmaschine', it: 'Macchina di riempimento e chiusura spray',
+
       },
       desc: {
         en: 'Servo filling and capping for spray vials, with nitrogen purging and CIP/SIP options.',
@@ -504,7 +679,10 @@
         vi: 'Chiết rót & đóng nắp servo cho chai xịt, có tùy chọn sục nitơ và CIP/SIP.',
         bn: 'স্প্রে ভায়ালের সার্ভো ভরাট ও ক্যাপিং, নাইট্রোজেন পার্জিং ও CIP/SIP অপশনসহ।',
         ur: 'سپرے شیشیوں کے لیے سروو بھرائی اور کیپنگ، نائٹروجن پرج اور CIP/SIP کے آپشنز کے ساتھ۔',
-        fa: 'پرکردن و دربندی سروو برای ویال اسپری با گزینه‌های پرج نیتروژن و CIP/SIP.'
+        fa: 'پرکردن و دربندی سروو برای ویال اسپری با گزینه‌های پرج نیتروژن و CIP/SIP.',
+
+        ar: 'تعبئة وإغلاق بتقنية سيرفو لزجاجات البخاخ، مع خيارات شطف بالنيتروجين وتنظيف CIP/SIP.', de: 'Servogesteuerte Abfüllung und Verschließung für Spray-Vials, mit Stickstoffspülung und CIP/SIP-Optionen.', it: 'Riempimento e chiusura servoassistiti per vial spray, con opzioni di purga azoto e CIP/SIP.',
+
       },
       specs: { model: 'FFD-100 / 150 / 200', output: '100–200 vials/min', container: '2–30 ml vial', accuracy: '±1%', feature: 'Nitrogen purging, CIP/SIP, tool-free format change' }
     },
@@ -518,7 +696,10 @@
         es: 'Capsuladora para viales', pt: 'Fechadora para frascos',
         th: 'เครื่องปิดฝาขวดไวอัล', vi: 'Máy đóng nắp lọ vial',
         bn: 'ভায়াল ক্যাপিং মেশিন', ur: 'شیشی کیپنگ مشین',
-        fa: 'دستگاه دربندی ویال'
+        fa: 'دستگاه دربندی ویال',
+
+        ar: 'آلة إغلاق القوارير', de: 'Vial-Verschließmaschine', it: 'Macchina di chiusura vial',
+
       },
       desc: {
         en: 'cGMP capper for medium to large vial lines, integrable with RABS.',
@@ -533,7 +714,10 @@
         vi: 'Máy đóng nắp đạt cGMP cho dây chuyền vial trung bình – lớn, tích hợp được RABS.',
         bn: 'মাঝারি থেকে বড় ভায়াল লাইনের জন্য সিজিএমপি ক্যাপার, RABS-এর সাথে সংযোগযোগ্য।',
         ur: 'درمیانے سے بڑے شیشی لائنوں کے لیے cGMP کیپر، RABS کے ساتھ مربوط۔',
-        fa: 'دربندنمای cGMP برای خطوط متوسط تا بزرگ ویال، قابل ادغام با RABS.'
+        fa: 'دربندنمای cGMP برای خطوط متوسط تا بزرگ ویال، قابل ادغام با RABS.',
+
+        ar: 'آلة إغلاق بموجب cGMP لخطوط قوارير متوسطة وكبيرة، قابلة للدمج مع RABS.', de: 'cGMP-Verschließer für mittlere bis große Vial-Linien, integrierbar mit RABS.', it: 'Chiuditrice cGMP per linee vial medio-grandi, integrabile con RABS.',
+
       },
       specs: { model: 'FC-020 / 040 / 120 / 300', output: '20–500 vials/min', container: '2–100 ml vial', feature: 'Breakage rate 0.05%, rejection of missing stopper/cap, vision option' }
     },
@@ -547,7 +731,10 @@
         es: 'Máquina llenadora de jeringas en nido (PFS)', pt: 'Máquina de enchimento de seringas em ninho (PFS)',
         th: 'เครื่องบรรจุกระบอกฉีดยาแบบถาด (PFS)', vi: 'Máy chiết rót ống tiêm dạng khay (PFS)',
         bn: 'নেস্ট সিরিঞ্জ (PFS) ভরাট মেশিন', ur: 'نیسٹ سرنج (PFS) بھرنے کی مشین',
-        fa: 'دستگاه پرکردن سرنگ سینی‌ای (PFS)'
+        fa: 'دستگاه پرکردن سرنگ سینی‌ای (PFS)',
+
+        ar: 'آلة تعبئة السرنجات بنظام العش (PFS)', de: 'Nest-Spritzen (PFS) Abfüllmaschine', it: 'Macchina di riempimento siringhe in nido (PFS)',
+
       },
       desc: {
         en: 'Three-in-one aseptic filler for RTU nested syringes, vials and cartridges.',
@@ -562,7 +749,10 @@
         vi: 'Máy chiết rót vô trùng 3-trong-1 cho ống tiêm, vial và cartridge RTU dạng khay.',
         bn: 'RTU নেস্টেড সিরিঞ্জ, ভায়াল ও কার্ট্রিজের জন্য থ্রি-ইন-ওয়ান অ্যাসেপটিক ফিলার।',
         ur: 'RTU نیسٹڈ سرنجوں، شیشیوں اور کارٹریجز کے لیے تین میں ایک ایسپٹک فلر۔',
-        fa: 'پرکن آسپتیک سه‌کاره برای سرنگ، ویال و کارتریج RTU در سینی.'
+        fa: 'پرکن آسپتیک سه‌کاره برای سرنگ، ویال و کارتریج RTU در سینی.',
+
+        ar: 'آلة تعبئة معقمة ثلاثية في واحد لسرنجات وكاليالت وكارتريدج جاهزة بنظام العش.', de: '3-in-1 aseptische Abfüllmaschine für RTU-Nestsysteme mit Spritzen, Vials und Kartuschen.', it: 'Riempitrice asettica 3-in-1 per siringhe, vial e cartucce RTU in nido.',
+
       },
       specs: { model: 'PFS-M / PFS-P (1–10 filling heads)', container: 'RTU nest: syringe, vial, cartridge', feature: 'Mechanical or vacuum stoppering, submerged filling, modular' }
     },
@@ -576,7 +766,10 @@
         es: 'Liofilizador', pt: 'Liofilizador',
         th: 'เครื่องทำแห้งเยือกแข็ง', vi: 'Máy sấy thăng hoa (đông khô)',
         bn: 'লায়োফিলাইজার (ফ্রিজ ড্রায়ার)', ur: 'لائوفلائزر (فریز ڈرائر)',
-        fa: 'لیوفیلایزر (خشک‌کن انجمادی)'
+        fa: 'لیوفیلایزر (خشک‌کن انجمادی)',
+
+        ar: 'المجفف بالتجميد (الليوفيليزر)', de: 'Lyophilisator (Gefriertrockner)', it: 'Liofilizzatore (essiccatore a freddo)',
+
       },
       desc: {
         en: 'Freeze dryer for temperature-sensitive products: vaccines, antibodies, diagnostics, APIs.',
@@ -591,7 +784,10 @@
         vi: 'Dành cho sản phẩm nhạy nhiệt: vắc-xin, kháng thể, chẩn đoán và API.',
         bn: 'তাপ-সংবেদনশীল পণ্যের জন্য: ভ্যাকসিন, অ্যান্টিবডি, ডায়াগনস্টিক ও এপিআই।',
         ur: 'درجہ حرارت سے حساس مصنوعات کے لیے: ویکسین، اینٹی باڈیز، تشخیصی کٹس اور APIs۔',
-        fa: 'برای محصولات حساس به دما: واکسن، آنتی‌بادی، تشخیصی و API.'
+        fa: 'برای محصولات حساس به دما: واکسن، آنتی‌بادی، تشخیصی و API.',
+
+        ar: 'مجفف بالتجميد للمنتجات الحساسة للحرارة: اللقاحات والأجسام المضادة والتشخيص والمواد الخام الصيدلانية.', de: 'Gefriertrockner für temperaturempfindliche Produkte: Impfstoffe, Antikörper, Diagnostika, APIs.', it: 'Liofilizzatore per prodotti termosensibili: vaccini, anticorpi, diagnostici, API.',
+
       },
       specs: { feature: 'Precise temperature & vacuum control, integrated CIP/SIP', cert: 'FDA, cGMP, 21 CFR Part 11', container: 'Vial & API bulk' }
     },
@@ -605,7 +801,10 @@
         es: 'Sistema de aislador', pt: 'Sistema de isolador',
         th: 'ระบบไอโซเลเตอร์', vi: 'Hệ thống isolator',
         bn: 'আইসোলেটর সিস্টেম', ur: 'آئسولیٹر سسٹم',
-        fa: 'سیستم ایزولاتور'
+        fa: 'سیستم ایزولاتور',
+
+        ar: 'نظام العازل', de: 'Isolatorsystem', it: 'Sistema isolatore',
+
       },
       desc: {
         en: 'Hard-wall sealed enclosure maintaining dynamic Grade A for aseptic processing.',
@@ -620,7 +819,10 @@
         vi: 'Buồng kín vách cứng duy trì cấp A động cho quy trình vô trùng.',
         bn: 'হার্ড-ওয়াল সিলড এনক্লোজার, অ্যাসেপটিক প্রক্রিয়ার জন্য ডাইনামিক গ্রেড-এ বজায় রাখে।',
         ur: 'سخت دیواروں والا بند انکلوژر جو ایسپٹک عمل کے لیے متحرک گریڈ A برقرار رکھتا ہے۔',
-        fa: 'محفظه درزبندی‌شده با دیواره صلب که گرید A پویا را برای فرایند آسپتیک حفظ می‌کند.'
+        fa: 'محفظه درزبندی‌شده با دیواره صلب که گرید A پویا را برای فرایند آسپتیک حفظ می‌کند.',
+
+        ar: 'حجرة مغلقة بجدران صلبة تحافظ على درجة A ديناميكية للمعالجة المعقمة.', de: 'Hartwandige dichte Kammer, die dynamisch Klasse A für aseptische Prozesse hält.', it: 'Recinto a parete rigida sigillato che mantiene grado A dinamico per processi asettici.',
+
       },
       specs: { filter: 'H14 HEPA, PAO scan-tested', decontam: 'H₂O₂ vapour, 6-log reduction', feature: 'Stainless steel + toughened glass, RTP or airlock transfer' }
     },
@@ -634,7 +836,10 @@
         es: 'Máquina de inspección visual', pt: 'Máquina de inspeção visual',
         th: 'เครื่องตรวจสอบด้วยภาพ', vi: 'Máy soi kiểm tra',
         bn: 'ভিজ্যুয়াল পরিদর্শন মেশিন', ur: 'بصری معائنہ مشین',
-        fa: 'دستگاه بازرسی چشمی'
+        fa: 'دستگاه بازرسی چشمی',
+
+        ar: 'آلة الفحص البصري', de: 'Sichtprüfmaschine', it: 'Macchina di ispezione visiva',
+
       },
       desc: {
         en: 'Automated inspection for vials, ampoules and oral liquid bottles.',
@@ -649,7 +854,10 @@
         vi: 'Kiểm tra tự động cho lọ vial, ống ampoule và chai thuốc nước.',
         bn: 'ভায়াল, অ্যাম্পুল ও ওরাল লিকুইড বোতলের স্বয়ংক্রিয় পরিদর্শন।',
         ur: 'شیشیوں، ایمپولوں اور زبانی مائع کی بوتلوں کا خودکار معائنہ۔',
-        fa: 'بازرسی خودکار ویال، آمپول و بطری‌های مایع خوراکی.'
+        fa: 'بازرسی خودکار ویال، آمپول و بطری‌های مایع خوراکی.',
+
+        ar: 'فحص آلي للقوارير والأمبولات وزجاجات السوائل الفموية.', de: 'Automatisierte Prüfung für Vials, Ampullen und Mundflüssigkeitsflaschen.', it: 'Ispezione automatizzata per vial, ampolle e flaconi di liquidi orali.',
+
       },
       specs: { model: 'VI-100 / 200 / 400 / 500', output: '100–500 containers/min', container: '2–30 ml', feature: 'Up to 5 camera stations, optional HGA headspace analysis' }
     },
@@ -663,7 +871,10 @@
         es: 'Llenadora de viales de laboratorio', pt: 'Enchedora de frascos de laboratório',
         th: 'เครื่องบรรจุขวดไวอัลระดับห้องปฏิบัติการ', vi: 'Máy chiết rót vial phòng thí nghiệm',
         bn: 'ল্যাবরেটরি ভায়াল ভরাট মেশিন', ur: 'لیبارٹری شیشی بھرنے کی مشین',
-        fa: 'دستگاه پرکردن ویال آزمایشگاهی'
+        fa: 'دستگاه پرکردن ویال آزمایشگاهی',
+
+        ar: 'آلة تعبئة القوارير المخبرية', de: 'Labor-Vialabfüllmaschine', it: 'Macchina di riempimento vial da laboratorio',
+
       },
       desc: {
         en: 'Portable bench-top filler for installation inside a biosafety cabinet.',
@@ -678,7 +889,10 @@
         vi: 'Thiết bị để bàn di động, lắp được bên trong tủ an toàn sinh học.',
         bn: 'পোর্টেবল বেঞ্চ-টপ ফিলার, বায়োসেফটি ক্যাবিনেটের ভেতরে বসানো যায়।',
         ur: 'پورٹیبل بینچ ٹاپ فلر، بائیو سیفٹی کیبنٹ کے اندر نصب کیا جا سکتا ہے۔',
-        fa: 'پرکن رومیزی قابل‌حمل، قابل نصب در کابینت ایمنی زیستی.'
+        fa: 'پرکن رومیزی قابل‌حمل، قابل نصب در کابینت ایمنی زیستی.',
+
+        ar: 'آلة تعبئة مخبرية محمولة تُركّب داخل خزانة الأمان البيولوجي.', de: 'Tragbarer Tischfüller zur Installation in einem Biosicherheitsschrank.', it: 'Riempitrice da banco portatile per installazione in una cabina di biosicurezza.',
+
       },
       specs: { size: '≈750 × 550 × 600 mm', weight: '≈50 kg', power: '2P / 220 V', output: '10–15 vials/min', container: '2–20 ml' }
     },
@@ -692,7 +906,10 @@
         es: 'Máquina llenadora semiautomática PFS', pt: 'Máquina de enchimento semiautomática PFS',
         th: 'เครื่องบรรจุ PFS กึ่งอัตโนมัติ', vi: 'Máy chiết rót PFS bán tự động',
         bn: 'পিএফএস আধা-স্বয়ংক্রিয় ভরাট মেশিন', ur: 'PFS نیم خودکار بھرنے کی مشین',
-        fa: 'دستگاه نیمه‌خودکار پرکردن PFS'
+        fa: 'دستگاه نیمه‌خودکار پرکردن PFS',
+
+        ar: 'آلة تعبئة PFS نصف آلية', de: 'PFS-Halbautomatische Abfüllmaschine', it: 'Macchina di riempimento PFS semiautomatica',
+
       },
       desc: {
         en: 'Manual load/unload with automatic filling and stoppering for development batches.',
@@ -707,7 +924,10 @@
         vi: 'Nạp/tháo liệu thủ công, chiết rót và đậy nút tự động cho lô R&D.',
         bn: 'ম্যানুয়াল লোড/আনলোড, স্বয়ংক্রিয় ভরাট ও স্টপারিং—ডেভেলপমেন্ট ব্যাচের জন্য।',
         ur: 'دستی لوڈ/ان لوڈ، خودکار بھرائی اور سٹاپرنگ—ڈیولپمنٹ بیچز کے لیے۔',
-        fa: 'بارگیری/تخلیه دستی با پرکردن و درپوش‌گذاری خودکار برای بچ‌های توسعه.'
+        fa: 'بارگیری/تخلیه دستی با پرکردن و درپوش‌گذاری خودکار برای بچ‌های توسعه.',
+
+        ar: 'تحميل وتفريغ يدوي مع تعبئة وسداد تلقائيين لدفعات التطوير.', de: 'Manuelles Be- und Entladen mit automatischer Füllung und Stopfen für Entwicklungschargen.', it: 'Carico/scarico manuale con riempimento e tappatura automatici per lotti di sviluppo.',
+
       },
       specs: { container: '0.5–20 ml prefilled syringe', feature: 'Peristaltic or ceramic pump, mechanical or vacuum stoppering', size: 'Portable — fits inside isolator or RABS' }
     },
@@ -721,7 +941,10 @@
         es: 'Llenadora de bolsas flexibles de laboratorio', pt: 'Enchedora de bolsas flexíveis de laboratório',
         th: 'เครื่องบรรจุถุงนิ่มระดับห้องปฏิบัติการ', vi: 'Máy chiết rót túi mềm phòng thí nghiệm',
         bn: 'ল্যাবরেটরি নরম-ব্যাগ ভরাট মেশিন', ur: 'لیبارٹری نرم تھیلا بھرنے کی مشین',
-        fa: 'دستگاه پرکردن کیسه نرم آزمایشگاهی'
+        fa: 'دستگاه پرکردن کیسه نرم آزمایشگاهی',
+
+        ar: 'آلة تعبئة الأكياس المرنة المخبرية', de: 'Labor-Softbag-Abfüllmaschine', it: 'Macchina di riempimento sacchi morbidi da laboratorio',
+
       },
       desc: {
         en: 'Gravimetric filling for soft bags during lab-scale development.',
@@ -736,7 +959,10 @@
         vi: 'Chiết rót theo trọng lượng cho túi mềm ở giai đoạn phát triển trong phòng thí nghiệm.',
         bn: 'ল্যাব-স্কেল ডেভেলপমেন্টে নরম ব্যাগের জন্য ওজন-ভিত্তিক ভরাট।',
         ur: 'لیبارٹری پیمانے پر ترقی کے دوران نرم تھیلوں کی وزنی بھرائی۔',
-        fa: 'پرکردن وزنی کیسه‌های نرم در مرحله توسعه آزمایشگاهی.'
+        fa: 'پرکردن وزنی کیسه‌های نرم در مرحله توسعه آزمایشگاهی.',
+
+        ar: 'تعبئة جاذبية للأكياس المرنة أثناء التطوير المخبري.', de: 'Gravimetrische Befüllung von Softbags während der Labor-Entwicklung.', it: 'Riempimento gravimetrico di sacchi morbidi durante lo sviluppo in laboratorio.',
+
       },
       specs: { feature: 'Gravimetric (weighing) filling, stable and repeatable', container: 'Mainstream soft-bag formats', size: 'Tool-free format changeover, portable' }
     },
@@ -750,7 +976,10 @@
         es: 'Capsuladora automática de laboratorio', pt: 'Fechadora automática de laboratório',
         th: 'เครื่องปิดฝาอัตโนมัติระดับห้องปฏิบัติการ', vi: 'Máy đóng nắp tự động phòng thí nghiệm',
         bn: 'ল্যাবরেটরি স্বয়ংক্রিয় ক্যাপিং মেশিন', ur: 'لیبارٹری خودکار کیپنگ مشین',
-        fa: 'دستگاه دربندی خودکار آزمایشگاهی'
+        fa: 'دستگاه دربندی خودکار آزمایشگاهی',
+
+        ar: 'آلة إغلاق أوتوماتيكية مخبرية', de: 'Labor-Automatische Verschließmaschine', it: 'Macchina di chiusura automatica da laboratorio',
+
       },
       desc: {
         en: 'Compact bench-top crimper for aluminium caps on vials in development and small batches.',
@@ -765,7 +994,10 @@
         vi: 'Máy ép nắp để bàn nhỏ gọn cho nắp nhôm lọ vial trong R&D và lô nhỏ.',
         bn: 'ডেভেলপমেন্ট ও ছোট ব্যাচে ভায়ালের অ্যালুমিনিয়াম ক্যাপের জন্য কমপ্যাক্ট বেঞ্চ-টপ ক্রিম্পার।',
         ur: 'ترقی اور چھوٹے بیچز میں شیشیوں کی ایلومینیم کیپ کے لیے کمپیکٹ بینچ ٹاپ کرمپر۔',
-        fa: 'پرس دربندی رومیزی فشرده برای درپوش‌های آلومینیومی ویال در توسعه و بچ‌های کوچک.'
+        fa: 'پرس دربندی رومیزی فشرده برای درپوش‌های آلومینیومی ویال در توسعه و بچ‌های کوچک.',
+
+        ar: 'مكبس طاولة مدمج للأغطية الألومنيوم على القوارير في مرحلة التطوير والدفعات الصغيرة.', de: 'Kompakter Tischcrimpier für Aluminiumkappen auf Vials in Entwicklung und Kleinserien.', it: 'Imbottigliatrice da banco compatta per tappi in alluminio su vial in sviluppo e piccoli lotti.',
+
       },
       specs: { size: '≈500 × 350 × 600 mm', weight: '≈35 kg', power: '2P / 220 V', container: '2–20 ml vial' }
     }
@@ -783,7 +1015,10 @@
       fr: 'Laveuse + tunnel + remplisseuse/boucheuse + capsuleuse', es: 'Lavadora + túnel + llenadora/taponadora + capsuladora',
       pt: 'Lavadora + túnel + enchedora/batoqueira + fechadora', th: 'เครื่องล้าง + อุโมงค์ + เครื่องบรรจุ/ใส่จุก + เครื่องปิดฝา',
       vi: 'Máy rửa + đường hầm + máy rót/đậy nút + máy đóng nắp', bn: 'ওয়াশার + টানেল + ফিলার/স্টপারার + ক্যাপার',
-      ur: 'واشر + ٹنل + فلر/سٹاپرر + کیپر', fa: 'واشر + تونل + پرکن/درپوش‌زن + دربندنما'
+      ur: 'واشر + ٹنل + فلر/سٹاپرر + کیپر', fa: 'واشر + تونل + پرکن/درپوش‌زن + دربندنما',
+
+      ar: 'غسالة + نفق + معبئة/ساد + مغلقة', de: 'Wascher + Tunnel + Füller/Stopfer + Verschließer', it: 'Lavatrice + tunnel + riempitrice/tappatrice + chiuditrice',
+
     },
     'Washer + tunnel + filling & sealing': {
       zh: '洗瓶机 + 隧道烘箱 + 灌装封口机', ja: '洗浄機＋トンネル＋充填密封機',
@@ -791,7 +1026,10 @@
       fr: 'Laveuse + tunnel + remplissage et scellage', es: 'Lavadora + túnel + llenado y sellado',
       pt: 'Lavadora + túnel + enchimento e selagem', th: 'เครื่องล้าง + อุโมงค์ + เครื่องบรรจุปิดผนึก',
       vi: 'Máy rửa + đường hầm + máy chiết rót hàn kín', bn: 'ওয়াশার + টানেল + ভরাট ও সিলিং',
-      ur: 'واشر + ٹنل + بھرائی اور سیلنگ', fa: 'واشر + تونل + پرکردن و پلمپ'
+      ur: 'واشر + ٹنل + بھرائی اور سیلنگ', fa: 'واشر + تونل + پرکردن و پلمپ',
+
+      ar: 'غسالة + نفق + تعبئة وإغلاق', de: 'Wascher + Tunnel + Füllen & Siegeln', it: 'Lavatrice + tunnel + riempimento e sigillatura',
+
     },
     'Washer + hot-air tunnel + filler & capper': {
       zh: '洗瓶机 + 热风隧道烘箱 + 灌装轧盖机', ja: '洗浄機＋熱風トンネル＋充填キャッパー',
@@ -799,246 +1037,366 @@
       fr: 'Laveuse + tunnel à air chaud + remplisseuse et capsuleuse', es: 'Lavadora + túnel de aire caliente + llenadora y capsuladora',
       pt: 'Lavadora + túnel de ar quente + enchedora e fechadora', th: 'เครื่องล้าง + อุโมงค์ลมร้อน + เครื่องบรรจุปิดฝา',
       vi: 'Máy rửa + đường hầm khí nóng + máy rót và đóng nắp', bn: 'ওয়াশার + হট-এয়ার টানেল + ফিলার ও ক্যাপার',
-      ur: 'واشر + گرم ہوا ٹنل + فلر اور کیپر', fa: 'واشر + تونل هوای گرم + پرکن و دربندنما'
+      ur: 'واشر + گرم ہوا ٹنل + فلر اور کیپر', fa: 'واشر + تونل هوای گرم + پرکن و دربندنما',
+
+      ar: 'غسالة + نفق هواء ساخن + معبئة ومغلقة', de: 'Wascher + Heißlufttunnel + Füller & Verschließer', it: 'Lavatrice + tunnel ad aria calda + riempitrice e chiuditrice',
+
     },
     /* --- 适用规格 --- */
     '2–100 ml vial': {
       zh: '2–100ml 西林瓶', ja: '2〜100ml バイアル', ko: '2~100ml 바이알',
       ru: 'Флакон 2–100 мл', fr: 'Flacon 2–100 ml', es: 'Vial de 2–100 ml', pt: 'Frasco de 2–100 ml',
       th: 'ขวดไวอัล 2–100 มล.', vi: 'Lọ vial 2–100 ml', bn: '২–১০০ মিলি ভায়াল',
-      ur: '2–100 ملی لیٹر شیشی', fa: 'ویال ۲–۱۰۰ میلی‌لیتر'
+      ur: '2–100 ملی لیٹر شیشی', fa: 'ویال ۲–۱۰۰ میلی‌لیتر',
+
+      ar: 'قارورة 2–100 مل', de: '2–100 ml Vial', it: 'Vial da 2–100 ml',
+
     },
     '2–30 ml vial': {
       zh: '2–30ml 西林瓶', ja: '2〜30ml バイアル', ko: '2~30ml 바이알',
       ru: 'Флакон 2–30 мл', fr: 'Flacon 2–30 ml', es: 'Vial de 2–30 ml', pt: 'Frasco de 2–30 ml',
       th: 'ขวดไวอัล 2–30 มล.', vi: 'Lọ vial 2–30 ml', bn: '২–৩০ মিলি ভায়াল',
-      ur: '2–30 ملی لیٹر شیشی', fa: 'ویال ۲–۳۰ میلی‌لیتر'
+      ur: '2–30 ملی لیٹر شیشی', fa: 'ویال ۲–۳۰ میلی‌لیتر',
+
+      ar: 'قارورة 2–30 مل', de: '2–30 ml Vial', it: 'Vial da 2–30 ml',
+
     },
     '1–100 ml vial': {
       zh: '1–100ml 西林瓶', ja: '1〜100ml バイアル', ko: '1~100ml 바이알',
       ru: 'Флакон 1–100 мл', fr: 'Flacon 1–100 ml', es: 'Vial de 1–100 ml', pt: 'Frasco de 1–100 ml',
       th: 'ขวดไวอัล 1–100 มล.', vi: 'Lọ vial 1–100 ml', bn: '১–১০০ মিলি ভায়াল',
-      ur: '1–100 ملی لیٹر شیشی', fa: 'ویال ۱–۱۰۰ میلی‌لیتر'
+      ur: '1–100 ملی لیٹر شیشی', fa: 'ویال ۱–۱۰۰ میلی‌لیتر',
+
+      ar: 'قارورة 1–100 مل', de: '1–100 ml Vial', it: 'Vial da 1–100 ml',
+
     },
     '2–20 ml vial': {
       zh: '2–20ml 西林瓶', ja: '2〜20ml バイアル', ko: '2~20ml 바이알',
       ru: 'Флакон 2–20 мл', fr: 'Flacon 2–20 ml', es: 'Vial de 2–20 ml', pt: 'Frasco de 2–20 ml',
       th: 'ขวดไวอัล 2–20 มล.', vi: 'Lọ vial 2–20 ml', bn: '২–২০ মিলি ভায়াল',
-      ur: '2–20 ملی لیٹر شیشی', fa: 'ویال ۲–۲۰ میلی‌لیتر'
+      ur: '2–20 ملی لیٹر شیشی', fa: 'ویال ۲–۲۰ میلی‌لیتر',
+
+      ar: 'قارورة 2–20 مل', de: '2–20 ml Vial', it: 'Vial da 2–20 ml',
+
     },
     '1–20 ml ampoule': {
       zh: '1–20ml 安瓿瓶', ja: '1〜20ml アンプル', ko: '1~20ml 앰플',
       ru: 'Ампула 1–20 мл', fr: 'Ampoule 1–20 ml', es: 'Ampolla de 1–20 ml', pt: 'Ampola de 1–20 ml',
       th: 'หลอดแอมพูล 1–20 มล.', vi: 'Ống ampoule 1–20 ml', bn: '১–২০ মিলি অ্যাম্পুল',
-      ur: '1–20 ملی لیٹر ایمپول', fa: 'آمپول ۱–۲۰ میلی‌لیتر'
+      ur: '1–20 ملی لیٹر ایمپول', fa: 'آمپول ۱–۲۰ میلی‌لیتر',
+
+      ar: 'أمبولة 1–20 مل', de: '1–20 ml Ampulle', it: 'Ampolla da 1–20 ml',
+
     },
     '5–20 ml oral liquid bottle': {
       zh: '5–20ml 口服液瓶', ja: '5〜20ml 経口液ボトル', ko: '5~20ml 경구액 병',
       ru: 'Флакон для пероральных жидкостей 5–20 мл', fr: 'Flacon liquide oral 5–20 ml', es: 'Frasco de líquido oral 5–20 ml', pt: 'Frasco de líquido oral 5–20 ml',
       th: 'ขวดยาน้ำ 5–20 มล.', vi: 'Chai thuốc nước 5–20 ml', bn: '৫–২০ মিলি ওরাল লিকুইড বোতল',
-      ur: '5–20 ملی لیٹر زبانی مائع کی بوتل', fa: 'بطری مایع خوراکی ۵–۲۰ میلی‌لیتر'
+      ur: '5–20 ملی لیٹر زبانی مائع کی بوتل', fa: 'بطری مایع خوراکی ۵–۲۰ میلی‌لیتر',
+
+      ar: 'زجاجة سائل فموي 5–20 مل', de: '5–20 ml Mundflüssigkeitsflasche', it: 'Flacone liquido orale da 5–20 ml',
+
     },
     '5–30 ml oral liquid bottle': {
       zh: '5–30ml 口服液瓶', ja: '5〜30ml 経口液ボトル', ko: '5~30ml 경구액 병',
       ru: 'Флакон для пероральных жидкостей 5–30 мл', fr: 'Flacon liquide oral 5–30 ml', es: 'Frasco de líquido oral 5–30 ml', pt: 'Frasco de líquido oral 5–30 ml',
       th: 'ขวดยาน้ำ 5–30 มล.', vi: 'Chai thuốc nước 5–30 ml', bn: '৫–৩০ মিলি ওরাল লিকুইড বোতল',
-      ur: '5–30 ملی لیٹر زبانی مائع کی بوتل', fa: 'بطری مایع خوراکی ۵–۳۰ میلی‌لیتر'
+      ur: '5–30 ملی لیٹر زبانی مائع کی بوتل', fa: 'بطری مایع خوراکی ۵–۳۰ میلی‌لیتر',
+
+      ar: 'زجاجة سائل فموي 5–30 مل', de: '5–30 ml Mundflüssigkeitsflasche', it: 'Flacone liquido orale da 5–30 ml',
+
     },
     'Vials & ampoules': {
       zh: '西林瓶与安瓿瓶', ja: 'バイアル・アンプル', ko: '바이알·앰플',
       ru: 'Флаконы и ампулы', fr: 'Flacons et ampoules', es: 'Viales y ampollas', pt: 'Frascos e ampolas',
       th: 'ขวดไวอัลและหลอดแอมพูล', vi: 'Lọ vial & ampoule', bn: 'ভায়াল ও অ্যাম্পুল',
-      ur: 'شیشیاں اور ایمپول', fa: 'ویال و آمپول'
+      ur: 'شیشیاں اور ایمپول', fa: 'ویال و آمپول',
+
+      ar: 'القوارير والأمبولات', de: 'Vials & Ampullen', it: 'Vial e ampolle',
+
     },
     'Cartridge 1–5 ml': {
       zh: '卡式瓶 1–5ml', ja: 'カートリッジ 1〜5ml', ko: '카트리지 1~5ml',
       ru: 'Картридж 1–5 мл', fr: 'Cartouche 1–5 ml', es: 'Cartucho de 1–5 ml', pt: 'Cartucho de 1–5 ml',
       th: 'คาร์ทริดจ์ 1–5 มล.', vi: 'Cartridge 1–5 ml', bn: 'কার্ট্রিজ ১–৫ মিলি',
-      ur: 'کارٹریج 1–5 ملی لیٹر', fa: 'کارتریج ۱–۵ میلی‌لیتر'
+      ur: 'کارٹریج 1–5 ملی لیٹر', fa: 'کارتریج ۱–۵ میلی‌لیتر',
+
+      ar: 'كارتريدج 1–5 مل', de: 'Kartusche 1–5 ml', it: 'Cartuccia da 1–5 ml',
+
     },
     'Vial & API bulk': {
       zh: '西林瓶与原料药散装', ja: 'バイアル・原薬バルク', ko: '바이알·원료의약품 벌크',
       ru: 'Флаконы и насыпные АФИ', fr: 'Flacons et principes actifs en vrac', es: 'Viales y API a granel', pt: 'Frascos e API a granel',
       th: 'ขวดไวอัลและ API แบบก้อน', vi: 'Lọ vial & API dạng bulk', bn: 'ভায়াল ও এপিআই বাল্ক',
-      ur: 'شیشیاں اور APIs بلک', fa: 'ویال و API فله'
+      ur: 'شیشیاں اور APIs بلک', fa: 'ویال و API فله',
+
+      ar: 'قارورة ومواد خام صيدلانية سائبة', de: 'Vial & API-Schüttgut', it: 'Vial e API sfuso',
+
     },
     'RTU nest: syringe, vial, cartridge': {
       zh: 'RTU 巢板：预充针、西林瓶、卡式瓶', ja: 'RTUネスト：シリンジ・バイアル・カートリッジ', ko: 'RTU 네스트: 시린지·바이알·카트리지',
       ru: 'Гнёзда RTU: шприцы, флаконы, картриджи', fr: 'Nid RTU : seringues, flacons, cartouches', es: 'Nido RTU: jeringas, viales, cartuchos', pt: 'Ninho RTU: seringas, frascos, cartuchos',
       th: 'ถาด RTU: กระบอกฉีดยา ขวดไวอัล คาร์ทริดจ์', vi: 'Khay RTU: ống tiêm, vial, cartridge', bn: 'RTU নেস্ট: সিরিঞ্জ, ভায়াল, কার্ট্রিজ',
-      ur: 'RTU نیسٹ: سرنج، شیشی، کارٹریج', fa: 'سینی RTU: سرنگ، ویال، کارتریج'
+      ur: 'RTU نیسٹ: سرنج، شیشی، کارٹریج', fa: 'سینی RTU: سرنگ، ویال، کارتریج',
+
+      ar: 'عش RTU: سرنجة وقارورة وكارتريدج', de: 'RTU-Nest: Spritze, Vial, Kartusche', it: 'Nido RTU: siringa, vial, cartuccia',
+
     },
     '0.5–20 ml prefilled syringe': {
       zh: '0.5–20ml 预充式注射器', ja: '0.5〜20ml プレフィルドシリンジ', ko: '0.5~20ml 프리필드 시린지',
       ru: 'Предзаполненный шприц 0,5–20 мл', fr: 'Seringue préremplie 0,5–20 ml', es: 'Jeringa precargada de 0,5–20 ml', pt: 'Seringa pré-cheia de 0,5–20 ml',
       th: 'กระบอกฉีดยาพร้อมใช้ 0.5–20 มล.', vi: 'Ống tiêm đóng sẵn 0,5–20 ml', bn: '০.৫–২০ মিলি প্রিফিলড সিরিঞ্জ',
-      ur: '0.5–20 ملی لیٹر پہلے سے بھری سرنج', fa: 'سرنگ از پیش پرشده ۰٫۵–۲۰ میلی‌لیتر'
+      ur: '0.5–20 ملی لیٹر پہلے سے بھری سرنج', fa: 'سرنگ از پیش پرشده ۰٫۵–۲۰ میلی‌لیتر',
+
+      ar: 'سرنجة مملوءة مسبقًا 0.5–20 مل', de: '0,5–20 ml Fertigspritze', it: 'Siringa preriempita da 0,5–20 ml',
+
     },
     'Mainstream soft-bag formats': {
       zh: '主流软袋规格', ja: '主流ソフトバッグ規格', ko: '주류 소프트백 규격',
       ru: 'Стандартные форматы мягких контейнеров', fr: 'Formats de poches souples courants', es: 'Formatos estándar de bolsas flexibles', pt: 'Formatos padrão de bolsas flexíveis',
       th: 'รูปแบบถุงนิ่มทั่วไป', vi: 'Các định dạng túi mềm phổ biến', bn: 'প্রচলিত নরম ব্যাগ ফরম্যাট',
-      ur: 'عام سافٹ بیگ فارمیٹس', fa: 'فرمت‌های رایج کیسه نرم'
+      ur: 'عام سافٹ بیگ فارمیٹس', fa: 'فرمت‌های رایج کیسه نرم',
+
+      ar: 'أشكال الأكياس المرنة الشائعة', de: 'Gängige Softbag-Formate', it: 'Formati sacchi morbidi comuni',
+
     },
     /* --- 生产速度 --- */
     '40–160 washing needles': {
       zh: '40–160 根洗瓶针', ja: '洗浄ニードル40〜160本', ko: '세척 니들 40–160개',
       ru: '40–160 моечных игл', fr: '40–160 aiguilles de lavage', es: '40–160 agujas de lavado', pt: '40–160 agulhas de lavagem',
       th: 'เข็มล้าง 40–160 ตัว', vi: '40–160 kim rửa', bn: '৪০–১৬০টি ওয়াশিং নিডল',
-      ur: '40–160 واشنگ نیدلز', fa: '۴۰–۱۶۰ سوزن شست‌وشو'
+      ur: '40–160 واشنگ نیدلز', fa: '۴۰–۱۶۰ سوزن شست‌وشو',
+
+      ar: '40–160 إبرة غسل', de: '40–160 Waschnadeln', it: '40–160 aghi di lavaggio',
+
     },
     /* --- 灌装精度 --- */
     '±0.5% (2 ml water-like)': {
       zh: '±0.5%（2ml 水样液）', ja: '±0.5%（2ml 水様液）', ko: '±0.5% (2ml 수용액 기준)',
       ru: '±0,5% (2 мл, водоподобный раствор)', fr: '±0,5 % (2 ml liquide aqueux)', es: '±0,5% (2 ml líquido acuoso)', pt: '±0,5% (2 ml líquido aquoso)',
       th: '±0.5% (2 มล. ของเหลวคล้ายน้ำ)', vi: '±0,5% (2 ml dung dịch dạng nước)', bn: '±০.৫% (২ মিলি পানি-সদৃশ)',
-      ur: '±0.5% (2 ملی لیٹر پانی جیسا)', fa: '±۰٫۵٪ (۲ میلی‌لیتر محلول آبی)'
+      ur: '±0.5% (2 ملی لیٹر پانی جیسا)', fa: '±۰٫۵٪ (۲ میلی‌لیتر محلول آبی)',
+
+      ar: '±0.5% (مائع شبيه بالماء 2 مل)', de: '±0,5 % (2 ml wasserähnlich)', it: '±0,5 % (2 ml simile all’acqua)',
+
     },
     /* --- 型号 --- */
     'PFS-M / PFS-P (1–10 filling heads)': {
       zh: 'PFS-M / PFS-P（1–10 个灌装头）', ja: 'PFS-M / PFS-P（1〜10充填ヘッド）', ko: 'PFS-M / PFS-P (1–10 충전 헤드)',
       ru: 'PFS-M / PFS-P (1–10 наполнителей)', fr: 'PFS-M / PFS-P (1–10 têtes de remplissage)', es: 'PFS-M / PFS-P (1–10 cabezales de llenado)', pt: 'PFS-M / PFS-P (1–10 cabeças de enchimento)',
       th: 'PFS-M / PFS-P (หัวบรรจุ 1–10 หัว)', vi: 'PFS-M / PFS-P (1–10 đầu chiết rót)', bn: 'পিএফএস-এম / পিএফএস-পি (১–১০ ভরাট হেড)',
-      ur: 'PFS-M / PFS-P (1–10 فلنگ ہیڈز)', fa: 'PFS-M / PFS-P (۱–۱۰ نازل پرکن)'
+      ur: 'PFS-M / PFS-P (1–10 فلنگ ہیڈز)', fa: 'PFS-M / PFS-P (۱–۱۰ نازل پرکن)',
+
+      ar: 'PFS-M / PFS-P (1–10 رؤوس تعبئة)', de: 'PFS-M / PFS-P (1–10 Füllköpfe)', it: 'PFS-M / PFS-P (1–10 teste di riempimento)',
+
     },
     /* --- 主要特点 --- */
     'Ceramic piston pump, peristaltic or time-pressure filling': {
       zh: '陶瓷柱塞泵，可选蠕动泵或时压式灌装', ja: 'セラミックピストンポンプ、チューブポンプまたは時圧式充填に対応', ko: '세라믹 피스톤 펌프, 튜브 펌프 또는 시간-압력 충전',
       ru: 'Керамический плунжерный насос, перистальтическое или время-давностное дозирование', fr: 'Pompe à piston céramique, remplissage péristaltique ou temps-pression', es: 'Bomba de pistón cerámico, llenado peristáltico o tiempo-presión', pt: 'Bomba de pistão cerâmico, enchimento peristáltico ou tempo-pressão',
       th: 'ปั๊มลูกสูบเซรามิก รองรับบรรจุแบบเพริสตอลติกหรือเวลา-แรงดัน', vi: 'Bơm piston gốm, chiết rót kiểu ống lót hoặc thời gian-áp suất', bn: 'সিরামিক পিস্টন পাম্প, পেরিস্টলটিক বা টাইম-প্রেসার ভরাট',
-      ur: 'سیرامک پسٹن پمپ، پرستالٹک یا ٹائم پریشر بھرائی', fa: 'پمپ پیستون سرامیکی، پرکردن پریستالتیک یا زمان-فشار'
+      ur: 'سیرامک پسٹن پمپ، پرستالٹک یا ٹائم پریشر بھرائی', fa: 'پمپ پیستون سرامیکی، پرکردن پریستالتیک یا زمان-فشار',
+
+      ar: 'مضخة مكبس خزفية، أو بريستالاتيك أو بتقنية الزمن-الضغط', de: 'Keramikkolbenpumpe, peristaltisch oder Zeit-Druck-Füllung', it: 'Pompa a pistone ceramica, peristaltica o a tempo-pressione',
+
     },
     'Ceramic or peristaltic pump filling': {
       zh: '陶瓷泵或蠕动泵灌装', ja: 'セラミックポンプまたはチューブポンプ充填', ko: '세라믹 펌프 또는 튜브 펌프 충전',
       ru: 'Дозирование керамическим или перистальтическим насосом', fr: 'Remplissage par pompe céramique ou péristaltique', es: 'Llenado con bomba cerámica o peristáltica', pt: 'Enchimento com bomba cerâmica ou peristáltica',
       th: 'บรรจุด้วยปั๊มเซรามิกหรือเพริสตอลติก', vi: 'Chiết rót bằng bơm gốm hoặc ống lót', bn: 'সিরামিক বা পেরিস্টলটিক পাম্প ভরাট',
-      ur: 'سیرامک یا پرستالٹک پمپ بھرائی', fa: 'پرکردن با پمپ سرامیکی یا پریستالتیک'
+      ur: 'سیرامک یا پرستالٹک پمپ بھرائی', fa: 'پرکردن با پمپ سرامیکی یا پریستالتیک',
+
+      ar: 'تعبئة بمضخة خزفية أو بريستالاتيك', de: 'Keramik- oder Peristaltikpumpenfüllung', it: 'Riempimento con pompa ceramica o peristaltica',
+
     },
     '≥3-log particle removal, WFI recirculation, silicone option': {
       zh: '≥3 级微粒去除，注射水循环，可选硅胶管', ja: '3ログ以上の粒子除去、注射用水循環、シリコンオプション', ko: '3-log 이상 입자 제거, 주사용수 순환, 실리콘 옵션',
       ru: 'Удаление частиц ≥3-log, рециркуляция WFI, опция силикона', fr: 'Élimination des particules ≥3-log, recirculation d’eau pour injection, option silicone', es: 'Eliminación de partículas ≥3-log, recirculación de agua para inyectables, opción de silicona', pt: 'Remoção de partículas ≥3-log, recirculação de água para injetáveis, opção de silicone',
       th: 'กำจัดอนุภาค ≥3-log หมุนเวียนน้ำสำหรับฉีด มีตัวเลือกท่อซิลิโคน', vi: 'Loại bỏ hạt ≥3-log, tuần hoàn nước pha tiêm, tùy chọn silicone', bn: '≥৩-লগ কণা অপসারণ, ডব্লিউএফআই পুনঃসঞ্চালন, সিলিকন অপশন',
-      ur: '≥3-لاگ ذرات کا اخراج، انجیکشن پانی کی گردش، سلکون آپشن', fa: 'حذف ذرات ≥3-log، گردش آب تزریقی، گزینه سیلیکون'
+      ur: '≥3-لاگ ذرات کا اخراج، انجیکشن پانی کی گردش، سلکون آپشن', fa: 'حذف ذرات ≥3-log، گردش آب تزریقی، گزینه سیلیکون',
+
+      ar: 'إزالة جسيمات ≥3-log، إعادة تدوير ماء الحقن، خيار سيليكون', de: '≥3-log Partikelentfernung, WFI-Umwälzung, Silikonoption', it: 'Rimozione particelle ≥3-log, ricircolo WFI, opzione silicone',
+
     },
     '320 °C hot air, 3.0–5.5 m tunnel, auto pressure balance': {
       zh: '320°C 热风，隧道长 3.0–5.5 米，自动压力平衡', ja: '320℃熱風、トンネル長3.0〜5.5m、自動圧力バランス', ko: '320°C 열풍, 터널 길이 3.0~5.5m, 자동 압력 균형',
       ru: 'Горячий воздух 320 °C, туннель 3,0–5,5 м, автоматический баланс давления', fr: 'Air chaud 320 °C, tunnel 3,0–5,5 m, équilibrage automatique de pression', es: 'Aire caliente a 320 °C, túnel de 3,0–5,5 m, equilibrio automático de presión', pt: 'Ar quente a 320 °C, túnel de 3,0–5,5 m, balanceamento automático de pressão',
       th: 'ลมร้อน 320°C อุโมงค์ยาว 3.0–5.5 ม. สมดุลแรงดันอัตโนมัติ', vi: 'Khí nóng 320 °C, đường hầm 3,0–5,5 m, cân bằng áp suất tự động', bn: '৩২০°সে গরম বাতাস, ৩.০–৫.৫ মি টানেল, স্বয়ংক্রিয় চাপ ভারসাম্য',
-      ur: '320° سینٹی گریڈ گرم ہوا، 3.0–5.5 میٹر ٹنل، خودکار پریشر بیلنس', fa: 'هوای گرم ۳۲۰ درجه، تونل ۳٫۰–۵٫۵ متر، تعادل فشار خودکار'
+      ur: '320° سینٹی گریڈ گرم ہوا، 3.0–5.5 میٹر ٹنل، خودکار پریشر بیلنس', fa: 'هوای گرم ۳۲۰ درجه، تونل ۳٫۰–۵٫۵ متر، تعادل فشار خودکار',
+
+      ar: 'هواء ساخن 320°م، نفق 3.0–5.5 م، توازن ضغط تلقائي', de: '320 °C Heißluft, 3,0–5,5 m Tunnel, automatischer Druckausgleich', it: 'Aria calda 320 °C, tunnel 3,0–5,5 m, bilanciamento pressione auto',
+
     },
     'Validated with PAO-tested H14 HEPA': {
       zh: '经 PAO 检测的 H14 高效过滤器验证', ja: 'PAO 試験済み H14 HEPA で検証', ko: 'PAO 시험 완료 H14 HEPA로 검증',
       ru: 'Валидировано с H14 HEPA, проверенным PAO-тестом', fr: 'Validé avec un H14 HEPA testé au PAO', es: 'Validado con H14 HEPA probado con PAO', pt: 'Validado com H14 HEPA testado com PAO',
       th: 'ผ่านการตรวจสอบด้วย H14 HEPA ที่ทดสอบด้วย PAO', vi: 'Được xác nhận bằng H14 HEPA thử nghiệm PAO', bn: 'PAO-পরীক্ষিত H14 HEPA দিয়ে যাচাইকৃত',
-      ur: 'PAO ٹیسٹ شدہ H14 HEPA کے ساتھ توثیق شدہ', fa: 'اعتبارسنجی‌شده با H14 HEPA آزمون PAO'
+      ur: 'PAO ٹیسٹ شدہ H14 HEPA کے ساتھ توثیق شدہ', fa: 'اعتبارسنجی‌شده با H14 HEPA آزمون PAO',
+
+      ar: 'معتمد بمرشح H14 HEPA مفحوص PAO', de: 'Validiert mit PAO-getestetem H14 HEPA', it: 'Validato con H14 HEPA testato PAO',
+
     },
     'Robot-compatible, CIP/SIP, nitrogen purging, 100% check-weigh': {
       zh: '兼容机器人，CIP/SIP，充氮，100% 在线检重', ja: 'ロボット対応、CIP/SIP、窒素置換、100%重量検査', ko: '로봇 호환, CIP/SIP, 질소 퍼지, 100% 중량 검사',
       ru: 'Совместимость с роботами, CIP/SIP, продувка азотом, 100% контроль массы', fr: 'Compatible robot, NEP/SEP, purge à l’azote, pesée de contrôle 100 %', es: 'Compatible con robot, CIP/SIP, purga de nitrógeno, pesaje de control del 100%', pt: 'Compatível com robô, CIP/SIP, purga de nitrogênio, pesagem de controle de 100%',
       th: 'รองรับหุ่นยนต์ CIP/SIP ไล่ไนโตรเจน ตรวจชั่งน้ำหนัก 100%', vi: 'Tương thích robot, CIP/SIP, sục nitơ, cân kiểm tra 100%', bn: 'রোবট-সামঞ্জস্যপূর্ণ, CIP/SIP, নাইট্রোজেন পার্জিং, ১০০% চেক-ওয়েই',
-      ur: 'روبوٹ مطابقت، CIP/SIP، نائٹروجن پرج، 100% چیک ویئنگ', fa: 'سازگار با ربات، CIP/SIP، پرج نیتروژن، توزین کنترل ۱۰۰٪'
+      ur: 'روبوٹ مطابقت، CIP/SIP، نائٹروجن پرج، 100% چیک ویئنگ', fa: 'سازگار با ربات، CIP/SIP، پرج نیتروژن، توزین کنترل ۱۰۰٪',
+
+      ar: 'متوافق مع الروبوت، CIP/SIP، شطف بالنيتروجين، وزن تحقق 100%', de: 'Roboterkompatibel, CIP/SIP, Stickstoffspülung, 100 % Kontrollwiegen', it: 'Compatibile con robot, CIP/SIP, purga azoto, pesatura di controllo 100%',
+
     },
     'Servo ceramic pump, curved needle lift to reduce splashing': {
       zh: '伺服陶瓷泵，弧形针升降减少飞溅', ja: 'サーボセラミックポンプ、湾曲針昇降で飛散低減', ko: '서보 세라믹 펌프, 곡선 니들 리프트로 비산 감소',
       ru: 'Сервоприводный керамический насос, изогнутый подъём иглы против брызг', fr: 'Pompe céramique servo, levée d’aiguille courbée pour réduire les éclaboussures', es: 'Bomba cerámica servo, elevación de aguja curva para reducir salpicaduras', pt: 'Bomba cerâmica servo, elevação de agulha curva para reduzir respingos',
       th: 'ปั๊มเซรามิกเซอร์โว ยกเข็มแบบโค้งเพื่อลดการกระเซ็น', vi: 'Bơm gốm servo, nâng kim cong giúp giảm bắn tóe', bn: 'সার্ভো সিরামিক পাম্প, বাঁকা সুই লিফট দিয়ে ছিটকে যাওয়া কমায়',
-      ur: 'سروو سیرامک پمپ، خمیدہ سوئی لفٹ سے چھینٹے کم', fa: 'پمپ سرامیکی سروو، بالا رفتن سوزن خمیده برای کاهش پاشش'
+      ur: 'سروو سیرامک پمپ، خمیدہ سوئی لفٹ سے چھینٹے کم', fa: 'پمپ سرامیکی سروو، بالا رفتن سوزن خمیده برای کاهش پاشش',
+
+      ar: 'مضخة خزفية سيرفو، رفع إبرة منحنية لتقليل التناثر', de: 'Servokeramikpumpe, gekrümmter Nadellift zur Spritzreduzierung', it: 'Pompa ceramica servo, sollevamento ago curvo per ridurre schizzi',
+
     },
     'Piston, stainless piston, ceramic or peristaltic pump options': {
       zh: '活塞、不锈钢活塞、陶瓷泵或蠕动泵可选', ja: 'ピストン・ステンレスピストン・セラミックポンプ・チューブポンプから選択可', ko: '피스톤, 스테인리스 피스톤, 세라믹 또는 튜브 펌프 옵션',
       ru: 'Варианты: плунжер, нерж. плунжер, керамический или перистальтический насос', fr: 'Options : piston, piston inox, pompe céramique ou péristaltique', es: 'Opciones: pistón, pistón de acero inoxidable, bomba cerámica o peristáltica', pt: 'Opções: pistão, pistão inox, bomba cerâmica ou peristáltica',
       th: 'ตัวเลือกปั๊ม: ลูกสูบ ลูกสูบสเตนเลส เซรามิก หรือเพริสตอลติก', vi: 'Tùy chọn bơm: piston, piston inox, bơm gốm hoặc ống lót', bn: 'পিস্টন, স্টেইনলেস পিস্টন, সিরামিক বা পেরিস্টলটিক পাম্প অপশন',
-      ur: 'پسٹن، سٹین لیس پسٹن، سیرامک یا پرستالٹک پمپ آپشنز', fa: 'گزینه‌ها: پیستون، پیستون استیل، پمپ سرامیکی یا پریستالتیک'
+      ur: 'پسٹن، سٹین لیس پسٹن، سیرامک یا پرستالٹک پمپ آپشنز', fa: 'گزینه‌ها: پیستون، پیستون استیل، پمپ سرامیکی یا پریستالتیک',
+
+      ar: 'مكبس، مكبس من الفولاذ المقاوم للصدأ، خيارات مضخة خزفية أو بريستالاتيك', de: 'Kolben, Edelstahlkolben, Keramik- oder Peristaltikpumpenoptionen', it: 'Pistone, pistone in acciaio, opzioni pompa ceramica o peristaltica',
+
     },
     'Dosing range 50–5000 mg, 1 / 2 / 4 heads': {
       zh: '分装范围 50–5000mg，1 / 2 / 4 头可选', ja: '充填範囲50〜5000mg、1/2/4ヘッド対応', ko: '투여 범위 50–5000mg, 1/2/4 헤드',
       ru: 'Диапазон дозирования 50–5000 мг, 1 / 2 / 4 дозатора', fr: 'Plage de dosage 50–5000 mg, 1 / 2 / 4 têtes', es: 'Rango de dosificación 50–5000 mg, 1 / 2 / 4 cabezales', pt: 'Faixa de dosagem 50–5000 mg, 1 / 2 / 4 cabeças',
       th: 'ช่วงการตวง 50–5000 มก. 1 / 2 / 4 หัวบรรจุ', vi: 'Khoảng định lượng 50–5000 mg, 1 / 2 / 4 đầu', bn: 'ডোজিং রেঞ্জ ৫০–৫০০০ মিগ্রা, ১ / ২ / ৪ হেড',
-      ur: 'خوراک کی حد 50–5000 ملی گرام، 1 / 2 / 4 ہیڈز', fa: 'محدوده دوزینگ ۵۰–۵۰۰۰ میلی‌گرم، ۱ / ۲ / ۴ نازل'
+      ur: 'خوراک کی حد 50–5000 ملی گرام، 1 / 2 / 4 ہیڈز', fa: 'محدوده دوزینگ ۵۰–۵۰۰۰ میلی‌گرم، ۱ / ۲ / ۴ نازل',
+
+      ar: 'نطاق الجرعات 50–5000 مغ، 1 / 2 / 4 رؤوس', de: 'Dosierbereich 50–5000 mg, 1 / 2 / 4 Köpfe', it: 'Campo dosaggio 50–5000 mg, 1 / 2 / 4 teste',
+
     },
     'Dosing range 20–1000 mg, minimal mechanical friction': {
       zh: '分装范围 20–1000mg，机械摩擦极小', ja: '充填範囲20〜1000mg、機械摩擦が極めて少ない', ko: '투여 범위 20–1000mg, 기계 마찰 최소화',
       ru: 'Диапазон дозирования 20–1000 мг, минимальное механическое трение', fr: 'Plage de dosage 20–1000 mg, friction mécanique minimale', es: 'Rango de dosificación 20–1000 mg, fricción mecánica mínima', pt: 'Faixa de dosagem 20–1000 mg, atrito mecânico mínimo',
       th: 'ช่วงการตวง 20–1000 มก. แรงเสียดทานเชิงกลน้อยที่สุด', vi: 'Khoảng định lượng 20–1000 mg, ma sát cơ học tối thiểu', bn: 'ডোজিং রেঞ্জ ২০–১০০০ মিগ্রা, যান্ত্রিক ঘর্ষণ খুবই কম',
-      ur: 'خوراک کی حد 20–1000 ملی گرام، میکانیکی رگڑ انتہائی کم', fa: 'محدوده دوزینگ ۲۰–۱۰۰۰ میلی‌گرم، اصطکاک مکانیکی حداقلی'
+      ur: 'خوراک کی حد 20–1000 ملی گرام، میکانیکی رگڑ انتہائی کم', fa: 'محدوده دوزینگ ۲۰–۱۰۰۰ میلی‌گرم، اصطکاک مکانیکی حداقلی',
+
+      ar: 'نطاق الجرعات 20–1000 مغ، احتكاك ميكانيكي شبه معدوم', de: 'Dosierbereich 20–1000 mg, minimale mechanische Reibung', it: 'Campo dosaggio 20–1000 mg, attrito meccanico minimo',
+
     },
     'Filling range 2–30 ml, nitrogen purging, CIP/SIP': {
       zh: '灌装范围 2–30ml，充氮，CIP/SIP', ja: '充填範囲2〜30ml、窒素置換、CIP/SIP', ko: '충전 범위 2–30ml, 질소 퍼지, CIP/SIP',
       ru: 'Диапазон наполнения 2–30 мл, продувка азотом, CIP/SIP', fr: 'Plage de remplissage 2–30 ml, purge d’azote, NEP/SEP', es: 'Rango de llenado 2–30 ml, purga de nitrógeno, CIP/SIP', pt: 'Faixa de enchimento 2–30 ml, purga de nitrogênio, CIP/SIP',
       th: 'ช่วงการบรรจุ 2–30 มล. ไล่ไนโตรเจน CIP/SIP', vi: 'Khoảng chiết rót 2–30 ml, sục nitơ, CIP/SIP', bn: 'ভরাট রেঞ্জ ২–৩০ মিলি, নাইট্রোজেন পার্জিং, CIP/SIP',
-      ur: 'بھرائی کی حد 2–30 ملی لیٹر، نائٹروجن پرج، CIP/SIP', fa: 'محدوده پرکردن ۲–۳۰ میلی‌لیتر، پرج نیتروژن، CIP/SIP'
+      ur: 'بھرائی کی حد 2–30 ملی لیٹر، نائٹروجن پرج، CIP/SIP', fa: 'محدوده پرکردن ۲–۳۰ میلی‌لیتر، پرج نیتروژن، CIP/SIP',
+
+      ar: 'نطاق التعبئة 2–30 مل، شطف بالنيتروجين، CIP/SIP', de: 'Füllbereich 2–30 ml, Stickstoffspülung, CIP/SIP', it: 'Campo riempimento 2–30 ml, purga azoto, CIP/SIP',
+
     },
     'Nitrogen purging, CIP/SIP, tool-free format change': {
       zh: '充氮，CIP/SIP，免工具换型', ja: '窒素置換、CIP/SIP、工具不要の規格替え', ko: '질소 퍼지, CIP/SIP, 공구 없는 형식 전환',
       ru: 'Продувка азотом, CIP/SIP, смена формата без инструментов', fr: 'Purge d’azote, NEP/SEP, changement de format sans outil', es: 'Purga de nitrógeno, CIP/SIP, cambio de formato sin herramientas', pt: 'Purga de nitrogênio, CIP/SIP, troca de formato sem ferramentas',
       th: 'ไล่ไนโตรเจน CIP/SIP เปลี่ยนรุ่นไม่ต้องใช้เครื่องมือ', vi: 'Sục nitơ, CIP/SIP, chuyển khuôn không cần dụng cụ', bn: 'নাইট্রোজেন পার্জিং, CIP/SIP, টুল-মুক্ত ফরম্যাট পরিবর্তন',
-      ur: 'نائٹروجن پرج، CIP/SIP، بغیر اوزار فارمیٹ تبدیلی', fa: 'پرج نیتروژن، CIP/SIP، تعویض فرمت بدون ابزار'
+      ur: 'نائٹروجن پرج، CIP/SIP، بغیر اوزار فارمیٹ تبدیلی', fa: 'پرج نیتروژن، CIP/SIP، تعویض فرمت بدون ابزار',
+
+      ar: 'شطف بالنيتروجين، CIP/SIP، تغيير شكل دون أدوات', de: 'Stickstoffspülung, CIP/SIP, Formatwechsel ohne Werkzeug', it: 'Purga azoto, CIP/SIP, cambio formato senza attrezzi',
+
     },
     'Breakage rate 0.05%, rejection of missing stopper/cap, vision option': {
       zh: '破瓶率 0.05%，缺塞/缺盖剔除，可选视觉检测', ja: '破損率0.05%、栓・キャップ欠落除去、外観検査オプション', ko: '파손률 0.05%, 마개/캡 누락 제거, 비전 옵션',
       ru: 'Бой 0,05%, отбраковка без пробки/колпачка, опция машинного зрения', fr: 'Casse 0,05 %, rejet de bouchon/capsule manquants, option vision', es: 'Rotura del 0,05%, rechazo de tapón/tapa faltante, opción de visión', pt: 'Quebra de 0,05%, rejeição de batoque/tampa ausente, opção de visão',
       th: 'อัตราแตก 0.05% คัดออกเมื่อไม่มีจุก/ฝา มีตัวเลือกกล้องตรวจ', vi: 'Tỷ lệ vỡ 0,05%, loại bỏ thiếu nút/nắp, tùy chọn thị giác', bn: 'ভাঙার হার ০.০৫%, স্টপার/ক্যাপ অনুপস্থিত বাতিল, ভিশন অপশন',
-      ur: 'ٹوٹنے کی شرح 0.05%، سٹاپر/کیپ غائب ہونے پر خارج، ویژن آپشن', fa: 'نرخ شکست ۰٫۰۵٪، حذف فاقد درپوش، گزینه بازرسی بینایی'
+      ur: 'ٹوٹنے کی شرح 0.05%، سٹاپر/کیپ غائب ہونے پر خارج، ویژن آپشن', fa: 'نرخ شکست ۰٫۰۵٪، حذف فاقد درپوش، گزینه بازرسی بینایی',
+
+      ar: 'معدل الكسر 0.05%، استبعاد السدادات/الأغطية الناقصة، خيار رؤية', de: 'Bruchrate 0,05 %, Aussortierung fehlender Stopfen/Kappen, Vision-Option', it: 'Tasso rottura 0,05%, scarto tappi/capsule mancanti, opzione visione',
+
     },
     'Mechanical or vacuum stoppering, submerged filling, modular': {
       zh: '机械或真空压塞，潜没式灌装，模块化', ja: '機械式または真空打栓、潜水充填、モジュール構造', ko: '기계식 또는 진공 마개, 잠수식 충전, 모듈형',
       ru: 'Механическая или вакуумная укупорка, подводимое наполнение, модульность', fr: 'Bouchage mécanique ou sous vide, remplissage immergé, modulaire', es: 'Taponado mecánico o por vacío, llenado sumergido, modular', pt: 'Batoque mecânico ou a vácuo, enchimento submerso, modular',
       th: 'ใส่จุกแบบกลไกหรือสุญญากาศ บรรจุแบบจม่น โมดูลาร์', vi: 'Đậy nút cơ khí hoặc chân không, chiết rót ngập, module', bn: 'মেকানিক্যাল বা ভ্যাকুয়াম স্টপারিং, সাবমার্জড ভরাট, মডুলার',
-      ur: 'میکانیکل یا ویکیوم سٹاپرنگ، سبمرجڈ بھرائی، ماڈیولر', fa: 'درپوش‌گذاری مکانیکی یا خلأ، پرکردن غوطه‌ور، ماژولار'
+      ur: 'میکانیکل یا ویکیوم سٹاپرنگ، سبمرجڈ بھرائی، ماڈیولر', fa: 'درپوش‌گذاری مکانیکی یا خلأ، پرکردن غوطه‌ور، ماژولار',
+
+      ar: 'سداد ميكانيكي أو بالفراغ، تعبئة مغمورة، معياري', de: 'Mechanisches oder Vakuumstopfen, getauchtes Füllen, modular', it: 'Tappatura meccanica o a vuoto, riempimento sommerso, modulare',
+
     },
     'Precise temperature & vacuum control, integrated CIP/SIP': {
       zh: '精确温度与真空控制，集成 CIP/SIP', ja: '高精度温度・真空制御、CIP/SIP 統合', ko: '정밀 온도·진공 제어, CIP/SIP 통합',
       ru: 'Точное управление температурой и вакуумом, встроенная CIP/SIP', fr: 'Contrôle précis de la température et du vide, NEP/SEP intégrée', es: 'Control preciso de temperatura y vacío, CIP/SIP integrado', pt: 'Controle preciso de temperatura e vácuo, CIP/SIP integrado',
       th: 'ควบคุมอุณหภูมิและสุญญากาศอย่างแม่นยำ รวม CIP/SIP', vi: 'Kiểm soát nhiệt độ & chân không chính xác, tích hợp CIP/SIP', bn: 'সুনির্দিষ্ট তাপমাত্রা ও ভ্যাকুয়াম নিয়ন্ত্রণ, ইন্টিগ্রেটেড CIP/SIP',
-      ur: 'درجہ حرارت اور ویکیوم کا درست کنٹرول، مربوط CIP/SIP', fa: 'کنترل دقیق دما و خلأ، CIP/SIP یکپارچه'
+      ur: 'درجہ حرارت اور ویکیوم کا درست کنٹرول، مربوط CIP/SIP', fa: 'کنترل دقیق دما و خلأ، CIP/SIP یکپارچه',
+
+      ar: 'تحكم دقيق بالحرارة والفراغ، CIP/SIP مدمج', de: 'Präzise Temperatur- & Vakuumregelung, integriertes CIP/SIP', it: 'Controllo preciso temperatura e vuoto, CIP/SIP integrato',
+
     },
     'H14 HEPA, PAO scan-tested': {
       zh: 'H14 高效过滤器，PAO 扫描检测', ja: 'H14 HEPA、PAO スキャン試験済み', ko: 'H14 HEPA, PAO 스캔 시험 완료',
       ru: 'H14 HEPA, проверено PAO-сканированием', fr: 'H14 HEPA, testé par balayage PAO', es: 'H14 HEPA, probado por barrido PAO', pt: 'H14 HEPA, testado por varredura PAO',
       th: 'H14 HEPA ทดสอบด้วย PAO scan', vi: 'H14 HEPA, kiểm tra quét PAO', bn: 'এইচ১৪ এইচইপিএ, পিএও স্ক্যান-পরীক্ষিত',
-      ur: 'H14 HEPA، PAO اسکین ٹیسٹ شدہ', fa: 'فیلتر H14 HEPA، آزمون اسکن PAO'
+      ur: 'H14 HEPA، PAO اسکین ٹیسٹ شدہ', fa: 'فیلتر H14 HEPA، آزمون اسکن PAO',
+
+      ar: 'H14 HEPA، مفحوص بمسح PAO', de: 'H14 HEPA, PAO-Scan-getestet', it: 'H14 HEPA, testato con scansione PAO',
+
     },
     'H₂O₂ vapour, 6-log reduction': {
       zh: '过氧化氢蒸汽，6 级杀灭', ja: '過酸化水素蒸気、6ログ低減', ko: '과산화수소 증기, 6-log 감소',
       ru: 'Пары H₂O₂, снижение на 6-log', fr: 'Vapeur H₂O₂, réduction 6-log', es: 'Vapor de H₂O₂, reducción 6-log', pt: 'Vapor de H₂O₂, redução 6-log',
       th: 'ไอ H₂O₂ ลดเชื้อ 6-log', vi: 'Hơi H₂O₂, giảm 6-log', bn: 'H₂O₂ বাষ্প, ৬-লগ হ্রাস',
-      ur: 'H₂O₂ بخارات، 6-لاگ کمی', fa: 'بخار H₂O₂، کاهش 6-log'
+      ur: 'H₂O₂ بخارات، 6-لاگ کمی', fa: 'بخار H₂O₂، کاهش 6-log',
+
+      ar: 'بخار H₂O₂، تقليل 6-log', de: 'H₂O₂-Dampf, 6-log-Reduktion', it: 'Vapore H₂O₂, riduzione 6-log',
+
     },
     'Stainless steel + toughened glass, RTP or airlock transfer': {
       zh: '不锈钢 + 钢化玻璃，RTP 或气锁传递', ja: 'ステンレススチール＋強化ガラス、RTPまたはエアロック搬送', ko: '스테인리스 스틸 + 강화유리, RTP 또는 에어락 이송',
       ru: 'Нерж. сталь + закалённое стекло, передача RTP или шлюз', fr: 'Inox + verre trempé, transfert RTP ou sas', es: 'Acero inoxidable + vidrio templado, transferencia RTP o esclusa', pt: 'Aço inoxidável + vidro temperado, transferência RTP ou eclusa',
       th: 'สเตนเลส + กระจกเทมเปอร์ ถ่ายผ่าน RTP หรือแอร์ล็อก', vi: 'Inox + kính cường lực, truyền qua RTP hoặc airlock', bn: 'স্টেইনলেস স্টিল + টেম্পার্ড গ্লাস, RTP বা এয়ারলক ট্রান্সফার',
-      ur: 'سٹین لیس سٹیل + ٹیمپرڈ گلاس، RTP یا ایئرلاک ٹرانسفر', fa: 'استنلس‌استیل + شیشه تقویت‌شده، انتقال RTP یا قفل هوا'
+      ur: 'سٹین لیس سٹیل + ٹیمپرڈ گلاس، RTP یا ایئرلاک ٹرانسفر', fa: 'استنلس‌استیل + شیشه تقویت‌شده، انتقال RTP یا قفل هوا',
+
+      ar: 'فولاذ مقاوم للصدأ + زجاج معزز، نقل RTP أو قفل هواء', de: 'Edelstahl + gehärtetes Glas, RTP- oder Schleusentransfer', it: 'Acciaio inox + vetro temperato, trasferimento RTP o antibaglia',
+
     },
     'Up to 5 camera stations, optional HGA headspace analysis': {
       zh: '最多 5 个相机工位，可选 HGA 顶空分析', ja: 'カメラ最大5ステーション、HGAヘッドスペース分析オプション', ko: '최대 5개 카메라 스테이션, HGA 헤드스페이스 분석 옵션',
       ru: 'До 5 камер, опция анализа головного пространства HGA', fr: 'Jusqu’à 5 postes caméra, option d’analyse d’espace de tête HGA', es: 'Hasta 5 estaciones de cámara, opción de análisis de espacio de cabeza HGA', pt: 'Até 5 estações de câmera, opção de análise de headspace HGA',
       th: 'กล้องได้ถึง 5 สถานี มีตัวเลือกวิเคราะห์ HGA headspace', vi: 'Tối đa 5 trạm camera, tùy chọn phân tích headspace HGA', bn: '৫টি ক্যামেরা স্টেশন পর্যন্ত, HGA হেডস্পেস বিশ্লেষণ অপশন',
-      ur: '5 کیمرہ اسٹیشنوں تک، HGA ہیڈ اسپیس تجزیہ آپشن', fa: 'تا ۵ ایستگاه دوربین، گزینه آنالیز هداسپیس HGA'
+      ur: '5 کیمرہ اسٹیشنوں تک، HGA ہیڈ اسپیس تجزیہ آپشن', fa: 'تا ۵ ایستگاه دوربین، گزینه آنالیز هداسپیس HGA',
+
+      ar: 'حتى 5 محطات كاميرا، تحليل HGA للفراغ الرأسي اختياري', de: 'Bis zu 5 Kamerastationen, optionale HGA-Kopfraumanalyse', it: 'Fino a 5 stazioni camera, opzionale analisi headspace HGA',
+
     },
     'Peristaltic or ceramic pump, mechanical or vacuum stoppering': {
       zh: '蠕动泵或陶瓷泵，机械或真空压塞', ja: 'チューブポンプまたはセラミックポンプ、機械式または真空打栓', ko: '튜브 펌프 또는 세라믹 펌프, 기계식 또는 진공 마개',
       ru: 'Перистальтический или керамический насос, механическая или вакуумная укупорка', fr: 'Pompe péristaltique ou céramique, bouchage mécanique ou sous vide', es: 'Bomba peristáltica o cerámica, taponado mecánico o por vacío', pt: 'Bomba peristáltica ou cerâmica, batoque mecânico ou a vácuo',
       th: 'ปั๊มเพริสตอลติกหรือเซรามิก ใส่จุกแบบกลไกหรือสุญญากาศ', vi: 'Bơm ống lót hoặc gốm, đậy nút cơ khí hoặc chân không', bn: 'পেরিস্টলটিক বা সিরামিক পাম্প, মেকানিক্যাল বা ভ্যাকুয়াম স্টপারিং',
-      ur: 'پرستالٹک یا سیرامک پمپ، میکانیکل یا ویکیوم سٹاپرنگ', fa: 'پمپ پریستالتیک یا سرامیکی، درپوش‌گذاری مکانیکی یا خلأ'
+      ur: 'پرستالٹک یا سیرامک پمپ، میکانیکل یا ویکیوم سٹاپرنگ', fa: 'پمپ پریستالتیک یا سرامیکی، درپوش‌گذاری مکانیکی یا خلأ',
+
+      ar: 'مضخة بريستالاتيك أو خزفية، سداد ميكانيكي أو بالفراغ', de: 'Peristaltik- oder Keramikpumpe, mechanisches oder Vakuumstopfen', it: 'Pompa peristaltica o ceramica, tappatura meccanica o a vuoto',
+
     },
     'Portable — fits inside isolator or RABS': {
       zh: '便携式——可放入隔离器或 RABS 内', ja: '可搬型——アイソレータやRABS内に収まる', ko: '휴대용 — 아이솔레이터 또는 RABS 내부에 설치 가능',
       ru: 'Портативная — помещается в изолятор или RABS', fr: 'Portable — s’installe dans un isolateur ou RABS', es: 'Portátil: cabe dentro de un aislador o RABS', pt: 'Portátil — cabe dentro de um isolador ou RABS',
       th: 'พกพาได้ — วางภายในไอโซเลเตอร์หรือ RABS ได้', vi: 'Di động — vừa bên trong isolator hoặc RABS', bn: 'পোর্টেবল — আইসোলেটর বা RABS-এর ভেতরে ফিট করে',
-      ur: 'پورٹیبل — آئسولیٹر یا RABS کے اندر فٹ ہوتا ہے', fa: 'قابل‌حمل — درون ایزولاتور یا RABS جا می‌شود'
+      ur: 'پورٹیبل — آئسولیٹر یا RABS کے اندر فٹ ہوتا ہے', fa: 'قابل‌حمل — درون ایزولاتور یا RABS جا می‌شود',
+
+      ar: 'محمول — يناسب داخل العازل أو RABS', de: 'Tragbar — passt in Isolator oder RABS', it: 'Portatile — entra in isolatore o RABS',
+
     },
     'Gravimetric (weighing) filling, stable and repeatable': {
       zh: '称重式灌装，稳定且可重复', ja: '重量式充填、安定かつ再現性あり', ko: '중량식 충전, 안정적이고 재현 가능',
       ru: 'Гравиметрическое (весовое) наполнение, стабильно и повторяемо', fr: 'Remplissage gravimétrique (par pesée), stable et répétable', es: 'Llenado gravimétrico (por pesaje), estable y repetible', pt: 'Enchimento gravimétrico (por pesagem), estável e repetível',
       th: 'บรรจุแบบชั่งน้ำหนัก เสถียรและทำซ้ำได้', vi: 'Chiết rót theo trọng lượng, ổn định và lặp lại được', bn: 'ওজন-ভিত্তিক ভরাট, স্থিতিশীল ও পুনরাবৃত্তিযোগ্য',
-      ur: 'وزنی بھرائی، مستحکم اور دوبارہ قابل', fa: 'پرکردن وزنی، پایدار و تکرارپذیر'
+      ur: 'وزنی بھرائی، مستحکم اور دوبارہ قابل', fa: 'پرکردن وزنی، پایدار و تکرارپذیر',
+
+      ar: 'تعبئة جاذبية (وزنية)، مستقرة وقابلة للتكرار', de: 'Gravimetrische (Gewichts-)Füllung, stabil und wiederholbar', it: 'Riempimento gravimetrico (a pesata), stabile e ripetibile',
+
     },
     'Tool-free format changeover, portable': {
       zh: '免工具换型，便于移动', ja: '工具不要の規格替え、可搬型', ko: '공구 없는 형식 전환, 휴대 가능',
       ru: 'Смена формата без инструментов, портативность', fr: 'Changement de format sans outil, portable', es: 'Cambio de formato sin herramientas, portátil', pt: 'Troca de formato sem ferramentas, portátil',
       th: 'เปลี่ยนรุ่นไม่ต้องใช้เครื่องมือ พกพาสะดวก', vi: 'Chuyển đổi khuôn không cần dụng cụ, di động', bn: 'টুল-মুক্ত ফরম্যাট পরিবর্তন, পোর্টেবল',
-      ur: 'بغیر اوزار فارمیٹ تبدیلی، پورٹیبل', fa: 'تعویض فرمت بدون ابزار، قابل‌حمل'
+      ur: 'بغیر اوزار فارمیٹ تبدیلی، پورٹیبل', fa: 'تعویض فرمت بدون ابزار، قابل‌حمل',
+
+      ar: 'تغيير شكل دون أدوات، محمول', de: 'Formatwechsel ohne Werkzeug, tragbar', it: 'Cambio formato senza attrezzi, portatile',
+
     }
   };
 
@@ -1048,7 +1406,7 @@
   }
 
   /* ---------- 工具 ---------- */
-  var LANG_KEYS = ['zh', 'en', 'ja', 'ko', 'ru', 'fr', 'es', 'pt', 'th', 'vi', 'bn', 'ur', 'fa'];
+  var LANG_KEYS = ['zh', 'en', 'ja', 'ko', 'ru', 'fr', 'es', 'pt', 'th', 'vi', 'bn', 'ur', 'fa', 'ar', 'de', 'it'];
 
   function lang() {
     return document.documentElement.lang || 'en';
@@ -1184,7 +1542,7 @@
 
   /* ---------- 目录 DOM ---------- */
   var CAT_LABEL = { lines: '', filling: '', washing: '', capping: '', lab: '' };
-  var RTL = { fa: true, ur: true };
+  var RTL = { fa: true, ur: true, ar: true };
 
   var searchEl = null, gridEl = null, countEl = null, emptyEl = null;
 
