@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hashoer Intelligent Technology Ltd | Pharmaceutical Equipment Solutions</title>
+  <link rel="canonical" href="https://hashoer.com/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png">
@@ -1019,6 +1020,38 @@
     }
   </style>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2150c07cc4fa4de4b070789867d2c941"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- ═══ Google 追踪（GA4 + Google Ads 转化）═══
+       现在留空 = 不加载任何谷歌脚本，零成本、零影响、无报错。
+       拿到 ID 后把下面三行填上，全站追踪立即生效（其余不用改）。
+       也可以用「换 ID」脚本一键替换。 -->
+  <script>
+    window.HASHOER_GA4_ID   = '';   /* GA4 衡量 ID，例：G-ABC123XYZ4 */
+    window.HASHOER_AW_ID    = '';   /* Google Ads 转化 ID，例：AW-123456789 */
+    window.HASHOER_AW_LABEL = '';   /* 转化标签，例：AbC-D_efGhIjk */
+  </script>
+  <script>
+    (function () {
+      window.hashoerTrack = window.hashoerTrack || function () {};
+      var GA = window.HASHOER_GA4_ID, AW = window.HASHOER_AW_ID;
+      if (!GA && !AW) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA || AW);
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      if (GA) window.gtag('config', GA, { anonymize_ip: true });
+      if (AW) window.gtag('config', AW);
+      window.hashoerTrack = function (name, label) {
+        try {
+          if (GA) window.gtag('event', name);
+          var lb = label || window.HASHOER_AW_LABEL;
+          if (AW && lb) window.gtag('event', 'conversion', { send_to: AW + '/' + lb });
+        } catch (e) {}
+      };
+    })();
+  </script>
 </head>
 <body>
 
@@ -3305,6 +3338,7 @@
       .then(function(r) { return r.json(); })
       .then(function(res) {
         if (res.success) {
+          try { window.hashoerTrack('generate_lead'); } catch (err) {}
           btn.textContent = dict.form_sent;
           btn.style.background = '#16a34a';
           e.target.reset();
@@ -3337,6 +3371,21 @@
     <span class="wa-float-text" data-i18n="wa_float_text">Chat with us</span>
   </a>
 
+  <script>
+    /* 转化点击埋点：WhatsApp / 邮件 / 电话（ID 未填时静默无动作） */
+    (function () {
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        try {
+          if (h.indexOf('wa.me') > -1) { window.hashoerTrack('click_whatsapp'); }
+          else if (h.indexOf('mailto:') === 0) { window.hashoerTrack('click_email'); }
+          else if (h.indexOf('tel:') === 0) { window.hashoerTrack('click_phone'); }
+        } catch (err) {}
+      }, true);
+    })();
+  </script>
   <script src="products.js?v=20260919a" charset="utf-8"></script>
 </body>
 </html>

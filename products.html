@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Full Equipment Range — Hashoer Intelligent Technology</title>
+  <link rel="canonical" href="https://hashoer.com/products.html">
   <meta name="description" content="Browse the complete Hashoer equipment range — 21 pharmaceutical filling, washing, sterilizing and capping lines. Search by name, container or model.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -124,6 +125,38 @@
       .nav-links a:not(.nav-cta) { display: none; }
     }
   </style>
+  <!-- ═══ Google 追踪（GA4 + Google Ads 转化）═══
+       现在留空 = 不加载任何谷歌脚本，零成本、零影响、无报错。
+       拿到 ID 后把下面三行填上，全站追踪立即生效（其余不用改）。
+       也可以用「换 ID」脚本一键替换。 -->
+  <script>
+    window.HASHOER_GA4_ID   = '';   /* GA4 衡量 ID，例：G-ABC123XYZ4 */
+    window.HASHOER_AW_ID    = '';   /* Google Ads 转化 ID，例：AW-123456789 */
+    window.HASHOER_AW_LABEL = '';   /* 转化标签，例：AbC-D_efGhIjk */
+  </script>
+  <script>
+    (function () {
+      window.hashoerTrack = window.hashoerTrack || function () {};
+      var GA = window.HASHOER_GA4_ID, AW = window.HASHOER_AW_ID;
+      if (!GA && !AW) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA || AW);
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      if (GA) window.gtag('config', GA, { anonymize_ip: true });
+      if (AW) window.gtag('config', AW);
+      window.hashoerTrack = function (name, label) {
+        try {
+          if (GA) window.gtag('event', name);
+          var lb = label || window.HASHOER_AW_LABEL;
+          if (AW && lb) window.gtag('event', 'conversion', { send_to: AW + '/' + lb });
+        } catch (e) {}
+      };
+    })();
+  </script>
 </head>
 <body>
 
