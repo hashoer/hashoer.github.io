@@ -148,11 +148,25 @@
       window.gtag('js', new Date());
       if (GA) window.gtag('config', GA, { anonymize_ip: true });
       if (AW) window.gtag('config', AW);
-      window.hashoerTrack = function (name, label) {
+      window.hashoerTrack = function (name, label, params) {
         try {
-          if (GA) window.gtag('event', name);
+          if (GA) {
+            if (params) window.gtag('event', name, params);
+            else window.gtag('event', name);
+          }
           var lb = label || window.HASHOER_AW_LABEL;
           if (AW && lb) window.gtag('event', 'conversion', { send_to: AW + '/' + lb });
+        } catch (e) {}
+      };
+      /* 虚拟页面浏览：让「网址不变」的浏览（产品详情弹窗等）也能出现在 GA4「页面和屏幕」报表里 */
+      window.hashoerTrackPage = function (path, title) {
+        try {
+          if (!GA) return;
+          window.gtag('event', 'page_view', {
+            page_path: path,
+            page_title: title,
+            page_location: window.location.origin + path
+          });
         } catch (e) {}
       };
     })();
@@ -352,6 +366,6 @@
     pAutoDetect();
   </script>
 
-  <script src="products.js?v=20260919a" charset="utf-8"></script>
+  <script src="products.js?v=20260921a" charset="utf-8"></script>
 </body>
 </html>

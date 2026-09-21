@@ -1511,6 +1511,10 @@
     document.getElementById('spCta').textContent = t(UI.cta);
     modal.classList.add('on');
     document.body.style.overflow = 'hidden';
+    /* 埋点：记一笔「谁看了哪款产品」——推虚拟页面浏览，GA4「页面和屏幕」报表里直接按产品名列出 */
+    try {
+      if (window.hashoerTrackPage) window.hashoerTrackPage('/products/' + p.id, t(p.name));
+    } catch (e) {}
   }
 
   function closeSpec() {
@@ -1537,7 +1541,13 @@
   }
 
   modal.querySelector('#spCta').addEventListener('click', function () {
-    if (current) inquire(current);
+    if (current) {
+      /* 埋点：从产品详情发起询盘 = 强意向信号 */
+      try {
+        if (window.hashoerTrack) window.hashoerTrack('begin_inquiry', null, { product: current.name.en });
+      } catch (e) {}
+      inquire(current);
+    }
   });
 
   /* ---------- 目录 DOM ---------- */
@@ -1590,8 +1600,22 @@
     emptyEl.style.display = 'none';
     gridEl.appendChild(emptyEl);
 
+    var lastSentTerm = '', searchTimer = null;
     searchEl.addEventListener('input', function () {
       applyFilter();
+      /* 埋点：客户在找什么设备（停止输入 1.2 秒才记一笔，同一个词只记一次） */
+      if (searchTimer) clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () {
+        var q = (searchEl.value || '').trim();
+        if (q.length < 2 || q.toLowerCase() === lastSentTerm) return;
+        lastSentTerm = q.toLowerCase();
+        var hitCount = applyFilter();
+        try {
+          if (window.hashoerTrack) {
+            window.hashoerTrack('view_search_results', null, { search_term: q, results_count: hitCount });
+          }
+        } catch (e) {}
+      }, 1200);
     });
     document.getElementById('catClear').addEventListener('click', function () {
       searchEl.value = '';
@@ -1647,6 +1671,7 @@
     countEl.textContent = n + ' ' + t(UI.unit);
     emptyEl.textContent = t(UI.noResult);
     emptyEl.style.display = n === 0 ? '' : 'none';
+    return n;
   }
 
   /* ---------- 剂型快捷入口（顶部 5 张分类卡） ---------- */
@@ -1744,6 +1769,10 @@
       if (qs) {
         searchEl.value = qs;
         applyFilter();
+        /* 埋点：从主页剂型卡或带 ?q= 的链接进来 = 客户关注这类剂型 */
+        try {
+          if (window.hashoerTrack) window.hashoerTrack('select_category', null, { category: qs });
+        } catch (e) {}
       }
     }
   }
