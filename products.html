@@ -120,6 +120,9 @@
       padding: 28px 24px 36px;
     }
 
+    .page-foot a { color: var(--gray); text-decoration: underline; text-underline-offset: 2px; }
+    .page-foot a:hover { color: var(--primary); }
+
     @media (max-width: 900px) {
       .nav-links { gap: 16px; }
       .nav-links a:not(.nav-cta) { display: none; }
@@ -201,7 +204,7 @@
   <!-- ════ FULL PRODUCT CATALOGUE (rendered by products.js) ════ -->
   <div id="catalogRoot"></div>
 
-  <div class="page-foot">© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. All rights reserved.</div>
+  <div class="page-foot">© 2023 Hashoer Intelligent Technology (Shanghai) Ltd. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></div>
 
   <script>
     /* ════ 导航多语（16 语，与主页字典同步） ════ */
