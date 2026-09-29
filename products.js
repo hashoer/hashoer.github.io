@@ -372,7 +372,7 @@
   /* ---------- 18 条产品线 ---------- */
   var CATALOG = [
                 {
-      id: 'washer', cat: 'washing', img: 'images/p04-washer.jpg',
+      id: 'washer', cat: 'washing', img: '/images/p04-washer.jpg',
       kw: 'washing machine washer vial ampoule ultrasonic rotary cleaning FWV',
       name: {
         en: 'Vertical vial & ampoule washing machine', zh: '立式洗瓶机',
@@ -407,7 +407,7 @@
       specs: { model: 'FWV-100 / 200 / 300 / 400 / 500 / 600', output: '40–160 washing needles', container: 'Vials & ampoules', feature: '≥3-log particle removal, WFI recirculation, silicone option' }
     },
     {
-      id: 'tunnel', cat: 'washing', img: 'images/p05-tunnel.jpg',
+      id: 'tunnel', cat: 'washing', img: '/images/p05-tunnel.jpg',
       kw: 'sterilizing depyrogenation tunnel oven dryer hot air FTV vial ampoule',
       name: {
         en: 'Sterilizing & depyrogenation tunnel', zh: '隧道烘箱',
@@ -442,7 +442,7 @@
       specs: { model: 'FTV-100 / 200 / 300 / 400 / 500', output: '100–600 containers/min', feature: '320 °C hot air, 3.0–5.5 m tunnel, auto pressure balance', cert: 'Validated with PAO-tested H14 HEPA' }
     },
     {
-      id: 'vial-filler', cat: 'filling', img: 'images/p06-vial-filler.jpg',
+      id: 'vial-filler', cat: 'filling', img: '/images/p06-vial-filler.jpg',
       kw: 'vial filling machine filler stoppering servo FFV aseptic',
       name: {
         en: 'Vial filling machine', zh: '西林瓶灌装机',
@@ -477,7 +477,7 @@
       specs: { model: 'FFV-100 / 200 / 300 / 400 / 500', output: '100–500 vials/min', container: '2–30 ml vial', accuracy: '±0.5% (2 ml water-like)', feature: 'Robot-compatible, CIP/SIP, nitrogen purging, 100% check-weigh' }
     },
     {
-      id: 'ampoule-filler', cat: 'filling', img: 'images/p07-ampoule-filler.jpg',
+      id: 'ampoule-filler', cat: 'filling', img: '/images/p07-ampoule-filler.jpg',
       kw: 'ampoule filling sealing machine filler gassing FFA flame',
       name: {
         en: 'Ampoule filling & sealing machine', zh: '安瓿瓶灌装机',
@@ -512,7 +512,7 @@
       specs: { model: 'FFA-100 / 200 / 300 / 400 / 500', output: '100–500 ampoules/min', container: '1–20 ml ampoule', feature: 'Servo ceramic pump, curved needle lift to reduce splashing' }
     },
     {
-      id: 'oral-filler', cat: 'filling', img: 'images/p08-oral-filler.jpg',
+      id: 'oral-filler', cat: 'filling', img: '/images/p08-oral-filler.jpg',
       kw: 'oral liquid filling capping machine syrup cap sorting FFK',
       name: {
         en: 'Oral liquid filling & capping machine', zh: '口服液灌装轧盖机',
@@ -547,7 +547,7 @@
       specs: { model: 'FFK-100 / 200 / 300 / 400', output: '100–400 bottles/min', container: '5–30 ml oral liquid bottle', feature: 'Piston, stainless piston, ceramic or peristaltic pump options' }
     },
     {
-      id: 'powder-screw', cat: 'filling', img: 'images/p09-powder-screw.jpg',
+      id: 'powder-screw', cat: 'filling', img: '/images/p09-powder-screw.jpg',
       kw: 'powder filling machine screw auger dosing vial sterile FF',
       name: {
         en: 'Screw powder filling machine', zh: '螺杆粉末灌装机',
@@ -582,7 +582,7 @@
       specs: { model: 'FF-100 / 200 / 300', output: '50–200 vials/min', container: '1–100 ml vial', accuracy: '±1% – ±8%', feature: 'Dosing range 50–5000 mg, 1 / 2 / 4 heads' }
     },
     {
-      id: 'powder-air', cat: 'filling', img: 'images/p10-powder-air.jpg',
+      id: 'powder-air', cat: 'filling', img: '/images/p10-powder-air.jpg',
       kw: 'powder filling machine airflow vacuum porous filter dosing vial',
       name: {
         en: 'Airflow powder filling machine', zh: '气流粉末分装机',
@@ -617,7 +617,7 @@
       specs: { model: 'FF-100 / 200 / 300', output: '20–80 vials/min', container: '2–100 ml vial', accuracy: '±1% – ±8%', feature: 'Dosing range 20–1000 mg, minimal mechanical friction' }
     },
     {
-      id: 'cartridge-filler', cat: 'filling', img: 'images/p11-cartridge-filler.jpg',
+      id: 'cartridge-filler', cat: 'filling', img: '/images/p11-cartridge-filler.jpg',
       kw: 'cartridge filling machine filler dental insulin pen FFC',
       name: {
         en: 'Cartridge filling machine', zh: '卡式瓶灌装机',
@@ -652,7 +652,7 @@
       specs: { model: 'FFC-100 / 150 / 200', output: '100–200 cartridges/min', container: 'Cartridge 1–5 ml', accuracy: '±1%', feature: 'Filling range 2–30 ml, nitrogen purging, CIP/SIP' }
     },
     {
-      id: 'spray-filler', cat: 'filling', img: 'images/p12-spray-filler.jpg',
+      id: 'spray-filler', cat: 'filling', img: '/images/p12-spray-filler.jpg',
       kw: 'spray filling capping machine nasal spray eye drop vial FFD',
       name: {
         en: 'Spray filling & capping machine', zh: '喷雾剂灌装轧盖机',
@@ -687,7 +687,7 @@
       specs: { model: 'FFD-100 / 150 / 200', output: '100–200 vials/min', container: '2–30 ml vial', accuracy: '±1%', feature: 'Nitrogen purging, CIP/SIP, tool-free format change' }
     },
     {
-      id: 'capper', cat: 'capping', img: 'images/p13-capper.jpg',
+      id: 'capper', cat: 'capping', img: '/images/p13-capper.jpg',
       kw: 'capping machine capper crimping vial aluminium cap RABS FC',
       name: {
         en: 'Vial capping machine', zh: '西林瓶轧盖机',
@@ -722,7 +722,7 @@
       specs: { model: 'FC-020 / 040 / 120 / 300', output: '20–500 vials/min', container: '2–100 ml vial', feature: 'Breakage rate 0.05%, rejection of missing stopper/cap, vision option' }
     },
     {
-      id: 'pfs-filler', cat: 'filling', img: 'images/p14-pfs-filler.jpg',
+      id: 'pfs-filler', cat: 'filling', img: '/images/p14-pfs-filler.jpg',
       kw: 'PFS prefilled syringe nest filling machine RTU stoppering vacuum cartridge vial',
       name: {
         en: 'Nest syringe (PFS) filling machine', zh: 'PFS 预充针灌装机',
@@ -757,7 +757,7 @@
       specs: { model: 'PFS-M / PFS-P (1–10 filling heads)', container: 'RTU nest: syringe, vial, cartridge', feature: 'Mechanical or vacuum stoppering, submerged filling, modular' }
     },
     {
-      id: 'lyophilizer', cat: 'vial', img: 'images/p15-lyophilizer.jpg',
+      id: 'lyophilizer', cat: 'vial', img: '/images/p15-lyophilizer.jpg',
       kw: 'lyophilizer freeze dryer lyophilisation vial vials vaccine API CIP SIP',
       name: {
         en: 'Lyophilizer (freeze dryer)', zh: '冻干机',
@@ -792,7 +792,7 @@
       specs: { feature: 'Precise temperature & vacuum control, integrated CIP/SIP', cert: 'FDA, cGMP, 21 CFR Part 11', container: 'Vial & API bulk' }
     },
     {
-      id: 'isolator', cat: 'capping', img: 'images/p16-isolator.jpg',
+      id: 'isolator', cat: 'capping', img: '/images/p16-isolator.jpg',
       kw: 'isolator containment RABS glove HEPA grade A aseptic RTP airlock',
       name: {
         en: 'Isolator system', zh: '隔离器系统',
@@ -827,7 +827,7 @@
       specs: { filter: 'H14 HEPA, PAO scan-tested', decontam: 'H₂O₂ vapour, 6-log reduction', feature: 'Stainless steel + toughened glass, RTP or airlock transfer' }
     },
     {
-      id: 'inspection', cat: 'capping', img: 'images/p17-inspection.jpg',
+      id: 'inspection', cat: 'capping', img: '/images/p17-inspection.jpg',
       kw: 'visual inspection machine camera vial ampoule particle check HGA VI',
       name: {
         en: 'Visual inspection machine', zh: '灯检机',
@@ -862,7 +862,7 @@
       specs: { model: 'VI-100 / 200 / 400 / 500', output: '100–500 containers/min', container: '2–30 ml', feature: 'Up to 5 camera stations, optional HGA headspace analysis' }
     },
     {
-      id: 'lab-vial-filler', cat: 'lab', img: 'images/p18-lab-vial-filler.jpg',
+      id: 'lab-vial-filler', cat: 'lab', img: '/images/p18-lab-vial-filler.jpg',
       kw: 'laboratory bench-top vial filling machine small batch R&D peristaltic',
       name: {
         en: 'Laboratory vial filling machine', zh: '西林瓶小试灌装机',
@@ -897,7 +897,7 @@
       specs: { size: '≈750 × 550 × 600 mm', weight: '≈50 kg', power: '2P / 220 V', output: '10–15 vials/min', container: '2–20 ml' }
     },
     {
-      id: 'pfs-semi', cat: 'lab', img: 'images/p19-pfs-semi.jpg',
+      id: 'pfs-semi', cat: 'lab', img: '/images/p19-pfs-semi.jpg',
       kw: 'PFS semi-automatic filling machine syringe nest laboratory R&D small batch',
       name: {
         en: 'PFS semi-automatic filling machine', zh: 'PFS 半自动灌装机',
@@ -932,7 +932,7 @@
       specs: { container: '0.5–20 ml prefilled syringe', feature: 'Peristaltic or ceramic pump, mechanical or vacuum stoppering', size: 'Portable — fits inside isolator or RABS' }
     },
     {
-      id: 'softbag-filler', cat: 'lab', img: 'images/p20-softbag-filler.jpg',
+      id: 'softbag-filler', cat: 'lab', img: '/images/p20-softbag-filler.jpg',
       kw: 'soft bag filling machine laboratory weighing gravimetric IV bag',
       name: {
         en: 'Laboratory soft-bag filling machine', zh: '软袋小试灌装机',
@@ -967,7 +967,7 @@
       specs: { feature: 'Gravimetric (weighing) filling, stable and repeatable', container: 'Mainstream soft-bag formats', size: 'Tool-free format changeover, portable' }
     },
     {
-      id: 'lab-capper', cat: 'lab', img: 'images/p21-lab-capper.jpg',
+      id: 'lab-capper', cat: 'lab', img: '/images/p21-lab-capper.jpg',
       kw: 'laboratory capping machine crimper bench-top vial small batch R&D',
       name: {
         en: 'Laboratory automatic capping machine', zh: '小试轧盖机',
@@ -1710,7 +1710,7 @@
       var h3 = card.querySelector('h3');
       var p = card.querySelector('p');
       if (icon) {
-        if (cfg.img) { icon.innerHTML = '<img src="images/' + cfg.img + '" alt="">'; }
+        if (cfg.img) { icon.innerHTML = '<img src="/images/' + cfg.img + '" alt="">'; }
         else { icon.textContent = cfg.icon; }
       }
       if (h3) h3.textContent = cfg[l] !== undefined ? cfg[l] : cfg.en;
