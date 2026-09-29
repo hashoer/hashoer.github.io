@@ -5,13 +5,15 @@ const path = require('path');
 const SITE = 'C:/Users/Administrator/WorkBuddy/建站搭子/hashoer-en';
 const BASE = 'https://hashoer.com';
 const LANGS = ['zh','ja','ko','ru','en','fr','es','pt','th','vi','bn','ur','fa','ar','de','it'];
-const TODAY = '2026-09-29';
+// lastmod 自动取生成当天日期（此前硬编码，易过期）
+const TODAY = new Date().toISOString().slice(0, 10);
 
 // 每个页面：en 用根，其余用 /lang/page（CF Pages pretty URL，无 .html）
+// basePath 统一带斜杠：/products、/privacy；loc 与 hreflang 必须同源生成，防止再次出现 /zhproducts 这类缺斜杠 404
 const PAGES = [
-  { en: '/', lang: '', priority: '1.0', freq: 'weekly' },
-  { en: '/products', lang: 'products', priority: '0.9', freq: 'weekly' },
-  { en: '/privacy', lang: 'privacy', priority: '0.3', freq: 'yearly' }
+  { en: '/', priority: '1.0', freq: 'weekly' },
+  { en: '/products', priority: '0.9', freq: 'weekly' },
+  { en: '/privacy', priority: '0.3', freq: 'yearly' }
 ];
 
 function altLinks(basePath) {
@@ -28,12 +30,12 @@ let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
 xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
 PAGES.forEach(function (p) {
-  const neutral = p.lang === '' ? '/' : ('/' + p.lang);
+  const basePath = p.en; // '/'、'/products'、'/privacy'，首尾均有斜杠
   LANGS.forEach(function (l) {
-    const loc = BASE + (l === 'en' ? p.en : ('/' + l + p.lang));
+    const loc = BASE + (l === 'en' ? basePath : ('/' + l + basePath));
     xml += '  <url>\n';
     xml += '    <loc>' + loc + '</loc>\n';
-    xml += altLinks(neutral);
+    xml += altLinks(basePath);
     xml += '    <lastmod>' + TODAY + '</lastmod>\n';
     xml += '    <changefreq>' + p.freq + '</changefreq>\n';
     xml += '    <priority>' + p.priority + '</priority>\n';
