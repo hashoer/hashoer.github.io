@@ -60,8 +60,8 @@ function patchScripts(doc, lang) {
   doc.querySelectorAll('script').forEach(function (s) {
     let t = s.textContent;
     if (!t) return;
-    t = t.replace(/applyLang\(detectInitialLang\(\)\);/g, "applyLang('" + lang + "');");
-    t = t.replace(/pApplyLang\(pInitialLang\(\)\);/g, "pApplyLang('" + lang + "');");
+    t = t.replace(/applyLang\((?:detectInitialLang\(\)|'[a-z]{2}')\);/g, "applyLang('" + lang + "');");
+    t = t.replace(/pApplyLang\((?:pInitialLang\(\)|'[a-z]{2}')\);/g, "pApplyLang('" + lang + "');");
     t = t.replace(/autoDetectLang\(\);/g, '/* autoDetect disabled: static lang page */');
     t = t.replace(/pAutoDetect\(\);/g, '/* pAutoDetect disabled: static lang page */');
     // onLangChange / pOnLangChange -> 跳转对应语言目录（记忆手动选择）
