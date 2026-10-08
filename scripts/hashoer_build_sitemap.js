@@ -2,7 +2,7 @@
 // hashoer 多语言 sitemap 生成器（与 druomu 同标准：48 URL + hreflang alternate）
 const fs = require('fs');
 const path = require('path');
-const SITE = 'C:/Users/Administrator/WorkBuddy/建站搭子/hashoer-en';
+const SITE = 'D:/外贸行资料库/06_独立站/建站搭子/hashoer-en';
 const BASE = 'https://hashoer.com';
 const LANGS = ['zh','ja','ko','ru','en','fr','es','pt','th','vi','bn','ur','fa','ar','de','it'];
 // lastmod 自动取生成当天日期（此前硬编码，易过期）

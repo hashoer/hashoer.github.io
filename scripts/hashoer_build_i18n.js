@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 
-const SITE = 'C:/Users/Administrator/WorkBuddy/建站搭子/hashoer-en';
+const SITE = 'D:/外贸行资料库/06_独立站/建站搭子/hashoer-en';
 const BASE = 'https://hashoer.com';
 const LANGS = ['zh','ja','ko','ru','en','fr','es','pt','th','vi','bn','ur','fa','ar','de','it'];
 const ANYLANG = 'en|zh|ja|ko|ru|fr|es|pt|th|vi|bn|ur|fa|ar|de|it';

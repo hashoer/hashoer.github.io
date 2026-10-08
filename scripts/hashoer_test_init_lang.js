@@ -2,7 +2,7 @@
 const { JSDOM } = require('jsdom');
 const path = require('path');
 
-const SITE = 'C:/Users/Administrator/WorkBuddy/建站搭子/hashoer-en';
+const SITE = 'D:/外贸行资料库/06_独立站/建站搭子/hashoer-en';
 
 async function testPage(file, url, expectText, label) {
   const dom = await JSDOM.fromFile(path.join(SITE, file), {
