@@ -66,8 +66,16 @@ function patchScripts(doc, lang) {
     t = t.replace(/pAutoDetect\(\);/g, '/* pAutoDetect disabled: static lang page */');
     // onLangChange / pOnLangChange -> 跳转对应语言目录（记忆手动选择）
     const remember = "try { localStorage.setItem('hashoer_lang', code); localStorage.setItem('hashoer_lang_manual', '1'); } catch (e) {}";
-    const jump = "var p = location.pathname.replace(/^\\/(" + ANYLANG + ")\\//, '');\n      " +
-      remember + "\n      window.location.href = (code === 'en' ? '/' : ('/' + code + '/')) + p;";
+    // 路径规范化：合并重复斜杠 -> 剥语言前缀 -> 补前导 / -> index.html 归一
+    // 旧写法在 /zh// 这类路径下会拼出 "//"，浏览器不会导航，导致英文切不回去
+    const jump = "var p = location.pathname.replace(/\\/{2,}/g, '/');\n      " +
+      "p = p.replace(/^\\/(" + ANYLANG + ")(\\/|$)/, '/');\n      " +
+      "p = p.replace(/\\/{2,}/g, '/');\n      " +
+      "if (p.charAt(0) !== '/') p = '/' + p;\n      " +
+      "p = p.replace(/\\/index\\.html$/, '/');\n      " +
+      "var qs = location.search || '', hs = location.hash || '';\n      " +
+      remember + "\n      " +
+      "window.location.href = (code === 'en' ? '/' : ('/' + code + '/')) + p.replace(/^\\//, '') + qs + hs;";
     t = t.replace(/function onLangChange\(code\) \{[\s\S]*?\n    \}/,
       "function onLangChange(code) {\n      " + jump + "\n    }");
     t = t.replace(/function pOnLangChange\(code\) \{[\s\S]*?\n    \}/,
@@ -77,7 +85,15 @@ function patchScripts(doc, lang) {
 }
 
 function injectHreflang(doc, basePath) {
-  doc.querySelectorAll('link[rel="alternate"]').forEach(function (el) { el.remove(); });
+  // 移除旧 alternate 链接，并连带清掉其两侧的纯空白文本节点，避免每次构建累积空行
+  doc.querySelectorAll('link[rel="alternate"]').forEach(function (el) {
+    const prev = el.previousSibling;
+    const next = el.nextSibling;
+    el.remove();
+    [prev, next].forEach(function (n) {
+      if (n && n.nodeType === 3 && !n.textContent.trim()) n.remove();
+    });
+  });
   let block = '';
   LANGS.forEach(function (l) {
     const url = BASE + (l === 'en' ? basePath : ('/' + l + basePath));

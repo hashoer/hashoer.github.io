@@ -1069,42 +1069,7 @@
     })();
   </script>
   <!-- Leadfeeder Web Visitors tracker · company-level visitor identification · site id p1e024B0qlQ8GB6d -->
-  <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('p1e024B0qlQ8GB6d'); </script>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <link rel="alternate" hreflang="zh" href="https://hashoer.com/zh/">
+  <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('p1e024B0qlQ8GB6d'); </script><link rel="alternate" hreflang="zh" href="https://hashoer.com/zh/">
   <link rel="alternate" hreflang="ja" href="https://hashoer.com/ja/">
   <link rel="alternate" hreflang="ko" href="https://hashoer.com/ko/">
   <link rel="alternate" hreflang="ru" href="https://hashoer.com/ru/">
@@ -3232,9 +3197,14 @@
     }
 
     function onLangChange(code) {
-      var p = location.pathname.replace(/^\/(en|zh|ja|ko|ru|fr|es|pt|th|vi|bn|ur|fa|ar|de|it)\//, '');
+      var p = location.pathname.replace(/\/{2,}/g, '/');
+      p = p.replace(/^\/(en|zh|ja|ko|ru|fr|es|pt|th|vi|bn|ur|fa|ar|de|it)(\/|$)/, '/');
+      p = p.replace(/\/{2,}/g, '/');
+      if (p.charAt(0) !== '/') p = '/' + p;
+      p = p.replace(/\/index\.html$/, '/');
+      var qs = location.search || '', hs = location.hash || '';
       try { localStorage.setItem('hashoer_lang', code); localStorage.setItem('hashoer_lang_manual', '1'); } catch (e) {}
-      window.location.href = (code === 'en' ? '/' : ('/' + code + '/')) + p;
+      window.location.href = (code === 'en' ? '/' : ('/' + code + '/')) + p.replace(/^\//, '') + qs + hs;
     }
 
     /* 默认语言：英文。只有访客手动切换过的语言才会被记住。 */
