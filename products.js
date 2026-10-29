@@ -92,6 +92,27 @@
 
       ar: 'إزالة التلوث', de: 'Dekontamination', it: 'Decontaminazione',
 
+    },
+    sterilant: {
+      zh: '灭菌剂', en: 'Sterilant', ja: '滅菌剤', ko: '멸균제', ru: 'Стерилянт', fr: 'Stérilisant',
+      es: 'Esterilizante', pt: 'Esterilizante', th: 'สารฆ่าเชื้อ', vi: 'Chất tiệt trùng', bn: 'জীবাণুনাশক', ur: 'جراثیم کش مادہ', fa: 'ماده استریل‌کننده',
+
+      ar: 'عامل التعقيم', de: 'Sterilisationsmittel', it: 'Sterilizzante',
+
+    },
+    control: {
+      zh: '控制方式', en: 'Control', ja: '制御方式', ko: '제어 방식', ru: 'Управление', fr: 'Commande',
+      es: 'Control', pt: 'Controle', th: 'การควบคุม', vi: 'Điều khiển', bn: 'নিয়ন্ত্রণ', ur: 'کنٹرول', fa: 'کنترل',
+
+      ar: 'التحكم', de: 'Steuerung', it: 'Controllo',
+
+    },
+    volume: {
+      zh: '灭菌体积', en: 'Sterilization volume', ja: '滅菌容積', ko: '멸균 용적', ru: 'Объём стерилизации', fr: 'Volume de stérilisation',
+      es: 'Volumen de esterilización', pt: 'Volume de esterilização', th: 'ปริมาตรฆ่าเชื้อ', vi: 'Thể tích tiệt trùng', bn: 'জীবাণুমুক্তকরণ আয়তন', ur: 'جراثیم کشی کا حجم', fa: 'حجم استریل',
+
+      ar: 'حجم التعقيم', de: 'Sterilisationsvolumen', it: 'Volume di sterilizzazione',
+
     }
   };
 
@@ -1000,6 +1021,76 @@
 
       },
       specs: { size: '≈500 × 350 × 600 mm', weight: '≈35 kg', power: '2P / 220 V', container: '2–20 ml vial' }
+    },
+    {
+      id: 'lab-vhp-portable', cat: 'lab', img: '/images/p22-vhp-portable.jpg',
+      kw: 'VHP sterilizer hydrogen peroxide portable room duct cavity decontamination laboratory',
+      name: {
+        en: 'Portable VHP sterilizer', zh: '便携式 VHP 灭菌机',
+        ja: '可搬式VHP滅菌機', ko: '휴대용 VHP 멸균기',
+        ru: 'Портативный стерилизатор VHP', fr: 'Stérilisateur VHP portable',
+        es: 'Esterilizador VHP portátil', pt: 'Esterilizador VHP portátil',
+        th: 'เครื่องฆ่าเชื้อ VHP แบบพกพา', vi: 'Máy tiệt trùng VHP di động',
+        bn: 'পোর্টেবল VHP স্টেরিলাইজার', ur: 'پورٹیبل VHP جراثیم کش',
+        fa: 'استریلایزر VHP قابل حمل',
+
+        ar: 'جهاز تعقيم VHP محمول', de: 'Tragbarer VHP-Sterilisator', it: 'Sterilizzatore VHP portatile',
+
+      },
+      desc: {
+        en: 'Lightweight portable unit for room, duct and cavity sterilization — 30–35% food-grade H₂O₂, vacuum flash vaporization, up to 150 m³ per unit.',
+        zh: '轻量化便携设备，适用于房间、管路与腔体灭菌；30–35% 食品级双氧水，真空闪蒸汽化，单台最大 150 m³。',
+        ja: '軽量可搬型。室・ダクト・キャビティの滅菌に対応。30～35%食品グレードH₂O₂、真空フラッシュ気化、1台最大150m³。',
+        ko: '경량 휴대형. 실내·덕트·캐비티 멸균 대응. 30~35% 식품등급 H₂O₂, 진공 플래시 기화, 대당 최대 150 m³.',
+        ru: 'Лёгкий переносной аппарат для стерилизации помещений, воздуховодов и полостей. 30–35% H₂O₂ пищевого класса, вакуумное флеш-испарение, до 150 м³ на аппарат.',
+        fr: 'Appareil portable léger pour la stérilisation des salles, gaines et cavités. H₂O₂ qualité alimentaire 30–35 %, vaporisation flash sous vide, jusqu’à 150 m³ par unité.',
+        es: 'Equipo portátil ligero para esterilizar salas, conductos y cavidades. H₂O₂ grado alimentario 30–35 %, vaporización flash al vacío, hasta 150 m³ por unidad.',
+        pt: 'Equipamento portátil leve para esterilizar salas, dutos e cavidades. H₂O₂ grau alimentício 30–35 %, vaporização flash a vácuo, até 150 m³ por unidade.',
+        th: 'เครื่องพกพาน้ำหนักเบา สำหรับฆ่าเชื้อห้อง ท่อลม และช่องปิด ใช้ H₂O₂ เกรดอาหาร 30–35% ระบบระเหยแบบแฟลชสุญญากาศ สูงสุด 150 m³ ต่อเครื่อง',
+        vi: 'Thiết bị di động nhẹ để tiệt trùng phòng, ống gió và khoang kín. H₂O₂ cấp thực phẩm 30–35%, hóa hơi flash chân không, tối đa 150 m³ mỗi máy.',
+        bn: 'হালকা পোর্টেবল ইউনিট—রুম, ডাক্ট ও ক্যাভিটি জীবাণুমুক্তকরণের জন্য। ৩০–৩৫% ফুড-গ্রেড H₂O₂, ভ্যাকুয়াম ফ্ল্যাশ বাষ্পীকরণ, প্রতি ইউনিট সর্বোচ্চ ১৫০ m³।',
+        ur: 'ہلکا پورٹیبل یونٹ—کمرے، ڈکٹ اور کیویٹی جراثیم کشی کے لیے۔ 30–35% فوڈ گریڈ H₂O₂، ویکیوم فلیش بخارات، فی یونٹ زیادہ سے زیادہ 150 m³۔',
+        fa: 'دستگاه سبک قابل حمل برای استریل اتاق، کانال هوا و حفره‌ها. H₂O₂ گرید غذایی ۳۰–۳۵٪، تبخیر فلش خلأ، تا ۱۵۰ m³ در هر دستگاه.',
+
+        ar: 'وحدة محمولة خفيفة لتعقيم الغرف ومجاري الهواء والتجاويف. H₂O₂ غذائي 30–35٪، تبخير وميضي بالتفريغ، حتى 150 m³ للوحدة.', de: 'Leichtes tragbares Gerät zur Sterilisation von Räumen, Kanälen und Hohlräumen. 30–35 % H₂O₂ in Lebensmittelqualität, Vakuum-Flash-Verdampfung, bis 150 m³ pro Einheit.', it: 'Unità portatile leggera per la sterilizzazione di stanze, canali e cavità. H₂O₂ grado alimentare 30–35 %, vaporizzazione flash sotto vuoto, fino a 150 m³ per unità.',
+
+      },
+      specs: { model: 'QKB S150', sterilant: '30–35% H₂O₂', control: '4.3" HMI', size: '300 × 300 × 300 mm', weight: '≈12 kg', power: 'AC 220 V / 50 Hz / 1.5 kW', decontam: '6-log', volume: '150 m³', cert: 'FDA 21 CFR Part 11 · GMP' }
+    },
+    {
+      id: 'lab-vhp-mobile', cat: 'lab', img: '/images/p23-vhp-mobile.jpg',
+      kw: 'VHP sterilization system mobile hydrogen peroxide cleanroom multi-unit laboratory',
+      name: {
+        en: 'Mobile VHP sterilization system', zh: '移动式 VHP 灭菌系统',
+        ja: '移動式VHP滅菌システム', ko: '이동식 VHP 멸균 시스템',
+        ru: 'Мобильная система стерилизации VHP', fr: 'Système de stérilisation VHP mobile',
+        es: 'Sistema de esterilización VHP móvil', pt: 'Sistema de esterilização VHP móvel',
+        th: 'ระบบฆ่าเชื้อ VHP แบบเคลื่อนที่', vi: 'Hệ thống tiệt trùng VHP di động',
+        bn: 'মোবাইল VHP স্টেরিলাইজেশন সিস্টেম', ur: 'موبائل VHP جراثیم کشی سسٹم',
+        fa: 'سیستم استریل VHP متحرک',
+
+        ar: 'نظام تعقيم VHP متحرك', de: 'Mobiles VHP-Sterilisationssystem', it: 'Sistema di sterilizzazione VHP mobile',
+
+      },
+      desc: {
+        en: 'Stainless-steel mobile system for large cleanrooms — networked multi-unit control, 7-inch touchscreen, up to 300 m³ per unit.',
+        zh: '不锈钢移动式系统，适用于大面积洁净区；支持多机联控，7 寸触摸屏，单台最大 300 m³。',
+        ja: 'ステンレス製移動式。大面積クリーンルーム向け。多機連携制御、7インチタッチパネル、1台最大300m³。',
+        ko: '스테인리스 이동식 시스템. 대면적 클린룸용. 다중 장비 연동 제어, 7인치 터치스크린, 대당 최대 300 m³.',
+        ru: 'Мобильная система из нержавеющей стали для больших чистых помещений. Сетевое управление несколькими блоками, 7-дюймовый сенсорный экран, до 300 м³ на блок.',
+        fr: 'Système mobile en inox pour grandes salles propres. Commande réseau multi-unités, écran tactile 7 pouces, jusqu’à 300 m³ par unité.',
+        es: 'Sistema móvil de acero inoxidable para salas limpias grandes. Control en red de varias unidades, pantalla táctil de 7 pulgadas, hasta 300 m³ por unidad.',
+        pt: 'Sistema móvel em aço inox para salas limpas grandes. Controle em rede de várias unidades, tela sensível ao toque de 7 polegadas, até 300 m³ por unidade.',
+        th: 'ระบบเคลื่อนที่สแตนเลสสำหรับห้องคลีนรูมขนาดใหญ่ ควบคุมหลายเครื่องผ่านเครือข่าย จอสัมผัส 7 นิ้ว สูงสุด 300 m³ ต่อเครื่อง',
+        vi: 'Hệ thống di động bằng inox cho phòng sạch lớn. Điều khiển liên kết nhiều máy, màn hình cảm ứng 7 inch, tối đa 300 m³ mỗi máy.',
+        bn: 'বড় ক্লিনরুমের জন্য স্টেইনলেস স্টিল মোবাইল সিস্টেম। নেটওয়ার্কভিত্তিক মাল্টি-ইউনিট নিয়ন্ত্রণ, ৭ ইঞ্চি টাচস্ক্রিন, প্রতি ইউনিট সর্বোচ্চ ৩০০ m³।',
+        ur: 'بڑے کلین رومز کے لیے سٹینلیس سٹیل موبائل سسٹم۔ نیٹ ورک ملٹی یونٹ کنٹرول، 7 انچ ٹچ اسکرین، فی یونٹ زیادہ سے زیادہ 300 m³۔',
+        fa: 'سیستم متحرک استیل ضدزنگ برای اتاق‌های پاک بزرگ. کنترل شبکه‌ای چند واحدی، صفحه لمسی ۷ اینچ، تا ۳۰۰ m³ در هر واحد.',
+
+        ar: 'نظام متحرك من الفولاذ المقاوم للصدأ للغرف النظيفة الكبيرة. تحكم شبكي متعدد الوحدات، شاشة لمس 7 بوصات، حتى 300 m³ للوحدة.', de: 'Mobiles Edelstahl-System für große Reinräume. Vernetzte Mehrgeräte-Steuerung, 7-Zoll-Touchscreen, bis 300 m³ pro Einheit.', it: 'Sistema mobile in acciaio inox per grandi camere bianche. Controllo in rete multi-unità, touchscreen da 7 pollici, fino a 300 m³ per unità.',
+
+      },
+      specs: { model: 'QKB S150', sterilant: '30–35% H₂O₂', control: '7" HMI', weight: '≈15 kg', power: 'AC 220 V / 50 Hz / 1.5 kW', decontam: '6-log', volume: '300 m³', cert: 'FDA 21 CFR Part 11 · GMP' }
     }
   ];
 
