@@ -1023,7 +1023,7 @@
       specs: { size: '≈500 × 350 × 600 mm', weight: '≈35 kg', power: '2P / 220 V', container: '2–20 ml vial' }
     },
     {
-      id: 'lab-vhp-portable', cat: 'lab', img: '/images/p22-vhp-portable.jpg',
+      id: 'lab-vhp-portable', cat: 'lab', img: '/images/p22-vhp-portable.jpg?v=20261113',
       kw: 'VHP sterilizer hydrogen peroxide portable room duct cavity decontamination laboratory',
       name: {
         en: 'Portable VHP sterilizer', zh: '便携式 VHP 灭菌机',
@@ -1058,7 +1058,7 @@
       specs: { model: 'QKB S150', sterilant: '30–35% H₂O₂', control: '4.3" HMI', size: '300 × 300 × 300 mm', weight: '≈12 kg', power: 'AC 220 V / 50 Hz / 1.5 kW', decontam: '6-log', volume: '150 m³', cert: 'FDA 21 CFR Part 11 · GMP' }
     },
     {
-      id: 'lab-vhp-mobile', cat: 'lab', img: '/images/p23-vhp-mobile.jpg',
+      id: 'lab-vhp-mobile', cat: 'lab', img: '/images/p23-vhp-mobile.jpg?v=20261113',
       kw: 'VHP sterilization system mobile hydrogen peroxide cleanroom multi-unit laboratory',
       name: {
         en: 'Mobile VHP sterilization system', zh: '移动式 VHP 灭菌系统',
